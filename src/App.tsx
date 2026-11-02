@@ -842,9 +842,7 @@ export default function App() {
       {/* 🚀 Distraction-Free Simple Footer */}
       <footer className="h-10 bg-slate-800 text-slate-200 flex items-center justify-between px-6 text-xs uppercase tracking-wider font-semibold font-mono shrink-0 select-none">
         <span>{currentUser.className ? `Lớp ${currentUser.className} // ` : ""}{currentUser.name} {currentUser.school ? `(${currentUser.school})` : ""}</span>        
-        <span className="text-slate-300">
-          {isSparkProgram ? "IC3 Spark Digital Literacy Platform" : "IC3 GS6 Examination Platform"}
-        </span>
+        
       </footer>
 
       {/* Change Password Modal for logged-in user */}
