@@ -15,6 +15,7 @@ app.use(express.json({ limit: "15mb" }));
 
 // Serve static images directly from public/images and public
 app.use("/images", express.static(path.join(process.cwd(), "public", "images")));
+app.use("/assets", express.static(path.join(process.cwd(), "public", "assets")));
 app.use(express.static(path.join(process.cwd(), "public")));
 
 // Initialize the Google Gemini GenAI SDK

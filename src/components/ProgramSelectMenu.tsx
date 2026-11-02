@@ -18,6 +18,8 @@ import {
   ShieldAlert
 } from "lucide-react";
 import { User } from "../types";
+import gs6Logo from "../assets/gs6_b4829e48.png";
+import sparkLogo from "../assets/spark_05b29717.png";
 
 interface ProgramSelectMenuProps {
   currentUser: User;
@@ -119,8 +121,9 @@ export default function ProgramSelectMenu({
             {/* GS6 Image Banner */}
             <div className="w-full h-36 sm:h-44 bg-gradient-to-b from-slate-50 to-slate-100/60 rounded-2xl border-2 border-slate-200 flex items-center justify-center p-4 relative group-hover:border-emerald-300 transition-colors">
               <img 
-                src="/assets/aistudio/gs6_b4829e48.png" 
+                src={gs6Logo} 
                 alt="IC3 Digital Literacy Certification Global Standard 6" 
+                onError={(e) => { e.currentTarget.src = "/assets/aistudio/gs6_b4829e48.png"; }}
                 className="max-h-full max-w-full object-contain filter drop-shadow-xs transition-transform duration-300 group-hover:scale-105"
               />
             </div>
@@ -212,8 +215,9 @@ export default function ProgramSelectMenu({
             {/* Spark Image Banner */}
             <div className="w-full h-36 sm:h-44 bg-gradient-to-b from-slate-50 to-slate-100/60 rounded-2xl border-2 border-slate-200 flex items-center justify-center p-4 relative group-hover:border-emerald-300 transition-colors">
               <img 
-                src="/assets/aistudio/spark_05b29717.png" 
+                src={sparkLogo} 
                 alt="IC3 Spark Digital Literacy" 
+                onError={(e) => { e.currentTarget.src = "/assets/aistudio/spark_05b29717.png"; }}
                 className="max-h-full max-w-full object-contain filter drop-shadow-xs transition-transform duration-300 group-hover:scale-105"
               />
             </div>
