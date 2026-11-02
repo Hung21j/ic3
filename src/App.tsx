@@ -633,13 +633,6 @@ export default function App() {
       {/* 🚀 Visual Header Bar - Soft Surface, High Contrast */}
       <header className="app-header h-16 bg-white border-b-2 border-slate-300 px-4 md:px-8 flex items-center justify-between shadow-xs z-10 shrink-0 select-none">
         <div className="flex items-center gap-3">
-          <div className="h-10 px-2 py-1 bg-slate-50 rounded-xl border border-slate-200 shadow-xs flex items-center justify-center shrink-0">
-            <img 
-              src={isSparkProgram ? "/assets/aistudio/spark_05b29717.png" : "/assets/aistudio/gs6_b4829e48.png"} 
-              alt={isSparkProgram ? "IC3 Spark" : "IC3 GS6"} 
-              className="h-7 w-auto object-contain"
-            />
-          </div>
           <div className="flex flex-col">
             <div className="flex items-center gap-2">
               <span className={`text-[10px] font-black uppercase font-mono px-1.5 py-0.5 rounded border ${
