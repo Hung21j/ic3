@@ -83,8 +83,7 @@ textarea {
 }
 
 /* Keep long question text, filenames, and labels inside their cards. */
-#ic3-study-page-deck,
-#ic3-study-page-deck * {
+#ic3-study-page-deck {
   min-width: 0;
 }
 
