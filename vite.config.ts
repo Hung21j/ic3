@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: '/ic3-preview/',
+    base: '/ic3/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
