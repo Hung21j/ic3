@@ -876,13 +876,7 @@ export default function IC3QuestionBank({
       <div className={`bg-gradient-to-r ${themeConfig.bgBanner} border-b-2 border-slate-300 p-4 md:p-5`}>
         <div className="flex items-center justify-between gap-3 flex-wrap sm:flex-nowrap">
           <div className="flex items-center gap-3">
-            <div className="h-11 px-2.5 py-1 bg-white rounded-xl border-2 border-slate-200 shadow-xs flex items-center justify-center shrink-0">
-              <img 
-                src={`${import.meta.env.BASE_URL}assets/aistudio/${isSpark ? "spark_05b29717.png" : "gs6_b4829e48.png"}`} 
-                alt={isSpark ? "IC3 Spark" : "IC3 GS6"} 
-                className="h-7 w-auto object-contain"
-              />
-            </div>
+            
             <div>
               <div className="flex items-center gap-2">
                 <span className={`text-[10px] font-black uppercase font-mono px-2 py-0.5 rounded-md border ${
