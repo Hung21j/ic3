@@ -893,7 +893,7 @@ export default function AdminDashboard({
     <div className="min-h-screen bg-[#eaedf2] flex flex-col font-sans text-slate-900 select-none border-4 md:border-8 border-slate-300">
       
       {/* 🚀 Admin Header Bar */}
-      <header className="h-16 bg-[#f7f9fc] border-b border-slate-300 px-4 md:px-8 flex items-center justify-between shadow-xs z-10 shrink-0">
+      <header className="admin-header h-16 bg-[#f7f9fc] border-b border-slate-300 px-4 md:px-8 flex items-center justify-between shadow-xs z-10 shrink-0">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-amber-600 text-white flex items-center justify-center shadow-md shadow-amber-600/20">
             <ShieldCheck className="w-6 h-6" />
@@ -908,7 +908,7 @@ export default function AdminDashboard({
           </div>
         </div>
 
-        <div className="flex items-center gap-2 md:gap-3">
+        <div className="admin-header__actions flex items-center gap-2 md:gap-3">
           <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-emerald-100/80 border border-emerald-300 text-emerald-900 rounded-xl text-xs font-mono font-bold shadow-xs">
             <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
             <span>Cloud Firestore: Đã đồng bộ</span>
@@ -959,7 +959,7 @@ export default function AdminDashboard({
         )}
       </AnimatePresence>
 
-      <main className="flex-1 overflow-y-auto p-4 md:p-8 space-y-6">
+      <main className="admin-main flex-1 overflow-y-auto p-4 md:p-8 space-y-6">
         <div className="max-w-7xl mx-auto w-full space-y-6">
 
           {/* 📊 Stat Cards Overview (Watch Quantity & Metrics) */}
