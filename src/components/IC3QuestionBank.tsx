@@ -57,13 +57,14 @@ interface SubsetConfig {
 
 const normalizeImagePath = (src?: string | null): string | undefined => {
   if (!src) return undefined;
-  if (src.startsWith("./images/")) {
-    return src.replace("./images/", "/images/");
-  }
-  if (src.startsWith("images/")) {
-    return "/" + src;
-  }
-  return src;
+
+  // Keep embedded, remote, and blob images unchanged.
+  if (/^(data:|https?:|blob:)/i.test(src)) return src;
+
+  // GitHub Pages hosts this project under /ic3/, not at the domain root.
+  // Prefix local public assets with Vite's configured base path.
+  const relativePath = src.replace(/^\\.\\//, "").replace(/^\\/+/, "");
+  return `${import.meta.env.BASE_URL}${relativePath}`;
 };
 
 const isImageSource = (str?: string | null): boolean => {
@@ -877,7 +878,7 @@ export default function IC3QuestionBank({
           <div className="flex items-center gap-3">
             <div className="h-11 px-2.5 py-1 bg-white rounded-xl border-2 border-slate-200 shadow-xs flex items-center justify-center shrink-0">
               <img 
-                src={isSpark ? "/assets/aistudio/spark_05b29717.png" : "/assets/aistudio/gs6_b4829e48.png"} 
+                src={`${import.meta.env.BASE_URL}assets/aistudio/${isSpark ? "spark_05b29717.png" : "gs6_b4829e48.png"}`} 
                 alt={isSpark ? "IC3 Spark" : "IC3 GS6"} 
                 className="h-7 w-auto object-contain"
               />
