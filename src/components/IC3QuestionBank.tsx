@@ -63,7 +63,7 @@ const normalizeImagePath = (src?: string | null): string | undefined => {
 
   // GitHub Pages hosts this project under /ic3/, not at the domain root.
   // Prefix local public assets with Vite's configured base path.
-  const relativePath = src.replace(/^\\.\\//, "").replace(/^\\/+/, "");
+  const relativePath = src.replace(/^\.?\//, "").replace(/^\/+/, "");
   return `${import.meta.env.BASE_URL}${relativePath}`;
 };
 
