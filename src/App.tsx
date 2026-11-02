@@ -631,7 +631,7 @@ export default function App() {
     <div className="min-h-screen bg-[#f0f3f8] flex flex-col font-sans text-slate-900 border-4 md:border-8 border-slate-300">
       
       {/* 🚀 Visual Header Bar - Soft Surface, High Contrast */}
-      <header className="h-16 bg-white border-b-2 border-slate-300 px-4 md:px-8 flex items-center justify-between shadow-xs z-10 shrink-0 select-none">
+      <header className="app-header h-16 bg-white border-b-2 border-slate-300 px-4 md:px-8 flex items-center justify-between shadow-xs z-10 shrink-0 select-none">
         <div className="flex items-center gap-3">
           <div className="h-10 px-2 py-1 bg-slate-50 rounded-xl border border-slate-200 shadow-xs flex items-center justify-center shrink-0">
             <img 
@@ -657,7 +657,7 @@ export default function App() {
         </div>
 
         {/* Header Profile Dashboard Integration */}
-        <div className="flex items-center gap-2.5 md:gap-3 flex-wrap">
+        <div className="app-header__actions flex items-center gap-2.5 md:gap-3 flex-wrap">
           <button
             type="button"
             onClick={handleSwitchProgram}
@@ -724,7 +724,7 @@ export default function App() {
       </header>
 
       {/* 🔮 Center Focused Layout Main Workspace - Single Column */}
-      <main className="flex-1 overflow-y-auto bg-[#f0f3f8] py-6 px-4 md:px-8">
+      <main className="app-main flex-1 overflow-y-auto bg-[#f0f3f8] py-6 px-4 md:px-8">
         <div className="max-w-7xl mx-auto w-full space-y-6">
           
           {/* 1. Main Focused Question Bank Display - Expanded */}
