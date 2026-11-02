@@ -43,3 +43,128 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #64748b;
 }
+
+/* Responsive foundation: prevent accidental horizontal page overflow. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100dvh;
+  overflow-x: clip;
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+input,
+select,
+textarea {
+  max-width: 100%;
+}
+
+/* Keep long question text, filenames, and labels inside their cards. */
+#ic3-study-page-deck,
+#ic3-study-page-deck * {
+  min-width: 0;
+}
+
+#ic3-study-page-deck img {
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 767px) {
+  html {
+    font-size: 15px;
+  }
+
+  .app-header,
+  .admin-header {
+    height: auto;
+    min-height: 4rem;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  .app-header__actions,
+  .admin-header__actions {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .app-header__actions > button,
+  .admin-header__actions > button {
+    min-height: 2.5rem;
+  }
+
+  .app-main {
+    padding: 1rem 0.625rem;
+  }
+
+  .admin-main {
+    padding: 0.75rem;
+  }
+
+  #ic3-study-page-deck {
+    border-radius: 0.875rem;
+  }
+
+  #ic3-study-page-deck .question-content {
+    padding: 0.875rem;
+    min-height: 0;
+  }
+
+  #ic3-study-page-deck button {
+    touch-action: manipulation;
+  }
+
+  /* Preserve wide matching/table content without widening the whole page. */
+  #ic3-study-page-deck .overflow-x-auto,
+  .admin-main .overflow-x-auto {
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Keep modal panels usable on short phone screens. */
+  [role="dialog"],
+  .fixed.inset-0 > div {
+    max-height: calc(100dvh - 1.5rem);
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .app-header__actions > button,
+  .admin-header__actions > button {
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+    font-size: 0.7rem;
+  }
+
+  #ic3-study-page-deck .grid.grid-cols-2 {
+    gap: 0.5rem;
+  }
+}
