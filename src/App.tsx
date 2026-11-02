@@ -482,14 +482,6 @@ export default function App() {
           
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b-2 border-slate-200 pb-5">
             <div className="flex items-center gap-4">
-              <div className="h-14 w-auto px-3 py-1.5 bg-slate-50 border-2 border-slate-200 rounded-2xl flex items-center justify-center shrink-0">
-                <img 
-                  src={isSparkProgram ? "/assets/aistudio/spark_05b29717.png" : "/assets/aistudio/gs6_b4829e48.png"} 
-                  alt={isSparkProgram ? "IC3 Spark" : "IC3 GS6"} 
-                  className="h-10 w-auto object-contain"
-                />
-              </div>
-
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
                   <span className={`text-[11px] font-black uppercase tracking-widest font-mono px-2 py-0.5 rounded-md border ${
