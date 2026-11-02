@@ -1,0 +1,235 @@
+NỘI DUNG CÂU HỎI VÀ ĐÁP ÁN (DÙNG ĐỂ TẠO FORM)
+
+Câu 1: Bạn hãy cho biết, hình ảnh nào sau đây là hình ảnh của một chiếc Laptop?
+
+Loại câu hỏi: Trắc nghiệm (Multiple Choice)
+Các lựa chọn:
+Hình chiếc máy tính xách tay (Đáp án đúng)
+Máy tính bảng
+Điện thoại thông minh
+Máy tính để bàn
+Câu 2: Bạn hãy cho biết phần mềm nào sau đây là hệ điều hành?
+
+Loại câu hỏi: Trắc nghiệm
+Các lựa chọn:
+Google
+Apple iPad
+Microsoft Windows (Đáp án đúng)
+Microsoft Word
+Câu 3: Bạn hãy cho biết, loại phần cứng (Hardware) nào gửi dữ liệu đến máy tính?
+
+Loại câu hỏi: Trắc nghiệm
+Các lựa chọn:
+Nhập (Input) (Đáp án đúng)
+Lưu trữ (Storage)
+Màn hình (Monitor)
+Xuất (Output)
+Câu 4: Bạn cần kết nối máy tính bảng với Internet. Bạn nên sử dụng phương tiện gì dưới đây?
+
+Loại câu hỏi: Trắc nghiệm
+Các lựa chọn:
+A monitor cable
+A printer cable
+Bluetooth
+Wi-Fi (Đáp án đúng)
+Câu 5: Bạn hãy cho biết, phần mềm nào dưới đây là phần mềm ứng dụng?
+
+Loại câu hỏi: Trắc nghiệm
+Các lựa chọn:
+iOS
+Windows
+Microsoft Word (Đáp án đúng)
+Flash drive
+Câu 6: Hình ảnh này cho biết loại thiết bị máy tính nào? (Hình ảnh laptop)
+
+Loại câu hỏi: Trắc nghiệm
+Các lựa chọn:
+Máy tính xách tay (Laptop computer) (Đáp án đúng)
+Máy tính để bàn (Desktop computer)
+Điện thoại thông minh (Smartphone)
+Máy tính bảng (Tablet)
+Câu 7: Máy tính để bàn có thể sử dụng loại thiết bị nào để kết nối Internet?
+
+Loại câu hỏi: Trắc nghiệm
+Các lựa chọn:
+Thiết bị Wi-Fi (A Wi-Fi Device) (Đáp án đúng)
+Một thiết bị lưu trữ (A Storage Device)
+Một thiết bị đa phương tiện (A Media Device)
+Một thiết bị hiển thị (A Display Device)
+Câu 8: Bạn đang học trực tuyến tại thư viện công cộng. Bạn cần sạc pin máy tính xách tay để hoàn thành công việc của mình... Bạn nên làm gì để vừa sạc pin máy tính và vừa tiếp tục làm việc?
+
+Loại câu hỏi: Trắc nghiệm
+Các lựa chọn:
+Di chuyển đến khu vực có sẵn một ổ cắm để sạc pin máy tính và tiếp tục buổi học (Đáp án đúng)
+Học cho đến khi hết pin máy tính tay để hãng không làm phiền bất cứ ai
+Rút phích cắm của điện thoại ở đồng bàn để có thể sử dụng ổ cắm gần đó
+Sử dụng dây nối dài kéo cáp thư viện để bạn không phải thay đổi chỗ ngồi
+Câu 9: Bạn hãy cho biết, hai thiết bị nào sau đây là thiết bị ngoại vi? (Chọn 2)
+
+Loại câu hỏi: Hộp kiểm (Checkboxes)
+Các lựa chọn:
+Chuột (Mouse) (Đáp án đúng)
+Bàn phím (Keyboard) (Đáp án đúng)
+Bộ sạc (Charger)
+Thùng máy (CPU case)
+Câu 10: Thuật ngữ cho phần mềm chạy trên điện thoại hoặc máy tính bảng là gì?
+
+Loại câu hỏi: Trắc nghiệm
+Các lựa chọn:
+Icon (Biểu tượng)
+Widget (Tiện ích)
+App (Ứng dụng) (Đáp án đúng)
+Program (Chương trình)
+Câu 11: Bạn hãy xác định mỗi mục hoặc là Phần cứng hoặc là Phần mềm:
+
+(Với câu hỏi dạng bảng, bạn có thể tạo thành 5 câu hỏi trắc nghiệm riêng lẻ trên Google Form cho từng mục)
+
+Máy in (Printer): Phần cứng (Đáp án đúng) / Phần mềm
+Cơ sở dữ liệu (Database): Phần cứng / Phần mềm (Đáp án đúng)
+Chuột (Mouse): Phần cứng (Đáp án đúng) / Phần mềm
+Bàn phím (Keyboard): Phần cứng (Đáp án đúng) / Phần mềm
+Thư điện tử (Email): Phần cứng / Phần mềm (Đáp án đúng)
+Câu 12: Di chuyển từng định nghĩa từ danh sách bên phải sang phần thuật ngữ mà nó xác định ở bên trái:
+
+(Bạn có thể tách thành 4 câu hỏi trắc nghiệm nhỏ trên Form)
+
+Thiết bị được phát minh cho một mục đích cụ thể $\rightarrow$ Thiết bị (Device)
+Các bộ phận của máy tính mà bạn có thể chạm vào $\rightarrow$ Phần cứng (Hardware)
+Công nghệ di chuyển nơi người dùng đến $\rightarrow$ Công nghệ di động (Mobile)
+Hướng dẫn mà máy tính làm theo $\rightarrow$ Chương trình (Program)
+Câu 13: Thiết bị nào có bàn di chuột tích hợp để trỏ và nhập?
+
+Loại câu hỏi: Trắc nghiệm
+Các lựa chọn:
+Desktop computer
+Tablet
+Laptop computer (Đáp án đúng)
+Smartphone
+Câu 14: An cần sạc điện thoại vào ban đêm để có thể sử dụng nó vào sáng hôm sau. Đâu là nơi an toàn để An giữ điện thoại của mình trong khi đang sạc?
+
+Loại câu hỏi: Trắc nghiệm
+Các lựa chọn:
+Dưới gối nằm của An
+Trên kệ trong phòng tắm
+Trên sàn nhà
+Trên bàn làm việc của An (Đáp án đúng)
+Câu 15: Bạn muốn tìm một trò chơi được cài đặt trên máy tính của mình. Trên thanh tác vụ được hiển thị, bạn nên nhấp vào đâu để tìm trò chơi?
+
+Loại câu hỏi: Trắc nghiệm
+Các lựa chọn:
+Ô tìm kiếm "Type here to search" (Đáp án đúng)
+Các biểu tượng ứng dụng khác trên thanh Taskbar
+Câu 16: Thiết bị đầu vào (Input device) nào sau đây được tích hợp vào điện thoại thông minh?
+
+Loại câu hỏi: Trắc nghiệm
+Các lựa chọn:
+Bàn di chuột (Touchpad)
+Bộ sạc pin (Charger)
+Tai nghe (Earbuds)
+Màn hình cảm ứng (Touchscreen) (Đáp án đúng)
+Câu 17: Phát biểu nào sau đây là đúng về một phần mềm ứng dụng trên máy tính để bàn?
+
+Loại câu hỏi: Trắc nghiệm
+Các lựa chọn:
+Máy tính của bạn phải được kết nối với Internet để chạy nó
+Bạn có thể đăng nhập vào nó từ bất kỳ thiết bị nào
+Phần mềm phải được cài đặt trên máy tính của bạn trước khi bạn có thể khởi chạy nó (Đáp án đúng)
+Phần mềm không yêu cầu bất kỳ dung lượng lưu trữ nào trên máy tính của bạn
+Câu 18: Bạn cần sử dụng máy tính bảng (Tablet) của mình trong giờ học... Bạn nên làm gì để tiếp tục tham gia trên máy tính của mình?
+
+Loại câu hỏi: Trắc nghiệm
+Các lựa chọn:
+Buộc bộ sạc điện thoại vào máy tính bảng ngay cả khi không tương thích
+Bí mật chuyển đổi bộ sạc với bạn bè trong giờ giải lao
+Hãy để máy tính bảng tắt nguồn và không tham gia bài học
+Hãy cho giáo viên của bạn biết rằng bộ sạc của bạn không hoạt động (Đáp án đúng)
+Câu 19: Tùy chọn nào sau đây là ví dụ về thiết bị đầu vào được tích hợp sẵn trên máy tính?
+
+Loại câu hỏi: Trắc nghiệm
+Các lựa chọn:
+Chuột (Mouse)
+Tai nghe (Headphones)
+Màn hình cảm ứng (Touchscreen) (Đáp án đúng)
+Câu 20: Tùy chọn nào sau đây là một tập tin (File)?
+
+Loại câu hỏi: Trắc nghiệm
+Các lựa chọn:
+Một thư mục ảnh từ một chuyến đi thực địa
+Một liên kết đến trang web trường học của bạn
+Tài liệu chứa danh sách bài tập cần làm của bạn (Đáp án đúng)
+Buổi phát trực tiếp sự kiện thể thao
+Câu 21: Bạn sẽ tìm thấy lệnh đóng (Close) trên thẻ (Tab) nào sau đây?
+
+Loại câu hỏi: Trắc nghiệm
+Các lựa chọn:
+Thẻ File (Đáp án đúng)
+Thẻ Home, Insert, Design,...
+Câu 22: Máy tính để bàn có thể sử dụng loại thiết bị nào để kết nối internet?
+
+Loại câu hỏi: Trắc nghiệm
+Các lựa chọn:
+Một thiết bị lưu trữ
+Một thiết bị hiển thị
+Một thiết bị đa phương tiện
+Một thiết bị wifi (A wifi device) (Đáp án đúng)
+Câu 23: Thuật ngữ cho thời gian bạn dành để làm những việc như: Xem TV, chơi game, nhắn tin điện thoại, nghiên cứu trên máy tính?
+
+Loại câu hỏi: Trắc nghiệm
+Các lựa chọn:
+Thời gian sử dụng thiết bị (Screen time) (Đáp án đúng)
+Tương tác trực tuyến (Online interaction)
+Cân bằng truyền thông (Media balance)
+Thời gian tập trung (Focus time)
+Câu 24: Đối với mỗi phát biểu về việc vận chuyển máy tính xách tay, hãy chọn Đúng hoặc Sai:
+
+(Tạo thành 3 câu trắc nghiệm dạng lưới hoặc trắc nghiệm đơn)
+
+Máy tính xách tay có thể được giữ trong xe một cách an toàn $\rightarrow$ Sai
+Máy tính xách tay được vận chuyển an toàn trong túi đựng $\rightarrow$ Đúng
+Máy tính xách tay có thể bị hỏng nếu tiếp xúc với nhiệt độ khắc nghiệt $\rightarrow$ Đúng
+Câu 25: Học sinh mới cần tạo một trang Web với mật khẩu là orange... Bạn nên nói gì với họ?
+
+Loại câu hỏi: Trắc nghiệm
+Các lựa chọn:
+Sử dụng tên thú cưng của họ làm mật khẩu
+Chia sẻ mật khẩu với bạn bè trong trường hợp họ quên nó
+Sử dụng số và ký hiệu trong mật khẩu (Đáp án đúng)
+Tạo mật khẩu ngắn để dễ nhớ
+Câu 26: Phần thông tin nào là an toàn để chia sẻ trực tuyến?
+
+Loại câu hỏi: Trắc nghiệm
+Các lựa chọn:
+Tên trường của bạn
+Màu sắc yêu thích của bạn (Đáp án đúng)
+Địa điểm yêu thích của bạn
+Công viên ưa thích của bạn
+Câu 27: Đối với mỗi mật khẩu, hãy chọn Mạnh hoặc Yếu:
+
+(Tạo thành 3 câu hỏi riêng biệt)
+
+W3*ud28x $\rightarrow$ Mạnh
+1234567890 $\rightarrow$ Yếu
+ILoveC@ndy2 $\rightarrow$ Mạnh
+Câu 28: Bạn nhận được một email từ cửa hàng yêu thích nói rằng bạn đã giành được 1000 đô la... Điều gì sẽ khiến bạn quan tâm về email này?
+
+Loại câu hỏi: Trắc nghiệm
+Các lựa chọn:
+Cửa hàng có thể đã nhầm lẫn vì bạn không nhớ đã tham gia cuộc thi
+Tiền ở dạng quà tặng chỉ có thể sử dụng tại một địa điểm
+Cửa hàng có thể muốn bạn tham gia vào một chiến dịch quảng cáo
+Email có thể là từ một kẻ lừa đảo đang cố gắng thu thập thông tin cá nhân của bạn (Đáp án đúng)
+Câu 29: Bạn nên làm gì nếu bạn bị người khác có hành vi trực tuyến tiêu cực không phù hợp?
+
+Loại câu hỏi: Trắc nghiệm
+Các lựa chọn:
+Yêu cầu người lạ dừng hành vi
+Nói với người lạ rằng bạn không thích hành vi của họ
+Trò chuyện với người lạ để giữ họ trực tuyến
+Nói với cha mẹ hoặc giáo viên của bạn (Đáp án đúng)
+Câu 30: Nhóm nào thích hợp cho bạn bè trực tuyến?
+
+Loại câu hỏi: Trắc nghiệm
+Các lựa chọn:
+Những người bạn gặp khi chơi trò chơi trực tuyến
+Những người bạn biết trong cuộc sống thực (Đáp án đúng)
+Những người thực hiện giao hàng đến nhà bạn

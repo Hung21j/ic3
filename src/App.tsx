@@ -15,12 +15,14 @@ import {
   Database,
   Layers,
   ArrowRight,
-  GraduationCap
+  GraduationCap,
+  ArrowLeft
 } from "lucide-react";
 import QuestionInputForm from "./components/QuestionInputForm";
 import QuestionResultView from "./components/QuestionResultView";
 import SolvedHistoryList from "./components/SolvedHistoryList";
 import IC3QuestionBank from "./components/IC3QuestionBank";
+import ProgramSelectMenu from "./components/ProgramSelectMenu";
 import AuthPage from "./components/AuthPage";
 import AdminDashboard from "./components/AdminDashboard";
 import { SolvedResponse, SavedQuestion, QuestionType, User } from "./types";
@@ -109,6 +111,45 @@ export const IC3_LEVELS = [
   }
 ];
 
+export const SPARK_LEVELS = [
+  {
+    id: "spark-level-1",
+    name: "Spark Level 1: Máy tính căn bản",
+    englishName: "Computing Fundamentals",
+    description: "Làm quen với các bộ phận máy tính, thiết bị vào/ra, cách bật/tắt máy đúng chuẩn và thành thạo thao tác chuột, bàn phím.",
+    skills: ["Nhận biết thiết bị phần cứng", "Thao tác chuột & Bàn phím", "Màn hình nền Desktop", "Bảo quản máy tính an toàn"],
+    badgeColor: "bg-emerald-50 text-emerald-800 border-emerald-200",
+    hoverBorder: "hover:border-emerald-400 hover:bg-emerald-50/10",
+    buttonColor: "bg-emerald-600 hover:bg-emerald-500",
+    ringColor: "ring-emerald-500/20",
+    iconBg: "bg-emerald-600"
+  },
+  {
+    id: "spark-level-2",
+    name: "Spark Level 2: Các ứng dụng cốt lõi",
+    englishName: "Key Applications",
+    description: "Thực hành soạn thảo văn bản đơn giản (Word), tập gõ tiếng Việt, vẽ tranh mỹ thuật và làm quen bài thuyết trình vui nhộn.",
+    skills: ["Tập gõ văn bản & Chữ hoa/thường", "Tập vẽ & Tô màu hình khối Paint", "Lưu bài làm (Ctrl+S)", "Chèn tranh ảnh trực quan"],
+    badgeColor: "bg-indigo-50 text-indigo-800 border-indigo-200",
+    hoverBorder: "hover:border-indigo-400 hover:bg-indigo-50/10",
+    buttonColor: "bg-indigo-600 hover:bg-indigo-500",
+    ringColor: "ring-indigo-500/20",
+    iconBg: "bg-indigo-600"
+  },
+  {
+    id: "spark-level-3",
+    name: "Spark Level 3: Cuộc sống trực tuyến",
+    englishName: "Living Online",
+    description: "Khám phá mạng Internet an toàn cho học sinh thiếu nhi, sử dụng trình duyệt web, tìm kiếm học tập và ứng xử văn minh số.",
+    skills: ["Trình duyệt web & Tìm kiếm an toàn", "Bảo vệ thông tin cá nhân", "Ứng xử lịch sự trên mạng", "Thời gian dùng thiết bị hợp lý"],
+    badgeColor: "bg-amber-50 text-amber-800 border-amber-200",
+    hoverBorder: "hover:border-amber-400 hover:bg-amber-50/10",
+    buttonColor: "bg-amber-600 hover:bg-amber-500",
+    ringColor: "ring-amber-500/20",
+    iconBg: "bg-amber-600"
+  }
+];
+
 export default function App() {
   const [activeResult, setActiveResult] = useState<SolvedResponse | null>(null);
   const [activeItem, setActiveItem] = useState<SavedQuestion | null>(null);
@@ -121,6 +162,10 @@ export default function App() {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [currentView, setCurrentView] = useState<"student" | "admin">("student");
   const [customQuestions, setCustomQuestions] = useState<IC3Question[]>([]);
+  const [selectedProgram, setSelectedProgram] = useState<"gs6" | "spark" | null>(() => {
+    const saved = localStorage.getItem("student_program_ic3");
+    return (saved === "gs6" || saved === "spark") ? saved : null;
+  });
   const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
   const [showUserChangePassword, setShowUserChangePassword] = useState(false);
   const [userToast, setUserToast] = useState<string | null>(null);
@@ -157,6 +202,20 @@ export default function App() {
     setCurrentView("student");
   };
 
+  const handleSelectProgram = (program: "gs6" | "spark") => {
+    setSelectedProgram(program);
+    localStorage.setItem("student_program_ic3", program);
+    setSelectedLevel(null);
+    localStorage.removeItem("student_level_ic3");
+  };
+
+  const handleSwitchProgram = () => {
+    setSelectedProgram(null);
+    localStorage.removeItem("student_program_ic3");
+    setSelectedLevel(null);
+    localStorage.removeItem("student_level_ic3");
+  };
+
   const handleAuthSuccess = (user: User) => {
     setCurrentUser(user);
     if (user.role === "admin") {
@@ -173,6 +232,11 @@ export default function App() {
   // Load custom questions, level and history
   useEffect(() => {
     loadCustomQuestions();
+
+    const savedProg = localStorage.getItem("student_program_ic3");
+    if (savedProg === "gs6" || savedProg === "spark") {
+      setSelectedProgram(savedProg);
+    }
 
     const savedLevel = localStorage.getItem("student_level_ic3");
     if (savedLevel) {
@@ -373,33 +437,91 @@ export default function App() {
     );
   }
 
+  if (!selectedProgram) {
+    return (
+      <>
+        <ProgramSelectMenu
+          currentUser={currentUser}
+          onSelectProgram={handleSelectProgram}
+          onLogout={handleLogout}
+          onOpenChangePassword={() => setShowUserChangePassword(true)}
+          onOpenAdmin={currentUser.role === "admin" ? () => setCurrentView("admin") : undefined}
+        />
+
+        {/* Change password modal for student in Program Selection */}
+        <ChangePasswordModal
+          isOpen={showUserChangePassword}
+          onClose={() => setShowUserChangePassword(false)}
+          userId={currentUser.id}
+          username={currentUser.username}
+          userName={currentUser.name}
+          className={currentUser.className}
+          school={currentUser.school}
+          onSuccess={(msg) => {
+            setUserToast(msg);
+            setTimeout(() => setUserToast(null), 4000);
+          }}
+        />
+      </>
+    );
+  }
+
+  const activeProgramLevels = selectedProgram === "spark" ? SPARK_LEVELS : IC3_LEVELS;
+  const isSparkProgram = selectedProgram === "spark";
+
   if (!selectedLevel) {
     return (
       <div className="min-h-screen bg-[#f0f3f8] text-slate-900 flex items-center justify-center p-4 md:p-8 font-sans select-none border-4 md:border-8 border-slate-300">
         <motion.div 
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="max-w-4xl w-full bg-white border-2 border-slate-300 rounded-2xl p-6 md:p-8 space-y-6 md:space-y-8 shadow-sm relative overflow-hidden"
+          className="max-w-5xl w-full bg-white border-2 border-slate-300 rounded-3xl p-6 md:p-8 space-y-6 md:space-y-8 shadow-sm relative overflow-hidden"
         >
           {/* Subtle decoration lines */}
-          <div className="absolute top-0 left-0 right-0 h-1.5 bg-indigo-700" />
+          <div className={`absolute top-0 left-0 right-0 h-2 ${isSparkProgram ? "bg-emerald-600" : "bg-indigo-700"}`} />
           
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b-2 border-slate-200 pb-5">
-            <div className="space-y-1">
-              <span className="text-xs font-black uppercase tracking-widest text-indigo-700 font-mono">
-                BƯỚC 2:
-              </span>
-              <h2 className="text-base md:text-lg font-black tracking-tight text-slate-900 uppercase font-mono">
-                CHỌN CẤP ĐỘ ÔN TẬP IC3
-              </h2>
-              <p className="text-xs md:text-sm text-slate-700 font-semibold leading-relaxed">
-                Xin chào <strong className="text-slate-950 font-black">{currentUser.name}</strong>
-                {currentUser.className && <> (Lớp <strong className="text-slate-950 font-black">{currentUser.className}</strong>)</>}
-                {currentUser.school && <> • <span className="text-slate-800 font-bold">{currentUser.school}</span></>}
-              </p>
+            <div className="flex items-center gap-4">
+              <div className="h-14 w-auto px-3 py-1.5 bg-slate-50 border-2 border-slate-200 rounded-2xl flex items-center justify-center shrink-0">
+                <img 
+                  src={isSparkProgram ? "/assets/aistudio/spark_05b29717.png" : "/assets/aistudio/gs6_b4829e48.png"} 
+                  alt={isSparkProgram ? "IC3 Spark" : "IC3 GS6"} 
+                  className="h-10 w-auto object-contain"
+                />
+              </div>
+
+              <div className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <span className={`text-[11px] font-black uppercase tracking-widest font-mono px-2 py-0.5 rounded-md border ${
+                    isSparkProgram 
+                      ? "bg-emerald-50 text-emerald-800 border-emerald-300" 
+                      : "bg-indigo-50 text-indigo-700 border-indigo-200"
+                  }`}>
+                    BƯỚC 2: CHỌN CẤP ĐỘ {isSparkProgram ? "IC3 SPARK" : "IC3 GS6"}
+                  </span>
+                </div>
+                <h2 className="text-base md:text-xl font-black tracking-tight text-slate-900 uppercase font-mono">
+                  {isSparkProgram ? "CÁC CẤP ĐỘ KHỞI ĐẦU IC3 SPARK" : "CÁC CẤP ĐỘ CHUẨN QUỐC TẾ IC3 GS6"}
+                </h2>
+                <p className="text-xs md:text-sm text-slate-700 font-semibold leading-relaxed">
+                  Xin chào <strong className="text-slate-950 font-black">{currentUser.name}</strong>
+                  {currentUser.className && <> (Lớp <strong className="text-slate-950 font-black">{currentUser.className}</strong>)</>}
+                  {currentUser.school && <> • <span className="text-slate-800 font-bold">{currentUser.school}</span></>}
+                </p>
+              </div>
             </div>
             
             <div className="flex items-center gap-2.5 self-start md:self-center flex-wrap">
+              <button
+                type="button"
+                onClick={handleSwitchProgram}
+                className="px-3.5 py-2 rounded-xl text-xs md:text-sm font-bold font-mono bg-white hover:bg-slate-100 border-2 border-slate-300 text-slate-800 transition flex items-center gap-1.5 cursor-pointer shadow-xs active:scale-95"
+                title="Quay lại chọn chương trình GS6 hoặc Spark"
+              >
+                <ArrowLeft className="w-4 h-4 text-slate-600" />
+                <span>Đổi chương trình</span>
+              </button>
+
               <button
                 type="button"
                 onClick={() => setShowUserChangePassword(true)}
@@ -433,7 +555,7 @@ export default function App() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {IC3_LEVELS.map((level) => (
+            {activeProgramLevels.map((level) => (
               <motion.div
                 key={level.id}
                 whileHover={{ scale: 1.02 }}
@@ -441,18 +563,18 @@ export default function App() {
                   localStorage.setItem("student_level_ic3", level.name);
                   setSelectedLevel(level.name);
                 }}
-                className={`bg-white hover:bg-[#f8fafc] border-2 border-slate-300 hover:border-indigo-600 rounded-2xl p-5 flex flex-col justify-between transition-all cursor-pointer relative overflow-hidden group select-none shadow-xs hover:shadow-md ${level.hoverBorder}`}
+                className={`bg-white hover:bg-[#f8fafc] border-2 border-slate-300 hover:border-emerald-600 rounded-2xl p-5 flex flex-col justify-between transition-all cursor-pointer relative overflow-hidden group select-none shadow-xs hover:shadow-md ${level.hoverBorder}`}
               >
                 <div className="space-y-4">
                   <div className="flex justify-between items-start">
                     <span className={`px-2.5 py-1 text-[11px] font-black border rounded-md uppercase font-mono ${level.badgeColor}`}>
-                      {level.id.replace("-", " ")}
+                      {level.id.replace("spark-", "").replace("-", " ")}
                     </span>
-                    <div className="w-2.5 h-2.5 rounded-full bg-slate-400 group-hover:bg-indigo-600 transition-colors" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-slate-400 group-hover:bg-emerald-600 transition-colors" />
                   </div>
 
                   <div className="space-y-1">
-                    <h3 className="text-base font-extrabold text-slate-900 leading-snug group-hover:text-indigo-700 transition-colors">
+                    <h3 className="text-base font-extrabold text-slate-900 leading-snug group-hover:text-emerald-700 transition-colors">
                       {level.name}
                     </h3>
                     <p className="text-xs font-bold text-slate-500 font-mono italic">
@@ -471,7 +593,7 @@ export default function App() {
                     <ul className="space-y-1.5">
                       {level.skills.map((skill, sIdx) => (
                         <li key={sIdx} className="text-xs md:text-sm text-slate-800 flex items-center gap-2 font-semibold">
-                          <span className="w-1.5 h-1.5 rounded-full bg-indigo-600 shrink-0" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 shrink-0" />
                           <span className="truncate">{skill}</span>
                         </li>
                       ))}
@@ -490,8 +612,8 @@ export default function App() {
             ))}
           </div>
 
-          <div className="text-center text-xs text-slate-500 font-mono border-t border-slate-300 pt-4">
-            Giáo trình bám sát khung năng lực IC3 quốc tế thế hệ mới.
+          <div className="text-center text-xs text-slate-500 font-mono border-t border-slate-300 pt-4 flex items-center justify-center gap-2">
+            <span>Chương trình ôn luyện {isSparkProgram ? "IC3 SPARK" : "IC3 GS6"} chuẩn quốc tế Certiport Hoa Kỳ.</span>
           </div>
         </motion.div>
 
@@ -518,16 +640,53 @@ export default function App() {
       
       {/* 🚀 Visual Header Bar - Soft Surface, High Contrast */}
       <header className="h-16 bg-white border-b-2 border-slate-300 px-4 md:px-8 flex items-center justify-between shadow-xs z-10 shrink-0 select-none">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
+          <div className="h-10 px-2 py-1 bg-slate-50 rounded-xl border border-slate-200 shadow-xs flex items-center justify-center shrink-0">
+            <img 
+              src={isSparkProgram ? "/assets/aistudio/spark_05b29717.png" : "/assets/aistudio/gs6_b4829e48.png"} 
+              alt={isSparkProgram ? "IC3 Spark" : "IC3 GS6"} 
+              className="h-7 w-auto object-contain"
+            />
+          </div>
           <div className="flex flex-col">
-            <h1 className="text-base md:text-lg font-black tracking-tight text-slate-900 leading-none">
-              ÔN TẬP IC3
-            </h1>
+            <div className="flex items-center gap-2">
+              <span className={`text-[10px] font-black uppercase font-mono px-1.5 py-0.5 rounded border ${
+                isSparkProgram 
+                  ? "bg-emerald-50 text-emerald-800 border-emerald-300" 
+                  : "bg-slate-100 text-slate-800 border-slate-300"
+              }`}>
+                {isSparkProgram ? "SPARK" : "GS6"}
+              </span>
+              <h1 className="text-sm md:text-base font-black tracking-tight text-slate-900 leading-none">
+                ÔN TẬP IC3
+              </h1>
+            </div>
           </div>
         </div>
 
         {/* Header Profile Dashboard Integration */}
-        <div className="flex items-center gap-2.5 md:gap-3.5 flex-wrap">
+        <div className="flex items-center gap-2.5 md:gap-3 flex-wrap">
+          <button
+            type="button"
+            onClick={handleSwitchProgram}
+            className="p-2 px-3 rounded-xl text-xs md:text-sm bg-white hover:bg-slate-100 border border-slate-300 text-slate-800 font-black font-mono transition cursor-pointer shadow-xs active:scale-95 flex items-center gap-1.5"
+            title="Đổi giữa GS6 và Spark"
+          >
+            <ArrowLeft className="w-3.5 h-3.5 text-slate-600" />
+            <span className="hidden sm:inline">Đổi chương trình</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => {
+              setSelectedLevel(null);
+              localStorage.removeItem("student_level_ic3");
+            }}
+            className={`p-2 px-3 rounded-xl text-xs md:text-sm ${accentChangeLvlBtn} font-black font-mono transition cursor-pointer shadow-xs`}
+          >
+            Đổi Level
+          </button>
+
           <button
             type="button"
             onClick={() => setShowUserChangePassword(true)}
@@ -549,7 +708,7 @@ export default function App() {
             </button>
           )}
 
-          <div className="bg-[#f1f5f9] border border-slate-300 rounded-xl px-3.5 py-2 flex items-center gap-2.5 shadow-xs">
+          <div className="bg-[#f1f5f9] border border-slate-300 rounded-xl px-3 py-1.5 flex items-center gap-2 shadow-xs">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 shrink-0 animate-pulse" />
             <div className="text-left leading-none">
               <p className="text-xs md:text-sm font-black text-slate-950">
@@ -560,17 +719,6 @@ export default function App() {
               </p>
             </div>
           </div>
-
-          <button
-            type="button"
-            onClick={() => {
-              setSelectedLevel(null);
-              localStorage.removeItem("student_level_ic3");
-            }}
-            className={`p-2 px-3 rounded-xl text-xs md:text-sm ${accentChangeLvlBtn} font-black font-mono transition cursor-pointer shadow-xs`}
-          >
-            Đổi Level
-          </button>
 
           <button
             type="button"
@@ -592,9 +740,15 @@ export default function App() {
             <div className="shadow-sm rounded-2xl overflow-hidden bg-white border-2 border-slate-300">
               <IC3QuestionBank 
                 selectedLevel={selectedLevel}
+                selectedProgram={selectedProgram || "gs6"}
                 currentUser={currentUser}
                 customQuestions={customQuestions}
                 onOpenAdminDashboard={currentUser.role === "admin" ? () => setCurrentView("admin") : undefined}
+                onSwitchProgram={handleSwitchProgram}
+                onSwitchLevel={() => {
+                  setSelectedLevel(null);
+                  localStorage.removeItem("student_level_ic3");
+                }}
                 onSelectQuestionToSolve={(data) => {
                   handleSolve({
                     questionText: data.questionText || data.question || "",
@@ -703,7 +857,9 @@ export default function App() {
       {/* 🚀 Distraction-Free Simple Footer */}
       <footer className="h-10 bg-slate-800 text-slate-200 flex items-center justify-between px-6 text-xs uppercase tracking-wider font-semibold font-mono shrink-0 select-none">
         <span>{currentUser.className ? `Lớp ${currentUser.className} // ` : ""}{currentUser.name} {currentUser.school ? `(${currentUser.school})` : ""}</span>        
-        <span className="text-slate-300">IC3 GS6 Examination Platform</span>
+        <span className="text-slate-300">
+          {isSparkProgram ? "IC3 Spark Digital Literacy Platform" : "IC3 GS6 Examination Platform"}
+        </span>
       </footer>
 
       {/* Change Password Modal for logged-in user */}

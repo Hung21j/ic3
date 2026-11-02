@@ -821,6 +821,8 @@ export const apiService = {
       text: string;
       correct: "True" | "False";
     }[];
+    trueColumnLabel?: string;
+    falseColumnLabel?: string;
     pairs?: { left: string; right: string; leftImage?: string; rightImage?: string }[];
     explanation?: string;
     order?: number;
@@ -838,6 +840,8 @@ export const apiService = {
       ...(q.correctAnswerText ? { correctAnswerText: q.correctAnswerText } : {}),
       ...(q.correctKeys && q.correctKeys.length > 0 ? { correctKeys: q.correctKeys } : {}),
       ...(q.statements && q.statements.length > 0 ? { statements: q.statements } : {}),
+      ...(q.trueColumnLabel ? { trueColumnLabel: q.trueColumnLabel } : {}),
+      ...(q.falseColumnLabel ? { falseColumnLabel: q.falseColumnLabel } : {}),
       ...(q.pairs && q.pairs.length > 0 ? { pairs: q.pairs } : {}),
       ...(q.explanation ? { explanation: q.explanation } : {}),
       ...(typeof orderNum === "number" ? { order: orderNum, questionNumber: orderNum } : {})
@@ -885,6 +889,8 @@ export const apiService = {
       ...(q.correctAnswerText !== undefined ? { correctAnswerText: q.correctAnswerText } : existing?.correctAnswerText ? { correctAnswerText: existing.correctAnswerText } : {}),
       ...(q.correctKeys && q.correctKeys.length > 0 ? { correctKeys: q.correctKeys } : existing?.correctKeys ? { correctKeys: existing.correctKeys } : {}),
       ...(q.statements && q.statements.length > 0 ? { statements: q.statements } : existing?.statements ? { statements: existing.statements } : {}),
+      ...(q.trueColumnLabel !== undefined ? (q.trueColumnLabel ? { trueColumnLabel: q.trueColumnLabel } : {}) : existing?.trueColumnLabel ? { trueColumnLabel: existing.trueColumnLabel } : {}),
+      ...(q.falseColumnLabel !== undefined ? (q.falseColumnLabel ? { falseColumnLabel: q.falseColumnLabel } : {}) : existing?.falseColumnLabel ? { falseColumnLabel: existing.falseColumnLabel } : {}),
       ...(q.pairs && q.pairs.length > 0 ? { pairs: q.pairs } : existing?.pairs ? { pairs: existing.pairs } : {}),
       ...(q.explanation !== undefined ? { explanation: q.explanation } : existing?.explanation ? { explanation: existing.explanation } : {}),
       ...(finalOrder !== undefined ? { order: finalOrder, questionNumber: finalOrder } : {})

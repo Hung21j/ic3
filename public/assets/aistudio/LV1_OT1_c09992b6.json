@@ -1,0 +1,1791 @@
+{
+  "packageVersion": 1,
+  "exam": {
+    "code": "EXAM_OT1_LV1_45",
+    "level": 1,
+    "part": "OT",
+    "title": "OT1",
+    "timeLimitSeconds": 600,
+    "standardCorrectCount": 0,
+    "passingPercentage": 100,
+    "questions": [
+      {
+        "questionCode": "LV1-OT1-01",
+        "originalOrder": 1,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-02",
+        "originalOrder": 2,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-03",
+        "originalOrder": 3,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-04",
+        "originalOrder": 4,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-05",
+        "originalOrder": 5,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-06",
+        "originalOrder": 6,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-07",
+        "originalOrder": 7,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-08",
+        "originalOrder": 8,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-09",
+        "originalOrder": 9,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-10",
+        "originalOrder": 10,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-11",
+        "originalOrder": 11,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-12",
+        "originalOrder": 12,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-13",
+        "originalOrder": 13,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-14",
+        "originalOrder": 14,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-15",
+        "originalOrder": 15,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-16",
+        "originalOrder": 16,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-17",
+        "originalOrder": 17,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-18",
+        "originalOrder": 18,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-19",
+        "originalOrder": 19,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-20",
+        "originalOrder": 20,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-21",
+        "originalOrder": 21,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-22",
+        "originalOrder": 22,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-23",
+        "originalOrder": 23,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-24",
+        "originalOrder": 24,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-25",
+        "originalOrder": 25,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-26",
+        "originalOrder": 26,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-27",
+        "originalOrder": 27,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-28",
+        "originalOrder": 28,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-29",
+        "originalOrder": 29,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-30",
+        "originalOrder": 30,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-31",
+        "originalOrder": 31,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-32",
+        "originalOrder": 32,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-33",
+        "originalOrder": 33,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-34",
+        "originalOrder": 34,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-35",
+        "originalOrder": 35,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-36",
+        "originalOrder": 36,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-37",
+        "originalOrder": 37,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-38",
+        "originalOrder": 38,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-39",
+        "originalOrder": 39,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-40",
+        "originalOrder": 40,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-41",
+        "originalOrder": 41,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-42",
+        "originalOrder": 42,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-43",
+        "originalOrder": 43,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-44",
+        "originalOrder": 44,
+        "points": 10
+      },
+      {
+        "questionCode": "LV1-OT1-45",
+        "originalOrder": 45,
+        "points": 10
+      }
+    ]
+  },
+  "questions": [
+    {
+      "code": "LV1-OT1-01",
+      "prompt": "Bạn cần lưu danh sách các trang web để có thể dễ dàng quay trở lại vào lần sau. Bạn nên sử dụng tính năng nào của trình duyệt web?",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "SingleChoice",
+      "isDifficult": false,
+      "options": [
+        {
+          "text": "Duyệt đa trang một lúc",
+          "isCorrect": false,
+          "originalOrder": 1
+        },
+        {
+          "text": "Mục yêu thích hoặc dấu trang",
+          "isCorrect": true,
+          "originalOrder": 2
+        },
+        {
+          "text": "Lịch sử hoặc dòng thời gian",
+          "isCorrect": false,
+          "originalOrder": 3
+        },
+        {
+          "text": "Hộp địa chỉ",
+          "isCorrect": false,
+          "originalOrder": 4
+        }
+      ],
+      "matchingPairs": [],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-02",
+      "prompt": "Lịch sử duyệt web và các trang web được đánh dấu trang cung cấp cho hacker một bản đồ của tất cả các trang web mà người dùng truy cập. Cùng với các trang web thường xuyên truy cập, hacker có thể sử dụng gì để truy cập vào tài khoản nếu mật khẩu được lưu vào thiết bị bị tấn công?",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "SingleChoice",
+      "isDifficult": false,
+      "options": [
+        {
+          "text": "Settings",
+          "isCorrect": false,
+          "originalOrder": 1
+        },
+        {
+          "text": "Cookies",
+          "isCorrect": true,
+          "originalOrder": 2
+        },
+        {
+          "text": "History",
+          "isCorrect": false,
+          "originalOrder": 3
+        },
+        {
+          "text": "Cutouts",
+          "isCorrect": false,
+          "originalOrder": 4
+        }
+      ],
+      "matchingPairs": [],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-03",
+      "prompt": "Một trong những giáo viên của bạn nói rằng bạn nên thay đổi cài đặt trình duyệt của mình để duyệt web ở chế độ riêng tư. Vậy lợi ích của việc duyệt web ở chế độ riêng tư là gì?",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "SingleChoice",
+      "isDifficult": false,
+      "options": [
+        {
+          "text": "Không thể nhìn thấy các gói được gửi/nhận qua mạng trường học của bạn",
+          "isCorrect": false,
+          "originalOrder": 1
+        },
+        {
+          "text": "Tên của bạn được giữ kín",
+          "isCorrect": false,
+          "originalOrder": 2
+        },
+        {
+          "text": "Đăng nhập máy tính và mật khẩu của bạn bị vô hiệu hóa",
+          "isCorrect": false,
+          "originalOrder": 3
+        },
+        {
+          "text": "Không có lịch sử nào được ghi lại trên máy tính",
+          "isCorrect": true,
+          "originalOrder": 4
+        }
+      ],
+      "matchingPairs": [],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-04",
+      "prompt": "Bạn hãy cho biết, duyệt web riêng tư đảm bảo điều gì sau đây ?",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "SingleChoice",
+      "isDifficult": false,
+      "options": [
+        {
+          "text": "Lịch sử của người dùng không được lưu trữ",
+          "isCorrect": true,
+          "originalOrder": 1
+        },
+        {
+          "text": "Có nhiều dung lượng lưu trữ hơn trên máy tính",
+          "isCorrect": false,
+          "originalOrder": 2
+        },
+        {
+          "text": "Mật khẩu không cần thay đổi",
+          "isCorrect": false,
+          "originalOrder": 3
+        },
+        {
+          "text": "Thông tin tài khoản được lưu trữ",
+          "isCorrect": false,
+          "originalOrder": 4
+        }
+      ],
+      "matchingPairs": [],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-05",
+      "prompt": "Xác định đúng chức năng của các thiết bị sau:",
+      "trueColumnLabel": "NHẬP",
+      "falseColumnLabel": "XUẤT",
+      "type": "TrueFalseTable",
+      "isDifficult": false,
+      "options": [],
+      "matchingPairs": [],
+      "media": [],
+      "statements": [
+        {
+          "text": "Keyboard",
+          "correct": 1,
+          "originalOrder": 1
+        },
+        {
+          "text": "Scanner",
+          "correct": 1,
+          "originalOrder": 2
+        },
+        {
+          "text": "Webcam",
+          "correct": 1,
+          "originalOrder": 3
+        },
+        {
+          "text": "Microphone",
+          "correct": 1,
+          "originalOrder": 4
+        },
+        {
+          "text": "Printer",
+          "correct": 0,
+          "originalOrder": 5
+        }
+      ]
+    },
+    {
+      "code": "LV1-OT1-06",
+      "prompt": "Người dùng có thể tắt tính năng lưu trữ mật khẩu trực tuyến ở đâu?",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "SingleChoice",
+      "isDifficult": false,
+      "options": [
+        {
+          "text": "Trong cài đặt trình duyệt của họ",
+          "isCorrect": true,
+          "originalOrder": 1
+        },
+        {
+          "text": "Trong lịch sử của họ",
+          "isCorrect": false,
+          "originalOrder": 2
+        },
+        {
+          "text": "Trong cài đặt máy tính của họ",
+          "isCorrect": false,
+          "originalOrder": 3
+        },
+        {
+          "text": "Trong hộp thư đến",
+          "isCorrect": false,
+          "originalOrder": 4
+        }
+      ],
+      "matchingPairs": [],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-07",
+      "prompt": "Khi nào người dùng nên cân nhắc việc thay đổi mật khẩu của họ (Chọn 3)",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "MultipleSelect",
+      "isDifficult": false,
+      "options": [
+        {
+          "text": "Họ đã được thông báo rằng có quyền truy cập trái phép vào tài khoản của họ",
+          "isCorrect": true,
+          "originalOrder": 1
+        },
+        {
+          "text": "Họ đã cập nhật mật khẩu của họ gần đây",
+          "isCorrect": false,
+          "originalOrder": 2
+        },
+        {
+          "text": "Họ đã không thay đổi mật khẩu của họ trong một thời gian dài ",
+          "isCorrect": true,
+          "originalOrder": 3
+        },
+        {
+          "text": "Khi họ muốn đóng tài khoản của mình",
+          "isCorrect": false,
+          "originalOrder": 4
+        },
+        {
+          "text": "Phần mềm độc hại đang chạy trên máy tính của họ",
+          "isCorrect": true,
+          "originalOrder": 5
+        }
+      ],
+      "matchingPairs": [],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-08",
+      "prompt": "Đâu là ba thiết bị NHẬP khi được kết nối với máy tính không có màn hình cảm ứng? (Chọn 3)",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "ImagePoint",
+      "isDifficult": false,
+      "options": [
+        {
+          "text": "area1",
+          "isCorrect": true,
+          "originalOrder": 1
+        },
+        {
+          "text": "area2",
+          "isCorrect": true,
+          "originalOrder": 2
+        },
+        {
+          "text": "area3",
+          "isCorrect": true,
+          "originalOrder": 3
+        }
+      ],
+      "matchingPairs": [],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-09",
+      "prompt": "Hành động bạn có thể thực hiện để giúp duy trì quyền riêng tư kỹ thuật số của bản thân? (Chọn 2)",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "MultipleSelect",
+      "isDifficult": false,
+      "options": [
+        {
+          "text": "Chỉ sử dụng Email trường học của bạn để gửi thông tin cá nhân",
+          "isCorrect": false,
+          "originalOrder": 1
+        },
+        {
+          "text": "Tắt GPS trên thiết bị của bạn khi không sử dụng thường xuyên",
+          "isCorrect": true,
+          "originalOrder": 2
+        },
+        {
+          "text": "Định cấu hình cài đặt trình duyệt web của bạn để chặn Cookie",
+          "isCorrect": true,
+          "originalOrder": 3
+        },
+        {
+          "text": "Lưu trữ tài liệu cá nhân của bạn trên vị trí lưu trữ đám mây",
+          "isCorrect": false,
+          "originalOrder": 4
+        }
+      ],
+      "matchingPairs": [],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-10",
+      "prompt": "Bạn cần đảm bảo an toàn cho mật khẩu của mình. Đâu là ba nguyên tắc bạn cần tuân thủ? (Chọn 3)",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "MultipleSelect",
+      "isDifficult": false,
+      "options": [
+        {
+          "text": "Sử dụng mật khẩu dựa trên thông tin riêng tư cá nhân",
+          "isCorrect": false,
+          "originalOrder": 1
+        },
+        {
+          "text": "Sử dụng mật khẩu khác nhau cho mỗi tài khoản",
+          "isCorrect": true,
+          "originalOrder": 2
+        },
+        {
+          "text": "Sử dụng mật khẩu phức tạp và ghi vào một cuốn sổ mà bạn luôn mang theo bên mình",
+          "isCorrect": false,
+          "originalOrder": 3
+        },
+        {
+          "text": "Sử dụng mật khẩu dài nhất hoặc cụm mật khẩu được hệ thống mật khẩu cho phép",
+          "isCorrect": true,
+          "originalOrder": 4
+        },
+        {
+          "text": "Sử dụng các từ có thể tìm thấy trong từ điển của một ngôn ngữ khác với ngôn ngữ chính của bạn",
+          "isCorrect": false,
+          "originalOrder": 5
+        },
+        {
+          "text": "Sử dụng xác thực đa yếu tố, nếu có",
+          "isCorrect": true,
+          "originalOrder": 6
+        }
+      ],
+      "matchingPairs": [],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-11",
+      "prompt": "Lợi ích của việc duyệt Web ở 'chế độ riêng tư' 'hoặc ẩn danh'?",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "SingleChoice",
+      "isDifficult": false,
+      "options": [
+        {
+          "text": "Cookie sẽ không báo cáo thông tin về bạn cho bên thứ ba",
+          "isCorrect": false,
+          "originalOrder": 1
+        },
+        {
+          "text": "Những người khác sẽ không biết được các hoạt động duyệt web của bạn dù sử dụng cùng một thiết bị",
+          "isCorrect": true,
+          "originalOrder": 2
+        },
+        {
+          "text": "Trình duyệt web của bạn chặn quảng cáo",
+          "isCorrect": false,
+          "originalOrder": 3
+        },
+        {
+          "text": "Không thể sử dụng vân tay kỹ thuật số để theo dõi các hoạt động trên trình duyệt của bạn",
+          "isCorrect": false,
+          "originalOrder": 4
+        }
+      ],
+      "matchingPairs": [],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-12",
+      "prompt": "Ghép từng bộ phận phần cứng của máy tính với hình ảnh tương ứng:",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "Matching",
+      "isDifficult": false,
+      "options": [],
+      "matchingPairs": [
+        {
+          "leftText": "Hình 1",
+          "rightText": "Bộ xử lý trung tâm (CPU)",
+          "originalOrder": 1
+        },
+        {
+          "leftText": "Hình 2",
+          "rightText": "Ổ cứng thể rắn",
+          "originalOrder": 2
+        },
+        {
+          "leftText": "Hình 3",
+          "rightText": "Ổ đĩa cứng",
+          "originalOrder": 3
+        },
+        {
+          "leftText": "Hình 4",
+          "rightText": "Bo mạch chủ",
+          "originalOrder": 4
+        }
+      ],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-13",
+      "prompt": "Xác định các tính năng tiêu chuẩn của thanh tác vụ trong Hệ điều hành Windows.",
+      "trueColumnLabel": "CÓ",
+      "falseColumnLabel": "KHÔNG",
+      "type": "TrueFalseTable",
+      "isDifficult": false,
+      "options": [],
+      "matchingPairs": [],
+      "media": [],
+      "statements": [
+        {
+          "text": "Khởi động trình quản lý tác vụ",
+          "correct": 1,
+          "originalOrder": 1
+        },
+        {
+          "text": "Điều chỉnh âm lượng đầu ra âm thanh",
+          "correct": 1,
+          "originalOrder": 2
+        },
+        {
+          "text": "Hiển thị cài đặt kết nối mạng",
+          "correct": 1,
+          "originalOrder": 3
+        },
+        {
+          "text": "Thu nhỏ tất cả các chương trình đang mở để hiển thị",
+          "correct": 1,
+          "originalOrder": 4
+        }
+      ]
+    },
+    {
+      "code": "LV1-OT1-14",
+      "prompt": "Làm cách nào để người dùng có thể bảo vệ mật khẩu của mình một cách tốt nhất? (Chọn 3)",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "MultipleSelect",
+      "isDifficult": false,
+      "options": [
+        {
+          "text": "Thay đổi mật khẩu thường xuyên",
+          "isCorrect": true,
+          "originalOrder": 1
+        },
+        {
+          "text": "Tạo mật khẩu mới cho mọi tài khoản",
+          "isCorrect": true,
+          "originalOrder": 2
+        },
+        {
+          "text": "Sử dụng cùng một mật khẩu cho tất cả các tài khoản",
+          "isCorrect": false,
+          "originalOrder": 3
+        },
+        {
+          "text": "Giữ bí mật mật khẩu",
+          "isCorrect": true,
+          "originalOrder": 4
+        },
+        {
+          "text": "Sử dụng số thứ tự trong mật khẩu",
+          "isCorrect": false,
+          "originalOrder": 5
+        }
+      ],
+      "matchingPairs": [],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-15",
+      "prompt": "Ghép từng loại cáp với tên tương ứng:",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "Matching",
+      "isDifficult": false,
+      "options": [],
+      "matchingPairs": [
+        {
+          "leftText": "Hình 1",
+          "rightText": "Lightning",
+          "originalOrder": 1
+        },
+        {
+          "leftText": "Hình 2",
+          "rightText": "USB-C",
+          "originalOrder": 2
+        },
+        {
+          "leftText": "Hình 3",
+          "rightText": "Micro USB  ",
+          "originalOrder": 3
+        },
+        {
+          "leftText": "Hình 4",
+          "rightText": "USB",
+          "originalOrder": 4
+        }
+      ],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-16",
+      "prompt": "Bạn cần tạo một mật khẩu mạnh. Đâu là ba nguyên tắc bạn cần tuân thủ? (Chọn 3)",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "MultipleSelect",
+      "isDifficult": false,
+      "options": [
+        {
+          "text": "Bao gồm chữ viết hoa và chữ viết thường",
+          "isCorrect": true,
+          "originalOrder": 1
+        },
+        {
+          "text": "Bao gồm các số dễ nhớ như ngày sinh và số điện thoại",
+          "isCorrect": false,
+          "originalOrder": 2
+        },
+        {
+          "text": "Bao gồm họ hoặc tên của bạn",
+          "isCorrect": false,
+          "originalOrder": 3
+        },
+        {
+          "text": "Bao gồm thông tin cá nhân như tên người trong gia đình hoặc tên vật nuôi",
+          "isCorrect": false,
+          "originalOrder": 4
+        },
+        {
+          "text": "Bao gồm các chữ cái, chữ số và ký hiệu",
+          "isCorrect": true,
+          "originalOrder": 5
+        },
+        {
+          "text": "Sử dụng tám ký tự trở lên",
+          "isCorrect": true,
+          "originalOrder": 6
+        }
+      ],
+      "matchingPairs": [],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-17",
+      "prompt": "Xác định các chức năng do Hệ điều hành của máy tính quản lý. Với mỗi tác vụ dưới đây:",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "TrueFalseTable",
+      "isDifficult": false,
+      "options": [],
+      "matchingPairs": [],
+      "media": [],
+      "statements": [
+        {
+          "text": "Chỉnh sửa tập tin văn bản",
+          "correct": 0,
+          "originalOrder": 1
+        },
+        {
+          "text": "Tìm kiếm trên Internet",
+          "correct": 0,
+          "originalOrder": 2
+        },
+        {
+          "text": "Cấp phát tài nguyên phần cứng",
+          "correct": 1,
+          "originalOrder": 3
+        },
+        {
+          "text": "Giao tiếp với các thiết bị ngoại vi",
+          "correct": 1,
+          "originalOrder": 4
+        }
+      ]
+    },
+    {
+      "code": "LV1-OT1-18",
+      "prompt": "Xác định mục đích của các công cụ trình duyệt Web phổ biến.",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "Matching",
+      "isDifficult": false,
+      "options": [],
+      "matchingPairs": [
+        {
+          "leftText": "Hiển thị lại một trang web đã 'truy cập trước đó'",
+          "rightText": "Back button",
+          "originalOrder": 1
+        },
+        {
+          "leftText": "Tải lại trang web hiện tại",
+          "rightText": "Refresh button",
+          "originalOrder": 2
+        },
+        {
+          "leftText": "Liệt kê các trang web bạn đã truy cập gần đây",
+          "rightText": "History",
+          "originalOrder": 3
+        },
+        {
+          "leftText": "Hiển thị URL của trang web hiện tại",
+          "rightText": "Address box",
+          "originalOrder": 4
+        }
+      ],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-19",
+      "prompt": "Quan sát hình ảnh sau để xác định các loại cổng kết nối. Ghép với tên loại cổng kết nối tương ứng:",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "Matching",
+      "isDifficult": false,
+      "options": [],
+      "matchingPairs": [
+        {
+          "leftText": "Display Port",
+          "rightText": "Hình 1",
+          "originalOrder": 1
+        },
+        {
+          "leftText": "Ethernet Port",
+          "rightText": "Hình 2",
+          "originalOrder": 2
+        },
+        {
+          "leftText": "HDMI Port",
+          "rightText": "Hình 3",
+          "originalOrder": 3
+        },
+        {
+          "leftText": "Audio Port",
+          "rightText": "Hình 4",
+          "originalOrder": 4
+        },
+        {
+          "leftText": "USB Port",
+          "rightText": "Hình 5",
+          "originalOrder": 5
+        }
+      ],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-20",
+      "prompt": "Máy tính để bàn sử dụng phần cứng nào để lưu trữ dữ liệu lâu dài?",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "SingleChoice",
+      "isDifficult": false,
+      "options": [
+        {
+          "text": "Bộ xử lý trung tâm (CPU)",
+          "isCorrect": false,
+          "originalOrder": 1
+        },
+        {
+          "text": "Ổ đĩa Flash USB",
+          "isCorrect": false,
+          "originalOrder": 2
+        },
+        {
+          "text": "Bo mạch chủ",
+          "isCorrect": false,
+          "originalOrder": 3
+        },
+        {
+          "text": "Ổ đĩa cứng",
+          "isCorrect": true,
+          "originalOrder": 4
+        }
+      ],
+      "matchingPairs": [],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-21",
+      "prompt": "Thiết bị phải có khả năng chạy bằng pin và phải được trang bị bàn phím vật lý tích hợp. Đâu là hai thiết bị đáp ứng được những yêu cầu trên? (Chọn 2)",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "MultipleSelect",
+      "isDifficult": false,
+      "options": [
+        {
+          "text": "Máy tính xách tay chạy Windows",
+          "isCorrect": true,
+          "originalOrder": 1
+        },
+        {
+          "text": "Máy tính để bàn Mac",
+          "isCorrect": false,
+          "originalOrder": 2
+        },
+        {
+          "text": "Máy tính đa năng chạy Windows",
+          "isCorrect": false,
+          "originalOrder": 3
+        },
+        {
+          "text": "Điện thoại thông minh chạy Android",
+          "isCorrect": false,
+          "originalOrder": 4
+        },
+        {
+          "text": "Máy tính bảng chạy Android",
+          "isCorrect": false,
+          "originalOrder": 5
+        },
+        {
+          "text": "Chromebook",
+          "isCorrect": true,
+          "originalOrder": 6
+        }
+      ],
+      "matchingPairs": [],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-22",
+      "prompt": "Với mỗi hệ điều hành, bạn hãy chọn công ty phát triển tương ứng:",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "Matching",
+      "isDifficult": false,
+      "options": [],
+      "matchingPairs": [
+        {
+          "leftText": "Android",
+          "rightText": "GOOGLE",
+          "originalOrder": 1
+        },
+        {
+          "leftText": "Chrome OS",
+          "rightText": "GOOGLE",
+          "originalOrder": 2
+        },
+        {
+          "leftText": "Windows",
+          "rightText": "MICROSOFT",
+          "originalOrder": 3
+        },
+        {
+          "leftText": "iOS",
+          "rightText": "APPLE",
+          "originalOrder": 4
+        },
+        {
+          "leftText": "Mac OS",
+          "rightText": "APPLE",
+          "originalOrder": 5
+        }
+      ],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-23",
+      "prompt": "Điều nào đúng với Hệ điều hành Linux? (Chọn 3)",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "MultipleSelect",
+      "isDifficult": false,
+      "options": [
+        {
+          "text": "Độc quyền",
+          "isCorrect": false,
+          "originalOrder": 1
+        },
+        {
+          "text": "Không thể được sử dụng trên bất cứ thứ gì ngoại trừ các thiết bị di động",
+          "isCorrect": false,
+          "originalOrder": 2
+        },
+        {
+          "text": "Có thể chạy trên mọi phần cứng",
+          "isCorrect": true,
+          "originalOrder": 3
+        },
+        {
+          "text": "Người dùng có thể sửa đổi phần mềm thông qua mã nguồn của chương trình",
+          "isCorrect": true,
+          "originalOrder": 4
+        },
+        {
+          "text": "Có tính bảo mật cao",
+          "isCorrect": true,
+          "originalOrder": 5
+        }
+      ],
+      "matchingPairs": [],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-24",
+      "prompt": "Với mỗi loại phần mềm, hãy xác định xem đó là Phần mềm Hệ Thống hay Phần mềm Ứng Dụng.",
+      "trueColumnLabel": "PHẦN MỀM ỨNG DỤNG",
+      "falseColumnLabel": "PHẦN MỀM<br> HỆ THỐNG",
+      "type": "TrueFalseTable",
+      "isDifficult": false,
+      "options": [],
+      "matchingPairs": [],
+      "media": [],
+      "statements": [
+        {
+          "text": "Trình duyệt Web",
+          "correct": 1,
+          "originalOrder": 1
+        },
+        {
+          "text": "Bộ phát đa phương tiện",
+          "correct": 1,
+          "originalOrder": 2
+        },
+        {
+          "text": "Trình điều khiển card đồ họa",
+          "correct": 0,
+          "originalOrder": 3
+        },
+        {
+          "text": "Trình quản lý phân vùng ổ đĩa",
+          "correct": 0,
+          "originalOrder": 4
+        }
+      ]
+    },
+    {
+      "code": "LV1-OT1-25",
+      "prompt": "Sự khác biệt giữa mạng có dây và không dây, hãy chọn Đúng hoặc Sai.",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "TrueFalseTable",
+      "isDifficult": false,
+      "options": [],
+      "matchingPairs": [],
+      "media": [],
+      "statements": [
+        {
+          "text": "Kết nối Wi-Fi được mã hóa an toàn hơn so với kết nối Ethernet",
+          "correct": 0,
+          "originalOrder": 1
+        },
+        {
+          "text": "Kết nối Wi-Fi thường ít xảy ra độ trễ khi truyền dữ liệu hơn so với kết nối Ethernet",
+          "correct": 0,
+          "originalOrder": 2
+        },
+        {
+          "text": "Kết nối Ethernet thường cung cấp tốc độ kết nối mạng nhanh hơn kết nối Wi-Fi",
+          "correct": 1,
+          "originalOrder": 3
+        }
+      ]
+    },
+    {
+      "code": "LV1-OT1-26",
+      "prompt": "Thiết bị nào chuyển đổi dữ liệu từ kỹ thuật số (Digital) sang tương tự (Analog) và ngược lại để truyền tín hiệu qua mạng?",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "SingleChoice",
+      "isDifficult": false,
+      "options": [
+        {
+          "text": "Router",
+          "isCorrect": false,
+          "originalOrder": 1
+        },
+        {
+          "text": "Ethernet Cable",
+          "isCorrect": false,
+          "originalOrder": 2
+        },
+        {
+          "text": "Network Adapter",
+          "isCorrect": false,
+          "originalOrder": 3
+        },
+        {
+          "text": "Modem",
+          "isCorrect": true,
+          "originalOrder": 4
+        }
+      ],
+      "matchingPairs": [],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-27",
+      "prompt": "Loại cáp nào có thể truyền dữ liệu lên đến 480 megabit/giây?",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "SingleChoice",
+      "isDifficult": false,
+      "options": [
+        {
+          "text": "USB",
+          "isCorrect": false,
+          "originalOrder": 1
+        },
+        {
+          "text": "USB-C",
+          "isCorrect": false,
+          "originalOrder": 2
+        },
+        {
+          "text": "Micro USB",
+          "isCorrect": false,
+          "originalOrder": 3
+        },
+        {
+          "text": "Lightning connecter",
+          "isCorrect": true,
+          "originalOrder": 4
+        }
+      ],
+      "matchingPairs": [],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-28",
+      "prompt": "Với mỗi câu phát biểu về những lợi ích của cơ sở hạ tầng mạng chất lượng, hãy chọn Đúng hoặc Sai.",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "TrueFalseTable",
+      "isDifficult": false,
+      "options": [],
+      "matchingPairs": [],
+      "media": [],
+      "statements": [
+        {
+          "text": "Đảm bảo rằng học sinh có thể kết nối thông suốt với mạng của nhà trường",
+          "correct": 1,
+          "originalOrder": 1
+        },
+        {
+          "text": "Cho phép học sinh kết nối với phòng máy tính của nhà trường từ mọi nơi",
+          "correct": 0,
+          "originalOrder": 2
+        },
+        {
+          "text": "Hỗ trợ mở rộng hệ thống mạng của nhà trường mà không cần thiết kế lại khi số lượng học sinh tăng lên",
+          "correct": 1,
+          "originalOrder": 3
+        }
+      ]
+    },
+    {
+      "code": "LV1-OT1-29",
+      "prompt": "Ba phát biểu nào dưới đây đúng với phần mềm nguồn mở? (Chọn 3)",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "MultipleSelect",
+      "isDifficult": false,
+      "options": [
+        {
+          "text": "Nó an toàn hơn phần mềm độc quyền",
+          "isCorrect": true,
+          "originalOrder": 1
+        },
+        {
+          "text": "Nó kém an toàn hơn phần mềm độc quyền",
+          "isCorrect": false,
+          "originalOrder": 2
+        },
+        {
+          "text": "Giấy phép của nó là trung lập về công nghệ",
+          "isCorrect": true,
+          "originalOrder": 3
+        },
+        {
+          "text": "Nó cho phép người dùng sửa đổi phần mềm để phù hợp với nhu cầu cụ thể của họ",
+          "isCorrect": true,
+          "originalOrder": 4
+        },
+        {
+          "text": "Nó thân thiện với người dùng hơn phần mềm độc quyền",
+          "isCorrect": false,
+          "originalOrder": 5
+        }
+      ],
+      "matchingPairs": [],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-30",
+      "prompt": "Sự khác biệt giữa Internet và mạng nội bộ",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "TrueFalseTable",
+      "isDifficult": false,
+      "options": [],
+      "matchingPairs": [],
+      "media": [],
+      "statements": [
+        {
+          "text": "Internet thuộc quyền sở hữu riêng của các tổ hợp công ty liên doanh",
+          "correct": 0,
+          "originalOrder": 1
+        },
+        {
+          "text": "Kết nối nội bộ an toàn hơn so với kết nối Internet ",
+          "correct": 1,
+          "originalOrder": 2
+        },
+        {
+          "text": "Mạng nội bộ không giới hạn số lượng người dùng và bất kỳ ai cũng có thể truy cập được",
+          "correct": 0,
+          "originalOrder": 3
+        }
+      ]
+    },
+    {
+      "code": "LV1-OT1-31",
+      "prompt": "Ba phát biểu nào dưới đây đúng với phần mềm độc quyền? (Chọn 3)",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "MultipleSelect",
+      "isDifficult": false,
+      "options": [
+        {
+          "text": "Nó kém an toàn hơn phần mềm nguồn mở",
+          "isCorrect": true,
+          "originalOrder": 1
+        },
+        {
+          "text": "Nó dễ bị phần mềm độc hại tấn công hơn phần mềm nguồn mở",
+          "isCorrect": true,
+          "originalOrder": 2
+        },
+        {
+          "text": "Giấy phép của nó là trung lập về công nghệ",
+          "isCorrect": false,
+          "originalOrder": 3
+        },
+        {
+          "text": "Nó cho phép người dùng sửa đổi phần mềm để phù hợp với nhu cầu cụ thể của họ",
+          "isCorrect": false,
+          "originalOrder": 4
+        },
+        {
+          "text": "Nó thân thiện với người dùng hơn phần mềm nguồn mở",
+          "isCorrect": true,
+          "originalOrder": 5
+        }
+      ],
+      "matchingPairs": [],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-32",
+      "prompt": "Đâu là câu phát biểu đúng về các ứng dụng dựa trên môi trường Web?",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "SingleChoice",
+      "isDifficult": false,
+      "options": [
+        {
+          "text": "Bạn phải có kết nối Internet để sử dụng ứng dụng Web",
+          "isCorrect": true,
+          "originalOrder": 1
+        },
+        {
+          "text": "Phiên bản Web của ứng dụng dành cho máy tính để bàn sở hữu tất cả các tính năng giống như phiên bản trên máy tính để bàn",
+          "isCorrect": false,
+          "originalOrder": 2
+        },
+        {
+          "text": "Các ứng dụng Web xử lý cục bộ thông tin trên máy tính của bạn",
+          "isCorrect": false,
+          "originalOrder": 3
+        },
+        {
+          "text": "Trước khi có thể sử dụng ứng dụng Web, bạn phải cài đặt ứng dụng đó trên máy tính của mình",
+          "isCorrect": false,
+          "originalOrder": 4
+        }
+      ],
+      "matchingPairs": [],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-33",
+      "prompt": "Với mỗi câu phát biểu về phần mềm mã nguồn mở, hãy chọn Đúng hoặc Sai:",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "TrueFalseTable",
+      "isDifficult": false,
+      "options": [],
+      "matchingPairs": [],
+      "media": [],
+      "statements": [
+        {
+          "text": "Tất cả phần mềm miễn phí đều là phần mềm mã nguồn mở",
+          "correct": 0,
+          "originalOrder": 1
+        },
+        {
+          "text": "Bất kỳ ai cũng có thể kiểm tra, sửa đổi và cải tiến mã nguồn của phần mềm mã nguồn mở",
+          "correct": 1,
+          "originalOrder": 2
+        },
+        {
+          "text": "Bạn phải đồng ý với Thỏa thuận cấp phép Người dùng cuối trước khi sử dụng phần mềm mã nguồn mở",
+          "correct": 0,
+          "originalOrder": 3
+        }
+      ]
+    },
+    {
+      "code": "LV1-OT1-34",
+      "prompt": "Ghép từng loại ứng dụng phần mềm với mục đích tương ứng:",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "Matching",
+      "isDifficult": false,
+      "options": [],
+      "matchingPairs": [
+        {
+          "leftText": "Hệ thống quản lý cơ sở dữ liệu",
+          "rightText": "Lưu trữ, sắp xếp, điều khiển và điều chỉnh các tập hợp thông tin liên quan",
+          "originalOrder": 1
+        },
+        {
+          "leftText": "Phần mềm xử lý văn bản",
+          "rightText": "Nhập, chỉnh sửa, định dạng và xuất văn bản ở định dạng tài liệu",
+          "originalOrder": 2
+        },
+        {
+          "leftText": "Phần mềm trình chiếu",
+          "rightText": "Hiển thị văn bản, hình ảnh và thông tin đa phương tiện dưới dạng trình chiếu điện tử",
+          "originalOrder": 3
+        },
+        {
+          "leftText": "Trình duyệt web",
+          "rightText": "Truy cập thông tin trên internet",
+          "originalOrder": 4
+        },
+        {
+          "leftText": "Ứng dụng bảng tính",
+          "rightText": "Sắp xếp, phân tích cũng như lưu trữ dữ liệu số và văn bản, tính toán và hiển thị dữ liệu dưới dạng biểu đồ",
+          "originalOrder": 5
+        }
+      ],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-35",
+      "prompt": "Loại USB nào có đầu nối có thể đảo ngược khi sử dụng?",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "SingleChoice",
+      "isDifficult": false,
+      "options": [
+        {
+          "text": "Micro USB",
+          "isCorrect": false,
+          "originalOrder": 1
+        },
+        {
+          "text": "USB-C",
+          "isCorrect": true,
+          "originalOrder": 2
+        },
+        {
+          "text": "USB",
+          "isCorrect": false,
+          "originalOrder": 3
+        },
+        {
+          "text": "Lightning connecter",
+          "isCorrect": false,
+          "originalOrder": 4
+        }
+      ],
+      "matchingPairs": [],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-36",
+      "prompt": "Làm cách nào bạn có thể xác định xem thiết bị của mình có được kết nối với Internet hay không?",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "SingleChoice",
+      "isDifficult": false,
+      "options": [
+        {
+          "text": "Hãy thử gửi một tin nhắn",
+          "isCorrect": false,
+          "originalOrder": 1
+        },
+        {
+          "text": "Mở trình duyệt",
+          "isCorrect": true,
+          "originalOrder": 2
+        },
+        {
+          "text": "Tải xuống ứng dụng Speedtest",
+          "isCorrect": false,
+          "originalOrder": 3
+        },
+        {
+          "text": "Thử lưu một tập tin",
+          "isCorrect": false,
+          "originalOrder": 4
+        }
+      ],
+      "matchingPairs": [],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-37",
+      "prompt": "Ghép từng thiết bị lưu trữ dữ liệu với định nghĩa tương ứng:",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "Matching",
+      "isDifficult": false,
+      "options": [],
+      "matchingPairs": [
+        {
+          "leftText": "Ổ cứng thể rắn",
+          "rightText": "Thiết bị lưu trữ dữ liệu bên trong giúp lưu trữ và truy xuất dữ liệu bằng bộ nhớ flash",
+          "originalOrder": 1
+        },
+        {
+          "leftText": "Ổ đĩa flash USB",
+          "rightText": "Thiết bị lưu trữ dữ liệu bên ngoài gọn nhẹ, sử dụng bộ nhớ flash",
+          "originalOrder": 2
+        },
+        {
+          "leftText": "Ổ cứng di động",
+          "rightText": "Thiết bị lưu trữ dữ liệu bên ngoài hoạt động dựa trên kết nối USB với máy tính",
+          "originalOrder": 3
+        },
+        {
+          "leftText": "Ổ đĩa cứng",
+          "rightText": "Thiết bị lưu trữ dữ liệu cơ điện tử bên trong giúp lưu trữ và truy xuất dữ liệu bằng đĩa từ quay nhanh",
+          "originalOrder": 4
+        }
+      ],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-38",
+      "prompt": "Bạn cần xác định thông tin nhận dạng cá nhân (PII - Personally Iden-tifiable Information) mà bạn không nên để lộ trên mạng. Với mỗi câu phát biểu, hãy chọn Có nếu đó là thông tin nhận dạng cá nhân hoặc không nếu không phải.",
+      "trueColumnLabel": "CÓ",
+      "falseColumnLabel": "KHÔNG",
+      "type": "TrueFalseTable",
+      "isDifficult": false,
+      "options": [],
+      "matchingPairs": [],
+      "media": [],
+      "statements": [
+        {
+          "text": "Màu mắt",
+          "correct": 0,
+          "originalOrder": 1
+        },
+        {
+          "text": "Ngày sinh",
+          "correct": 1,
+          "originalOrder": 2
+        },
+        {
+          "text": "Nơi sinh",
+          "correct": 1,
+          "originalOrder": 3
+        }
+      ]
+    },
+    {
+      "code": "LV1-OT1-39",
+      "prompt": "Với mỗi câu phát biểu, hãy chọn Đúng nếu đó là ví dụ về bắt nạt trên mạng hoặc Sai nếu không phải.",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "TrueFalseTable",
+      "isDifficult": false,
+      "options": [],
+      "matchingPairs": [],
+      "media": [],
+      "statements": [
+        {
+          "text": "A Liên tục gửi những tin nhắn ác ý riêng cho B",
+          "correct": 1,
+          "originalOrder": 1
+        },
+        {
+          "text": "C Đăng tải một ý kiến gây tranh cãi trên một diễn đàn trực tuyến công khai",
+          "correct": 0,
+          "originalOrder": 2
+        },
+        {
+          "text": "D Đăng ảnh riêng tư của E lên mạng mà không có sự cho phép của cô",
+          "correct": 1,
+          "originalOrder": 3
+        },
+        {
+          "text": "F tạo một tài khoản Instagram để đăng tải những tin đồn về các học sinh trong trường",
+          "correct": 0,
+          "originalOrder": 4
+        }
+      ]
+    },
+    {
+      "code": "LV1-OT1-40",
+      "prompt": "Cách an toàn để gửi thông tin nhận dạng cá nhân (PII - Personally Identifiable Information) qua Email là gì?",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "SingleChoice",
+      "isDifficult": false,
+      "options": [
+        {
+          "text": "Bằng cách chỉ gửi Email PII cho người thân",
+          "isCorrect": false,
+          "originalOrder": 1
+        },
+        {
+          "text": "Bằng cách mã hóa Email",
+          "isCorrect": true,
+          "originalOrder": 2
+        },
+        {
+          "text": "Không bao giờ gửi Email",
+          "isCorrect": false,
+          "originalOrder": 3
+        },
+        {
+          "text": "Bằng cách giải mã một Email",
+          "isCorrect": false,
+          "originalOrder": 4
+        }
+      ],
+      "matchingPairs": [],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-41",
+      "prompt": "Với mỗi câu phát biểu về đạo văn, hãy chọn Đúng hoặc Sai.",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "TrueFalseTable",
+      "isDifficult": false,
+      "options": [],
+      "matchingPairs": [],
+      "media": [],
+      "statements": [
+        {
+          "text": "Bạn sẽ bị quy vào tội đạo văn nếu không trích dẫn nguồn đầy đủ",
+          "correct": 1,
+          "originalOrder": 1
+        },
+        {
+          "text": "Trong tác phẩm viết, bạn phải sử dụng phần chú thích cuối trang để trích dẫn nguồn",
+          "correct": 1,
+          "originalOrder": 2
+        },
+        {
+          "text": "Bạn có thể mạo nhận tác phẩm hoặc ý tưởng của người khác làm của riêng mình mà không cần trích dẫn nguồn",
+          "correct": 0,
+          "originalOrder": 3
+        },
+        {
+          "text": "Bạn chỉ phải trích dẫn nguồn khi sử dụng câu văn chính xác như trong tác phẩm gốc của người khác",
+          "correct": 0,
+          "originalOrder": 4
+        },
+        {
+          "text": "Đạo văn là lấy cắp ý tưởng của người khác mà không ghi công",
+          "correct": 1,
+          "originalOrder": 5
+        }
+      ]
+    },
+    {
+      "code": "LV1-OT1-42",
+      "prompt": "Bốn điều nào được coi là thông tin nhận dạng cá nhân PII-Personally Indentifiable Information?(Chọn 4)",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "MultipleSelect",
+      "isDifficult": false,
+      "options": [
+        {
+          "text": "Số an sinh xã hội",
+          "isCorrect": true,
+          "originalOrder": 1
+        },
+        {
+          "text": "Địa chỉ gửi thư",
+          "isCorrect": true,
+          "originalOrder": 2
+        },
+        {
+          "text": "Kích thước quần áo",
+          "isCorrect": false,
+          "originalOrder": 3
+        },
+        {
+          "text": "Màu tóc",
+          "isCorrect": false,
+          "originalOrder": 4
+        },
+        {
+          "text": "Lịch sử quét sinh trắc học",
+          "isCorrect": true,
+          "originalOrder": 5
+        },
+        {
+          "text": "Địa chỉ IP",
+          "isCorrect": true,
+          "originalOrder": 6
+        }
+      ],
+      "matchingPairs": [],
+      "media": [],
+      "statements": []
+    },
+    {
+      "code": "LV1-OT1-43",
+      "prompt": "Bạn cần xác định ví dụ về hành xử đúng mực trên mạng trong môi trường văn phòng. Với mỗi phát biểu, chọn Có nếu đúng hoặc Không nếu không.",
+      "trueColumnLabel": "CÓ",
+      "falseColumnLabel": "KHÔNG",
+      "type": "TrueFalseTable",
+      "isDifficult": false,
+      "options": [],
+      "matchingPairs": [],
+      "media": [],
+      "statements": [
+        {
+          "text": "Luôn Cc cho đồng nghiệp khi gửi email để giúp họ nắm được thông tin",
+          "correct": 0,
+          "originalOrder": 1
+        },
+        {
+          "text": "Chia sẻ các tập tin lớn từ dịch vụ lưu trữ đám mây hoặc vị trí máy chủ thay vì đính kèm trong email",
+          "correct": 1,
+          "originalOrder": 2
+        },
+        {
+          "text": "Áp dụng các tiêu chuẩn và giá trị trong các tương tác trực tuyến tương tự như khi bạn tương tác trực tiếp",
+          "correct": 1,
+          "originalOrder": 3
+        }
+      ]
+    },
+    {
+      "code": "LV1-OT1-44",
+      "prompt": "Với mỗi câu phát biểu về các phương pháp trích dẫn, hãy chọn Đúng hoặc Sai.",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "TrueFalseTable",
+      "isDifficult": false,
+      "options": [],
+      "matchingPairs": [],
+      "media": [],
+      "statements": [
+        {
+          "text": "Bạn phải trích dẫn nguồn nếu trích dẫn trực tiếp từ một bài phát biểu",
+          "correct": 1,
+          "originalOrder": 1
+        },
+        {
+          "text": "Bạn phải trích dẫn nguồn nếu diễn đạt lại bài viết của một người khác ",
+          "correct": 1,
+          "originalOrder": 2
+        },
+        {
+          "text": "Bạn phải trích dẫn nguồn nếu tóm tắt bài viết của một người khác",
+          "correct": 1,
+          "originalOrder": 3
+        },
+        {
+          "text": "Bạn nên đặt dấu ngoặc kép xung quanh các cụm từ gồm ba từ trở lên được trích dẫn từ bài viết của một người khác",
+          "correct": 1,
+          "originalOrder": 4
+        }
+      ]
+    },
+    {
+      "code": "LV1-OT1-45",
+      "prompt": "Đâu là ba yếu tố phải có trong trích dẫn về một cuốn sách đã xuất bản? (Chọn 3)",
+      "trueColumnLabel": "ĐÚNG",
+      "falseColumnLabel": "SAI",
+      "type": "MultipleSelect",
+      "isDifficult": false,
+      "options": [
+        {
+          "text": "Tên tác giả",
+          "isCorrect": true,
+          "originalOrder": 1
+        },
+        {
+          "text": "Tên sách",
+          "isCorrect": true,
+          "originalOrder": 2
+        },
+        {
+          "text": "Ngày xuất bản",
+          "isCorrect": true,
+          "originalOrder": 3
+        },
+        {
+          "text": "Ngày truy cập",
+          "isCorrect": false,
+          "originalOrder": 4
+        },
+        {
+          "text": "Tình trạng bản quyền",
+          "isCorrect": false,
+          "originalOrder": 5
+        },
+        {
+          "text": "Tình trạng thương hiệu",
+          "isCorrect": false,
+          "originalOrder": 6
+        }
+      ],
+      "matchingPairs": [],
+      "media": [],
+      "statements": []
+    }
+  ]
+}

@@ -32,7 +32,7 @@ export interface SolvedResponse {
 
   // Yes/No Answer format
   yesNoAnswer?: {
-    answer: 'Yes' | 'No' | 'True' | 'False';
+    answer: 'Yes' | 'No' | 'True' | 'False' | 'Google' | 'Apple' | 'Microsoft' | string;
     statement: string;
   };
 

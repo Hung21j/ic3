@@ -34,6 +34,7 @@ import { motion, AnimatePresence } from "motion/react";
 
 interface IC3QuestionBankProps {
   selectedLevel: string;
+  selectedProgram?: "gs6" | "spark";
   onSelectQuestionToSolve: (data: {
     questionText: string;
     question?: string;
@@ -45,6 +46,8 @@ interface IC3QuestionBankProps {
   currentUser?: User;
   customQuestions?: IC3Question[];
   onOpenAdminDashboard?: () => void;
+  onSwitchProgram?: () => void;
+  onSwitchLevel?: () => void;
 }
 
 interface SubsetConfig {
@@ -52,20 +55,49 @@ interface SubsetConfig {
   name: string;
 }
 
+const normalizeImagePath = (src?: string | null): string | undefined => {
+  if (!src) return undefined;
+  if (src.startsWith("./images/")) {
+    return src.replace("./images/", "/images/");
+  }
+  if (src.startsWith("images/")) {
+    return "/" + src;
+  }
+  return src;
+};
+
+const isImageSource = (str?: string | null): boolean => {
+  if (!str) return false;
+  return str.startsWith("data:image/") || 
+         str.startsWith("/images/") || 
+         str.startsWith("./images/") || 
+         /\.(png|jpe?g|webp|svg|gif)$/i.test(str.trim());
+};
+
 export default function IC3QuestionBank({ 
   selectedLevel, 
+  selectedProgram = "gs6",
   onSelectQuestionToSolve, 
   isLoading,
   currentUser,
   customQuestions = [],
-  onOpenAdminDashboard
+  onOpenAdminDashboard,
+  onSwitchProgram,
+  onSwitchLevel
 }: IC3QuestionBankProps) {
+  // Determine if this session is IC3 Spark or IC3 GS6
+  const isSpark = selectedProgram === "spark" || selectedLevel.toLowerCase().includes("spark");
+
   // Determine which level ID applies based on selectedLevel (Level 1, 2, or 3)
-  let activeLevelId = "level-1";
-  if (selectedLevel.includes("Level 2")) {
-    activeLevelId = "level-2";
-  } else if (selectedLevel.includes("Level 3")) {
-    activeLevelId = "level-3";
+  let activeLevelId = isSpark ? "spark-level-1" : "level-1";
+  if (selectedLevel.includes("Level 2") || selectedLevel.includes("Cấp độ 2") || selectedLevel.includes("spark-level-2")) {
+    activeLevelId = isSpark ? "spark-level-2" : "level-2";
+  } else if (selectedLevel.includes("Level 3") || selectedLevel.includes("Cấp độ 3") || selectedLevel.includes("spark-level-3")) {
+    activeLevelId = isSpark ? "spark-level-3" : "level-3";
+  } else if (isSpark) {
+    activeLevelId = "spark-level-1";
+  } else {
+    activeLevelId = "level-1";
   }
 
   // Color theme configurations matching the Level Selection page styles
@@ -124,10 +156,52 @@ export default function IC3QuestionBank({
       accentGlow: "shadow-amber-100 ring-amber-500/10",
       badgeStyle: "bg-amber-50 text-amber-700 border-amber-150",
       btnOutline: "border-amber-200 text-amber-700 hover:bg-amber-50"
+    },
+    "spark-level-1": {
+      bgBanner: "from-emerald-50 via-teal-50 to-slate-50",
+      iconBg: "bg-emerald-600",
+      textPrimary: "text-emerald-700",
+      borderPrimary: "border-emerald-600",
+      progressGlow: "from-emerald-500 to-teal-500",
+      qIndexStyle: "text-emerald-700 bg-emerald-50 border-emerald-200",
+      explainHeader: "text-emerald-800",
+      explainBg: "bg-emerald-50/50 border-emerald-200",
+      nextBtnActive: "bg-emerald-600 text-white border-emerald-600 hover:bg-emerald-700 active:scale-95",
+      accentGlow: "shadow-emerald-100 ring-emerald-500/10",
+      badgeStyle: "bg-emerald-50 text-emerald-800 border-emerald-200",
+      btnOutline: "border-emerald-300 text-emerald-800 hover:bg-emerald-50"
+    },
+    "spark-level-2": {
+      bgBanner: "from-indigo-50 via-purple-50 to-slate-50",
+      iconBg: "bg-indigo-600",
+      textPrimary: "text-indigo-700",
+      borderPrimary: "border-indigo-600",
+      progressGlow: "from-indigo-500 to-purple-500",
+      qIndexStyle: "text-indigo-700 bg-indigo-50 border-indigo-200",
+      explainHeader: "text-indigo-800",
+      explainBg: "bg-indigo-50/50 border-indigo-200",
+      nextBtnActive: "bg-indigo-600 text-white border-indigo-600 hover:bg-indigo-700 active:scale-95",
+      accentGlow: "shadow-indigo-100 ring-indigo-500/10",
+      badgeStyle: "bg-indigo-50 text-indigo-800 border-indigo-200",
+      btnOutline: "border-indigo-300 text-indigo-800 hover:bg-indigo-50"
+    },
+    "spark-level-3": {
+      bgBanner: "from-amber-50 via-orange-50 to-slate-50",
+      iconBg: "bg-amber-600",
+      textPrimary: "text-amber-700",
+      borderPrimary: "border-amber-600",
+      progressGlow: "from-amber-500 to-orange-500",
+      qIndexStyle: "text-amber-700 bg-amber-50 border-amber-200",
+      explainHeader: "text-amber-800",
+      explainBg: "bg-amber-50/50 border-amber-200",
+      nextBtnActive: "bg-amber-600 text-white border-amber-600 hover:bg-amber-700 active:scale-95",
+      accentGlow: "shadow-amber-100 ring-amber-500/10",
+      badgeStyle: "bg-amber-50 text-amber-800 border-amber-200",
+      btnOutline: "border-amber-300 text-amber-800 hover:bg-amber-50"
     }
   };
 
-  const themeConfig = LEVEL_THEMES[activeLevelId] || LEVEL_THEMES["level-1"];
+  const themeConfig = LEVEL_THEMES[activeLevelId] || (isSpark ? LEVEL_THEMES["spark-level-1"] : LEVEL_THEMES["level-1"]);
 
   // Core application states
   const [allQuestions, setAllQuestions] = useState<IC3Question[]>([]);
@@ -205,9 +279,20 @@ export default function IC3QuestionBank({
 
       try {
         const parsed = JSON.parse(ans) as Record<string, string>;
-        return statementsList.every(
-          (statement, index) => parsed[String(index)] === statement.correct
-        );
+        const cols = (question.columnLabels && question.columnLabels.length > 0)
+          ? question.columnLabels
+          : [question.trueColumnLabel || "Đúng", question.falseColumnLabel || "Sai"];
+
+        return statementsList.every((statement, index) => {
+          const userVal = parsed[String(index)];
+          const target = statement.correct;
+          if (!userVal) return false;
+          if (userVal === target) return true;
+          if (userVal.toLowerCase() === target.toLowerCase()) return true;
+          if (userVal === "True" && (target === "True" || target === cols[0])) return true;
+          if (userVal === "False" && (target === "False" || target === cols[1])) return true;
+          return false;
+        });
       } catch {
         return question.correctKeys?.includes(ans) || false;
       }
@@ -218,7 +303,7 @@ export default function IC3QuestionBank({
   const handleSelectStatementAnswer = (
     question: IC3Question,
     statementIndex: number,
-    value: "True" | "False"
+    value: string
   ) => {
     if (appMode === "training" && checkedQuestions[question.id]) {
       return;
@@ -276,15 +361,27 @@ export default function IC3QuestionBank({
 
   // Load questions directly from the static IC3_QUESTIONS file and customQuestions
   useEffect(() => {
-    const merged = [
-      ...IC3_QUESTIONS,
-      ...(customQuestions || [])
-    ];
-    setAllQuestions(merged);
+    const qMap = new Map<string, IC3Question>();
+    IC3_QUESTIONS.forEach((q) => qMap.set(q.id, q));
+    (customQuestions || []).forEach((q) => qMap.set(q.id, q));
+    setAllQuestions(Array.from(qMap.values()));
   }, [customQuestions]);
 
   // Filter questions for active level of the screen
-  const levelQuestions = allQuestions.filter((q) => q.levelId === activeLevelId);
+  const levelQuestions = allQuestions.filter((q) => {
+    if (isSpark) {
+      return (
+        q.levelId === activeLevelId ||
+        (q.program === "spark" && (
+          (activeLevelId.endsWith("1") && q.levelId.endsWith("1")) ||
+          (activeLevelId.endsWith("2") && q.levelId.endsWith("2")) ||
+          (activeLevelId.endsWith("3") && q.levelId.endsWith("3"))
+        ))
+      );
+    }
+    // In GS6 mode:
+    return q.levelId === activeLevelId && q.program !== "spark" && !q.levelId.startsWith("spark-");
+  });
 
   // Divide base levelQuestions into the selected subset dynamically using the subsetId field directly
   const getSubsetQuestions = (subsetId: string, questionsList: IC3Question[]): IC3Question[] => {
@@ -358,9 +455,13 @@ export default function IC3QuestionBank({
 
     if (question.type === "yes_no" && question.statements && question.statements.length > 1) {
       const shuffledStatements = shuffleArray(question.statements);
-      const newAnswerText = shuffledStatements
-        .map((s, idx) => `${idx + 1}. ${s.correct === "True" ? "Đúng" : "Sai"}`)
-        .join("\n");
+      const trueLabel = question.trueColumnLabel || "Đúng";
+      const falseLabel = question.falseColumnLabel || "Sai";
+      const newAnswerText = question.columnLabels && question.columnLabels.length > 0
+        ? shuffledStatements.map((s) => `${s.text} ➔ ${s.correct}`).join("\n")
+        : shuffledStatements
+            .map((s, idx) => `${idx + 1}. ${s.correct === "True" ? trueLabel : s.correct === "False" ? falseLabel : s.correct}`)
+            .join("\n");
       return {
         ...question,
         statements: shuffledStatements,
@@ -771,21 +872,57 @@ export default function IC3QuestionBank({
     <div id="ic3-study-page-deck" className="bg-white rounded-2xl border-2 border-slate-300 shadow-sm overflow-hidden flex flex-col min-h-[500px]">
       
       {/* ================= 🌟 TOP HEADER BANNER ================= */}
-      <div className={`bg-gradient-to-r ${themeConfig.bgBanner} border-b-2 border-slate-300 p-5`}>
+      <div className={`bg-gradient-to-r ${themeConfig.bgBanner} border-b-2 border-slate-300 p-4 md:p-5`}>
         <div className="flex items-center justify-between gap-3 flex-wrap sm:flex-nowrap">
           <div className="flex items-center gap-3">
-            <div className={`w-10 h-10 ${themeConfig.iconBg} rounded-xl flex items-center justify-center text-white shadow-md shrink-0`}>
-              <BookOpenCheck className="w-5.5 h-5.5" />
+            <div className="h-11 px-2.5 py-1 bg-white rounded-xl border-2 border-slate-200 shadow-xs flex items-center justify-center shrink-0">
+              <img 
+                src={isSpark ? "/assets/aistudio/spark_05b29717.png" : "/assets/aistudio/gs6_b4829e48.png"} 
+                alt={isSpark ? "IC3 Spark" : "IC3 GS6"} 
+                className="h-7 w-auto object-contain"
+              />
             </div>
             <div>
-              <h3 className="text-md font-black text-slate-900 uppercase tracking-widest font-mono leading-none">
-                {selectedLevel.toUpperCase()}{selectedSubSet ? ` • ĐỀ ${selectedSubSet}` : ""}
+              <div className="flex items-center gap-2">
+                <span className={`text-[10px] font-black uppercase font-mono px-2 py-0.5 rounded-md border ${
+                  isSpark 
+                    ? "bg-emerald-100 text-emerald-800 border-emerald-300" 
+                    : "bg-slate-100 text-slate-800 border-slate-300"
+                }`}>
+                  {isSpark ? "IC3 SPARK" : "IC3 GS6"}
+                </span>
+                {selectedSubSet && (
+                  <span className="text-[10px] font-black uppercase font-mono px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-700 border border-indigo-200">
+                    ĐỀ {selectedSubSet}
+                  </span>
+                )}
+              </div>
+              <h3 className="text-sm md:text-base font-black text-slate-900 uppercase tracking-wide font-mono mt-0.5">
+                {selectedLevel.toUpperCase()}
               </h3>
             </div>
           </div>
           
           {/* Dynamic state widgets */}
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2 flex-wrap">
+            {onSwitchProgram && appMode === "menu" && (
+              <button
+                type="button"
+                onClick={onSwitchProgram}
+                className="text-xs font-black uppercase text-slate-800 bg-white hover:bg-slate-100 border border-slate-300 shadow-xs px-3 py-1.5 rounded-xl transition cursor-pointer font-mono flex items-center gap-1.5"
+              >
+                <span>Đổi chương trình</span>
+              </button>
+            )}
+            {onSwitchLevel && appMode === "menu" && (
+              <button
+                type="button"
+                onClick={onSwitchLevel}
+                className="text-xs font-black uppercase text-indigo-700 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 shadow-xs px-3 py-1.5 rounded-xl transition cursor-pointer font-mono flex items-center gap-1.5"
+              >
+                <span>Đổi Level</span>
+              </button>
+            )}
             {/* Running timer stopwatch */}
             {isTimerActive && (
               <div className="flex items-center gap-1.5 bg-slate-900 border border-slate-800 text-emerald-400 font-mono text-xs px-3 py-1.5 rounded-lg shadow-sm font-black">
@@ -1332,10 +1469,10 @@ export default function IC3QuestionBank({
                             <div className="mt-4 flex flex-col items-center justify-center">
                               <div className="relative group max-w-full overflow-hidden rounded-xl border-2 border-slate-300 bg-slate-50 p-1 shadow-xs">
                                 <img
-                                  src={q.image}
+                                  src={normalizeImagePath(q.image)}
                                   alt="Hình ảnh minh họa câu hỏi"
                                   className="max-h-72 sm:max-h-84 md:max-h-96 w-auto max-w-full rounded-lg object-contain cursor-pointer transition-transform hover:scale-[1.01]"
-                                  onClick={() => setPreviewImage(q.image!)}
+                                  onClick={() => setPreviewImage(normalizeImagePath(q.image)!)}
                                 />
                                 <div className="absolute bottom-2 right-2 px-2 py-0.5 bg-slate-900/75 text-white text-[10px] font-mono rounded-md backdrop-blur-xs flex items-center gap-1 pointer-events-none">
                                   <ZoomIn className="w-3 h-3" />
@@ -1516,114 +1653,149 @@ export default function IC3QuestionBank({
                               }
                             ];
 
+                        const columns: string[] = (q.columnLabels && q.columnLabels.length > 0)
+                          ? q.columnLabels
+                          : [q.trueColumnLabel || "Đúng", q.falseColumnLabel || "Sai"];
+
+                        const numCols = columns.length;
+                        const colWidth = numCols > 3 ? "75px" : numCols === 3 ? "105px" : "125px";
+                        const gridStyle = {
+                          gridTemplateColumns: `minmax(180px, 1fr) repeat(${numCols}, minmax(70px, ${colWidth}))`
+                        };
+
                         return (
                           <div className="space-y-3 pt-1">
                             <div className="flex items-center gap-1.5">
                               <Compass className="w-4 h-4 text-slate-600" />
                               <span className="text-xs font-black uppercase text-slate-800 font-mono tracking-wider">
-                                Hãy xác định các phát biểu sau là Đúng hay Sai:
+                                {numCols > 2
+                                  ? `Hãy phân loại theo các nhóm: [ ${columns.join(" ] - [ ")} ]:`
+                                  : q.trueColumnLabel && q.falseColumnLabel
+                                    ? `Hãy phân loại theo [ ${q.trueColumnLabel} ] hoặc [ ${q.falseColumnLabel} ]:`
+                                    : "Hãy xác định các phát biểu sau là Đúng hay Sai:"}
                               </span>
                             </div>
 
-                            <div className="overflow-hidden rounded-xl border-2 border-slate-300">
-                              {/* HEADER */}
-                              <div className="grid grid-cols-[1fr_75px_75px] sm:grid-cols-[1fr_90px_90px] bg-slate-100 border-b-2 border-slate-300">
-                                <div className="p-3 font-black text-xs uppercase font-mono text-slate-800">
-                                  Các phát biểu
-                                </div>
-                                <div className="p-3 text-center font-black text-xs uppercase font-mono text-emerald-700 border-l border-slate-300">
-                                  Đúng
-                                </div>
-                                <div className="p-3 text-center font-black text-xs uppercase font-mono text-rose-700 border-l border-slate-300">
-                                  Sai
-                                </div>
-                              </div>
-
-                              {/* STATEMENTS */}
-                              {statementsList.map((statement, index) => {
-                                let parsedAnswer: Record<string, string> = {};
-                                try {
-                                  parsedAnswer = JSON.parse(userAns || "{}");
-                                } catch {
-                                  parsedAnswer = {};
-                                }
-
-                                const selectedValue = parsedAnswer[String(index)];
-                                const isTrueSelected = selectedValue === "True";
-                                const isFalseSelected = selectedValue === "False";
-                                const isCorrectAnswer = statement.correct === selectedValue;
-
-                                return (
-                                  <div
-                                    key={index}
-                                    className={`grid grid-cols-[1fr_75px_75px] sm:grid-cols-[1fr_90px_90px] border-b border-slate-200 last:border-b-0 transition ${
-                                      appMode === "training" && isChecked
-                                        ? isCorrectAnswer
-                                          ? "bg-emerald-50"
-                                          : "bg-rose-50"
-                                        : "bg-white"
-                                    }`}
-                                  >
-                                    {/* STATEMENT */}
-                                    <div className="p-3.5 sm:p-4 flex items-center min-w-0">
-                                      <span className="mr-2.5 sm:mr-3 w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-slate-100 border border-slate-300 flex items-center justify-center text-xs font-black font-mono shrink-0">
-                                        {index + 1}
-                                      </span>
-                                      <span className="text-xs sm:text-sm font-semibold leading-relaxed text-slate-900 break-words flex-1 min-w-0">
-                                        {statement.text}
-                                      </span>
-                                    </div>
-
-                                    {/* TRUE */}
-                                    <div className="border-l border-slate-200 flex items-center justify-center p-2.5 sm:p-3">
-                                      <button
-                                        type="button"
-                                        disabled={appMode === "training" && isChecked}
-                                        onClick={() =>
-                                          handleSelectStatementAnswer(q, index, "True")
-                                        }
-                                        className={`w-7 h-7 sm:w-8 sm:h-8 rounded-md border-2 flex items-center justify-center transition ${
-                                          isTrueSelected
-                                            ? "bg-emerald-600 border-emerald-600 text-white"
-                                            : "bg-white border-slate-400 hover:border-emerald-500"
-                                        } ${
-                                          appMode === "training" && isChecked
-                                            ? "cursor-not-allowed"
-                                            : "cursor-pointer"
-                                        }`}
-                                      >
-                                        {isTrueSelected && (
-                                          <Check className="w-4 h-4 sm:w-5 sm:h-5" />
-                                        )}
-                                      </button>
-                                    </div>
-
-                                    {/* FALSE */}
-                                    <div className="border-l border-slate-200 flex items-center justify-center p-2.5 sm:p-3">
-                                      <button
-                                        type="button"
-                                        disabled={appMode === "training" && isChecked}
-                                        onClick={() =>
-                                          handleSelectStatementAnswer(q, index, "False")
-                                        }
-                                        className={`w-7 h-7 sm:w-8 sm:h-8 rounded-md border-2 flex items-center justify-center transition ${
-                                          isFalseSelected
-                                            ? "bg-rose-600 border-rose-600 text-white"
-                                            : "bg-white border-slate-400 hover:border-rose-500"
-                                        } ${
-                                          appMode === "training" && isChecked
-                                            ? "cursor-not-allowed"
-                                            : "cursor-pointer"
-                                        }`}
-                                      >
-                                        {isFalseSelected && (
-                                          <Check className="w-4 h-4 sm:w-5 sm:h-5" />
-                                        )}
-                                      </button>
-                                    </div>
+                            <div className="overflow-x-auto rounded-xl border-2 border-slate-300">
+                              <div className="min-w-[420px]">
+                                {/* HEADER */}
+                                <div style={gridStyle} className="grid bg-slate-100 border-b-2 border-slate-300 items-center">
+                                  <div className="p-3 font-black text-xs uppercase font-mono text-slate-800">
+                                    Danh sách phát biểu / Đối tượng
                                   </div>
-                                );
-                              })}
+                                  {columns.map((colName, cIdx) => {
+                                    const colColor = cIdx === 0 
+                                      ? "text-emerald-700" 
+                                      : cIdx === 1 
+                                        ? (numCols === 2 ? "text-rose-700" : "text-blue-700") 
+                                        : cIdx === 2 
+                                          ? "text-purple-700" 
+                                          : "text-amber-700";
+                                    return (
+                                      <div key={cIdx} className={`p-2 sm:p-3 text-center font-black text-xs uppercase font-mono ${colColor} border-l border-slate-300 leading-tight`}>
+                                        {colName}
+                                      </div>
+                                    );
+                                  })}
+                                </div>
+
+                                {/* STATEMENTS */}
+                                {statementsList.map((statement, index) => {
+                                  let parsedAnswer: Record<string, string> = {};
+                                  try {
+                                    parsedAnswer = JSON.parse(userAns || "{}");
+                                  } catch {
+                                    parsedAnswer = {};
+                                  }
+
+                                  const selectedValue = parsedAnswer[String(index)];
+                                  const isRowCorrect = columns.some((colName, cIdx) => {
+                                    const isSelected = selectedValue === colName ||
+                                      (cIdx === 0 && (selectedValue === "True" || selectedValue === (q.trueColumnLabel || "True"))) ||
+                                      (cIdx === 1 && (selectedValue === "False" || selectedValue === (q.falseColumnLabel || "False")));
+                                    const isTarget = statement.correct === colName ||
+                                      (cIdx === 0 && (statement.correct === "True" || statement.correct === (q.trueColumnLabel || "True"))) ||
+                                      (cIdx === 1 && (statement.correct === "False" || statement.correct === (q.falseColumnLabel || "False")));
+                                    return isSelected && isTarget;
+                                  });
+
+                                  return (
+                                    <div
+                                      key={index}
+                                      style={gridStyle}
+                                      className={`grid border-b border-slate-200 last:border-b-0 transition ${
+                                        appMode === "training" && isChecked
+                                          ? isRowCorrect
+                                            ? "bg-emerald-50/70"
+                                            : "bg-rose-50/70"
+                                          : "bg-white"
+                                      }`}
+                                    >
+                                      {/* STATEMENT */}
+                                      <div className="p-3.5 sm:p-4 flex items-center min-w-0">
+                                        <span className="mr-2.5 sm:mr-3 w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-slate-100 border border-slate-300 flex items-center justify-center text-xs font-black font-mono shrink-0">
+                                          {index + 1}
+                                        </span>
+                                        <span className="text-xs sm:text-sm font-semibold leading-relaxed text-slate-900 break-words flex-1 min-w-0">
+                                          {statement.text}
+                                        </span>
+                                      </div>
+
+                                      {/* COLUMNS */}
+                                      {columns.map((colName, cIdx) => {
+                                        const isSelected = selectedValue === colName ||
+                                          (cIdx === 0 && (selectedValue === "True" || selectedValue === (q.trueColumnLabel || "True"))) ||
+                                          (cIdx === 1 && (selectedValue === "False" || selectedValue === (q.falseColumnLabel || "False")));
+
+                                        const isTarget = statement.correct === colName ||
+                                          (cIdx === 0 && (statement.correct === "True" || statement.correct === (q.trueColumnLabel || "True"))) ||
+                                          (cIdx === 1 && (statement.correct === "False" || statement.correct === (q.falseColumnLabel || "False")));
+
+                                        let btnStyle = isSelected
+                                          ? "bg-emerald-600 border-emerald-600 text-white"
+                                          : "bg-white border-slate-400 hover:border-emerald-500";
+
+                                        if (appMode === "training" && isChecked) {
+                                          if (isTarget) {
+                                            btnStyle = isSelected
+                                              ? "bg-emerald-600 border-emerald-600 text-white shadow-xs"
+                                              : "bg-emerald-100 border-emerald-500 text-emerald-800 ring-2 ring-emerald-400/50";
+                                          } else if (isSelected) {
+                                            btnStyle = "bg-rose-600 border-rose-600 text-white";
+                                          } else {
+                                            btnStyle = "bg-slate-50 border-slate-200 text-transparent opacity-40";
+                                          }
+                                        }
+
+                                        return (
+                                          <div key={cIdx} className="border-l border-slate-200 flex items-center justify-center p-2.5 sm:p-3">
+                                            <button
+                                              type="button"
+                                              disabled={appMode === "training" && isChecked}
+                                              onClick={() => {
+                                                const valToSave = (columns.length === 2 && !q.columnLabels)
+                                                  ? (cIdx === 0 ? "True" : "False")
+                                                  : colName;
+                                                handleSelectStatementAnswer(q, index, valToSave);
+                                              }}
+                                              className={`w-7 h-7 sm:w-8 sm:h-8 rounded-md border-2 flex items-center justify-center transition ${btnStyle} ${
+                                                appMode === "training" && isChecked
+                                                  ? "cursor-not-allowed"
+                                                  : "cursor-pointer"
+                                              }`}
+                                              title={colName}
+                                            >
+                                              {(isSelected || (appMode === "training" && isChecked && isTarget)) && (
+                                                <Check className="w-4 h-4 sm:w-5 sm:h-5" />
+                                              )}
+                                            </button>
+                                          </div>
+                                        );
+                                      })}
+                                    </div>
+                                  );
+                                })}
+                              </div>
                             </div>
                           </div>
                         );
@@ -1678,21 +1850,38 @@ export default function IC3QuestionBank({
                                     onDrop={(e) => handleDrop(e, pair.left)}
                                   >
                                     {/* Term description */}
-                                    <div className="sm:w-1/3 min-w-[105px] flex flex-col items-center justify-center p-2.5 bg-indigo-600 text-white rounded-lg shadow-xs shrink-0 font-mono font-bold text-xs sm:text-sm text-center break-words gap-1.5">
-                                      {pair.leftImage && (
-                                        <img
-                                          src={pair.leftImage}
-                                          alt={pair.left}
-                                          className="w-14 h-14 sm:w-16 sm:h-16 rounded-md object-contain bg-white/15 p-0.5 border border-white/25 cursor-pointer hover:opacity-90 transition"
-                                          onClick={(e) => {
-                                            e.stopPropagation();
-                                            setPreviewImage(pair.leftImage!);
-                                          }}
-                                          title="Bấm để phóng to ảnh"
-                                        />
-                                      )}
-                                      <span>{pair.left}</span>
-                                    </div>
+                                    {(() => {
+                                      const termImage = normalizeImagePath(pair.leftImage || (isImageSource(pair.left) ? pair.left : undefined));
+                                      const isLeftUrl = isImageSource(pair.left);
+                                      const displayLabel = isLeftUrl 
+                                        ? (pair.left.includes("12a") ? "Hình 1" : pair.left.includes("12c") ? "Hình 2" : pair.left.includes("12d") ? "Hình 3" : pair.left.includes("12b") ? "Hình 4" : "Hình ảnh")
+                                        : pair.left;
+
+                                      return (
+                                        <div className="sm:w-2/5 md:w-1/3 min-w-[130px] flex flex-col items-center justify-center p-3 bg-indigo-600 text-white rounded-xl shadow-xs shrink-0 font-mono font-bold text-xs sm:text-sm text-center break-words gap-2">
+                                          {termImage && (
+                                            <div 
+                                              className="relative group/termImg bg-white rounded-xl p-1.5 border-2 border-indigo-200/90 shadow-sm cursor-pointer hover:border-white transition flex items-center justify-center"
+                                              onClick={(e) => {
+                                                e.stopPropagation();
+                                                setPreviewImage(termImage);
+                                              }}
+                                              title="Bấm để phóng to hình ảnh"
+                                            >
+                                              <img
+                                                src={termImage}
+                                                alt={displayLabel}
+                                                className="w-20 h-20 sm:w-24 sm:h-24 object-contain rounded-lg transition-transform group-hover/termImg:scale-105"
+                                              />
+                                              <div className="absolute inset-0 bg-slate-950/30 opacity-0 group-hover/termImg:opacity-100 rounded-lg flex items-center justify-center transition">
+                                                <ZoomIn className="w-5 h-5 text-white drop-shadow" />
+                                              </div>
+                                            </div>
+                                          )}
+                                          <span className="leading-snug">{displayLabel}</span>
+                                        </div>
+                                      );
+                                    })()}
 
                                     {/* Matching drop area/slot */}
                                     <div 
@@ -1712,15 +1901,16 @@ export default function IC3QuestionBank({
                                           <div className="flex items-center gap-2 flex-1 min-w-0">
                                             {(() => {
                                               const matchedPairObj = q.pairs.find(p => p.right === matchedDef);
-                                              if (matchedPairObj?.rightImage) {
+                                              const rightImg = normalizeImagePath(matchedPairObj?.rightImage);
+                                              if (rightImg) {
                                                 return (
                                                   <img
-                                                    src={matchedPairObj.rightImage}
+                                                    src={rightImg}
                                                     alt={matchedDef}
                                                     className="w-10 h-10 rounded-md object-contain bg-slate-100 border border-slate-300 p-0.5 shrink-0 cursor-pointer hover:opacity-90"
                                                     onClick={(e) => {
                                                       e.stopPropagation();
-                                                      setPreviewImage(matchedPairObj.rightImage!);
+                                                      setPreviewImage(rightImg);
                                                     }}
                                                     title="Bấm để phóng to ảnh"
                                                   />
@@ -1822,12 +2012,12 @@ export default function IC3QuestionBank({
                                       <div className="flex items-center gap-2.5 min-w-0 flex-1">
                                         {defItem.image && (
                                           <img
-                                            src={defItem.image}
+                                            src={normalizeImagePath(defItem.image)}
                                             alt={defItem.text}
                                             className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg border border-slate-300 object-contain bg-slate-50 p-0.5 shrink-0 cursor-pointer hover:opacity-90"
                                             onClick={(e) => {
                                               e.stopPropagation();
-                                              setPreviewImage(defItem.image!);
+                                              setPreviewImage(normalizeImagePath(defItem.image)!);
                                             }}
                                             title="Bấm để phóng to ảnh"
                                           />
@@ -2394,7 +2584,28 @@ export default function IC3QuestionBank({
                                 return (
                                   <div key={pair.left} className={`p-3.5 rounded-xl border text-xs md:text-sm flex flex-col gap-2 ${rowStyle}`}>
                                     <div className="flex items-center justify-between gap-2 flex-wrap">
-                                      <span className="font-bold text-indigo-950 font-mono text-xs md:text-sm">{pair.left}</span>
+                                      {(() => {
+                                        const reviewImg = normalizeImagePath(pair.leftImage || (isImageSource(pair.left) ? pair.left : undefined));
+                                        const isLeftUrl = isImageSource(pair.left);
+                                        const displayLabel = isLeftUrl 
+                                          ? (pair.left.includes("12a") ? "Hình 1" : pair.left.includes("12c") ? "Hình 2" : pair.left.includes("12d") ? "Hình 3" : pair.left.includes("12b") ? "Hình 4" : "Hình ảnh")
+                                          : pair.left;
+
+                                        return (
+                                          <div className="flex items-center gap-2.5">
+                                            {reviewImg && (
+                                              <img
+                                                src={reviewImg}
+                                                alt={displayLabel}
+                                                className="w-12 h-12 rounded-lg object-contain bg-white border border-slate-300 p-1 shrink-0 cursor-pointer hover:opacity-90 shadow-2xs"
+                                                onClick={() => setPreviewImage(reviewImg)}
+                                                title="Bấm để phóng to ảnh"
+                                              />
+                                            )}
+                                            <span className="font-bold text-indigo-950 font-mono text-xs md:text-sm">{displayLabel}</span>
+                                          </div>
+                                        );
+                                      })()}
                                       
                                       {matchedDef ? (
                                         isThisCorrect ? (
