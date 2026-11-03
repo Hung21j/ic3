@@ -198,7 +198,7 @@ export default function AuthPage({ onAuthSuccess }: AuthPageProps) {
               }`}
             >
               <ListOrdered className="w-4 h-4 text-indigo-600 shrink-0" />
-              <span className="truncate">ĐĂNG NHẬP VỚI DANH SÁCH</span>
+              <span className="truncate">HỌC SINH</span>
             </button>
             <button
               type="button"
@@ -210,7 +210,7 @@ export default function AuthPage({ onAuthSuccess }: AuthPageProps) {
               }`}
             >
               <Lock className="w-4 h-4 text-slate-600 shrink-0" />
-              <span className="truncate">NHẬP TÊN TÀI KHOẢN</span>
+              <span className="truncate">GIÁO VIÊN</span>
             </button>
           </div>
 
@@ -239,9 +239,7 @@ export default function AuthPage({ onAuthSuccess }: AuthPageProps) {
                   className="space-y-4"
                 >
                   <div className="flex items-center justify-between pb-1">
-                    <p className="text-xs text-slate-600 font-semibold">
-                      Chọn thông tin theo danh sách admin đã tạo:
-                    </p>
+
                     <button
                       type="button"
                       onClick={loadStudentDirectory}
@@ -329,7 +327,7 @@ export default function AuthPage({ onAuthSuccess }: AuthPageProps) {
                     <div className="flex items-center justify-between">
                       <label className="block text-xs font-black uppercase tracking-wide text-slate-800 font-mono flex items-center gap-1.5">
                         <UserIcon className="w-4 h-4 text-indigo-600 shrink-0" />
-                        <span>3. {isManualUsernameMode ? "Tự nhập Tên đăng nhập" : "Họ và tên học sinh"}</span>
+                        <span>3. Tên đăng nhập</span>
                       </label>
                       <button
                         type="button"
@@ -347,7 +345,7 @@ export default function AuthPage({ onAuthSuccess }: AuthPageProps) {
                         {isManualUsernameMode ? (
                           <span>← Quay lại chọn danh sách</span>
                         ) : (
-                          <span>Không thấy tên? Tự nhập</span>
+                          <span></span>
                         )}
                       </button>
                     </div>
@@ -406,22 +404,14 @@ export default function AuthPage({ onAuthSuccess }: AuthPageProps) {
                             }}
                             className="text-[11px] font-semibold text-slate-600 hover:text-indigo-700 flex items-center gap-1 cursor-pointer transition text-left"
                           >
-                            <span>💡 Không tìm thấy tên bạn trong danh sách?</span>
-                            <span className="font-bold text-indigo-700 underline">Bấm vào đây để tự nhập tên đăng nhập</span>
+                            <span className="font-bold text-indigo-700 underline">Nhập tên → </span>
                           </button>
                         </div>
                       </div>
                     ) : (
                       /* Trường tự nhập tên đăng nhập nếu không tìm thấy tên trong danh sách */
                       <div className="space-y-1.5 p-3.5 bg-indigo-50/80 border-2 border-indigo-300 rounded-xl">
-                        <div className="flex items-center justify-between">
-                          <span className="text-[11px] font-black uppercase text-indigo-900 font-mono">
-                            Tên đăng nhập (Username):
-                          </span>
-                          <span className="text-[10px] font-bold text-indigo-800 bg-indigo-200/70 px-2 py-0.5 rounded font-mono">
-                            Tự nhập thông tin
-                          </span>
-                        </div>
+
                         <div className="relative">
                           <input
                             type="text"
@@ -436,9 +426,7 @@ export default function AuthPage({ onAuthSuccess }: AuthPageProps) {
                             className="w-full px-3.5 py-3 bg-white border-2 border-indigo-400 rounded-xl text-sm font-bold text-slate-950 placeholder-slate-400 focus:outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-200 transition"
                           />
                         </div>
-                        <p className="text-[11px] text-indigo-900 font-semibold leading-relaxed">
-                          💡 Dành cho học sinh chưa có tên trong danh sách lớp. Hãy nhập chính xác Tên đăng nhập do giáo viên cung cấp.
-                        </p>
+
                       </div>
                     )}
                   </div>
@@ -494,7 +482,7 @@ export default function AuthPage({ onAuthSuccess }: AuthPageProps) {
                       <span>Đang xác thực đăng nhập...</span>
                     ) : (
                       <>
-                        <span>Đăng nhập hệ thống</span>
+                        <span>ĐĂNG NHẬP</span>
                         <ArrowRight className="w-4.5 h-4.5" />
                       </>
                     )}

@@ -97,7 +97,16 @@ textarea {
     font-size: 15px;
   }
 
-  .app-header,
+  .app-header {
+    height: 3.5rem;
+    min-height: 3.5rem;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0 0.75rem;
+  }
+
   .admin-header {
     height: auto;
     min-height: 4rem;
@@ -107,14 +116,17 @@ textarea {
     padding: 0.75rem;
   }
 
-  .app-header__actions,
+  .app-header__actions {
+    width: auto;
+    justify-content: flex-end;
+  }
+
   .admin-header__actions {
     width: 100%;
     justify-content: flex-start;
     gap: 0.5rem;
   }
 
-  .app-header__actions > button,
   .admin-header__actions > button {
     min-height: 2.5rem;
   }

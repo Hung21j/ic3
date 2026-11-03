@@ -20,6 +20,7 @@ import {
 import { User } from "../types";
 import gs6Logo from "../assets/gs6_b4829e48.png";
 import sparkLogo from "../assets/spark_05b29717.png";
+import UserDropdownMenu from "./UserDropdownMenu";
 
 interface ProgramSelectMenuProps {
   currentUser: User;
@@ -52,12 +53,9 @@ export default function ProgramSelectMenu({
           <div className="space-y-1.5">
             <div className="flex items-center gap-2">
               <span className="px-2.5 py-1 rounded-md text-[11px] font-black uppercase tracking-widest bg-indigo-50 text-indigo-700 border border-indigo-200 font-mono">
-                BƯỚC 1: LỰA CHỌN CHƯƠNG TRÌNH HỌC & THI
+                BƯỚC 1: LỰA CHỌN CHƯƠNG TRÌNH 
               </span>
             </div>
-            <h1 className="text-xl md:text-2xl font-black tracking-tight text-slate-950 uppercase font-mono">
-              HỆ THỐNG ÔN LUYỆN CHỨNG CHỈ IC3
-            </h1>
             <p className="text-xs md:text-sm text-slate-700 font-semibold leading-relaxed">
               Xin chào <strong className="text-slate-950 font-black">{currentUser.name}</strong>
               {currentUser.className && <> (Lớp <strong className="text-slate-950 font-black">{currentUser.className}</strong>)</>}
@@ -65,36 +63,16 @@ export default function ProgramSelectMenu({
             </p>
           </div>
           
-          <div className="flex items-center gap-2.5 self-start md:self-center flex-wrap">
-            <button
-              type="button"
-              onClick={onOpenChangePassword}
-              className="px-3.5 py-2.5 rounded-xl text-xs md:text-sm font-bold font-mono bg-[#f1f5f9] hover:bg-[#e2e8f0] border border-slate-300 text-slate-900 transition flex items-center gap-2 cursor-pointer shadow-xs active:scale-95"
-              title="Đổi mật khẩu tài khoản"
-            >
-              <KeyRound className="w-4 h-4 text-indigo-600" />
-              <span>Đổi mật khẩu</span>
-            </button>
-
-            {currentUser.role === "admin" && onOpenAdmin && (
-              <button
-                type="button"
-                onClick={onOpenAdmin}
-                className="px-3.5 py-2.5 rounded-xl text-xs md:text-sm font-bold font-mono bg-amber-600 hover:bg-amber-700 text-white shadow-sm transition active:scale-95 flex items-center gap-2 cursor-pointer"
-              >
-                <ShieldCheck className="w-4 h-4" />
-                <span>Trang Quản Trị</span>
-              </button>
-            )}
-
-            <button
-              type="button"
-              onClick={onLogout}
-              className="px-3.5 py-2.5 rounded-xl text-xs md:text-sm font-bold font-mono bg-[#f1f5f9] hover:bg-rose-50 hover:text-rose-700 hover:border-rose-300 border border-slate-300 text-slate-800 transition flex items-center gap-2 cursor-pointer shadow-xs active:scale-95"
-            >
-              <LogOut className="w-4 h-4" />
-              <span>Đăng xuất</span>
-            </button>
+          <div className="flex items-center gap-2.5 self-end md:self-center shrink-0">
+            <UserDropdownMenu
+              currentUser={currentUser}
+              selectedProgram={null}
+              selectedLevel={null}
+              onSwitchProgram={() => {}}
+              onChangePassword={onOpenChangePassword}
+              onOpenAdmin={currentUser.role === "admin" ? onOpenAdmin : undefined}
+              onLogout={onLogout}
+            />
           </div>
         </div>
 
@@ -133,9 +111,6 @@ export default function ProgramSelectMenu({
               <div>
                 <h3 className="text-xl font-black text-slate-950 group-hover:text-emerald-700 transition-colors flex items-center gap-2">
                   <span>IC3 GS6</span>
-                  <span className="text-xs font-bold text-emerald-700 bg-emerald-100/70 border border-emerald-300 px-2 py-0.5 rounded-full font-mono">
-                    Global Standard 6
-                  </span>
                 </h3>
                 <p className="text-xs md:text-sm text-slate-600 font-semibold mt-1">
                   Chuẩn tin học quốc tế đánh giá toàn diện kỹ năng công nghệ thông tin và truyền thông hiện đại.
@@ -144,9 +119,7 @@ export default function ProgramSelectMenu({
 
               {/* Levels breakdown */}
               <div className="space-y-2 pt-2 border-t border-slate-200">
-                <span className="text-xs font-black uppercase tracking-wider text-slate-700 font-mono block">
-                  3 Cấp độ ôn luyện chuẩn:
-                </span>
+
                 <ul className="space-y-2">
                   <li className="text-xs md:text-sm text-slate-800 flex items-start gap-2.5 font-semibold">
                     <span className="w-5 h-5 rounded-md bg-emerald-100 border border-emerald-300 text-emerald-800 text-[11px] font-black flex items-center justify-center shrink-0 mt-0.5">
@@ -169,18 +142,6 @@ export default function ProgramSelectMenu({
                 </ul>
               </div>
 
-              {/* Feature Tags */}
-              <div className="flex flex-wrap gap-1.5 pt-3 mt-auto">
-                <span className="px-2 py-1 text-[11px] font-bold font-mono bg-slate-100 text-slate-700 rounded-md border border-slate-200">
-                  ⚡ 5 Đề OT1-OT5
-                </span>
-                <span className="px-2 py-1 text-[11px] font-bold font-mono bg-slate-100 text-slate-700 rounded-md border border-slate-200">
-                  🎯 Đề GM1 - GM2
-                </span>
-                <span className="px-2 py-1 text-[11px] font-bold font-mono bg-slate-100 text-slate-700 rounded-md border border-slate-200">
-                  ⏱️ Chế độ Thi & Luyện tập
-                </span>
-              </div>
             </div>
 
             {/* Action Button */}
@@ -189,7 +150,7 @@ export default function ProgramSelectMenu({
                 type="button"
                 className="w-full py-3.5 px-4 rounded-2xl text-xs md:text-sm font-black uppercase tracking-wider text-white bg-emerald-600 hover:bg-emerald-700 group-hover:bg-emerald-600 shadow-md transition duration-200 flex items-center justify-center gap-2 cursor-pointer"
               >
-                <span>VÀO HỌC & THI GS6</span>
+                <span>BẮT ĐẦU</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
             </div>
@@ -227,9 +188,7 @@ export default function ProgramSelectMenu({
               <div>
                 <h3 className="text-xl font-black text-slate-950 group-hover:text-emerald-700 transition-colors flex items-center gap-2">
                   <span>IC3 SPARK</span>
-                  <span className="text-xs font-bold text-slate-800 bg-slate-200/80 border border-slate-300 px-2 py-0.5 rounded-full font-mono">
-                    For Young Learners
-                  </span>
+
                 </h3>
                 <p className="text-xs md:text-sm text-slate-600 font-semibold mt-1">
                   Chương trình chuẩn kỹ năng số quốc tế dành riêng cho lứa tuổi thiếu nhi và học sinh tiểu học.
@@ -238,9 +197,7 @@ export default function ProgramSelectMenu({
 
               {/* Levels breakdown */}
               <div className="space-y-2 pt-2 border-t border-slate-200">
-                <span className="text-xs font-black uppercase tracking-wider text-slate-700 font-mono block">
-                  3 Cấp độ ôn luyện Spark:
-                </span>
+
                 <ul className="space-y-2">
                   <li className="text-xs md:text-sm text-slate-800 flex items-start gap-2.5 font-semibold">
                     <span className="w-5 h-5 rounded-md bg-emerald-100 border border-emerald-300 text-emerald-800 text-[11px] font-black flex items-center justify-center shrink-0 mt-0.5">
@@ -263,18 +220,6 @@ export default function ProgramSelectMenu({
                 </ul>
               </div>
 
-              {/* Feature Tags */}
-              <div className="flex flex-wrap gap-1.5 pt-3 mt-auto">
-                <span className="px-2 py-1 text-[11px] font-bold font-mono bg-slate-100 text-slate-700 rounded-md border border-slate-200">
-                  👶 Thân thiện lứa tuổi
-                </span>
-                <span className="px-2 py-1 text-[11px] font-bold font-mono bg-slate-100 text-slate-700 rounded-md border border-slate-200">
-                  🧩 Kéo thả & Ghép cặp
-                </span>
-                <span className="px-2 py-1 text-[11px] font-bold font-mono bg-slate-100 text-slate-700 rounded-md border border-slate-200">
-                  ✨ Chấm điểm & Giải thích
-                </span>
-              </div>
             </div>
 
             {/* Action Button */}
@@ -283,7 +228,7 @@ export default function ProgramSelectMenu({
                 type="button"
                 className="w-full py-3.5 px-4 rounded-2xl text-xs md:text-sm font-black uppercase tracking-wider text-white bg-emerald-600 hover:bg-emerald-700 shadow-md transition duration-200 flex items-center justify-center gap-2 cursor-pointer"
               >
-                <span>VÀO HỌC & THI SPARK</span>
+                <span>BẮT ĐẦU</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
             </div>

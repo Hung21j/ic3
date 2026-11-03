@@ -32,6 +32,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { ShieldCheck, LogOut, KeyRound } from "lucide-react";
 import { ChangePasswordModal } from "./components/ChangePasswordModal";
 import { firestoreService } from "./services/firestoreService";
+import UserDropdownMenu from "./components/UserDropdownMenu";
 
 // Academic/solving status indicators during analysis
 const STATUS_INDICATORS = [
@@ -492,9 +493,7 @@ export default function App() {
                     BƯỚC 2: CHỌN CẤP ĐỘ {isSparkProgram ? "IC3 SPARK" : "IC3 GS6"}
                   </span>
                 </div>
-                <h2 className="text-base md:text-xl font-black tracking-tight text-slate-900 uppercase font-mono">
-                  {isSparkProgram ? "CÁC CẤP ĐỘ KHỞI ĐẦU IC3 SPARK" : "CÁC CẤP ĐỘ CHUẨN QUỐC TẾ IC3 GS6"}
-                </h2>
+
                 <p className="text-xs md:text-sm text-slate-700 font-semibold leading-relaxed">
                   Xin chào <strong className="text-slate-950 font-black">{currentUser.name}</strong>
                   {currentUser.className && <> (Lớp <strong className="text-slate-950 font-black">{currentUser.className}</strong>)</>}
@@ -503,46 +502,16 @@ export default function App() {
               </div>
             </div>
             
-            <div className="flex items-center gap-2.5 self-start md:self-center flex-wrap">
-              <button
-                type="button"
-                onClick={handleSwitchProgram}
-                className="px-3.5 py-2 rounded-xl text-xs md:text-sm font-bold font-mono bg-white hover:bg-slate-100 border-2 border-slate-300 text-slate-800 transition flex items-center gap-1.5 cursor-pointer shadow-xs active:scale-95"
-                title="Quay lại chọn chương trình GS6 hoặc Spark"
-              >
-                <ArrowLeft className="w-4 h-4 text-slate-600" />
-                <span>Đổi chương trình</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setShowUserChangePassword(true)}
-                className="px-3.5 py-2 rounded-xl text-xs md:text-sm font-bold font-mono bg-[#f1f5f9] hover:bg-[#e2e8f0] border border-slate-300 text-slate-900 transition flex items-center gap-1.5 cursor-pointer shadow-xs"
-                title="Đổi mật khẩu tài khoản của bạn"
-              >
-                <KeyRound className="w-4 h-4 text-indigo-600" />
-                <span>Đổi mật khẩu</span>
-              </button>
-
-              {currentUser.role === "admin" && (
-                <button
-                  type="button"
-                  onClick={() => setCurrentView("admin")}
-                  className="px-3.5 py-2 rounded-xl text-xs md:text-sm font-bold font-mono bg-amber-600 hover:bg-amber-700 text-white shadow-sm transition active:scale-95 flex items-center gap-1.5 cursor-pointer"
-                >
-                  <ShieldCheck className="w-4 h-4" />
-                  <span>Trang Quản Trị</span>
-                </button>
-              )}
-
-              <button
-                type="button"
-                onClick={handleLogout}
-                className="px-3.5 py-2 rounded-xl text-xs md:text-sm font-bold font-mono bg-[#f1f5f9] hover:bg-rose-50 hover:text-rose-700 hover:border-rose-300 border border-slate-300 text-slate-800 transition flex items-center gap-1.5 cursor-pointer shadow-xs"
-              >
-                <LogOut className="w-4 h-4" />
-                <span>Đăng xuất</span>
-              </button>
+            <div className="flex items-center gap-2.5 self-end md:self-center">
+              <UserDropdownMenu
+                currentUser={currentUser}
+                selectedProgram={selectedProgram}
+                selectedLevel={null}
+                onSwitchProgram={handleSwitchProgram}
+                onChangePassword={() => setShowUserChangePassword(true)}
+                onOpenAdmin={currentUser.role === "admin" ? () => setCurrentView("admin") : undefined}
+                onLogout={handleLogout}
+              />
             </div>
           </div>
 
@@ -597,7 +566,7 @@ export default function App() {
                   <button
                     className={`w-full py-2.5 rounded-xl text-xs md:text-sm font-black uppercase tracking-wider text-white transition duration-200 ${level.buttonColor}`}
                   >
-                    Bắt đầu luyện
+                    BẮT ĐẦU
                   </button>
                 </div>
               </motion.div>
@@ -631,10 +600,10 @@ export default function App() {
     <div className="min-h-screen bg-[#f0f3f8] flex flex-col font-sans text-slate-900 border-4 md:border-8 border-slate-300">
       
       {/* 🚀 Visual Header Bar - Soft Surface, High Contrast */}
-      <header className="app-header h-16 bg-white border-b-2 border-slate-300 px-4 md:px-8 flex items-center justify-between shadow-xs z-10 shrink-0 select-none">
-        <div className="flex items-center gap-3">
+      <header className="app-header h-14 sm:h-16 bg-white border-b-2 border-slate-300 px-3 sm:px-6 md:px-8 flex items-center justify-between gap-2 shadow-xs z-20 shrink-0 select-none flex-nowrap">
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <div className="flex flex-col">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5 sm:gap-2">
               <span className={`text-[10px] font-black uppercase font-mono px-1.5 py-0.5 rounded border ${
                 isSparkProgram 
                   ? "bg-emerald-50 text-emerald-800 border-emerald-300" 
@@ -642,77 +611,28 @@ export default function App() {
               }`}>
                 {isSparkProgram ? "SPARK" : "GS6"}
               </span>
-              <h1 className="text-sm md:text-base font-black tracking-tight text-slate-900 leading-none">
+              <h1 className="text-xs sm:text-base font-black tracking-tight text-slate-900 leading-none">
                 ÔN TẬP IC3
               </h1>
             </div>
           </div>
         </div>
 
-        {/* Header Profile Dashboard Integration */}
-        <div className="app-header__actions flex items-center gap-2.5 md:gap-3 flex-wrap">
-          <button
-            type="button"
-            onClick={handleSwitchProgram}
-            className="p-2 px-3 rounded-xl text-xs md:text-sm bg-white hover:bg-slate-100 border border-slate-300 text-slate-800 font-black font-mono transition cursor-pointer shadow-xs active:scale-95 flex items-center gap-1.5"
-            title="Đổi giữa GS6 và Spark"
-          >
-            <ArrowLeft className="w-3.5 h-3.5 text-slate-600" />
-            <span className="hidden sm:inline">Đổi chương trình</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => {
+        {/* Header Profile Dashboard Integration via Unified Dropdown */}
+        <div className="app-header__actions flex items-center gap-2 shrink-0">
+          <UserDropdownMenu
+            currentUser={currentUser}
+            selectedProgram={selectedProgram}
+            selectedLevel={selectedLevel}
+            onSwitchProgram={handleSwitchProgram}
+            onSwitchLevel={() => {
               setSelectedLevel(null);
               localStorage.removeItem("student_level_ic3");
             }}
-            className={`p-2 px-3 rounded-xl text-xs md:text-sm ${accentChangeLvlBtn} font-black font-mono transition cursor-pointer shadow-xs`}
-          >
-            Đổi Level
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setShowUserChangePassword(true)}
-            className="p-2 px-3 rounded-xl text-xs md:text-sm bg-[#f1f5f9] hover:bg-[#e2e8f0] border border-slate-300 text-slate-900 font-bold font-mono transition flex items-center gap-1.5 cursor-pointer shadow-xs"
-            title="Đổi mật khẩu tài khoản"
-          >
-            <KeyRound className="w-4 h-4 text-indigo-600" />
-            <span className="hidden sm:inline">Đổi mật khẩu</span>
-          </button>
-
-          {currentUser.role === "admin" && (
-            <button
-              type="button"
-              onClick={() => setCurrentView("admin")}
-              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs md:text-sm font-bold font-mono bg-amber-600 hover:bg-amber-700 text-white shadow-sm transition active:scale-95 cursor-pointer"
-            >
-              <ShieldCheck className="w-4 h-4" />
-              <span>Trang Quản Trị</span>
-            </button>
-          )}
-
-          <div className="bg-[#f1f5f9] border border-slate-300 rounded-xl px-3 py-1.5 flex items-center gap-2 shadow-xs">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 shrink-0 animate-pulse" />
-            <div className="text-left leading-none">
-              <p className="text-xs md:text-sm font-black text-slate-950">
-                {currentUser.name}
-              </p>
-              <p className="text-[11px] font-bold text-slate-700 mt-1 font-mono">
-                {currentUser.className ? `Lớp ${currentUser.className}` : "Tài khoản"} {currentUser.school ? `• ${currentUser.school}` : ""}
-              </p>
-            </div>
-          </div>
-
-          <button
-            type="button"
-            onClick={handleLogout}
-            className="p-2 px-3 rounded-xl text-xs md:text-sm bg-[#f1f5f9] hover:bg-rose-50 hover:border-rose-300 border border-slate-300 text-rose-700 font-bold font-mono transition flex items-center gap-1.5 cursor-pointer shadow-xs"
-          >
-            <LogOut className="w-4 h-4" />
-            <span className="hidden sm:inline">Đăng xuất</span>
-          </button>
+            onChangePassword={() => setShowUserChangePassword(true)}
+            onOpenAdmin={currentUser.role === "admin" ? () => setCurrentView("admin") : undefined}
+            onLogout={handleLogout}
+          />
         </div>
       </header>
 
@@ -841,7 +761,7 @@ export default function App() {
 
       {/* 🚀 Distraction-Free Simple Footer */}
       <footer className="h-10 bg-slate-800 text-slate-200 flex items-center justify-between px-6 text-xs uppercase tracking-wider font-semibold font-mono shrink-0 select-none">
-        <span>{currentUser.className ? `Lớp ${currentUser.className} // ` : ""}{currentUser.name} {currentUser.school ? `(${currentUser.school})` : ""}</span>        
+        <span>{currentUser.className ? `${currentUser.className} // ` : ""}{currentUser.name}</span>        
         
       </footer>
 

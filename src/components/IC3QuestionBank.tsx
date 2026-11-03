@@ -866,8 +866,34 @@ export default function IC3QuestionBank({
     }
   };
 
+  // Stats calculation for both training and testing modes (shared by dropdown & sidebar)
+  const answeredCount = activeQuestions.filter((item) => {
+    const ans = selectedAnswers[item.id];
+    if (!ans) return false;
+    if (item.type === "yes_no") {
+      try {
+        return Object.keys(JSON.parse(ans)).length > 0;
+      } catch {
+        return false;
+      }
+    }
+    if (item.type === "matching") {
+      try {
+        return Object.keys(JSON.parse(ans)).length > 0;
+      } catch {
+        return false;
+      }
+    }
+    return true;
+  }).length;
+  const flaggedCount = activeQuestions.filter((item) => !!flaggedQuestions[item.id]).length;
+  const unansweredCount = activeQuestions.length - answeredCount;
 
-
+  const checkedCount = activeQuestions.filter((item) => !!checkedQuestions[item.id]).length;
+  const correctTrainingCount = activeQuestions.filter((item) => {
+    return !!checkedQuestions[item.id] && checkIfQuestionIsCorrect(item, selectedAnswers[item.id]);
+  }).length;
+  const wrongTrainingCount = checkedCount - correctTrainingCount;
 
   return (
     <div id="ic3-study-page-deck" className="bg-white rounded-2xl border-2 border-slate-300 shadow-sm overflow-hidden flex flex-col min-h-[500px]">
@@ -886,38 +912,24 @@ export default function IC3QuestionBank({
                 }`}>
                   {isSpark ? "IC3 SPARK" : "IC3 GS6"}
                 </span>
+
+                <span className={`inline-block text-xs font-black uppercase font-mono px-3 py-1 rounded-md text-emerald-800 bg-emerald-50 border border-emerald-200`}>
+                  {appMode === "training" ? "TRAINING" : appMode === "testing" ? "TESTING" : "MODE"}
+                </span>
+
                 {selectedSubSet && (
                   <span className="text-[10px] font-black uppercase font-mono px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-700 border border-indigo-200">
-                    ĐỀ {selectedSubSet}
+                    {selectedSubSet}
                   </span>
                 )}
               </div>
-              <h3 className="text-sm md:text-base font-black text-slate-900 uppercase tracking-wide font-mono mt-0.5">
-                {selectedLevel.toUpperCase()}
-              </h3>
+              
             </div>
           </div>
           
           {/* Dynamic state widgets */}
           <div className="flex items-center gap-2 flex-wrap">
-            {onSwitchProgram && appMode === "menu" && (
-              <button
-                type="button"
-                onClick={onSwitchProgram}
-                className="text-xs font-black uppercase text-slate-800 bg-white hover:bg-slate-100 border border-slate-300 shadow-xs px-3 py-1.5 rounded-xl transition cursor-pointer font-mono flex items-center gap-1.5"
-              >
-                <span>Đổi chương trình</span>
-              </button>
-            )}
-            {onSwitchLevel && appMode === "menu" && (
-              <button
-                type="button"
-                onClick={onSwitchLevel}
-                className="text-xs font-black uppercase text-indigo-700 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 shadow-xs px-3 py-1.5 rounded-xl transition cursor-pointer font-mono flex items-center gap-1.5"
-              >
-                <span>Đổi Level</span>
-              </button>
-            )}
+
             {/* Running timer stopwatch */}
             {isTimerActive && (
               <div className="flex items-center gap-1.5 bg-slate-900 border border-slate-800 text-emerald-400 font-mono text-xs px-3 py-1.5 rounded-lg shadow-sm font-black">
@@ -932,68 +944,200 @@ export default function IC3QuestionBank({
                 <button
                   type="button"
                   onClick={() => setShowQuestionDropdown(!showQuestionDropdown)}
-                  className="flex items-center gap-2 shrink-0 bg-white border border-slate-200 hover:bg-slate-50 px-3 py-1.5 rounded-lg shadow-sm transition active:scale-95 text-slate-700 font-mono text-xs font-bold"
+                  className={`flex items-center gap-1.5 sm:gap-2 shrink-0 bg-white border-2 border-slate-300 hover:bg-slate-50 px-2.5 sm:px-3 py-1.5 rounded-xl shadow-xs transition active:scale-95 text-slate-800 font-mono text-xs font-black cursor-pointer ${
+                    showQuestionDropdown ? "ring-2 ring-indigo-400 border-indigo-600 bg-indigo-50/30" : ""
+                  }`}
+                  title="Xem bản đồ câu hỏi (dạng lưới)"
                 >
-                  <span className="text-[9px] font-black font-mono text-slate-400 uppercase tracking-wider hidden sm:inline">Câu hỏi:</span>
-                  <span className={`text-sm font-black ${themeConfig.textPrimary}`}>{safeIndex + 1}</span>
+                  <LayoutGrid className="w-3.5 h-3.5 text-indigo-600 shrink-0" />
+                  <span className="text-[10px] text-slate-500 uppercase tracking-wider hidden sm:inline">Bản đồ:</span>
+                  <span className="text-sm font-black text-indigo-700">{safeIndex + 1}</span>
                   <span className="text-slate-300 font-light">/</span>
-                  <span className="text-xs font-black text-slate-600">{activeQuestions.length}</span>
-                  <ChevronDown className="w-3.5 h-3.5 text-slate-400 shrink-0 animate-pulse" />
+                  <span className="text-xs font-black text-slate-700">{activeQuestions.length}</span>
+                  <ChevronDown className={`w-3.5 h-3.5 text-slate-500 shrink-0 transition-transform duration-200 ${showQuestionDropdown ? "rotate-180 text-indigo-600" : ""}`} />
                 </button>
 
+                {/* BẢN ĐỒ CÂU HỎI (DẠNG XEM LƯỚI) TRONG DROPDOWN DANH SÁCH CÂU HỎI */}
                 {showQuestionDropdown && (
                   <>
                     <div 
-                      className="fixed inset-0 z-20" 
+                      className="fixed inset-0 z-40 bg-slate-950/40 backdrop-blur-xs" 
                       onClick={() => setShowQuestionDropdown(false)}
                     />
-                    <div className="absolute right-0 mt-1.5 w-64 max-h-80 overflow-y-auto bg-white border border-slate-200 rounded-xl shadow-xl py-1.5 z-30 font-sans divide-y divide-slate-100">
-                      <div className="px-3 py-2 text-[10px] font-extrabold text-slate-400 uppercase tracking-wider bg-slate-50/50 sticky top-0 border-b border-slate-100 z-10 flex items-center justify-between">
-                        <span>Danh sách câu hỏi</span>
-                        <span>{activeQuestions.length} câu</span>
-                      </div>
-                      {activeQuestions.map((q, idx) => {
-                        const isCurrent = idx === safeIndex;
-                        const isFlagged = flaggedQuestions[q.id];
-                        const isAnswered = !!selectedAnswers[q.id];
-                        
-                        return (
+                    <div className="fixed inset-x-3 top-20 max-w-sm sm:max-w-md mx-auto sm:inset-auto sm:absolute sm:top-full sm:right-0 sm:mt-2 sm:w-96 bg-white border-2 border-slate-300 rounded-2xl shadow-2xl p-4 sm:p-5 z-50 font-sans select-none animate-in fade-in slide-in-from-top-2 duration-150">
+                      {/* Header */}
+                      <div className="flex items-center justify-between border-b-2 border-slate-200 pb-3">
+                        <div className="flex items-center gap-2">
+                          <div className="w-7 h-7 rounded-lg bg-indigo-600 text-white flex items-center justify-center shadow-xs">
+                            <LayoutGrid className="w-4 h-4" />
+                          </div>
+                          <div>
+                            <h4 className="text-xs font-black uppercase font-mono tracking-wider text-slate-900 leading-none">
+                              Bản đồ câu hỏi
+                            </h4>
+                            <span className="text-[10px] font-bold text-slate-500 font-mono">
+                              {appMode === "training"
+                                ? `Đã nộp ${checkedCount}/${activeQuestions.length} câu`
+                                : `Đã làm ${answeredCount}/${activeQuestions.length} câu`}
+                            </span>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-2">
+                          <span className="px-2 py-0.5 rounded-md bg-indigo-100 text-indigo-800 text-xs font-black font-mono">
+                            {Math.round(((appMode === "training" ? checkedCount : answeredCount) / (activeQuestions.length || 1)) * 100)}%
+                          </span>
                           <button
-                            key={q.id}
                             type="button"
-                            onClick={() => {
-                              setDirection(idx > safeIndex ? 1 : -1);
-                              setCurrentIndex(idx);
-                              setShowQuestionDropdown(false);
-                            }}
-                            className={`w-full text-left px-3 py-2 text-xs transition flex items-center justify-between gap-2 hover:bg-slate-50 ${
-                              isCurrent 
-                                ? "bg-indigo-50/40 text-indigo-900 font-bold" 
-                                : "text-slate-700 font-semibold"
-                            }`}
+                            onClick={() => setShowQuestionDropdown(false)}
+                            className="w-6 h-6 rounded-md hover:bg-slate-100 flex items-center justify-center text-slate-400 hover:text-slate-700 cursor-pointer text-sm font-bold"
                           >
-                            <div className="flex items-center gap-2 truncate">
-                              <span className={`w-2 h-2 rounded-full shrink-0 ${
-                                isAnswered 
-                                  ? "bg-emerald-500 shadow-sm" 
-                                  : "bg-slate-200"
-                              }`} title={isAnswered ? "Đã làm" : "Chưa làm"} />
-                              
-                              <span className="font-mono text-[11px] text-slate-500 shrink-0">
-                                Câu {idx + 1}:
-                              </span>
-                              
-                              <span className="truncate text-slate-600 font-medium">
-                                {q.text}
-                              </span>
-                            </div>
-                            
-                            {isFlagged && (
-                              <Flag className="w-3.5 h-3.5 text-rose-500 fill-rose-500 shrink-0" />
-                            )}
+                            ✕
                           </button>
-                        );
-                      })}
+                        </div>
+                      </div>
+
+                      {/* Progress Bar */}
+                      <div className="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden my-2.5">
+                        <div
+                          className={`${appMode === "training" ? "bg-emerald-600" : "bg-indigo-600"} h-full rounded-full transition-all duration-300`}
+                          style={{
+                            width: `${((appMode === "training" ? checkedCount : answeredCount) / (activeQuestions.length || 1)) * 100}%`
+                          }}
+                        />
+                      </div>
+
+                      {/* Quick Summary Pill Counters */}
+                      {appMode === "training" ? (
+                        <div className="grid grid-cols-4 gap-1 text-center text-[10px] font-mono font-bold mb-3">
+                          <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 py-1 px-0.5 rounded-lg">
+                            Đúng: <span className="font-black">{correctTrainingCount}</span>
+                          </div>
+                          <div className="bg-rose-50 border border-rose-200 text-rose-800 py-1 px-0.5 rounded-lg">
+                            Sai: <span className="font-black">{wrongTrainingCount}</span>
+                          </div>
+                          <div className="bg-slate-100 border border-slate-300 text-slate-700 py-1 px-0.5 rounded-lg">
+                            Chưa: <span className="font-black">{activeQuestions.length - checkedCount}</span>
+                          </div>
+                          <div className="bg-amber-50 border border-amber-200 text-amber-800 py-1 px-0.5 rounded-lg">
+                            Cờ: <span className="font-black">{flaggedCount}</span>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="grid grid-cols-3 gap-1.5 text-center text-[10px] font-mono font-bold mb-3">
+                          <div className="bg-indigo-50 border border-indigo-200 text-indigo-900 py-1 px-1 rounded-lg">
+                            Đã làm: <span className="font-black">{answeredCount}</span>
+                          </div>
+                          <div className="bg-slate-100 border border-slate-300 text-slate-700 py-1 px-1 rounded-lg">
+                            Chưa: <span className="font-black">{unansweredCount}</span>
+                          </div>
+                          <div className="bg-rose-50 border border-rose-200 text-rose-800 py-1 px-1 rounded-lg">
+                            Cờ: <span className="font-black">{flaggedCount}</span>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Grid of Questions */}
+                      <div>
+                        <span className="text-[10px] font-extrabold uppercase font-mono text-slate-500 block mb-1.5">
+                          Chọn câu hỏi:
+                        </span>
+                        <div className="grid grid-cols-5 sm:grid-cols-6 gap-2 max-h-[260px] overflow-y-auto pr-1 py-1">
+                          {activeQuestions.map((item, idx) => {
+                            const ans = selectedAnswers[item.id];
+                            let hasAns = !!ans;
+                            if (item.type === "yes_no" || item.type === "matching") {
+                              try {
+                                hasAns = Object.keys(JSON.parse(ans)).length > 0;
+                              } catch {
+                                hasAns = false;
+                              }
+                            }
+                            const isActive = idx === safeIndex;
+                            const isFlagged = !!flaggedQuestions[item.id];
+
+                            let bubbleStyle = "bg-white text-slate-800 border-2 border-slate-300 hover:border-slate-400 font-bold hover:bg-slate-50";
+                            if (isActive) {
+                              bubbleStyle = "bg-indigo-100 border-2 border-indigo-600 text-indigo-950 font-black ring-2 ring-indigo-400 shadow-sm scale-105 z-10";
+                            } else if (appMode === "training") {
+                              const isCheckedItem = !!checkedQuestions[item.id];
+                              if (isCheckedItem) {
+                                const isCorrect = checkIfQuestionIsCorrect(item, selectedAnswers[item.id]);
+                                if (isCorrect) {
+                                  bubbleStyle = "bg-emerald-600 text-white border-2 border-emerald-600 font-black shadow-xs hover:bg-emerald-700";
+                                } else {
+                                  bubbleStyle = "bg-rose-600 text-white border-2 border-rose-600 font-black shadow-xs hover:bg-rose-700";
+                                }
+                              } else if (hasAns) {
+                                bubbleStyle = "bg-indigo-600 text-white border-2 border-indigo-600 font-black shadow-xs hover:bg-indigo-700";
+                              }
+                            } else if (hasAns) {
+                              bubbleStyle = "bg-indigo-600 text-white border-2 border-indigo-600 font-black shadow-xs hover:bg-indigo-700";
+                            }
+
+                            return (
+                              <button
+                                key={item.id}
+                                type="button"
+                                onClick={() => {
+                                  setDirection(idx > safeIndex ? 1 : -1);
+                                  setCurrentIndex(idx);
+                                  setShowQuestionDropdown(false);
+                                }}
+                                className={`h-8 sm:h-9 rounded-xl border text-xs font-mono flex items-center justify-center transition active:scale-95 relative cursor-pointer ${bubbleStyle}`}
+                                title={`Câu ${idx + 1}${hasAns ? " (Đã làm)" : " (Chưa làm)"}${isFlagged ? " - Đã gắn cờ" : ""}`}
+                              >
+                                <span>{idx + 1}</span>
+                                {isFlagged && (
+                                  <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-rose-500 rounded-full border border-white flex items-center justify-center text-[7px] text-white">
+                                    🚩
+                                  </span>
+                                )}
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </div>
+
+                      {/* Legend */}
+                      <div className="border-t border-slate-200 mt-2.5 pt-2 text-[10px] font-mono font-semibold text-slate-600">
+                        <div className="flex items-center justify-between gap-1 flex-wrap">
+                          {appMode === "training" ? (
+                            <>
+                              <span className="flex items-center gap-1">
+                                <span className="w-2.5 h-2.5 rounded bg-emerald-600 inline-block" /> Đúng
+                              </span>
+                              <span className="flex items-center gap-1">
+                                <span className="w-2.5 h-2.5 rounded bg-rose-600 inline-block" /> Sai
+                              </span>
+                              <span className="flex items-center gap-1">
+                                <span className="w-2.5 h-2.5 rounded bg-indigo-600 inline-block" /> Đã chọn
+                              </span>
+                              <span className="flex items-center gap-1">
+                                <span className="w-2.5 h-2.5 rounded bg-white border border-slate-400 inline-block" /> Chưa
+                              </span>
+                              <span className="flex items-center gap-1">
+                                <span className="text-[10px]">🚩</span> Cờ
+                              </span>
+                            </>
+                          ) : (
+                            <>
+                              <span className="flex items-center gap-1">
+                                <span className="w-2.5 h-2.5 rounded bg-indigo-600 inline-block" /> Đã làm
+                              </span>
+                              <span className="flex items-center gap-1">
+                                <span className="w-2.5 h-2.5 rounded bg-white border border-slate-400 inline-block" /> Chưa
+                              </span>
+                              <span className="flex items-center gap-1">
+                                <span className="w-2.5 h-2.5 rounded bg-indigo-100 border border-indigo-600 inline-block" /> Đang xem
+                              </span>
+                              <span className="flex items-center gap-1">
+                                <span className="text-[10px]">🚩</span> Cờ
+                              </span>
+                            </>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   </>
                 )}
@@ -1373,70 +1517,23 @@ export default function IC3QuestionBank({
             // In Training and checked: reveal result.
             const showAnswerDetail = appMode === "training" && isChecked;
 
-            // Stats calculation for both training and testing modes
-            const answeredCount = activeQuestions.filter((item) => {
-              const ans = selectedAnswers[item.id];
-              if (!ans) return false;
-              if (item.type === "yes_no") {
-                try {
-                  return Object.keys(JSON.parse(ans)).length > 0;
-                } catch {
-                  return false;
-                }
-              }
-              if (item.type === "matching") {
-                try {
-                  return Object.keys(JSON.parse(ans)).length > 0;
-                } catch {
-                  return false;
-                }
-              }
-              return true;
-            }).length;
-            const flaggedCount = activeQuestions.filter((item) => !!flaggedQuestions[item.id]).length;
-            const unansweredCount = activeQuestions.length - answeredCount;
-
-            const checkedCount = activeQuestions.filter((item) => !!checkedQuestions[item.id]).length;
-            const correctTrainingCount = activeQuestions.filter((item) => {
-              return !!checkedQuestions[item.id] && checkIfQuestionIsCorrect(item, selectedAnswers[item.id]);
-            }).length;
-            const wrongTrainingCount = checkedCount - correctTrainingCount;
-
             return (
-              <div className="flex-grow flex flex-col lg:flex-row items-stretch">
+              <div className="flex-grow flex flex-col justify-between min-w-0 w-full">
                 
-                {/* LEFT COLUMN: QUESTION CONTENT AND ACTION CONTROLS */}
-                <div className="flex-1 flex flex-col justify-between min-w-0">
-                  
-                  {/* Main Content Area */}
-                  <div className="p-4 sm:p-5 md:p-6 flex-1 relative overflow-y-auto min-h-[350px]">
-                    <AnimatePresence mode="wait" custom={direction}>
-                      <motion.div
-                        key={q.id}
-                        custom={direction}
-                        initial={{ opacity: 0, x: direction * 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -direction * 50 }}
-                        transition={{ duration: 0.18, ease: "easeInOut" }}
-                        className="space-y-4"
-                      >
-                        {/* Sub Mode Title Badge & Question Indicator */}
-                        <div className="flex items-center justify-between border-b-2 border-slate-200 pb-3 flex-wrap gap-2">
-                          <div className="flex items-center gap-2 flex-wrap">
-                            <span className={`inline-block text-xs font-black uppercase font-mono px-3 py-1 rounded-md text-emerald-800 bg-emerald-50 border border-emerald-200`}>
-                              {appMode === "training" ? "TRAINING (LUYỆN TẬP)" : "TESTING (THI THỬ)"}
-                            </span>
-                            <span className="text-xs font-mono font-black text-indigo-800 bg-indigo-50 border border-indigo-200 px-2.5 py-1 rounded-md">
-                              Câu {safeIndex + 1}/{activeQuestions.length}
-                            </span>
-                            {appMode === "training" && (q.questionNumber || q.order) && (
-                              <span className="text-[10px] font-mono font-bold text-slate-500 bg-slate-100 border border-slate-200 px-2 py-1 rounded-md">
-                                STT: #{q.questionNumber || q.order}
-                              </span>
-                            )}
-                          </div>
-
-                        {/* Flag to highlight button */}
+                {/* Main Content Area - Full width on PC with enlarged comfortable typography */}
+                <div className="p-4 sm:p-6 md:p-8 flex-1 relative overflow-y-auto min-h-[380px] max-w-5xl mx-auto w-full">
+                  <AnimatePresence mode="wait" custom={direction}>
+                    <motion.div
+                      key={q.id}
+                      custom={direction}
+                      initial={{ opacity: 0, x: direction * 50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -direction * 50 }}
+                      transition={{ duration: 0.18, ease: "easeInOut" }}
+                      className="space-y-5"
+                    >
+                      {/* Flag to highlight button */}
+                      <div className="flex items-center justify-end border-b-2 border-slate-200 pb-3">
                         <button
                           type="button"
                           onClick={() => {
@@ -1445,7 +1542,7 @@ export default function IC3QuestionBank({
                               [q.id]: !prev[q.id]
                             }));
                           }}
-                          className={`flex items-center gap-1.5 px-3 py-1 rounded-md border-2 text-xs font-bold font-mono transition active:scale-95 uppercase tracking-wide select-none cursor-pointer ${
+                          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border-2 text-xs font-bold font-mono transition active:scale-95 uppercase tracking-wide select-none cursor-pointer ${
                             flaggedQuestions[q.id]
                               ? "bg-rose-50 border-rose-300 text-rose-800 font-black"
                               : "bg-white border-slate-300 text-slate-700 hover:bg-slate-100"
@@ -1456,21 +1553,21 @@ export default function IC3QuestionBank({
                         </button>
                       </div>
 
-                      {/* Question Text */}
-                      <div className="space-y-2">
-                        <div className="bg-white border-2 border-slate-300 rounded-2xl p-5 text-sm md:text-base text-slate-950 leading-relaxed font-bold shadow-xs">
+                      {/* Question Text - Enlarged & prominent */}
+                      <div className="space-y-3">
+                        <div className="bg-white border-2 border-slate-300 rounded-2xl p-6 sm:p-8 text-base md:text-lg lg:text-xl text-slate-950 leading-relaxed font-bold shadow-xs">
                           <p className="whitespace-pre-wrap leading-relaxed">{q.text}</p>
                           {q.image && (
-                            <div className="mt-4 flex flex-col items-center justify-center">
-                              <div className="relative group max-w-full overflow-hidden rounded-xl border-2 border-slate-300 bg-slate-50 p-1 shadow-xs">
+                            <div className="mt-5 flex flex-col items-center justify-center">
+                              <div className="relative group max-w-full overflow-hidden rounded-xl border-2 border-slate-300 bg-slate-50 p-1.5 shadow-xs">
                                 <img
                                   src={normalizeImagePath(q.image)}
                                   alt="Hình ảnh minh họa câu hỏi"
-                                  className="max-h-72 sm:max-h-84 md:max-h-96 w-auto max-w-full rounded-lg object-contain cursor-pointer transition-transform hover:scale-[1.01]"
+                                  className="max-h-80 sm:max-h-96 md:max-h-[460px] w-auto max-w-full rounded-lg object-contain cursor-pointer transition-transform hover:scale-[1.01]"
                                   onClick={() => setPreviewImage(normalizeImagePath(q.image)!)}
                                 />
-                                <div className="absolute bottom-2 right-2 px-2 py-0.5 bg-slate-900/75 text-white text-[10px] font-mono rounded-md backdrop-blur-xs flex items-center gap-1 pointer-events-none">
-                                  <ZoomIn className="w-3 h-3" />
+                                <div className="absolute bottom-2 right-2 px-2.5 py-1 bg-slate-900/75 text-white text-[11px] font-mono rounded-md backdrop-blur-xs flex items-center gap-1.5 pointer-events-none">
+                                  <ZoomIn className="w-3.5 h-3.5" />
                                   <span>Bấm để phóng to</span>
                                 </div>
                               </div>
@@ -1479,20 +1576,20 @@ export default function IC3QuestionBank({
                         </div>
                       </div>
 
-                      {/* Options rendering */}
+                      {/* Options rendering - Enlarged font & comfortable padding */}
                       {q.type === "multiple_choice" && q.options && (
-                        <div className="space-y-2.5 pt-1">
+                        <div className="space-y-3 pt-2">
                           {q.correctKeys && q.correctKeys.length > 1 ? (
-                            <span className="text-xs font-black uppercase text-indigo-700 flex items-center gap-1.5 font-mono tracking-wider">
-                              <Compass className="w-4 h-4 text-indigo-600" /> Vui lòng chọn TẤT CẢ các phương án đúng (chọn nhiều đáp án):
+                            <span className="text-xs sm:text-sm font-black uppercase text-indigo-700 flex items-center gap-1.5 font-mono tracking-wider">
+                              <Compass className="w-4 h-4 text-indigo-600 shrink-0" /> Vui lòng chọn TẤT CẢ các phương án đúng (chọn nhiều đáp án):
                             </span>
                           ) : (
-                            <span className="text-xs font-black uppercase text-slate-800 flex items-center gap-1.5 font-mono tracking-wider">
-                              <Compass className="w-4 h-4 text-slate-600" /> Vui lòng chọn một phương án đáp án:
+                            <span className="text-xs sm:text-sm font-black uppercase text-slate-800 flex items-center gap-1.5 font-mono tracking-wider">
+                              <Compass className="w-4 h-4 text-slate-600 shrink-0" /> Vui lòng chọn một phương án đáp án:
                             </span>
                           )}
                           
-                          <div className="grid grid-cols-1 gap-3">
+                          <div className="grid grid-cols-1 gap-3.5 sm:gap-4">
                             {q.options.map((opt, oIdx) => {
                               const letterKey = String.fromCharCode(65 + oIdx);
                               const isMulti = !!(q.correctKeys && q.correctKeys.length > 1);
@@ -1563,15 +1660,15 @@ export default function IC3QuestionBank({
                                   key={letterKey}
                                   type="button"
                                   onClick={handleOptionClick}
-                                  className={`flex items-center gap-3.5 w-full text-left p-3.5 rounded-xl border-2 text-xs md:text-sm transition active:scale-[0.99] focus:outline-none cursor-pointer shadow-xs ${btnStyle}`}
+                                  className={`flex items-center gap-4 w-full text-left p-4 sm:p-5 rounded-2xl border-2 text-sm sm:text-base md:text-lg transition active:scale-[0.99] focus:outline-none cursor-pointer shadow-xs ${btnStyle}`}
                                 >
-                                  <span className={`w-6 h-6 rounded-lg flex items-center justify-center font-mono font-black text-xs border shrink-0 ${circleStyle}`}>
+                                  <span className={`w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center font-mono font-black text-sm sm:text-base border shrink-0 ${circleStyle}`}>
                                     {letterKey}
                                   </span>
-                                  <span className="flex-1 leading-relaxed break-words">{opt.replace(/^[A-J][\.\:\)]\s*/i, "")}</span>
+                                  <span className="flex-1 leading-relaxed break-words font-medium">{opt.replace(/^[A-J][\.\:\)]\s*/i, "")}</span>
                                   {isMulti && (
                                     <span
-                                      className={`w-5 h-5 rounded border-2 flex items-center justify-center text-xs shrink-0 transition ${
+                                      className={`w-6 h-6 rounded-lg border-2 flex items-center justify-center text-xs shrink-0 transition ${
                                         isSelected
                                           ? "bg-indigo-600 border-indigo-600 text-white font-bold"
                                           : "border-slate-400 bg-white text-transparent"
@@ -2080,35 +2177,37 @@ export default function IC3QuestionBank({
                   </AnimatePresence>
                 </div>
 
-                {/* Bottom Footer Action Controllers */}
-                <div className="bg-white border-t-2 border-slate-300 px-5 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 select-none">
+                {/* Bottom Footer Action Controllers - Always horizontal single row, non-wrapping on mobile */}
+                <div className="bg-white border-t-2 border-slate-300 px-3 sm:px-5 py-2.5 sm:py-3.5 flex items-center justify-between gap-1.5 sm:gap-3 select-none shrink-0">
                   
                   {/* Left Side: Specific controls like submitting answers in training */}
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
                     <button
                       type="button"
                       disabled={safeIndex === 0}
                       onClick={handlePrev}
-                      className={`flex items-center gap-1.5 text-xs md:text-sm font-black uppercase px-4 py-2.5 rounded-xl border-2 font-mono transition shadow-xs cursor-pointer ${
+                      className={`flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-black uppercase px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-xl border-2 font-mono transition shadow-xs cursor-pointer shrink-0 whitespace-nowrap active:scale-95 ${
                         safeIndex === 0 
-                          ? "bg-slate-100 text-slate-400 border-slate-200 cursor-not-allowed" 
-                          : "bg-white text-slate-800 border-slate-300 hover:bg-slate-100 active:scale-95"
+                          ? "bg-slate-100 text-slate-400 border-slate-200 cursor-not-allowed opacity-60" 
+                          : "bg-white text-slate-800 border-slate-300 hover:bg-slate-100"
                       }`}
                     >
-                      <ArrowLeft className="w-4 h-4 shrink-0" />
-                      QUAY LẠI
+                      <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
+                      <span>QUAY LẠI</span>
                     </button>
                   </div>
 
                   {/* Right Side: Back - Next - Submit controls */}
-                  <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0">
+                  <div className="flex items-center justify-end gap-1.5 sm:gap-3 shrink-0 flex-nowrap">
                     {appMode === "training" && userAns && !isChecked && (
                       <button
                         type="button"
                         onClick={() => handleCheckOptionTraining(q.id)}
-                        className="text-xs md:text-sm font-black text-white bg-indigo-600 hover:bg-indigo-700 px-5 py-2.5 rounded-xl font-mono transition shadow-sm flex items-center gap-1.5 active:scale-95 text-center uppercase cursor-pointer"
+                        className="text-xs sm:text-sm font-black text-white bg-indigo-600 hover:bg-indigo-700 px-2.5 sm:px-5 py-2 sm:py-2.5 rounded-xl font-mono transition shadow-sm flex items-center gap-1 sm:gap-1.5 active:scale-95 text-center uppercase cursor-pointer shrink-0 whitespace-nowrap"
                       >
-                        <Check className="w-4 h-4" /> Nộp bài [Enter]
+                        <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
+                        <span>Nộp bài</span>
+                        <span className="hidden sm:inline"> [Enter]</span>
                       </button>
                     )}
 
@@ -2118,264 +2217,36 @@ export default function IC3QuestionBank({
                         <button
                           type="button"
                           onClick={handleFinishTraining}
-                          className="bg-indigo-600 text-white hover:bg-indigo-700 px-5 py-2.5 rounded-xl text-xs md:text-sm font-black uppercase font-mono transition shadow-sm active:scale-95 flex items-center gap-1.5 cursor-pointer"
+                          className="bg-indigo-600 text-white hover:bg-indigo-700 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-black uppercase font-mono transition shadow-sm active:scale-95 flex items-center gap-1 sm:gap-1.5 cursor-pointer shrink-0 whitespace-nowrap"
                         >
-                          HOÀN THÀNH
-                          <Award className="w-4 h-4 text-white" />
+                          <span>NỘP BÀI</span>
+                          <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0" />
                         </button>
                       ) : (
                         <button
                           type="button"
                           onClick={handleSubmitTestingExam}
-                          className="bg-emerald-600 text-white hover:bg-emerald-700 px-5 py-2.5 rounded-xl text-xs md:text-sm font-black uppercase font-mono transition shadow-sm active:scale-95 flex items-center gap-1.5 cursor-pointer"
+                          className="bg-emerald-600 text-white hover:bg-emerald-700 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-black uppercase font-mono transition shadow-sm active:scale-95 flex items-center gap-1 sm:gap-1.5 cursor-pointer shrink-0 whitespace-nowrap"
                         >
-                          NỘP BÀI THI CHÍNH THỨC
-                          <Award className="w-4 h-4 text-white" />
+                          <span className="hidden sm:inline">NỘP BÀI THI CHÍNH THỨC</span>
+                          <span className="sm:hidden">NỘP BÀI THI</span>
+                          <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0" />
                         </button>
                       )
                     ) : (
                       <button
                         type="button"
                         onClick={handleNext}
-                        className={`flex items-center gap-1.5 text-xs md:text-sm font-black uppercase px-5 py-2.5 rounded-xl border font-mono transition shadow-sm cursor-pointer ${themeConfig.nextBtnActive}`}
+                        className={`flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-black uppercase px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl border font-mono transition shadow-sm cursor-pointer shrink-0 whitespace-nowrap active:scale-95 ${themeConfig.nextBtnActive}`}
                       >
-                        TIẾP THEO
-                        <ArrowRight className="w-4 h-4 shrink-0" />
+                        <span>TIẾP THEO</span>
+                        <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
                       </button>
                     )}
                   </div>
 
-                </div>
-
-                {/* Hotkeys HUD guidance */}
-                <div className="bg-slate-100 border-t border-slate-300 px-4 py-2.5 flex items-center justify-center gap-2 text-xs text-slate-700 font-semibold font-mono">
-                  <Keyboard className="w-4 h-4 text-slate-600 shrink-0" />
-                  {appMode === "training" ? (
-                    <span>Mẹo: Ấn <kbd className="bg-white border border-slate-400 rounded px-1.5 py-0.5 text-slate-900 font-bold">Enter</kbd> lần 1 để nộp xem đáp án, ấn <kbd className="bg-white border border-slate-400 rounded px-1.5 py-0.5 text-slate-900 font-bold font-mono">Enter</kbd> lần 2 để qua câu tiếp theo!</span>
-                  ) : (
-                    <span>Bản đồ câu bên phải hỗ trợ nhấp chuột nhảy cóc nhanh. Dùng phím <kbd className="bg-white border border-slate-400 rounded px-1.5 py-0.5 text-slate-900 font-bold font-mono">←</kbd> <kbd className="bg-white border border-slate-400 rounded px-1.5 py-0.5 text-slate-900 font-bold font-mono">→</kbd> để đổi câu liên tục!</span>
-                  )}
                 </div>
               </div>
-
-              {/* RIGHT COLUMN: QUESTION GRID SIDEBAR FOR BOTH TRAINING & TESTING MODES */}
-              {(appMode === "testing" || appMode === "training") && (
-                <div className="w-full lg:w-72 xl:w-80 border-t-2 lg:border-t-0 lg:border-l-2 border-slate-300 bg-slate-50/95 p-4 sm:p-5 flex flex-col justify-between shrink-0 overflow-y-auto">
-                  <div className="space-y-4">
-                    {/* Title & Stats */}
-                    <div className="flex items-center justify-between border-b-2 border-slate-200 pb-3">
-                      <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center shadow-xs">
-                          <LayoutGrid className="w-4 h-4" />
-                        </div>
-                        <div>
-                          <h4 className="text-xs font-black uppercase font-mono tracking-wider text-slate-900">
-                            Bản đồ câu hỏi
-                          </h4>
-                          <span className="text-[11px] font-bold text-slate-500 font-mono">
-                            {appMode === "training"
-                              ? `Đã nộp ${checkedCount}/${activeQuestions.length} câu`
-                              : `Đã làm ${answeredCount}/${activeQuestions.length} câu`}
-                          </span>
-                        </div>
-                      </div>
-
-                      <span className="px-2 py-1 rounded-md bg-indigo-100 text-indigo-800 text-xs font-black font-mono">
-                        {Math.round(((appMode === "training" ? checkedCount : answeredCount) / (activeQuestions.length || 1)) * 100)}%
-                      </span>
-                    </div>
-
-                    {/* Progress Bar */}
-                    <div className="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
-                      <div
-                        className={`${appMode === "training" ? "bg-emerald-600" : "bg-indigo-600"} h-full rounded-full transition-all duration-300`}
-                        style={{
-                          width: `${((appMode === "training" ? checkedCount : answeredCount) / (activeQuestions.length || 1)) * 100}%`
-                        }}
-                      />
-                    </div>
-
-                    {/* Quick Summary Pill Counters */}
-                    {appMode === "training" ? (
-                      <div className="grid grid-cols-4 gap-1 text-center text-[10px] font-mono font-bold">
-                        <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 py-1.5 px-0.5 rounded-lg">
-                          Đúng: <span className="font-black">{correctTrainingCount}</span>
-                        </div>
-                        <div className="bg-rose-50 border border-rose-200 text-rose-800 py-1.5 px-0.5 rounded-lg">
-                          Sai: <span className="font-black">{wrongTrainingCount}</span>
-                        </div>
-                        <div className="bg-slate-100 border border-slate-300 text-slate-700 py-1.5 px-0.5 rounded-lg">
-                          Chưa: <span className="font-black">{activeQuestions.length - checkedCount}</span>
-                        </div>
-                        <div className="bg-amber-50 border border-amber-200 text-amber-800 py-1.5 px-0.5 rounded-lg">
-                          Cờ: <span className="font-black">{flaggedCount}</span>
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="grid grid-cols-3 gap-1.5 text-center text-[10px] font-mono font-bold">
-                        <div className="bg-indigo-50 border border-indigo-200 text-indigo-900 py-1.5 px-1 rounded-lg">
-                          Đã làm: <span className="font-black">{answeredCount}</span>
-                        </div>
-                        <div className="bg-slate-100 border border-slate-300 text-slate-700 py-1.5 px-1 rounded-lg">
-                          Chưa: <span className="font-black">{unansweredCount}</span>
-                        </div>
-                        <div className="bg-rose-50 border border-rose-200 text-rose-800 py-1.5 px-1 rounded-lg">
-                          Cờ: <span className="font-black">{flaggedCount}</span>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Grid of Questions */}
-                    <div>
-                      <span className="text-[10px] font-extrabold uppercase font-mono text-slate-500 block mb-2">
-                        Danh sách câu hỏi (dạng lưới):
-                      </span>
-                      <div className="grid grid-cols-5 sm:grid-cols-6 lg:grid-cols-5 gap-2 max-h-[380px] lg:max-h-[440px] overflow-y-auto pr-1 py-1">
-                        {activeQuestions.map((item, idx) => {
-                          const ans = selectedAnswers[item.id];
-                          let hasAns = !!ans;
-                          if (item.type === "yes_no") {
-                            try {
-                              hasAns = Object.keys(JSON.parse(ans)).length > 0;
-                            } catch {
-                              hasAns = false;
-                            }
-                          }
-                          if (item.type === "matching") {
-                            try {
-                              hasAns = Object.keys(JSON.parse(ans)).length > 0;
-                            } catch {
-                              hasAns = false;
-                            }
-                          }
-                          const isActive = idx === safeIndex;
-                          const isFlagged = !!flaggedQuestions[item.id];
-
-                          let bubbleStyle = "bg-white text-slate-800 border-2 border-slate-300 hover:border-slate-400 font-bold hover:bg-slate-50";
-                          if (isActive) {
-                            bubbleStyle = "bg-indigo-100 border-2 border-indigo-600 text-indigo-950 font-black ring-2 ring-indigo-400 shadow-sm scale-105 z-10";
-                          } else if (appMode === "training") {
-                            const isCheckedItem = !!checkedQuestions[item.id];
-                            if (isCheckedItem) {
-                              const isCorrect = checkIfQuestionIsCorrect(item, selectedAnswers[item.id]);
-                              if (isCorrect) {
-                                bubbleStyle = "bg-emerald-600 text-white border-2 border-emerald-600 font-black shadow-xs hover:bg-emerald-700";
-                              } else {
-                                bubbleStyle = "bg-rose-600 text-white border-2 border-rose-600 font-black shadow-xs hover:bg-rose-700";
-                              }
-                            } else if (hasAns) {
-                              bubbleStyle = "bg-indigo-600 text-white border-2 border-indigo-600 font-black shadow-xs hover:bg-indigo-700";
-                            }
-                          } else if (hasAns) {
-                            bubbleStyle = "bg-indigo-600 text-white border-2 border-indigo-600 font-black shadow-xs hover:bg-indigo-700";
-                          }
-
-                          return (
-                            <button
-                              key={item.id}
-                              type="button"
-                              onClick={() => {
-                                setDirection(idx > safeIndex ? 1 : -1);
-                                setCurrentIndex(idx);
-                              }}
-                              className={`h-9 rounded-xl border text-xs font-mono flex items-center justify-center transition active:scale-95 relative cursor-pointer ${bubbleStyle}`}
-                              title={`Câu ${idx + 1}${hasAns ? " (Đã làm)" : " (Chưa làm)"}${isFlagged ? " - Đã gắn cờ" : ""}`}
-                            >
-                              <span>{idx + 1}</span>
-                              {isFlagged && (
-                                <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-rose-500 rounded-full border border-white flex items-center justify-center text-[7px] text-white">
-                                  🚩
-                                </span>
-                              )}
-                            </button>
-                          );
-                        })}
-                      </div>
-                    </div>
-
-                    {/* Legend */}
-                    {appMode === "training" ? (
-                      <div className="border-t border-slate-200 pt-3 space-y-1.5 text-[11px] font-semibold text-slate-600">
-                        <div className="flex items-center justify-between">
-                          <span className="flex items-center gap-1.5">
-                            <span className="w-3.5 h-3.5 rounded bg-emerald-600 border border-emerald-600 inline-block" />
-                            Đúng
-                          </span>
-                          <span className="flex items-center gap-1.5">
-                            <span className="w-3.5 h-3.5 rounded bg-rose-600 border border-rose-600 inline-block" />
-                            Chưa đúng
-                          </span>
-                          <span className="flex items-center gap-1.5">
-                            <span className="w-3.5 h-3.5 rounded bg-indigo-600 border border-indigo-600 inline-block" />
-                            Đã chọn
-                          </span>
-                        </div>
-                        <div className="flex items-center justify-between">
-                          <span className="flex items-center gap-1.5">
-                            <span className="w-3.5 h-3.5 rounded bg-white border-2 border-slate-300 inline-block" />
-                            Chưa làm
-                          </span>
-                          <span className="flex items-center gap-1.5">
-                            <span className="w-3.5 h-3.5 rounded bg-indigo-100 border-2 border-indigo-600 inline-block" />
-                            Đang xem
-                          </span>
-                          <span className="flex items-center gap-1.5">
-                            <span className="w-3.5 h-3.5 rounded bg-rose-500 inline-block text-[8px] text-white text-center leading-3">🚩</span>
-                            Đã gắn cờ
-                          </span>
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="border-t border-slate-200 pt-3 space-y-1.5 text-[11px] font-semibold text-slate-600">
-                        <div className="flex items-center justify-between">
-                          <span className="flex items-center gap-1.5">
-                            <span className="w-3.5 h-3.5 rounded bg-indigo-600 border border-indigo-600 inline-block" />
-                            Đã trả lời
-                          </span>
-                          <span className="flex items-center gap-1.5">
-                            <span className="w-3.5 h-3.5 rounded bg-white border-2 border-slate-300 inline-block" />
-                            Chưa làm
-                          </span>
-                        </div>
-                        <div className="flex items-center justify-between">
-                          <span className="flex items-center gap-1.5">
-                            <span className="w-3.5 h-3.5 rounded bg-indigo-100 border-2 border-indigo-600 inline-block" />
-                            Đang xem
-                          </span>
-                          <span className="flex items-center gap-1.5">
-                            <span className="w-3.5 h-3.5 rounded bg-rose-500 inline-block text-[8px] text-white text-center leading-3">🚩</span>
-                            Đã gắn cờ
-                          </span>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Quick Action Button at bottom of sidebar */}
-                  <div className="mt-4 pt-3 border-t-2 border-slate-200">
-                    {appMode === "training" ? (
-                      <button
-                        type="button"
-                        onClick={handleFinishTraining}
-                        className="w-full py-3 px-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-mono font-black text-xs md:text-sm uppercase tracking-wide shadow-sm transition active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
-                      >
-                        <Award className="w-4 h-4" />
-                        HOÀN THÀNH BÀI ÔN ({checkedCount}/{activeQuestions.length})
-                      </button>
-                    ) : (
-                      <button
-                        type="button"
-                        onClick={handleSubmitTestingExam}
-                        className="w-full py-3 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-mono font-black text-xs md:text-sm uppercase tracking-wide shadow-sm transition active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
-                      >
-                        <Award className="w-4 h-4" />
-                        NỘP BÀI THI ({answeredCount}/{activeQuestions.length})
-                      </button>
-                    )}
-                  </div>
-                </div>
-              )}
-            </div>
             );
           })()}
 
