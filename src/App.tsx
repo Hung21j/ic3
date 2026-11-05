@@ -163,10 +163,7 @@ export default function App() {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [currentView, setCurrentView] = useState<"student" | "admin">("student");
   const [customQuestions, setCustomQuestions] = useState<IC3Question[]>([]);
-  const [selectedProgram, setSelectedProgram] = useState<"gs6" | "spark" | null>(() => {
-    const saved = localStorage.getItem("student_program_ic3");
-    return (saved === "gs6" || saved === "spark") ? saved : null;
-  });
+  const [selectedProgram, setSelectedProgram] = useState<"gs6" | "spark" | null>(null);
   const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
   const [showUserChangePassword, setShowUserChangePassword] = useState(false);
   const [userToast, setUserToast] = useState<string | null>(null);
@@ -201,6 +198,10 @@ export default function App() {
     await apiService.logout();
     setCurrentUser(null);
     setCurrentView("student");
+    setSelectedProgram(null);
+    setSelectedLevel(null);
+    localStorage.removeItem("student_program_ic3");
+    localStorage.removeItem("student_level_ic3");
   };
 
   const handleSelectProgram = (program: "gs6" | "spark") => {
@@ -219,6 +220,12 @@ export default function App() {
 
   const handleAuthSuccess = (user: User) => {
     setCurrentUser(user);
+    // Khi học sinh đăng nhập vào, luôn trả về màn hình chọn chương trình (Bước 1)
+    setSelectedProgram(null);
+    setSelectedLevel(null);
+    localStorage.removeItem("student_program_ic3");
+    localStorage.removeItem("student_level_ic3");
+
     if (user.role === "admin") {
       setCurrentView("admin");
     } else {
@@ -230,19 +237,9 @@ export default function App() {
     apiService.setActiveSession(null);
   }, []);
 
-  // Load custom questions, level and history
+  // Load custom questions and history
   useEffect(() => {
     loadCustomQuestions();
-
-    const savedProg = localStorage.getItem("student_program_ic3");
-    if (savedProg === "gs6" || savedProg === "spark") {
-      setSelectedProgram(savedProg);
-    }
-
-    const savedLevel = localStorage.getItem("student_level_ic3");
-    if (savedLevel) {
-      setSelectedLevel(savedLevel);
-    }
 
     const saved = localStorage.getItem("question_solver_history");
     if (saved) {
