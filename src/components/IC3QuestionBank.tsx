@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { IC3_QUESTIONS, IC3Question } from "../data/ic3Questions";
+import { IC3_QUESTIONS, IC3Question, normalizeMCQOptions } from "../data/ic3Questions";
 import { QuestionType, User } from "../types";
 import { apiService } from "../services/apiService";
 import { 
@@ -40,7 +40,7 @@ interface IC3QuestionBankProps {
     question?: string;
     questionType: QuestionType;
     image: string | null;
-    options: string[];
+    options?: Array<{ key: string; text: string }> | string[];
   }) => void;
   isLoading: boolean;
   currentUser?: User;
@@ -403,48 +403,9 @@ export default function IC3QuestionBank({
 
   // Utility to shuffle answer choices within an individual question
   const shuffleQuestionOptions = (question: IC3Question): IC3Question => {
-    if (question.type === "multiple_choice" && question.options && question.options.length > 1) {
-      const origOptions = question.options;
-      const origCorrectKeys = question.correctKeys || [];
-
-      // Map each option with its correctness state and cleaned text
-      const parsed = origOptions.map((optStr, idx) => {
-        const origLetter = String.fromCharCode(65 + idx); // 'A', 'B', 'C', 'D'...
-        const isCorrect = origCorrectKeys.includes(origLetter) ||
-          origCorrectKeys.some((k) => optStr.trim().startsWith(`${k}.`) || optStr.trim().startsWith(`${k} `) || optStr.trim() === k);
-        const cleanText = optStr.replace(/^[A-J][\.\:\)]\s*/i, "").trim();
-        return {
-          cleanText,
-          isCorrect
-        };
-      });
-
-      // Shuffle the options array
-      const shuffled = shuffleArray(parsed);
-
-      // Reassign new letters (A, B, C, D...) and compute new correct keys
-      const newOptions: string[] = [];
-      const newCorrectKeys: string[] = [];
-      const correctItems: string[] = [];
-
-      shuffled.forEach((item, newIdx) => {
-        const newLetter = String.fromCharCode(65 + newIdx);
-        newOptions.push(`${newLetter}. ${item.cleanText}`);
-        if (item.isCorrect) {
-          newCorrectKeys.push(newLetter);
-          correctItems.push(`${newLetter}. ${item.cleanText}`);
-        }
-      });
-
-      const finalCorrectKeys = newCorrectKeys.length > 0 ? newCorrectKeys : origCorrectKeys;
-      const finalAnswerText = correctItems.length > 0 ? correctItems.join(" | ") : question.correctAnswerText;
-
-      return {
-        ...question,
-        options: newOptions,
-        correctKeys: finalCorrectKeys,
-        correctAnswerText: finalAnswerText
-      };
+    // Với multiple_choice: cố định đáp án cho key, không xáo trộn lại thứ tự hay đổi phím
+    if (question.type === "multiple_choice") {
+      return question;
     }
 
     if (question.type === "matching" && question.pairs && question.pairs.length > 1) {
@@ -1590,8 +1551,9 @@ export default function IC3QuestionBank({
                           )}
                           
                           <div className="grid grid-cols-1 gap-3.5 sm:gap-4">
-                            {q.options.map((opt, oIdx) => {
-                              const letterKey = String.fromCharCode(65 + oIdx);
+                            {normalizeMCQOptions(q.options).map((opt) => {
+                              const letterKey = opt.key;
+                              const optText = opt.text;
                               const isMulti = !!(q.correctKeys && q.correctKeys.length > 1);
                               const selectedKeysList = userAns
                                 ? userAns.split(",").map((s) => s.trim()).filter(Boolean)
@@ -1665,7 +1627,7 @@ export default function IC3QuestionBank({
                                   <span className={`w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center font-mono font-black text-sm sm:text-base border shrink-0 ${circleStyle}`}>
                                     {letterKey}
                                   </span>
-                                  <span className="flex-1 leading-relaxed break-words font-medium">{opt.replace(/^[A-J][\.\:\)]\s*/i, "")}</span>
+                                  <span className="flex-1 leading-relaxed break-words font-medium">{optText}</span>
                                   {isMulti && (
                                     <span
                                       className={`w-6 h-6 rounded-lg border-2 flex items-center justify-center text-xs shrink-0 transition ${
@@ -2364,10 +2326,16 @@ export default function IC3QuestionBank({
                         {/* MCQ answers breakdown */}
                         {q.type === "multiple_choice" && q.options && (
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
-                            {q.options.map((opt, oIdx) => {
-                              const letter = String.fromCharCode(65 + oIdx);
+                            {normalizeMCQOptions(q.options).map((opt) => {
+                              const letter = opt.key;
                               const isThisAnswerCorrect = q.correctKeys?.includes(letter);
-                              const isThisAnswerUserChoice = ans === letter;
+                              const isMulti = !!(q.correctKeys && q.correctKeys.length > 1);
+                              const selectedKeysList = ans
+                                ? ans.split(",").map((s) => s.trim()).filter(Boolean)
+                                : [];
+                              const isThisAnswerUserChoice = isMulti
+                                ? selectedKeysList.includes(letter)
+                                : ans === letter;
 
                               let cellStyle = "border-2 border-slate-300 text-slate-800 bg-white";
                               if (isThisAnswerCorrect) {
@@ -2387,7 +2355,7 @@ export default function IC3QuestionBank({
                                   }`}>
                                     {letter}
                                   </span>
-                                  <span className="flex-1 min-w-0">{opt}</span>
+                                  <span className="flex-1 min-w-0">{opt.text}</span>
                                 </div>
                               );
                             })}

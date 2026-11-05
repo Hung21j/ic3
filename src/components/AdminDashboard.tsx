@@ -40,7 +40,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { User, SessionLog, ExamHistoryItem } from "../types";
-import { IC3Question, IC3_QUESTIONS } from "../data/ic3Questions";
+import { IC3Question, IC3_QUESTIONS, normalizeMCQOptions } from "../data/ic3Questions";
 import { apiService } from "../services/apiService";
 import { 
   parseBulkStudentsInput, 
@@ -598,7 +598,7 @@ export default function AdminDashboard({
       return;
     }
 
-    let options: string[] | undefined = undefined;
+    let options: Array<{ key: string; text: string }> | undefined = undefined;
     let finalCorrectKeys: string[] | undefined = undefined;
     let pairs: { left: string; right: string }[] | undefined = undefined;
 
@@ -616,7 +616,10 @@ export default function AdminDashboard({
         alert("Vui lòng chọn ít nhất 1 đáp án đúng cho câu hỏi.");
         return;
       }
-      options = trimmedOptions.map((optText, idx) => `${String.fromCharCode(65 + idx)}. ${optText}`);
+      options = trimmedOptions.map((optText, idx) => ({
+        key: String.fromCharCode(65 + idx),
+        text: optText
+      }));
       finalCorrectKeys = [...mcCorrectKeys].sort();
     } else if (qType === "yes_no") {
         const validStatements = yesNoStatements
@@ -656,9 +659,13 @@ export default function AdminDashboard({
     let defaultAnswerText = "";
     if (qType === "multiple_choice" && options && finalCorrectKeys) {
       if (finalCorrectKeys.length === 1) {
-        defaultAnswerText = options.find((o) => o.startsWith(finalCorrectKeys![0])) || finalCorrectKeys[0];
+        const found = options.find((o) => o.key === finalCorrectKeys![0]);
+        defaultAnswerText = found ? `${found.key}. ${found.text}` : finalCorrectKeys[0];
       } else {
-        defaultAnswerText = options.filter((o) => finalCorrectKeys!.includes(o.charAt(0))).join(" | ");
+        defaultAnswerText = options
+          .filter((o) => finalCorrectKeys!.includes(o.key))
+          .map((o) => `${o.key}. ${o.text}`)
+          .join(" | ");
       }
     } else if (qType === "yes_no" && statements) {
       defaultAnswerText = statements
@@ -2408,18 +2415,19 @@ export default function AdminDashboard({
                         {/* Multiple Choice Options */}
                         {q.options && q.options.length > 0 && (
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 mb-2">
-                            {q.options.map((opt: string, optIdx: number) => {
-                              const isCorrect = q.correctKeys?.some((k: string) => opt.startsWith(k));
+                            {normalizeMCQOptions(q.options).map((opt, optIdx: number) => {
+                              const isCorrect = q.correctKeys?.includes(opt.key);
                               return (
                                 <div 
                                   key={optIdx} 
-                                  className={`px-2 py-1 rounded text-[11px] font-medium ${
+                                  className={`px-2 py-1 rounded text-[11px] font-medium flex items-center gap-1.5 ${
                                     isCorrect 
                                       ? "bg-emerald-100/70 border border-emerald-300 text-emerald-900 font-bold"
                                       : "bg-white border border-slate-200 text-slate-600"
                                   }`}
                                 >
-                                  {opt}
+                                  <span className="font-mono font-bold">{opt.key}.</span>
+                                  <span>{opt.text}</span>
                                 </div>
                               );
                             })}

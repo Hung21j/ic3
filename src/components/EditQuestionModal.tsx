@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Edit3, X, CheckCircle2, AlertCircle, Plus, Trash2, Image as ImageIcon, UploadCloud } from "lucide-react";
-import { IC3Question } from "../data/ic3Questions";
+import { IC3Question, normalizeMCQOptions } from "../data/ic3Questions";
 import { apiService } from "../services/apiService";
 import { compressAndEncodeImage } from "../utils/imageUtils";
 
@@ -60,8 +60,7 @@ export const EditQuestionModal: React.FC<EditQuestionModalProps> = ({
 
       if (question.type === "multiple_choice") {
         if (question.options && question.options.length > 0) {
-          // Normalize options to strip 'A. ', 'B. ' if desired, or keep as is
-          const rawOpts = question.options.map((opt) => opt.replace(/^[A-D]\.\s*/, ""));
+          const rawOpts = normalizeMCQOptions(question.options).map((opt) => opt.text);
           while (rawOpts.length < 4) rawOpts.push("");
           setMcOptions(rawOpts.slice(0, 4));
         } else {
@@ -227,7 +226,7 @@ export const EditQuestionModal: React.FC<EditQuestionModalProps> = ({
       return;
     }
 
-    let formattedOptions: string[] | undefined = undefined;
+    let formattedOptions: Array<{ key: string; text: string }> | undefined = undefined;
     let finalCorrectKeys: string[] | undefined = undefined;
     let finalPairs: { left: string; right: string }[] | undefined = undefined;
     let finalStatements:
@@ -242,11 +241,15 @@ export const EditQuestionModal: React.FC<EditQuestionModalProps> = ({
         setError("Vui lòng nhập đầy đủ nội dung cho cả 4 lựa chọn A, B, C, D.");
         return;
       }
-      formattedOptions = filled.map((opt, i) => `${labels[i]}. ${opt}`);
+      formattedOptions = filled.map((opt, i) => ({
+        key: labels[i],
+        text: opt
+      }));
       finalCorrectKeys = mcCorrectKeys;
       if (!finalAnswerText) {
         finalAnswerText = formattedOptions
-          .filter((_, i) => mcCorrectKeys.includes(labels[i]))
+          .filter((o) => mcCorrectKeys.includes(o.key))
+          .map((o) => `${o.key}. ${o.text}`)
           .join(" | ");
       }
     } else if (qType === "yes_no") {

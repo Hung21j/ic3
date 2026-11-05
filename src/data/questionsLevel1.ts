@@ -14,10 +14,10 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
     "type": "multiple_choice",
     "text": "Bạn cần lưu danh sách các trang web để có thể dễ dàng quay trở lại vào lần sau. Bạn nên sử dụng tính năng nào của trình duyệt web?",
     "options": [
-      "A. Duyệt đa trang một lúc",
-      "B. Mục yêu thích hoặc dấu trang",
-      "C. Lịch sử hoặc dòng thời gian",
-      "D. Hộp địa chỉ"
+      { "key": "A", "text": "Duyệt đa trang một lúc" },
+      { "key": "B", "text": "Mục yêu thích hoặc dấu trang" },
+      { "key": "C", "text": "Lịch sử hoặc dòng thời gian" },
+      { "key": "D", "text": "Hộp địa chỉ" }
     ],
     "correctKeys": [
       "B"
@@ -33,10 +33,10 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
     "type": "multiple_choice",
     "text": "Lịch sử duyệt web và các trang web được đánh dấu trang cung cấp cho hacker một bản đồ của tất cả các trang web mà người dùng truy cập. Cùng với các trang web thường xuyên truy cập, hacker có thể sử dụng gì để truy cập vào tài khoản nếu mật khẩu được lưu vào thiết bị bị tấn công?",
     "options": [
-      "A. Settings",
-      "B. Cookies",
-      "C. History",
-      "D. Cutouts"
+      { "key": "A", "text": "Settings" },
+      { "key": "B", "text": "Cookies" },
+      { "key": "C", "text": "History" },
+      { "key": "D", "text": "Cutouts" }
     ],
     "correctKeys": [
       "B"
@@ -52,10 +52,10 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
     "type": "multiple_choice",
     "text": "Một trong những giáo viên của bạn nói rằng bạn nên thay đổi cài đặt trình duyệt của mình để duyệt web ở chế độ riêng tư. Vậy lợi ích của việc duyệt web ở chế độ riêng tư là gì?",
     "options": [
-      "A. Không thể nhìn thấy các gói được gửi/nhận qua mạng trường học của bạn",
-      "B. Tên của bạn được giữ kín",
-      "C. Đăng nhập máy tính và mật khẩu của bạn bị vô hiệu hóa",
-      "D. Không có lịch sử nào được ghi lại trên máy tính"
+      { "key": "A", "text": "Không thể nhìn thấy các gói được gửi/nhận qua mạng trường học của bạn" },
+      { "key": "B", "text": "Tên của bạn được giữ kín" },
+      { "key": "C", "text": "Đăng nhập máy tính và mật khẩu của bạn bị vô hiệu hóa" },
+      { "key": "D", "text": "Không có lịch sử nào được ghi lại trên máy tính" }
     ],
     "correctKeys": [
       "D"
@@ -71,10 +71,10 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
     "type": "multiple_choice",
     "text": "Bạn hãy cho biết, duyệt web riêng tư đảm bảo điều gì sau đây ?",
     "options": [
-      "A. Lịch sử của người dùng không được lưu trữ",
-      "B. Có nhiều dung lượng lưu trữ hơn trên máy tính",
-      "C. Mật khẩu không cần thay đổi",
-      "D. Thông tin tài khoản được lưu trữ"
+      { "key": "A", "text": "Lịch sử của người dùng không được lưu trữ" },
+      { "key": "B", "text": "Có nhiều dung lượng lưu trữ hơn trên máy tính" },
+      { "key": "C", "text": "Mật khẩu không cần thay đổi" },
+      { "key": "D", "text": "Thông tin tài khoản được lưu trữ" }
     ],
     "correctKeys": [
       "A"
@@ -124,10 +124,10 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
     "type": "multiple_choice",
     "text": "Người dùng có thể tắt tính năng lưu trữ mật khẩu trực tuyến ở đâu?",
     "options": [
-      "A. Trong cài đặt trình duyệt của họ",
-      "B. Trong lịch sử của họ",
-      "C. Trong cài đặt máy tính của họ",
-      "D. Trong hộp thư đến"
+      { "key": "A", "text": "Trong cài đặt trình duyệt của họ" },
+      { "key": "B", "text": "Trong lịch sử của họ" },
+      { "key": "C", "text": "Trong cài đặt máy tính của họ" },
+      { "key": "D", "text": "Trong hộp thư đến" }
     ],
     "correctKeys": [
       "A"
@@ -143,11 +143,11 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
     "type": "multiple_choice",
     "text": "Khi nào người dùng nên cân nhắc việc thay đổi mật khẩu của họ (Chọn 3)",
     "options": [
-      "A. Họ đã được thông báo rằng có quyền truy cập trái phép vào tài khoản của họ",
-      "B. Họ đã cập nhật mật khẩu của họ gần đây",
-      "C. Họ đã không thay đổi mật khẩu của họ trong một thời gian dài",
-      "D. Khi họ muốn đóng tài khoản của mình",
-      "E. Phần mềm độc hại đang chạy trên máy tính của họ"
+      { "key": "A", "text": "Họ đã được thông báo rằng có quyền truy cập trái phép vào tài khoản của họ" },
+      { "key": "B", "text": "Họ đã cập nhật mật khẩu của họ gần đây" },
+      { "key": "C", "text": "Họ đã không thay đổi mật khẩu của họ trong một thời gian dài" },
+      { "key": "D", "text": "Khi họ muốn đóng tài khoản của mình" },
+      { "key": "E", "text": "Phần mềm độc hại đang chạy trên máy tính của họ" }
     ],
     "correctKeys": [
       "A",
@@ -166,12 +166,12 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
     "text": "Đâu là ba thiết bị NHẬP khi được kết nối với máy tính không có màn hình cảm ứng? (Chọn 3)",
     "image": "/images/lv1-ot1-08.png",
     "options": [
-      "A. Bàn phím (Keyboard)",
-      "B. Chuột máy tính (Mouse)",
-      "C. Tai nghe có mic (headset)",
-      "D. Màn hình máy tính (Monitor)",
-      "E. Máy in văn phòng (Printer)",
-      "F. Thùng máy (CPU)"
+      { "key": "A", "text": "Bàn phím (Keyboard)" },
+      { "key": "B", "text": "Chuột máy tính (Mouse)" },
+      { "key": "C", "text": "Tai nghe có mic (headset)" },
+      { "key": "D", "text": "Màn hình máy tính (Monitor)" },
+      { "key": "E", "text": "Máy in văn phòng (Printer)" },
+      { "key": "F", "text": "Thùng máy (CPU)" }
     ],
     "correctKeys": [
       "A",
@@ -189,10 +189,10 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
     "type": "multiple_choice",
     "text": "Hành động bạn có thể thực hiện để giúp duy trì quyền riêng tư kỹ thuật số của bản thân? (Chọn 2)",
     "options": [
-      "A. Chỉ sử dụng Email trường học của bạn để gửi thông tin cá nhân",
-      "B. Tắt GPS trên thiết bị của bạn khi không sử dụng thường xuyên",
-      "C. Định cấu hình cài đặt trình duyệt web của bạn để chặn Cookie",
-      "D. Lưu trữ tài liệu cá nhân của bạn trên vị trí lưu trữ đám mây"
+      { "key": "A", "text": "Chỉ sử dụng Email trường học của bạn để gửi thông tin cá nhân" },
+      { "key": "B", "text": "Tắt GPS trên thiết bị của bạn khi không sử dụng thường xuyên" },
+      { "key": "C", "text": "Định cấu hình cài đặt trình duyệt web của bạn để chặn Cookie" },
+      { "key": "D", "text": "Lưu trữ tài liệu cá nhân của bạn trên vị trí lưu trữ đám mây" }
     ],
     "correctKeys": [
       "B",
@@ -209,12 +209,12 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
     "type": "multiple_choice",
     "text": "Bạn cần đảm bảo an toàn cho mật khẩu của mình. Đâu là ba nguyên tắc bạn cần tuân thủ? (Chọn 3)",
     "options": [
-      "A. Sử dụng mật khẩu dựa trên thông tin riêng tư cá nhân",
-      "B. Sử dụng mật khẩu khác nhau cho mỗi tài khoản",
-      "C. Sử dụng mật khẩu phức tạp và ghi vào một cuốn sổ mà bạn luôn mang theo bên mình",
-      "D. Sử dụng mật khẩu dài nhất hoặc cụm mật khẩu được hệ thống mật khẩu cho phép",
-      "E. Sử dụng các từ có thể tìm thấy trong từ điển của một ngôn ngữ khác với ngôn ngữ chính của bạn",
-      "F. Sử dụng xác thực đa yếu tố, nếu có"
+      { "key": "A", "text": "Sử dụng mật khẩu dựa trên thông tin riêng tư cá nhân" },
+      { "key": "B", "text": "Sử dụng mật khẩu khác nhau cho mỗi tài khoản" },
+      { "key": "C", "text": "Sử dụng mật khẩu phức tạp và ghi vào một cuốn sổ mà bạn luôn mang theo bên mình" },
+      { "key": "D", "text": "Sử dụng mật khẩu dài nhất hoặc cụm mật khẩu được hệ thống mật khẩu cho phép" },
+      { "key": "E", "text": "Sử dụng các từ có thể tìm thấy trong từ điển của một ngôn ngữ khác với ngôn ngữ chính của bạn" },
+      { "key": "F", "text": "Sử dụng xác thực đa yếu tố, nếu có" }
     ],
     "correctKeys": [
       "B",
@@ -232,10 +232,10 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
     "type": "multiple_choice",
     "text": "Lợi ích của việc duyệt Web ở 'chế độ riêng tư' 'hoặc ẩn danh'?",
     "options": [
-      "A. Cookie sẽ không báo cáo thông tin về bạn cho bên thứ ba",
-      "B. Những người khác sẽ không biết được các hoạt động duyệt web của bạn dù sử dụng cùng một thiết bị",
-      "C. Trình duyệt web của bạn chặn quảng cáo",
-      "D. Không thể sử dụng vân tay kỹ thuật số để theo dõi các hoạt động trên trình duyệt của bạn"
+      { "key": "A", "text": "Cookie sẽ không báo cáo thông tin về bạn cho bên thứ ba" },
+      { "key": "B", "text": "Những người khác sẽ không biết được các hoạt động duyệt web của bạn dù sử dụng cùng một thiết bị" },
+      { "key": "C", "text": "Trình duyệt web của bạn chặn quảng cáo" },
+      { "key": "D", "text": "Không thể sử dụng vân tay kỹ thuật số để theo dõi các hoạt động trên trình duyệt của bạn" }
     ],
     "correctKeys": [
       "B"
@@ -313,11 +313,11 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
     "type": "multiple_choice",
     "text": "Làm cách nào để người dùng có thể bảo vệ mật khẩu của mình một cách tốt nhất? (Chọn 3)",
     "options": [
-      "A. Thay đổi mật khẩu thường xuyên",
-      "B. Tạo mật khẩu mới cho mọi tài khoản",
-      "C. Sử dụng cùng một mật khẩu cho tất cả các tài khoản",
-      "D. Giữ bí mật mật khẩu",
-      "E. Sử dụng số thứ tự trong mật khẩu"
+      { "key": "A", "text": "Thay đổi mật khẩu thường xuyên" },
+      { "key": "B", "text": "Tạo mật khẩu mới cho mọi tài khoản" },
+      { "key": "C", "text": "Sử dụng cùng một mật khẩu cho tất cả các tài khoản" },
+      { "key": "D", "text": "Giữ bí mật mật khẩu" },
+      { "key": "E", "text": "Sử dụng số thứ tự trong mật khẩu" }
     ],
     "correctKeys": [
       "A",
@@ -368,12 +368,12 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
     "type": "multiple_choice",
     "text": "Bạn cần tạo một mật khẩu mạnh. Đâu là ba nguyên tắc bạn cần tuân thủ? (Chọn 3)",
     "options": [
-      "A. Bao gồm chữ viết hoa và chữ viết thường",
-      "B. Bao gồm các số dễ nhớ như ngày sinh và số điện thoại",
-      "C. Bao gồm họ hoặc tên của bạn",
-      "D. Bao gồm thông tin cá nhân như tên người trong gia đình hoặc tên vật nuôi",
-      "E. Bao gồm các chữ cái, chữ số và ký hiệu",
-      "F. Sử dụng tám ký tự trở lên"
+      { "key": "A", "text": "Bao gồm chữ viết hoa và chữ viết thường" },
+      { "key": "B", "text": "Bao gồm các số dễ nhớ như ngày sinh và số điện thoại" },
+      { "key": "C", "text": "Bao gồm họ hoặc tên của bạn" },
+      { "key": "D", "text": "Bao gồm thông tin cá nhân như tên người trong gia đình hoặc tên vật nuôi" },
+      { "key": "E", "text": "Bao gồm các chữ cái, chữ số và ký hiệu" },
+      { "key": "F", "text": "Sử dụng tám ký tự trở lên" }
     ],
     "correctKeys": [
       "A",
@@ -486,10 +486,10 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
     "type": "multiple_choice",
     "text": "Máy tính để bàn sử dụng phần cứng nào để lưu trữ dữ liệu lâu dài?",
     "options": [
-      "A. Bộ xử lý trung tâm (CPU)",
-      "B. Ổ đĩa Flash USB",
-      "C. Bo mạch chủ",
-      "D. Ổ đĩa cứng"
+      { "key": "A", "text": "Bộ xử lý trung tâm (CPU)" },
+      { "key": "B", "text": "Ổ đĩa Flash USB" },
+      { "key": "C", "text": "Bo mạch chủ" },
+      { "key": "D", "text": "Ổ đĩa cứng" }
     ],
     "correctKeys": [
       "D"
@@ -505,12 +505,12 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
     "type": "multiple_choice",
     "text": "Thiết bị phải có khả năng chạy bằng pin và phải được trang bị bàn phím vật lý tích hợp. Đâu là hai thiết bị đáp ứng được những yêu cầu trên? (Chọn 2)",
     "options": [
-      "A. Máy tính xách tay chạy Windows",
-      "B. Máy tính để bàn Mac",
-      "C. Máy tính đa năng chạy Windows",
-      "D. Điện thoại thông minh chạy Android",
-      "E. Máy tính bảng chạy Android",
-      "F. Chromebook"
+      { "key": "A", "text": "Máy tính xách tay chạy Windows" },
+      { "key": "B", "text": "Máy tính để bàn Mac" },
+      { "key": "C", "text": "Máy tính đa năng chạy Windows" },
+      { "key": "D", "text": "Điện thoại thông minh chạy Android" },
+      { "key": "E", "text": "Máy tính bảng chạy Android" },
+      { "key": "F", "text": "Chromebook" }
     ],
     "correctKeys": [
       "A",
@@ -562,11 +562,11 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
     "type": "multiple_choice",
     "text": "Điều nào đúng với Hệ điều hành Linux? (Chọn 3)",
     "options": [
-      "A. Độc quyền",
-      "B. Không thể được sử dụng trên bất cứ thứ gì ngoại trừ các thiết bị di động",
-      "C. Có thể chạy trên mọi phần cứng",
-      "D. Người dùng có thể sửa đổi phần mềm thông qua mã nguồn của chương trình",
-      "E. Có tính bảo mật cao"
+      { "key": "A", "text": "Độc quyền" },
+      { "key": "B", "text": "Không thể được sử dụng trên bất cứ thứ gì ngoại trừ các thiết bị di động" },
+      { "key": "C", "text": "Có thể chạy trên mọi phần cứng" },
+      { "key": "D", "text": "Người dùng có thể sửa đổi phần mềm thông qua mã nguồn của chương trình" },
+      { "key": "E", "text": "Có tính bảo mật cao" }
     ],
     "correctKeys": [
       "C",
@@ -640,10 +640,10 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
     "type": "multiple_choice",
     "text": "Thiết bị nào chuyển đổi dữ liệu từ kỹ thuật số (Digital) sang tương tự (Analog) và ngược lại để truyền tín hiệu qua mạng?",
     "options": [
-      "A. Router",
-      "B. Ethernet Cable",
-      "C. Network Adapter",
-      "D. Modem"
+      { "key": "A", "text": "Router" },
+      { "key": "B", "text": "Ethernet Cable" },
+      { "key": "C", "text": "Network Adapter" },
+      { "key": "D", "text": "Modem" }
     ],
     "correctKeys": [
       "D"
@@ -659,10 +659,10 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
     "type": "multiple_choice",
     "text": "Loại cáp nào có thể truyền dữ liệu lên đến 480 megabit/giây?",
     "options": [
-      "A. USB",
-      "B. USB-C",
-      "C. Micro USB",
-      "D. Lightning connecter"
+      { "key": "A", "text": "USB" },
+      { "key": "B", "text": "USB-C" },
+      { "key": "C", "text": "Micro USB" },
+      { "key": "D", "text": "Lightning connecter" }
     ],
     "correctKeys": [
       "D"
@@ -704,11 +704,11 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
     "type": "multiple_choice",
     "text": "Ba phát biểu nào dưới đây đúng với phần mềm nguồn mở? (Chọn 3)",
     "options": [
-      "A. Nó an toàn hơn phần mềm độc quyền",
-      "B. Nó kém an toàn hơn phần mềm độc quyền",
-      "C. Giấy phép của nó là trung lập về công nghệ",
-      "D. Nó cho phép người dùng sửa đổi phần mềm để phù hợp với nhu cầu cụ thể của họ",
-      "E. Nó thân thiện với người dùng hơn phần mềm độc quyền"
+      { "key": "A", "text": "Nó an toàn hơn phần mềm độc quyền" },
+      { "key": "B", "text": "Nó kém an toàn hơn phần mềm độc quyền" },
+      { "key": "C", "text": "Giấy phép của nó là trung lập về công nghệ" },
+      { "key": "D", "text": "Nó cho phép người dùng sửa đổi phần mềm để phù hợp với nhu cầu cụ thể của họ" },
+      { "key": "E", "text": "Nó thân thiện với người dùng hơn phần mềm độc quyền" }
     ],
     "correctKeys": [
       "A",
@@ -752,11 +752,11 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
     "type": "multiple_choice",
     "text": "Ba phát biểu nào dưới đây đúng với phần mềm độc quyền? (Chọn 3)",
     "options": [
-      "A. Nó kém an toàn hơn phần mềm nguồn mở",
-      "B. Nó dễ bị phần mềm độc hại tấn công hơn phần mềm nguồn mở",
-      "C. Giấy phép của nó là trung lập về công nghệ",
-      "D. Nó cho phép người dùng sửa đổi phần mềm để phù hợp với nhu cầu cụ thể của họ",
-      "E. Nó thân thiện với người dùng hơn phần mềm nguồn mở"
+      { "key": "A", "text": "Nó kém an toàn hơn phần mềm nguồn mở" },
+      { "key": "B", "text": "Nó dễ bị phần mềm độc hại tấn công hơn phần mềm nguồn mở" },
+      { "key": "C", "text": "Giấy phép của nó là trung lập về công nghệ" },
+      { "key": "D", "text": "Nó cho phép người dùng sửa đổi phần mềm để phù hợp với nhu cầu cụ thể của họ" },
+      { "key": "E", "text": "Nó thân thiện với người dùng hơn phần mềm nguồn mở" }
     ],
     "correctKeys": [
       "A",
@@ -774,10 +774,10 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
     "type": "multiple_choice",
     "text": "Đâu là câu phát biểu đúng về các ứng dụng dựa trên môi trường Web?",
     "options": [
-      "A. Bạn phải có kết nối Internet để sử dụng ứng dụng Web",
-      "B. Phiên bản Web của ứng dụng dành cho máy tính để bàn sở hữu tất cả các tính năng giống như phiên bản trên máy tính để bàn",
-      "C. Các ứng dụng Web xử lý cục bộ thông tin trên máy tính của bạn",
-      "D. Trước khi có thể sử dụng ứng dụng Web, bạn phải cài đặt ứng dụng đó trên máy tính của mình"
+      { "key": "A", "text": "Bạn phải có kết nối Internet để sử dụng ứng dụng Web" },
+      { "key": "B", "text": "Phiên bản Web của ứng dụng dành cho máy tính để bàn sở hữu tất cả các tính năng giống như phiên bản trên máy tính để bàn" },
+      { "key": "C", "text": "Các ứng dụng Web xử lý cục bộ thông tin trên máy tính của bạn" },
+      { "key": "D", "text": "Trước khi có thể sử dụng ứng dụng Web, bạn phải cài đặt ứng dụng đó trên máy tính của mình" }
     ],
     "correctKeys": [
       "A"
@@ -851,10 +851,10 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
     "type": "multiple_choice",
     "text": "Loại USB nào có đầu nối có thể đảo ngược khi sử dụng?",
     "options": [
-      "A. Micro USB",
-      "B. USB-C",
-      "C. USB",
-      "D. Lightning connecter"
+      { "key": "A", "text": "Micro USB" },
+      { "key": "B", "text": "USB-C" },
+      { "key": "C", "text": "USB" },
+      { "key": "D", "text": "Lightning connecter" }
     ],
     "correctKeys": [
       "B"
@@ -870,10 +870,10 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
     "type": "multiple_choice",
     "text": "Làm cách nào bạn có thể xác định xem thiết bị của mình có được kết nối với Internet hay không?",
     "options": [
-      "A. Hãy thử gửi một tin nhắn",
-      "B. Mở trình duyệt",
-      "C. Tải xuống ứng dụng Speedtest",
-      "D. Thử lưu một tập tin"
+      { "key": "A", "text": "Hãy thử gửi một tin nhắn" },
+      { "key": "B", "text": "Mở trình duyệt" },
+      { "key": "C", "text": "Tải xuống ứng dụng Speedtest" },
+      { "key": "D", "text": "Thử lưu một tập tin" }
     ],
     "correctKeys": [
       "B"
@@ -973,10 +973,10 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
     "type": "multiple_choice",
     "text": "Cách an toàn để gửi thông tin nhận dạng cá nhân (PII - Personally Identifiable Information) qua Email là gì?",
     "options": [
-      "A. Bằng cách chỉ gửi Email PII cho người thân",
-      "B. Bằng cách mã hóa Email",
-      "C. Không bao giờ gửi Email",
-      "D. Bằng cách giải mã một Email"
+      { "key": "A", "text": "Bằng cách chỉ gửi Email PII cho người thân" },
+      { "key": "B", "text": "Bằng cách mã hóa Email" },
+      { "key": "C", "text": "Không bao giờ gửi Email" },
+      { "key": "D", "text": "Bằng cách giải mã một Email" }
     ],
     "correctKeys": [
       "B"
@@ -1026,12 +1026,12 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
     "type": "multiple_choice",
     "text": "Bốn điều nào được coi là thông tin nhận dạng cá nhân PII-Personally Indentifiable Information?(Chọn 4)",
     "options": [
-      "A. Số an sinh xã hội",
-      "B. Địa chỉ gửi thư",
-      "C. Kích thước quần áo",
-      "D. Màu tóc",
-      "E. Lịch sử quét sinh trắc học",
-      "F. Địa chỉ IP"
+      { "key": "A", "text": "Số an sinh xã hội" },
+      { "key": "B", "text": "Địa chỉ gửi thư" },
+      { "key": "C", "text": "Kích thước quần áo" },
+      { "key": "D", "text": "Màu tóc" },
+      { "key": "E", "text": "Lịch sử quét sinh trắc học" },
+      { "key": "F", "text": "Địa chỉ IP" }
     ],
     "correctKeys": [
       "A",
@@ -1106,12 +1106,12 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
     "type": "multiple_choice",
     "text": "Đâu là ba yếu tố phải có trong trích dẫn về một cuốn sách đã xuất bản? (Chọn 3)",
     "options": [
-      "A. Tên tác giả",
-      "B. Tên sách",
-      "C. Ngày xuất bản",
-      "D. Ngày truy cập",
-      "E. Tình trạng bản quyền",
-      "F. Tình trạng thương hiệu"
+      { "key": "A", "text": "Tên tác giả" },
+      { "key": "B", "text": "Tên sách" },
+      { "key": "C", "text": "Ngày xuất bản" },
+      { "key": "D", "text": "Ngày truy cập" },
+      { "key": "E", "text": "Tình trạng bản quyền" },
+      { "key": "F", "text": "Tình trạng thương hiệu" }
     ],
     "correctKeys": [
       "A",

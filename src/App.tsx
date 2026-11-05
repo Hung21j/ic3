@@ -659,7 +659,7 @@ export default function App() {
                     questionText: data.questionText || data.question || "",
                     questionType: data.questionType,
                     image: data.image,
-                    options: data.options
+                    options: (data.options || []).map((o) => (typeof o === "string" ? o : `${o.key}. ${o.text}`))
                   });
                 }}
                 isLoading={isLoading}

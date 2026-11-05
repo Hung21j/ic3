@@ -814,7 +814,7 @@ export const apiService = {
     type: "multiple_choice" | "yes_no" | "matching";
     text: string;
     image?: string;
-    options?: string[];
+    options?: Array<{ key: string; text: string }> | string[];
     correctAnswerText?: string;
     correctKeys?: string[];
     statements?: {

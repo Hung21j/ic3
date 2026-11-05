@@ -382,11 +382,6 @@ export default function AuthPage({ onAuthSuccess }: AuthPageProps) {
                                 {s.name} ({s.username})
                               </option>
                             ))}
-                            {selectedClass && (
-                              <option value="__manual__" className="text-indigo-700 font-bold bg-indigo-50">
-                                ➕ Không tìm thấy tên trong danh sách? Nhập tên đăng nhập thủ công
-                              </option>
-                            )}
                           </select>
                           <div className="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-slate-500">
                             <ArrowRight className="w-4 h-4 rotate-90" />

@@ -19,12 +19,12 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     order: 1,
     type: "multiple_choice",
     text: "Bạn hãy cho biết, hình ảnh nào sau đây là hình ảnh của một chiếc Laptop?",
-    image: "/images/s-lv1-ot1-1.png",
+    image: "/images/s-lv1-ot1-1.jpg",
     options: [
-      "A. Hình chiếc máy tính xách tay",
-      "B. Máy tính bảng",
-      "C. Điện thoại thông minh",
-      "D. Máy tính để bàn"
+      { key: "A", text: "Hình chiếc máy tính xách tay" },
+      { key: "B", text: "Máy tính bảng" },
+      { key: "C", text: "Điện thoại thông minh" },
+      { key: "D", text: "Máy tính để bàn" }
     ],
     correctKeys: ["A"],
     correctAnswerText: "A. Hình chiếc máy tính xách tay",
@@ -40,10 +40,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Bạn hãy cho biết phần mềm nào sau đây là hệ điều hành?",
     options: [
-      "A. Google",
-      "B. Apple iPad",
-      "C. Microsoft Windows",
-      "D. Microsoft Word"
+      { key: "A", text: "Google" },
+      { key: "B", text: "Apple iPad" },
+      { key: "C", text: "Microsoft Windows" },
+      { key: "D", text: "Microsoft Word" }
     ],
     correctKeys: ["C"],
     correctAnswerText: "C. Microsoft Windows",
@@ -59,10 +59,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Bạn hãy cho biết, loại phần cứng (Hardware) nào gửi dữ liệu đến máy tính?",
     options: [
-      "A. Nhập (Input)",
-      "B. Lưu trữ (Storage)",
-      "C. Màn hình (Monitor)",
-      "D. Xuất (Output)"
+      { key: "A", text: "Nhập (Input)" },
+      { key: "B", text: "Lưu trữ (Storage)" },
+      { key: "C", text: "Màn hình (Monitor)" },
+      { key: "D", text: "Xuất (Output)" }
     ],
     correctKeys: ["A"],
     correctAnswerText: "A. Nhập (Input)",
@@ -78,10 +78,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Bạn cần kết nối máy tính bảng với Internet. Bạn nên sử dụng phương tiện gì dưới đây?",
     options: [
-      "A. Cáp màn hình (A monitor cable)",
-      "B. Cáp máy in (A printer cable)",
-      "C. Bluetooth",
-      "D. Wi-Fi"
+      { key: "A", text: "Cáp màn hình (A monitor cable)" },
+      { key: "B", text: "Cáp máy in (A printer cable)" },
+      { key: "C", text: "Bluetooth" },
+      { key: "D", text: "Wi-Fi" }
     ],
     correctKeys: ["D"],
     correctAnswerText: "D. Wi-Fi",
@@ -97,10 +97,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Bạn hãy cho biết, phần mềm nào dưới đây là phần mềm ứng dụng?",
     options: [
-      "A. iOS",
-      "B. Windows",
-      "C. Microsoft Word",
-      "D. Flash drive"
+      { key: "A", text: "iOS" },
+      { key: "B", text: "Windows" },
+      { key: "C", text: "Microsoft Word" },
+      { key: "D", text: "Flash drive" }
     ],
     correctKeys: ["C"],
     correctAnswerText: "C. Microsoft Word",
@@ -117,10 +117,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     text: "Hình ảnh này cho biết loại thiết bị máy tính nào?",
     image: "/images/s-lv1-ot1-6.png",
     options: [
-      "A. Máy tính xách tay (Laptop computer)",
-      "B. Máy tính để bàn (Desktop computer)",
-      "C. Điện thoại thông minh (Smartphone)",
-      "D. Máy tính bảng (Tablet)"
+      { key: "A", text: "Máy tính xách tay (Laptop computer)" },
+      { key: "B", text: "Máy tính để bàn (Desktop computer)" },
+      { key: "C", text: "Điện thoại thông minh (Smartphone)" },
+      { key: "D", text: "Máy tính bảng (Tablet)" }
     ],
     correctKeys: ["A"],
     correctAnswerText: "A. Máy tính xách tay (Laptop computer)",
@@ -136,10 +136,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Máy tính để bàn có thể sử dụng loại thiết bị nào để kết nối Internet?",
     options: [
-      "A. Thiết bị Wi-Fi (A Wi-Fi Device)",
-      "B. Một thiết bị lưu trữ (A Storage Device)",
-      "C. Một thiết bị đa phương tiện (A Media Device)",
-      "D. Một thiết bị hiển thị (A Display Device)"
+      { key: "A", text: "Thiết bị Wi-Fi (A Wi-Fi Device)" },
+      { key: "B", text: "Một thiết bị lưu trữ (A Storage Device)" },
+      { key: "C", text: "Một thiết bị đa phương tiện (A Media Device)" },
+      { key: "D", text: "Một thiết bị hiển thị (A Display Device)" }
     ],
     correctKeys: ["A"],
     correctAnswerText: "A. Thiết bị Wi-Fi (A Wi-Fi Device)",
@@ -155,10 +155,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Bạn đang học trực tuyến tại thư viện công cộng. Bạn cần sạc pin máy tính xách tay để hoàn thành công việc của mình... Bạn nên làm gì để vừa sạc pin máy tính và vừa tiếp tục làm việc?",
     options: [
-      "A. Di chuyển đến khu vực có sẵn một ổ cắm để sạc pin máy tính và tiếp tục buổi học",
-      "B. Học cho đến khi hết pin máy tính để không làm phiền bất cứ ai",
-      "C. Rút phích cắm của điện thoại ở đồng bàn để có thể sử dụng ổ cắm gần đó",
-      "D. Sử dụng dây nối dài kéo cáp khắp thư viện để bạn không phải thay đổi chỗ ngồi"
+      { key: "A", text: "Di chuyển đến khu vực có sẵn một ổ cắm để sạc pin máy tính và tiếp tục buổi học" },
+      { key: "B", text: "Học cho đến khi hết pin máy tính để không làm phiền bất cứ ai" },
+      { key: "C", text: "Rút phích cắm của điện thoại ở đồng bàn để có thể sử dụng ổ cắm gần đó" },
+      { key: "D", text: "Sử dụng dây nối dài kéo cáp khắp thư viện để bạn không phải thay đổi chỗ ngồi" }
     ],
     correctKeys: ["A"],
     correctAnswerText: "A. Di chuyển đến khu vực có sẵn một ổ cắm để sạc pin máy tính và tiếp tục buổi học",
@@ -174,10 +174,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Bạn hãy cho biết, hai thiết bị nào sau đây là thiết bị ngoại vi? (Chọn 2)",
     options: [
-      "A. Chuột (Mouse)",
-      "B. Bàn phím (Keyboard)",
-      "C. Bộ sạc (Charger)",
-      "D. Thùng máy (CPU case)"
+      { key: "A", text: "Chuột (Mouse)" },
+      { key: "B", text: "Bàn phím (Keyboard)" },
+      { key: "C", text: "Bộ sạc (Charger)" },
+      { key: "D", text: "Thùng máy (CPU case)" }
     ],
     correctKeys: ["A", "B"],
     correctAnswerText: "A. Chuột (Mouse) | B. Bàn phím (Keyboard)",
@@ -193,10 +193,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Thuật ngữ cho phần mềm chạy trên điện thoại hoặc máy tính bảng là gì?",
     options: [
-      "A. Icon (Biểu tượng)",
-      "B. Widget (Tiện ích)",
-      "C. App (Ứng dụng)",
-      "D. Program (Chương trình)"
+      { key: "A", text: "Icon (Biểu tượng)" },
+      { key: "B", text: "Widget (Tiện ích)" },
+      { key: "C", text: "App (Ứng dụng)" },
+      { key: "D", text: "Program (Chương trình)" }
     ],
     correctKeys: ["C"],
     correctAnswerText: "C. App (Ứng dụng)",
@@ -251,10 +251,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Thiết bị nào có bàn di chuột (Touchpad) tích hợp để trỏ và nhập?",
     options: [
-      "A. Desktop computer",
-      "B. Tablet",
-      "C. Laptop computer",
-      "D. Smartphone"
+      { key: "A", text: "Desktop computer" },
+      { key: "B", text: "Tablet" },
+      { key: "C", text: "Laptop computer" },
+      { key: "D", text: "Smartphone" }
     ],
     correctKeys: ["C"],
     correctAnswerText: "C. Laptop computer",
@@ -270,10 +270,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "An cần sạc điện thoại vào ban đêm để có thể sử dụng nó vào sáng hôm sau. Đâu là nơi an toàn để An giữ điện thoại của mình trong khi đang sạc?",
     options: [
-      "A. Dưới gối nằm của An",
-      "B. Trên kệ trong phòng tắm",
-      "C. Trên sàn nhà",
-      "D. Trên bàn làm việc của An"
+      { key: "A", text: "Dưới gối nằm của An" },
+      { key: "B", text: "Trên kệ trong phòng tắm" },
+      { key: "C", text: "Trên sàn nhà" },
+      { key: "D", text: "Trên bàn làm việc của An" }
     ],
     correctKeys: ["D"],
     correctAnswerText: "D. Trên bàn làm việc của An",
@@ -290,10 +290,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     text: "Bạn muốn tìm một trò chơi được cài đặt trên máy tính của mình. Trên thanh tác vụ (Taskbar) được hiển thị, bạn nên nhấp vào đâu để tìm trò chơi?",
     image: "/images/s-lv1-ot1-15.png",
     options: [
-      "A. Ô tìm kiếm 'Type here to search'",
-      "B. Các biểu tượng ứng dụng khác trên thanh Taskbar",
-      "C. Biểu tượng loa âm lượng",
-      "D. Nút hiển thị đồng hồ"
+      { key: "A", text: "Nút Start" },
+      { key: "B", text: "ô tìm kiếm" },
+      { key: "C", text: "Ứng dụng MS Edge" },
+      { key: "D", text: "Thư mục File Explorer" }
     ],
     correctKeys: ["A"],
     correctAnswerText: "A. Ô tìm kiếm 'Type here to search'",
@@ -309,10 +309,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Thiết bị đầu vào (Input device) nào sau đây được tích hợp vào điện thoại thông minh?",
     options: [
-      "A. Bàn di chuột (Touchpad)",
-      "B. Bộ sạc pin (Charger)",
-      "C. Tai nghe (Earbuds)",
-      "D. Màn hình cảm ứng (Touchscreen)"
+      { key: "A", text: "Bàn di chuột (Touchpad)" },
+      { key: "B", text: "Bộ sạc pin (Charger)" },
+      { key: "C", text: "Tai nghe (Earbuds)" },
+      { key: "D", text: "Màn hình cảm ứng (Touchscreen)" }
     ],
     correctKeys: ["D"],
     correctAnswerText: "D. Màn hình cảm ứng (Touchscreen)",
@@ -328,10 +328,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Phát biểu nào sau đây là đúng về một phần mềm ứng dụng trên máy tính để bàn?",
     options: [
-      "A. Máy tính của bạn phải được kết nối với Internet để chạy nó",
-      "B. Bạn có thể đăng nhập vào nó từ bất kỳ thiết bị nào",
-      "C. Phần mềm phải được cài đặt trên máy tính của bạn trước khi bạn có thể khởi chạy nó",
-      "D. Phần mềm không yêu cầu bất kỳ dung lượng lưu trữ nào trên máy tính của bạn"
+      { key: "A", text: "Máy tính của bạn phải được kết nối với Internet để chạy nó" },
+      { key: "B", text: "Bạn có thể đăng nhập vào nó từ bất kỳ thiết bị nào" },
+      { key: "C", text: "Phần mềm phải được cài đặt trên máy tính của bạn trước khi bạn có thể khởi chạy nó" },
+      { key: "D", text: "Phần mềm không yêu cầu bất kỳ dung lượng lưu trữ nào trên máy tính của bạn" }
     ],
     correctKeys: ["C"],
     correctAnswerText: "C. Phần mềm phải được cài đặt trên máy tính của bạn trước khi bạn có thể khởi chạy nó",
@@ -347,10 +347,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Bạn cần sử dụng máy tính bảng (Tablet) của mình trong giờ học nhưng bộ sạc của bạn không hoạt động. Bạn nên làm gì để tiếp tục tham gia trên máy tính của mình?",
     options: [
-      "A. Buộc bộ sạc điện thoại vào máy tính bảng ngay cả khi không tương thích",
-      "B. Bí mật chuyển đổi bộ sạc với bạn bè trong giờ giải lao",
-      "C. Hãy để máy tính bảng tắt nguồn và không tham gia bài học",
-      "D. Hãy cho giáo viên của bạn biết rằng bộ sạc của bạn không hoạt động"
+      { key: "A", text: "Buộc bộ sạc điện thoại vào máy tính bảng ngay cả khi không tương thích" },
+      { key: "B", text: "Bí mật chuyển đổi bộ sạc với bạn bè trong giờ giải lao" },
+      { key: "C", text: "Hãy để máy tính bảng tắt nguồn và không tham gia bài học" },
+      { key: "D", text: "Hãy cho giáo viên của bạn biết rằng bộ sạc của bạn không hoạt động" }
     ],
     correctKeys: ["D"],
     correctAnswerText: "D. Hãy cho giáo viên của bạn biết rằng bộ sạc của bạn không hoạt động",
@@ -366,10 +366,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Tùy chọn nào sau đây là ví dụ về thiết bị đầu vào được tích hợp sẵn trên máy tính?",
     options: [
-      "A. Chuột (Mouse)",
-      "B. Tai nghe (Headphones)",
-      "C. Màn hình cảm ứng (Touchscreen)",
-      "D. Máy in (Printer)"
+      { key: "A", text: "Chuột (Mouse)" },
+      { key: "B", text: "Tai nghe (Headphones)" },
+      { key: "C", text: "Màn hình cảm ứng (Touchscreen)" },
+      { key: "D", text: "Máy in (Printer)" }
     ],
     correctKeys: ["C"],
     correctAnswerText: "C. Màn hình cảm ứng (Touchscreen)",
@@ -385,10 +385,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Tùy chọn nào sau đây là một tập tin (File)?",
     options: [
-      "A. Một thư mục ảnh từ một chuyến đi thực địa",
-      "B. Một liên kết đến trang web trường học của bạn",
-      "C. Tài liệu chứa danh sách bài tập cần làm của bạn",
-      "D. Buổi phát trực tiếp sự kiện thể thao"
+      { key: "A", text: "Một thư mục ảnh từ một chuyến đi thực địa" },
+      { key: "B", text: "Một liên kết đến trang web trường học của bạn" },
+      { key: "C", text: "Tài liệu chứa danh sách bài tập cần làm của bạn" },
+      { key: "D", text: "Buổi phát trực tiếp sự kiện thể thao" }
     ],
     correctKeys: ["C"],
     correctAnswerText: "C. Tài liệu chứa danh sách bài tập cần làm của bạn",
@@ -405,10 +405,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     text: "Bạn sẽ tìm thấy lệnh đóng (Close) trên thẻ (Tab) nào sau đây trong các ứng dụng văn phòng?",
     image: "/images/s-lv1-ot1-21.png",
     options: [
-      "A. Thẻ File",
-      "B. Thẻ Home",
-      "C. Thẻ Insert",
-      "D. Thẻ Design"
+      { key: "A", text: "Thẻ File" },
+      { key: "B", text: "Thẻ Home" },
+      { key: "C", text: "Thẻ Insert" },
+      { key: "D", text: "Thẻ Design" }
     ],
     correctKeys: ["A"],
     correctAnswerText: "A. Thẻ File",
@@ -424,10 +424,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Máy tính để bàn có thể sử dụng loại thiết bị nào để kết nối internet?",
     options: [
-      "A. Một thiết bị lưu trữ",
-      "B. Một thiết bị hiển thị",
-      "C. Một thiết bị đa phương tiện",
-      "D. Một thiết bị Wi-Fi (A Wi-Fi device)"
+      { key: "A", text: "Một thiết bị lưu trữ" },
+      { key: "B", text: "Một thiết bị hiển thị" },
+      { key: "C", text: "Một thiết bị đa phương tiện" },
+      { key: "D", text: "Một thiết bị Wi-Fi (A Wi-Fi device)" }
     ],
     correctKeys: ["D"],
     correctAnswerText: "D. Một thiết bị Wi-Fi (A Wi-Fi device)",
@@ -443,10 +443,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Thuật ngữ cho thời gian bạn dành để làm những việc như: Xem TV, chơi game, nhắn tin điện thoại, nghiên cứu trên máy tính?",
     options: [
-      "A. Thời gian sử dụng thiết bị (Screen time)",
-      "B. Tương tác trực tuyến (Online interaction)",
-      "C. Cân bằng truyền thông (Media balance)",
-      "D. Thời gian tập trung (Focus time)"
+      { key: "A", text: "Thời gian sử dụng thiết bị (Screen time)" },
+      { key: "B", text: "Tương tác trực tuyến (Online interaction)" },
+      { key: "C", text: "Cân bằng truyền thông (Media balance)" },
+      { key: "D", text: "Thời gian tập trung (Focus time)" }
     ],
     correctKeys: ["A"],
     correctAnswerText: "A. Thời gian sử dụng thiết bị (Screen time)",
@@ -481,10 +481,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Học sinh mới cần tạo một trang Web với mật khẩu là 'orange'... Bạn nên nói gì với họ để nâng cao độ bảo mật?",
     options: [
-      "A. Sử dụng tên thú cưng của họ làm mật khẩu",
-      "B. Chia sẻ mật khẩu với bạn bè trong trường hợp họ quên nó",
-      "C. Sử dụng số và ký hiệu trong mật khẩu",
-      "D. Tạo mật khẩu ngắn để dễ nhớ"
+      { key: "A", text: "Sử dụng tên thú cưng của họ làm mật khẩu" },
+      { key: "B", text: "Chia sẻ mật khẩu với bạn bè trong trường hợp họ quên nó" },
+      { key: "C", text: "Sử dụng số và ký hiệu trong mật khẩu" },
+      { key: "D", text: "Tạo mật khẩu ngắn để dễ nhớ" }
     ],
     correctKeys: ["C"],
     correctAnswerText: "C. Sử dụng số và ký hiệu trong mật khẩu",
@@ -500,10 +500,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Phần thông tin nào là an toàn để chia sẻ trực tuyến?",
     options: [
-      "A. Tên trường và lớp của bạn",
-      "B. Màu sắc yêu thích của bạn",
-      "C. Địa chỉ nhà riêng của bạn",
-      "D. Công viên ưa thích gần nhà bạn"
+      { key: "A", text: "Tên trường và lớp của bạn" },
+      { key: "B", text: "Màu sắc yêu thích của bạn" },
+      { key: "C", text: "Địa chỉ nhà riêng của bạn" },
+      { key: "D", text: "Công viên ưa thích gần nhà bạn" }
     ],
     correctKeys: ["B"],
     correctAnswerText: "B. Màu sắc yêu thích của bạn",
@@ -538,10 +538,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Bạn nhận được một email từ cửa hàng yêu thích nói rằng bạn đã giành được 1000 đô la... Điều gì sẽ khiến bạn quan tâm và nghi ngờ về email này?",
     options: [
-      "A. Cửa hàng có thể đã nhầm lẫn vì bạn không nhớ đã tham gia cuộc thi",
-      "B. Tiền ở dạng quà tặng chỉ có thể sử dụng tại một địa điểm",
-      "C. Cửa hàng có thể muốn bạn tham gia vào một chiến dịch quảng cáo",
-      "D. Email có thể là từ một kẻ lừa đảo đang cố gắng thu thập thông tin cá nhân của bạn"
+      { key: "A", text: "Cửa hàng có thể đã nhầm lẫn vì bạn không nhớ đã tham gia cuộc thi" },
+      { key: "B", text: "Tiền ở dạng quà tặng chỉ có thể sử dụng tại một địa điểm" },
+      { key: "C", text: "Cửa hàng có thể muốn bạn tham gia vào một chiến dịch quảng cáo" },
+      { key: "D", text: "Email có thể là từ một kẻ lừa đảo đang cố gắng thu thập thông tin cá nhân của bạn" }
     ],
     correctKeys: ["D"],
     correctAnswerText: "D. Email có thể là từ một kẻ lừa đảo đang cố gắng thu thập thông tin cá nhân của bạn",
@@ -557,10 +557,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Bạn nên làm gì nếu bạn bị người khác có hành vi trực tuyến tiêu cực hoặc không phù hợp đối với mình?",
     options: [
-      "A. Yêu cầu người lạ dừng hành vi và cãi nhau với họ",
-      "B. Nói với người lạ rằng bạn không thích hành vi của họ",
-      "C. Trò chuyện với người lạ để giữ họ trực tuyến",
-      "D. Nói với cha mẹ hoặc giáo viên của bạn"
+      { key: "A", text: "Yêu cầu người lạ dừng hành vi và cãi nhau với họ" },
+      { key: "B", text: "Nói với người lạ rằng bạn không thích hành vi của họ" },
+      { key: "C", text: "Trò chuyện với người lạ để giữ họ trực tuyến" },
+      { key: "D", text: "Nói với cha mẹ hoặc giáo viên của bạn" }
     ],
     correctKeys: ["D"],
     correctAnswerText: "D. Nói với cha mẹ hoặc giáo viên của bạn",
@@ -576,10 +576,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Nhóm nào là thích hợp và an toàn nhất cho bạn bè trực tuyến?",
     options: [
-      "A. Những người bạn gặp khi chơi trò chơi trực tuyến",
-      "B. Những người bạn biết trong cuộc sống thực",
-      "C. Những người thực hiện giao hàng đến nhà bạn",
-      "D. Bất kỳ ai gửi lời mời kết bạn ngẫu nhiên"
+      { key: "A", text: "Những người bạn gặp khi chơi trò chơi trực tuyến" },
+      { key: "B", text: "Những người bạn biết trong cuộc sống thực" },
+      { key: "C", text: "Những người thực hiện giao hàng đến nhà bạn" },
+      { key: "D", text: "Bất kỳ ai gửi lời mời kết bạn ngẫu nhiên" }
     ],
     correctKeys: ["B"],
     correctAnswerText: "B. Những người bạn biết trong cuộc sống thực",
@@ -597,10 +597,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Bộ phận nào được ví như 'Bộ não' của máy tính, thực hiện mọi phép tính và xử lý thông tin?",
     options: [
-      "A. CPU (Bộ vi xử lý trung tâm)",
-      "B. Ổ đĩa quang CD/DVD",
-      "C. Chuột quang",
-      "D. Cáp nguồn"
+      { key: "A", text: "CPU (Bộ vi xử lý trung tâm)" },
+      { key: "B", text: "Ổ đĩa quang CD/DVD" },
+      { key: "C", text: "Chuột quang" },
+      { key: "D", text: "Cáp nguồn" }
     ],
     correctKeys: ["A"],
     correctAnswerText: "A. CPU (Bộ vi xử lý trung tâm)",
@@ -616,10 +616,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Thiết bị nào sau đây là máy tính xách tay nhỏ gọn, có pin tích hợp và có thể gập lại mang đi dễ dàng?",
     options: [
-      "A. Máy tính để bàn (Desktop PC)",
-      "B. Máy tính xách tay (Laptop)",
-      "C. Máy chủ (Server)",
-      "D. Máy in văn phòng"
+      { key: "A", text: "Máy tính để bàn (Desktop PC)" },
+      { key: "B", text: "Máy tính xách tay (Laptop)" },
+      { key: "C", text: "Máy chủ (Server)" },
+      { key: "D", text: "Máy in văn phòng" }
     ],
     correctKeys: ["B"],
     correctAnswerText: "B. Máy tính xách tay (Laptop)",
@@ -671,10 +671,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Để gõ chữ in hoa liên tục nhiều chữ cái, em nên bật đèn phím nào trên bàn phím?",
     options: [
-      "A. Tab",
-      "B. Caps Lock",
-      "C. Alt",
-      "D. Ctrl"
+      { key: "A", text: "Tab" },
+      { key: "B", text: "Caps Lock" },
+      { key: "C", text: "Alt" },
+      { key: "D", text: "Ctrl" }
     ],
     correctKeys: ["B"],
     correctAnswerText: "B. Caps Lock",
@@ -692,10 +692,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Ổ cứng (Hard Drive) và thẻ nhớ USB dùng để làm gì trong hệ thống máy tính?",
     options: [
-      "A. Lưu trữ dữ liệu và chương trình lâu dài ngay cả khi tắt máy",
-      "B. Phát ra bài hát",
-      "C. Tự động lau sạch bụi bẩn màn hình",
-      "D. Thay thế nguồn điện gia đình"
+      { key: "A", text: "Lưu trữ dữ liệu và chương trình lâu dài ngay cả khi tắt máy" },
+      { key: "B", text: "Phát ra bài hát" },
+      { key: "C", text: "Tự động lau sạch bụi bẩn màn hình" },
+      { key: "D", text: "Thay thế nguồn điện gia đình" }
     ],
     correctKeys: ["A"],
     correctAnswerText: "A. Lưu trữ dữ liệu và chương trình lâu dài ngay cả khi tắt máy",
@@ -711,10 +711,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Thanh nằm ngang ở dưới cùng màn hình Desktop trong hệ điều hành Windows chứa nút Start và các biểu tượng ứng dụng gọi là gì?",
     options: [
-      "A. Title Bar (Thanh tiêu đề)",
-      "B. Taskbar (Thanh tác vụ)",
-      "C. Menu Bar",
-      "D. Scroll Bar (Thanh cuộn)"
+      { key: "A", text: "Title Bar (Thanh tiêu đề)" },
+      { key: "B", text: "Taskbar (Thanh tác vụ)" },
+      { key: "C", text: "Menu Bar" },
+      { key: "D", text: "Scroll Bar (Thanh cuộn)" }
     ],
     correctKeys: ["B"],
     correctAnswerText: "B. Taskbar (Thanh tác vụ)",
@@ -730,10 +730,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Hệ điều hành phổ biến được cài đặt trên hầu hết các máy tính học đường hiện nay là gì?",
     options: [
-      "A. Microsoft Windows",
-      "B. Microsoft Word",
-      "C. Google Chrome",
-      "D. Scratch"
+      { key: "A", text: "Microsoft Windows" },
+      { key: "B", text: "Microsoft Word" },
+      { key: "C", text: "Google Chrome" },
+      { key: "D", text: "Scratch" }
     ],
     correctKeys: ["A"],
     correctAnswerText: "A. Microsoft Windows",
@@ -749,10 +749,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Để điều chỉnh độ lớn âm thanh phát ra từ loa máy tính, em chọn biểu tượng nào trên góc phải thanh Taskbar?",
     options: [
-      "A. Biểu tượng hình chiếc Loa (Volume)",
-      "B. Biểu tượng quả Pin",
-      "C. Biểu tượng chiếc Đồng hồ",
-      "D. Biểu tượng sóng Wi-Fi"
+      { key: "A", text: "Biểu tượng hình chiếc Loa (Volume)" },
+      { key: "B", text: "Biểu tượng quả Pin" },
+      { key: "C", text: "Biểu tượng chiếc Đồng hồ" },
+      { key: "D", text: "Biểu tượng sóng Wi-Fi" }
     ],
     correctKeys: ["A"],
     correctAnswerText: "A. Biểu tượng hình chiếc Loa (Volume)",
@@ -772,10 +772,10 @@ export const SPARK_LEVEL2_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Phần mềm nào sau đây là ứng dụng chuyên dùng để soạn thảo thư từ, đoạn văn bản và bài học?",
     options: [
-      "A. Microsoft Word",
-      "B. Máy tính bỏ túi (Calculator)",
-      "C. Trình phát nhạc (Windows Media Player)",
-      "D. Phần mềm quét virus"
+      { key: "A", text: "Microsoft Word" },
+      { key: "B", text: "Máy tính bỏ túi (Calculator)" },
+      { key: "C", text: "Trình phát nhạc (Windows Media Player)" },
+      { key: "D", text: "Phần mềm quét virus" }
     ],
     correctKeys: ["A"],
     correctAnswerText: "A. Microsoft Word",
@@ -791,10 +791,10 @@ export const SPARK_LEVEL2_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Trong Microsoft Word, biểu tượng chữ B đậm (Bold) trên thanh công cụ dùng để làm gì cho đoạn chữ được chọn?",
     options: [
-      "A. Gạch chân chữ",
-      "B. Làm cho chữ in đậm",
-      "C. Làm cho chữ in nghiêng",
-      "D. Xóa đoạn chữ đó đi"
+      { key: "A", text: "Gạch chân chữ" },
+      { key: "B", text: "Làm cho chữ in đậm" },
+      { key: "C", text: "Làm cho chữ in nghiêng" },
+      { key: "D", text: "Xóa đoạn chữ đó đi" }
     ],
     correctKeys: ["B"],
     correctAnswerText: "B. Làm cho chữ in đậm",
@@ -810,10 +810,10 @@ export const SPARK_LEVEL2_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Tổ hợp phím tắt nào giúp em lưu nhanh bài làm (Save) vào máy tính để không bị mất dữ liệu?",
     options: [
-      "A. Ctrl + S",
-      "B. Ctrl + P",
-      "C. Ctrl + C",
-      "D. Ctrl + Z"
+      { key: "A", text: "Ctrl + S" },
+      { key: "B", text: "Ctrl + P" },
+      { key: "C", text: "Ctrl + C" },
+      { key: "D", text: "Ctrl + Z" }
     ],
     correctKeys: ["A"],
     correctAnswerText: "A. Ctrl + S",
@@ -865,10 +865,10 @@ export const SPARK_LEVEL2_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Phần mềm nào sau đây giúp tạo các bài trình chiếu (Slide) có hình ảnh, chữ viết và hiệu ứng sinh động để thuyết trình trước lớp?",
     options: [
-      "A. Microsoft PowerPoint",
-      "B. Notepad",
-      "C. Paint",
-      "D. Windows Calculator"
+      { key: "A", text: "Microsoft PowerPoint" },
+      { key: "B", text: "Notepad" },
+      { key: "C", text: "Paint" },
+      { key: "D", text: "Windows Calculator" }
     ],
     correctKeys: ["A"],
     correctAnswerText: "A. Microsoft PowerPoint",
@@ -886,10 +886,10 @@ export const SPARK_LEVEL2_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Phần mềm bảng tính Microsoft Excel thường được dùng tốt nhất cho công việc nào sau đây?",
     options: [
-      "A. Lập danh sách, tính toán điểm số và vẽ biểu đồ",
-      "B. Xem phim hoạt hình",
-      "C. Nghe đài phát thanh",
-      "D. Cắt tỉa ảnh chân dung chuyên nghiệp"
+      { key: "A", text: "Lập danh sách, tính toán điểm số và vẽ biểu đồ" },
+      { key: "B", text: "Xem phim hoạt hình" },
+      { key: "C", text: "Nghe đài phát thanh" },
+      { key: "D", text: "Cắt tỉa ảnh chân dung chuyên nghiệp" }
     ],
     correctKeys: ["A"],
     correctAnswerText: "A. Lập danh sách, tính toán điểm số và vẽ biểu đồ",
@@ -905,10 +905,10 @@ export const SPARK_LEVEL2_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Trong Microsoft Word, tổ hợp phím tắt Ctrl + Z có tác dụng gì?",
     options: [
-      "A. Hoàn tác (Undo) lại thao tác vừa làm sai",
-      "B. Xóa toàn bộ văn bản",
-      "C. In bài ra giấy",
-      "D. Tắt máy tính"
+      { key: "A", text: "Hoàn tác (Undo) lại thao tác vừa làm sai" },
+      { key: "B", text: "Xóa toàn bộ văn bản" },
+      { key: "C", text: "In bài ra giấy" },
+      { key: "D", text: "Tắt máy tính" }
     ],
     correctKeys: ["A"],
     correctAnswerText: "A. Hoàn tác (Undo) lại thao tác vừa làm sai",
@@ -924,10 +924,10 @@ export const SPARK_LEVEL2_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Khi chèn tranh ảnh vào văn bản Word, em vào thẻ (Tab) nào trên thanh ruy-băng (Ribbon)?",
     options: [
-      "A. Insert",
-      "B. Home",
-      "C. View",
-      "D. File"
+      { key: "A", text: "Insert" },
+      { key: "B", text: "Home" },
+      { key: "C", text: "View" },
+      { key: "D", text: "File" }
     ],
     correctKeys: ["A"],
     correctAnswerText: "A. Insert",
@@ -943,10 +943,10 @@ export const SPARK_LEVEL2_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Để gõ được tiếng Việt có dấu theo kiểu TELEX trên máy tính, để gõ chữ 'Â' em bấm:",
     options: [
-      "A. Gõ hai chữ 'a' liên tiếp (aa)",
-      "B. Gõ chữ 'a' và số '8'",
-      "C. Gõ chữ 'a' và phím 'w'",
-      "D. Gõ chữ 'a' và phím 's'"
+      { key: "A", text: "Gõ hai chữ 'a' liên tiếp (aa)" },
+      { key: "B", text: "Gõ chữ 'a' và số '8'" },
+      { key: "C", text: "Gõ chữ 'a' và phím 'w'" },
+      { key: "D", text: "Gõ chữ 'a' và phím 's'" }
     ],
     correctKeys: ["A"],
     correctAnswerText: "A. Gõ hai chữ 'a' liên tiếp (aa)",
@@ -966,10 +966,10 @@ export const SPARK_LEVEL3_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Ứng dụng nào sau đây được gọi là trình duyệt web (Web Browser) dùng để mở và xem các trang web trên mạng?",
     options: [
-      "A. Google Chrome",
-      "B. Microsoft Word",
-      "C. Paint",
-      "D. Windows Media Player"
+      { key: "A", text: "Google Chrome" },
+      { key: "B", text: "Microsoft Word" },
+      { key: "C", text: "Paint" },
+      { key: "D", text: "Windows Media Player" }
     ],
     correctKeys: ["A"],
     correctAnswerText: "A. Google Chrome",
@@ -985,10 +985,10 @@ export const SPARK_LEVEL3_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Khi một người lạ trên mạng nhắn tin hỏi tên thật, địa chỉ nhà hoặc số điện thoại của em, em nên làm gì?",
     options: [
-      "A. Cung cấp ngay đầy đủ thông tin",
-      "B. Không chia sẻ và báo ngay cho cha mẹ hoặc thầy cô giáo biết",
-      "C. Gửi thêm ảnh chụp nhà và trường học",
-      "D. Hẹn gặp người lạ ở công viên"
+      { key: "A", text: "Cung cấp ngay đầy đủ thông tin" },
+      { key: "B", text: "Không chia sẻ và báo ngay cho cha mẹ hoặc thầy cô giáo biết" },
+      { key: "C", text: "Gửi thêm ảnh chụp nhà và trường học" },
+      { key: "D", text: "Hẹn gặp người lạ ở công viên" }
     ],
     correctKeys: ["B"],
     correctAnswerText: "B. Không chia sẻ và báo ngay cho cha mẹ hoặc thầy cô giáo biết",
@@ -1004,10 +1004,10 @@ export const SPARK_LEVEL3_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Mật khẩu (Password) như thế nào được coi là mật khẩu mạnh và an toàn?",
     options: [
-      "A. 123456",
-      "B. Ngày sinh nhật của em",
-      "C. Kết hợp chữ hoa, chữ thường, chữ số và ký tự đặc biệt, không dễ đoán",
-      "D. Tên của chú thú cưng"
+      { key: "A", text: "123456" },
+      { key: "B", text: "Ngày sinh nhật của em" },
+      { key: "C", text: "Kết hợp chữ hoa, chữ thường, chữ số và ký tự đặc biệt, không dễ đoán" },
+      { key: "D", text: "Tên của chú thú cưng" }
     ],
     correctKeys: ["C"],
     correctAnswerText: "C. Kết hợp chữ hoa, chữ thường, chữ số và ký tự đặc biệt, không dễ đoán",
@@ -1059,10 +1059,10 @@ export const SPARK_LEVEL3_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Dịch vụ thư điện tử (Email) dùng để làm gì?",
     options: [
-      "A. Gửi và nhận thư từ, tài liệu học tập qua mạng Internet",
-      "B. Nấu ăn tự động",
-      "C. Đo nhiệt độ phòng học",
-      "D. Bơm mực cho máy in"
+      { key: "A", text: "Gửi và nhận thư từ, tài liệu học tập qua mạng Internet" },
+      { key: "B", text: "Nấu ăn tự động" },
+      { key: "C", text: "Đo nhiệt độ phòng học" },
+      { key: "D", text: "Bơm mực cho máy in" }
     ],
     correctKeys: ["A"],
     correctAnswerText: "A. Gửi và nhận thư từ, tài liệu học tập qua mạng Internet",
@@ -1080,10 +1080,10 @@ export const SPARK_LEVEL3_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Công cụ tìm kiếm trực tuyến phổ biến nhất trên Internet hiện nay là gì?",
     options: [
-      "A. Google Search",
-      "B. Đồng hồ báo thức",
-      "C. Trình soạn thảo văn bản Word",
-      "D. Bàn phím số"
+      { key: "A", text: "Google Search" },
+      { key: "B", text: "Đồng hồ báo thức" },
+      { key: "C", text: "Trình soạn thảo văn bản Word" },
+      { key: "D", text: "Bàn phím số" }
     ],
     correctKeys: ["A"],
     correctAnswerText: "A. Google Search",
@@ -1099,10 +1099,10 @@ export const SPARK_LEVEL3_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Để giữ gìn sức khỏe đôi mắt và thể lực khi dùng máy tính, sau mỗi 30 - 45 phút học tập, em nên:",
     options: [
-      "A. Đứng dậy vận động nhẹ, nhìn ra xa vào cây xanh và chớp mắt thư giãn",
-      "B. Chơi tiếp trò chơi điện tử thêm 3 tiếng",
-      "C. Nhìn thật sát vào màn hình máy tính",
-      "D. Đọc truyện tranh trong phòng tối"
+      { key: "A", text: "Đứng dậy vận động nhẹ, nhìn ra xa vào cây xanh và chớp mắt thư giãn" },
+      { key: "B", text: "Chơi tiếp trò chơi điện tử thêm 3 tiếng" },
+      { key: "C", text: "Nhìn thật sát vào màn hình máy tính" },
+      { key: "D", text: "Đọc truyện tranh trong phòng tối" }
     ],
     correctKeys: ["A"],
     correctAnswerText: "A. Đứng dậy vận động nhẹ, nhìn ra xa vào cây xanh và chớp mắt thư giãn",
@@ -1118,10 +1118,10 @@ export const SPARK_LEVEL3_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Biểu tượng ổ khóa màu xám hoặc xanh nằm ở bên cạnh địa chỉ trang web (https://) thể hiện điều gì?",
     options: [
-      "A. Trang web được mã hóa bảo mật an toàn cho kết nối truyền tải dữ liệu",
-      "B. Trang web bị khóa không cho học sinh xem",
-      "C. Trang web đã bị virus tấn công",
-      "D. Máy tính sắp hết pin"
+      { key: "A", text: "Trang web được mã hóa bảo mật an toàn cho kết nối truyền tải dữ liệu" },
+      { key: "B", text: "Trang web bị khóa không cho học sinh xem" },
+      { key: "C", text: "Trang web đã bị virus tấn công" },
+      { key: "D", text: "Máy tính sắp hết pin" }
     ],
     correctKeys: ["A"],
     correctAnswerText: "A. Trang web được mã hóa bảo mật an toàn cho kết nối truyền tải dữ liệu",
@@ -1137,10 +1137,10 @@ export const SPARK_LEVEL3_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Hiện tượng có người gửi tin nhắn đe dọa, chê bai xấu xí hoặc tẩy chay bạn bè trên không gian mạng được gọi là gì?",
     options: [
-      "A. Bắt nạt qua mạng (Cyberbullying)",
-      "B. Học nhóm vui vẻ",
-      "C. Trò chơi trí tuệ",
-      "D. Kết nối cộng đồng văn minh"
+      { key: "A", text: "Bắt nạt qua mạng (Cyberbullying)" },
+      { key: "B", text: "Học nhóm vui vẻ" },
+      { key: "C", text: "Trò chơi trí tuệ" },
+      { key: "D", text: "Kết nối cộng đồng văn minh" }
     ],
     correctKeys: ["A"],
     correctAnswerText: "A. Bắt nạt qua mạng (Cyberbullying)",

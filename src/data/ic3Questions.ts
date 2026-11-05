@@ -1,4 +1,4 @@
-import { QuestionType } from "../types";
+import { QuestionType, MCQOption } from "../types";
 
 export interface IC3Question {
   id: string;
@@ -25,7 +25,8 @@ export interface IC3Question {
   type: QuestionType; // "multiple_choice" hoặc "yes_no" hoặc "matching"
   text: string;
   image?: string; // Hình ảnh câu hỏi đề bài minh họa (nếu có)
-  options?: string[]; // Danh sách đáp án lựa chọn (cho dạng multiple_choice)
+  // Cấu trúc mới cố định đáp án cho key: [ { key: "A", text: "..." } ]
+  options?: Array<{ key: string; text: string }> | string[];
 
   // Custom column headers for TrueFalseTable (e.g. NHẬP / XUẤT, CÓ / KHÔNG, PHẦN MỀM ỨNG DỤNG / PHẦN MỀM HỆ THỐNG)
   trueColumnLabel?: string;
@@ -48,6 +49,36 @@ export interface IC3Question {
   explanation?: string; // Lời giải thích / chú giải
   order?: number; // Thứ tự câu hỏi do Admin thiết lập
   isCustom?: boolean; // Đánh dấu câu hỏi tự tạo
+}
+
+/**
+ * Chuẩn hóa danh sách phương án trắc nghiệm về dạng chuẩn [ { key: "A", text: "..." } ]
+ * Đảm bảo tương thích ngược tuyệt đối với cả dữ liệu string[] cũ và object { key, text } mới.
+ */
+export function normalizeMCQOptions(
+  options?: Array<{ key: string; text: string }> | string[]
+): Array<{ key: string; text: string }> {
+  if (!options || !Array.isArray(options)) return [];
+  return options.map((opt, idx) => {
+    if (typeof opt === "object" && opt !== null && "key" in opt) {
+      return {
+        key: String(opt.key || String.fromCharCode(65 + idx)).trim().toUpperCase(),
+        text: String(opt.text || "").replace(/^[A-J][\.\:\)]\s*/i, "").trim()
+      };
+    }
+    const str = typeof opt === "string" ? opt : String(opt);
+    const match = str.match(/^([A-J])[\.\:\)]\s*(.*)$/i);
+    if (match) {
+      return {
+        key: match[1].toUpperCase(),
+        text: match[2].trim()
+      };
+    }
+    return {
+      key: String.fromCharCode(65 + idx),
+      text: str.trim()
+    };
+  });
 }
 
 import { LEVEL1_OT_QUESTIONS } from "./questionsLevel1";
