@@ -799,7 +799,7 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
       { key: "C", text: "Mưa (Rain)" },
       { key: "D", text: "Ngón tay (Fingers)" }
     ],
-    correctKeys: ["A", "C"]
+    correctKeys: ["A", "C", "D"]
   },
   {
     id: "spark-l1-ot2-12",
@@ -1023,24 +1023,26 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     subsetId: "OT2",
     questionNumber: 24,
     order: 54,
-    type: "matching",
+    type: "yes_no",
     text: "Xác định tuyên bố là Thực tế hay Ý kiến:",
-    pairs: [
+    trueColumnLabel: "Ý kiến (Opinion)",
+    falseColumnLabel: "Thực tế (Fact)",
+    statements: [
       {
-        left: "Nhà hàng có một khu trò chơi điện tử thực sự thú vị",
-        right: "Ý kiến (Opinion)"
+        text: "Nhà hàng có một khu trò chơi điện tử thực sự thú vị",
+        correct: "True"
       },
       {
-        left: "Nhà hàng có các món tráng miệng ngon nhất",
-        right: "Ý kiến (Opinion)"
+        text: "Nhà hàng có các món tráng miệng ngon nhất",
+        correct: "True"
       },
       {
-        left: "Nhà hàng chỉ cách trường học một dãy nhà",
-        right: "Thực tế (Fact)"
+        text: "Nhà hàng chỉ cách trường học một dãy nhà",
+        correct: "False"
       },
       {
-        left: "Nhà hàng có mười loại pizza khác nhau",
-        right: "Thực tế (Fact)"
+        text: "Nhà hàng có mười loại pizza khác nhau",
+        correct: "False"
       }
     ]
   },
