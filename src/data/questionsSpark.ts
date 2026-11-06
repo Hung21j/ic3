@@ -595,14 +595,14 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     questionNumber: 1,
     order: 31,
     type: "multiple_choice",
-    text: "Bộ phận nào được ví như 'Bộ não' của máy tính, thực hiện mọi phép tính và xử lý thông tin?",
+    text: "Ai đó bạn gặp trực tuyến, yêu cầu bạn cung cấp tên và địa chỉ của bạn để họ gửi cho bạn lời mời dự tiệc sinh nhật. Bạn nên làm gì?",
     options: [
-      { key: "A", text: "CPU (Bộ vi xử lý trung tâm)" },
-      { key: "B", text: "Ổ đĩa quang CD/DVD" },
-      { key: "C", text: "Chuột quang" },
-      { key: "D", text: "Cáp nguồn" }
+      { key: "A", text: "Cung cấp tên và địa chỉ của bạn" },
+      { key: "B", text: "Từ chối cung cấp tên hoặc địa chỉ của bạn" },
+      { key: "C", text: "Cung cấp tên của bạn nhưng không cho biết địa chỉ của bạn" },
+      { key: "D", text: "Đề nghị gặp tại bữa tiệc" }
     ],
-    correctKeys: ["A"],
+    correctKeys: ["B"],
     correctAnswerText: "A. CPU (Bộ vi xử lý trung tâm)",
     explanation: "CPU (Central Processing Unit) là bộ xử lý trung tâm, điều hành và xử lý mọi tác vụ của hệ thống máy tính."
   },
@@ -614,12 +614,12 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     questionNumber: 2,
     order: 32,
     type: "multiple_choice",
-    text: "Thiết bị nào sau đây là máy tính xách tay nhỏ gọn, có pin tích hợp và có thể gập lại mang đi dễ dàng?",
+    text: "Thông tin cá nhân nào bạn Không nên chia sẻ trực tuyến?",
     options: [
-      { key: "A", text: "Máy tính để bàn (Desktop PC)" },
-      { key: "B", text: "Máy tính xách tay (Laptop)" },
-      { key: "C", text: "Máy chủ (Server)" },
-      { key: "D", text: "Máy in văn phòng" }
+      { key: "A", text: "Tuổi" },
+      { key: "B", text: "Địa chỉ" },
+      { key: "C", text: "Lớp" },
+      { key: "D", text: "Tên" }
     ],
     correctKeys: ["B"],
     correctAnswerText: "B. Máy tính xách tay (Laptop)",
@@ -632,16 +632,15 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     subsetId: "OT2",
     questionNumber: 3,
     order: 33,
-    type: "yes_no",
-    text: "Phân loại các thiết bị sau vào nhóm THIẾT BỊ VÀO (Input) hoặc THIẾT BỊ RA (Output):",
-    trueColumnLabel: "THIẾT BỊ VÀO",
-    falseColumnLabel: "THIẾT BỊ RA",
-    statements: [
-      { text: "Bàn phím máy tính", correct: "True" },
-      { text: "Màn hình máy tính", correct: "False" },
-      { text: "Microphone (Micro thu âm)", correct: "True" },
-      { text: "Loa và Tai nghe", correct: "False" }
+    type: "multiple_choice",
+    text: "Hãy xem xét những gì bạn biết về bản chất công khai và lâu dài của nội dung trực tuyến. Nội dung nào Không an toàn để chia sẻ trực tuyến?",
+    options: [
+      { key: "A", text: "Danh sách những cuốn sách yêu thích của bạn" },
+      { key: "B", text: "Vị trí GPS của công viên bên cạnh ngôi nhà của bạn" },
+      { key: "C", text: "Một bức ảnh về bữa tối ngon miệng của bạn" },
+      { key: "D", text: "Một bức ảnh về dự án nghệ thuật hoàn toàn tuyệt vời của bạn" }
     ],
+    correctKeys: ["B"],
     explanation: "Bàn phím và Micro đưa dữ liệu vào máy (Input). Màn hình và Loa xuất dữ liệu ra cho người dùng (Output)."
   },
   {
@@ -651,14 +650,15 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     subsetId: "OT2",
     questionNumber: 4,
     order: 34,
-    type: "matching",
-    text: "Ghép từng thao tác chuột với mô tả cách làm tương ứng:",
-    pairs: [
-      { left: "Nhấp chuột trái (Click)", right: "Nhấn nhanh nút chuột trái một lần rồi thả ngón tay ra" },
-      { left: "Nhấp đúp chuột (Double click)", right: "Nhấn nhanh nút chuột trái hai lần liên tiếp" },
-      { left: "Kéo thả chuột (Drag and Drop)", right: "Nhấn giữ nút chuột trái, di chuyển đối tượng đến vị trí mới rồi thả ra" },
-      { left: "Nhấp chuột phải (Right click)", right: "Nhấn nút chuột phải một lần để mở bảng menu tùy chọn" }
+    type: "multiple_choice",
+    text: "Lưng mẹ bạn đau khi bà ngồi vào bàn làm việc để sử dụng máy tính. Mẹ yêu cầu bạn cho lời khuyên về cách có tư thế tốt. Bạn nên nói gì với mẹ?",
+    options: [
+      { key: "A", text: "Nâng màn hình máy tính lên trên tầm mắt để phải ngước nhìn lên nó" },
+      { key: "B", text: "Bắt chéo chân và ngả người ra sau" },
+      { key: "C", text: "Nghiêng về phía màn hình máy tính" },
+      { key: "D", text: "Ngồi thẳng lưng và chân phẳng trên sàn nhà" }
     ],
+    correctKeys: ["D"],
     explanation: "Đây là 4 kỹ năng thao tác chuột cơ bản mà học sinh cần thuần thục khi dùng máy tính."
   },
   {
@@ -669,18 +669,491 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     questionNumber: 5,
     order: 35,
     type: "multiple_choice",
-    text: "Để gõ chữ in hoa liên tục nhiều chữ cái, em nên bật đèn phím nào trên bàn phím?",
+    text: "Khi nào thì có thể nói chuyện với người lạ trực tuyến?",
     options: [
-      { key: "A", text: "Tab" },
-      { key: "B", text: "Caps Lock" },
-      { key: "C", text: "Alt" },
-      { key: "D", text: "Ctrl" }
+      { key: "A", text: "Bất cứ lúc nào" },
+      { key: "B", text: "Cuối tuần" },
+      { key: "C", text: "Không bao giờ" },
+      { key: "D", text: "Ban ngày" }
     ],
-    correctKeys: ["B"],
+    correctKeys: ["C"],
     correctAnswerText: "B. Caps Lock",
     explanation: "Phím Caps Lock khi bật sáng đèn sẽ giúp mọi ký tự chữ cái gõ ra đều là chữ in hoa."
   },
 
+  {
+    id: "spark-l1-ot2-06",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 6,
+    order: 36,
+    type: "yes_no",
+    text: "Bạn đang truy cập Internet và cửa sổ hiển thị bật lên. Bạn cần quyết định những gì bạn có thể làm một cách an toàn. Đối với mỗi hành động, hãy chọn Có nếu nên làm hoặc Không nếu không nên làm.",
+    image: "/images/s-lv1-ot2-6.jpg",
+    statements: [
+      {
+        text: "Nhập địa chỉ email và mật khẩu thông thường của bạn",
+        correct: "False"
+      },
+      {
+        text: "Đồng ý với các điều khoản và điều kiện",
+        correct: "False"
+      },
+      {
+        text: "Nhấp vào Get More Free Games!!! để nhận thêm game miễn phí",
+        correct: "False"
+      }
+    ]
+  },
+  {
+    id: "spark-l1-ot2-07",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 7,
+    order: 37,
+    type: "multiple_choice",
+    text: "Bạn có một máy tính, một màn hình và một bàn phím trong phòng của bạn. Tại sao bạn nên che bàn phím khi không sử dụng nó?",
+    options: [
+      { key: "A", text: "Để bảo vệ bàn phím khỏi ánh sáng mặt trời" },
+      { key: "B", text: "Để bảo vệ bàn phím khỏi nhiệt độ ấm áp" },
+      { key: "C", text: "Để bảo vệ bàn phím khỏi nhiệt độ lạnh" },
+      { key: "D", text: "Để bảo vệ bàn phím khỏi bụi" }
+    ],
+    correctKeys: ["D"]
+  },
+
+  {
+    id: "spark-l1-ot2-08",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 8,
+    order: 38,
+    type: "yes_no",
+    text: "Các tư thế tốt khi sử dụng máy tính là gì? Chọn Có hoặc Không cho mỗi tư thế dưới đây.",
+    statements: [
+      {
+        text: "Giữ chân trên sàn",
+        correct: "True"
+      },
+      {
+        text: "Cúi người về phía trước để xem màn hình",
+        correct: "False"
+      },
+      {
+        text: "Bắt chéo chân dưới bàn làm việc",
+        correct: "False"
+      },
+      {
+        text: "Thư giãn vai của bạn",
+        correct: "True"
+      }
+    ]
+  },
+  {
+    id: "spark-l1-ot2-09",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 9,
+    order: 39,
+    type: "multiple_choice",
+    text: "Ai trong số những người này là bạn an toàn nhất để có trên mạng?",
+    options: [
+      { key: "A", text: "Một người mà bạn đi học với người đó và chơi trò chơi trực tuyến vào cuối tuần" },
+      { key: "B", text: "Một người gửi tin nhắn trực tiếp trên mạng xã hội yêu cầu số điện thoại của bạn" },
+      { key: "C", text: "Ai đó gửi email cho bạn nói rằng bạn đã giành được giải thưởng và cần gửi lại thông tin cá nhân" }
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "spark-l1-ot2-10",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 10,
+    order: 40,
+    type: "multiple_choice",
+    text: "Cách an toàn nhất để sạc thiết bị di động là gì?",
+    options: [
+      { key: "A", text: "Đặt thiết bị di động bên ngoài trong ngày và sạc nó dưới ánh nắng trực tiếp" },
+      { key: "B", text: "Đặt thiết bị trên sàn và cắm cáp sạc của một thiết bị khác" },
+      { key: "C", text: "Đặt ở nơi an toàn gần ổ cắm và cắm cáp sạc đi kèm với thiết bị" }
+    ],
+    correctKeys: ["C"]
+  },
+  {
+    id: "spark-l1-ot2-11",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 11,
+    order: 41,
+    type: "multiple_choice",
+    text: "Những yếu tố nào sau đây làm cho thiết bị có thể bị hỏng? (Chọn tất cả các đáp án đúng)",
+    options: [
+      { key: "A", text: "Thực phẩm (Food)" },
+      { key: "B", text: "Cơ vệ sinh" },
+      { key: "C", text: "Mưa (Rain)" },
+      { key: "D", text: "Ngón tay (Fingers)" }
+    ],
+    correctKeys: ["A", "C"]
+  },
+  {
+    id: "spark-l1-ot2-12",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 12,
+    order: 42,
+    type: "multiple_choice",
+    text: "Bạn gặp một người trong phòng trò chuyện chơi game trực tuyến. Họ yêu cầu bạn cung cấp địa chỉ nhà của bạn. Bạn nên kết luận điều gì từ yêu cầu của họ?",
+    options: [
+      { key: "A", text: "Họ tò mò về nơi bạn sống" },
+      { key: "B", text: "Họ muốn gửi cho bạn một cái gì đó" },
+      { key: "C", text: "Họ muốn đến thăm bạn" },
+      { key: "D", text: "Họ không phải là một người bạn trực tuyến thích hợp" }
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "spark-l1-ot2-13",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 13,
+    order: 43,
+    type: "multiple_choice",
+    text: "Thông tin nào Không nên được chia sẻ trực tuyến? (Chọn 3)",
+    options: [
+      { key: "A", text: "Bài hát em yêu thích (Favourite song)" },
+      { key: "B", text: "Ngày sinh (Birthdate)" },
+      { key: "C", text: "Tuổi (Age)" },
+      { key: "D", text: "Địa chỉ nhà (Home address)" }
+    ],
+    correctKeys: ["B", "C", "D"]
+  },
+  {
+    id: "spark-l1-ot2-14",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 14,
+    order: 44,
+    type: "multiple_choice",
+    text: "Bạn gửi ảnh của bạn và gia đình của bạn cho một người bạn cùng lớp. Bạn cùng lớp đăng ảnh lên mạng xã hội của họ. Bạn có thể làm gì để xóa ảnh vĩnh viễn khỏi internet?",
+    options: [
+      { key: "A", text: "Bạn không thể xóa ảnh mãi mãi, vì internet là công khai và vĩnh viễn" },
+      { key: "B", text: "Đăng nhập vào máy tính của bạn cùng lớp và cố gắng xóa các bức ảnh" },
+      { key: "C", text: "Báo bạn cùng lớp của bạn gỡ ảnh xuống nếu không bạn sẽ không còn là bạn của họ nữa" },
+      { key: "D", text: "Gửi yêu cầu hỗ trợ đến dịch vụ khách hàng của ứng dụng truyền thông xã hội" }
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "spark-l1-ot2-15",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 15,
+    order: 45,
+    type: "multiple_choice",
+    text: "Trong cửa sổ trình duyệt được hiển thị, bạn nên nhấp hoặc nhấn vào đâu để truy cập các trang khác của trang Web Net PC?",
+    image: "/images/s-lv1-ot2-15.jpg",
+    options: [
+      { key: "B", text: "Thanh địa chỉ URL (http://netpc)" },
+      { key: "D", text: "Khu vực chứa các liên kết trang: Home | About | Search | Store | Contact" },
+      { key: "C", text: "Cài đặt trình duyệt" },
+      { key: "A", text: "Cửa sổ trình duyệt" }
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "spark-l1-ot2-16",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 16,
+    order: 46,
+    type: "multiple_choice",
+    text: "Bạn cần đóng (Close) cửa sổ trình duyệt hiển thị. Bạn nên nhấp hoặc nhấn vào biểu tượng nào?",
+    image: "/images/s-lv1-ot2-16.jpg",
+    options: [
+      { key: "C", text: "Biểu tượng dấu 'X' ở góc trên bên phải trên cùng" },
+      { key: "A", text: "Nút mũi tên qua trái" },
+      { key: "D", text: "Biểu tượng dấu 3 gạch" },
+      { key: "B", text: "Biểu tượng dấu +" }
+    ],
+    correctKeys: ["C"]
+  },
+  {
+    id: "spark-l1-ot2-17",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 17,
+    order: 47,
+    type: "multiple_choice",
+    text: "Bằng cách sử dụng tính năng Bookmarks/Favorites của trình duyệt web, bạn có thể lưu lưu gì?",
+    options: [
+      { key: "A", text: "Cookie trang web (Webpage cookies)" },
+      { key: "B", text: "Cài đặt trang web (Webpage settings)" },
+      { key: "C", text: "Liên kết trang web (Webpage links)" },
+      { key: "D", text: "Hình ảnh trang web (Webpage images)" }
+    ],
+    correctKeys: ["C"]
+  },
+  {
+    id: "spark-l1-ot2-18",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 18,
+    order: 48,
+    type: "multiple_choice",
+    text: "Bạn thường tìm thấy điều gì trong ứng dụng máy tính để bàn và trên các trang web?",
+    options: [
+      { key: "A", text: "Thanh địa chỉ" },
+      { key: "B", text: "Đoạn văn bản" },
+      { key: "C", text: "Nút đặt hàng" },
+      { key: "D", text: "Giỏ hàng" }
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "spark-l1-ot2-19",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 19,
+    order: 49,
+    type: "multiple_choice",
+    text: "Nhi thích đọc các bài báo trực tuyến. Cô ấy chỉ muốn đọc các bài báo dựa trên sự thật, không phải ý kiến. Câu hỏi nào có thể giúp Nhi xác định các bài báo dựa trên thực tế?",
+    options: [
+      { key: "A", text: "Kiểu phông chữ nào đã được sử dụng?" },
+      { key: "B", text: "Bài viết dài bao nhiêu?" },
+      { key: "C", text: "Bài viết có hình ảnh không?" },
+      { key: "D", text: "Ai đã viết bài báo?" }
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "spark-l1-ot2-20",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 20,
+    order: 50,
+    type: "multiple_choice",
+    text: "Bạn cần truy cập một trang web khác. Trên trang web được hiển thị, bạn nên nhập URL mới vào đâu?",
+    image: "/images/s-lv1-ot2-20.jpg",
+    options: [
+      { key: "A", text: "Thẻ new tab" },
+      { key: "B", text: "Thanh địa chỉ" },
+      { key: "C", text: "Biểu tượng dấu 3 gạch ngang" },
+      { key: "D", text: "Thanh tìm kiếm" }
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "spark-l1-ot2-21",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 21,
+    order: 51,
+    type: "multiple_choice",
+    text: "Tên của khu vực ở đầu cửa sổ trình duyệt hiển thị URL trang web được gọi là gì?",
+    image: "/images/s-lv1-ot2-21.jpg",
+    options: [
+      { key: "A", text: "Thanh tiêu đề (Title bar)" },
+      { key: "B", text: "Thanh địa chỉ (Address bar)" },
+      { key: "C", text: "Bookmark/Favorite" },
+      { key: "D", text: "Thẻ trình duyệt (Tab)" }
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "spark-l1-ot2-22",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 22,
+    order: 52,
+    type: "multiple_choice",
+    text: "Bạn hãy cho biết, công cụ nào của trình duyệt cho phép truy cập vào các trang web yêu thích?",
+    options: [
+      { key: "A", text: "Bookmarks" },
+      { key: "B", text: "Settings" },
+      { key: "C", text: "Back" },
+      { key: "D", text: "Home" }
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "spark-l1-ot2-23",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 23,
+    order: 53,
+    type: "matching",
+    text: "Ghép nối thuật ngữ và định nghĩa tương ứng:",
+    pairs: [
+      {
+        left: "Trang web (Web page)",
+        right: "Một tài liệu với văn bản và hình ảnh mà bạn nhìn thấy và đọc trên internet"
+      },
+      {
+        left: "Trình duyệt web (Web browser)",
+        right: "Phần mềm bạn sử dụng để xem mọi thứ trên Internet"
+      },
+      {
+        left: "Công cụ tìm kiếm (Search engine)",
+        right: "Phần mềm bạn sử dụng để tìm mọi thứ trên internet"
+      }
+    ]
+  },
+  {
+    id: "spark-l1-ot2-24",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 24,
+    order: 54,
+    type: "matching",
+    text: "Xác định tuyên bố là Thực tế hay Ý kiến:",
+    pairs: [
+      {
+        left: "Nhà hàng có một khu trò chơi điện tử thực sự thú vị",
+        right: "Ý kiến (Opinion)"
+      },
+      {
+        left: "Nhà hàng có các món tráng miệng ngon nhất",
+        right: "Ý kiến (Opinion)"
+      },
+      {
+        left: "Nhà hàng chỉ cách trường học một dãy nhà",
+        right: "Thực tế (Fact)"
+      },
+      {
+        left: "Nhà hàng có mười loại pizza khác nhau",
+        right: "Thực tế (Fact)"
+      }
+    ]
+  },
+  {
+    id: "spark-l1-ot2-25",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 25,
+    order: 55,
+    type: "multiple_choice",
+    text: "Cách nhanh nhất để lưu trang web bạn đang xem để bạn có thể quay lại sau là gì?",
+    options: [
+      { key: "A", text: "Lưu địa chỉ trang web trong một tập tin" },
+      { key: "B", text: "Lưu trang web vào màn hình máy tính của bạn" },
+      { key: "C", text: "Tạo dấu trang (Bookmark)" },
+      { key: "D", text: "Viết địa chỉ trang web trên một tờ giấy" }
+    ],
+    correctKeys: ["C"]
+  },
+  {
+    id: "spark-l1-ot2-26",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 26,
+    order: 56,
+    type: "multiple_choice",
+    text: "Một giáo viên báo học sinh của mình nghiên cứu cùng một chủ đề trên máy tính bảng của họ trong 30 phút tiếp theo. Khi giáo viên hỏi một học sinh xem bạn ấy có thực hiện nghiên cứu hay không, bạn ấy nói có. Làm thế nào giáo viên có thể tìm ra liệu học sinh có nói sự thật hay không?",
+    options: [
+      { key: "A", text: "Bằng cách hỏi những học sinh khác ngồi gần trong thời gian nghiên cứu" },
+      { key: "B", text: "Bằng cách kiểm tra lịch sử trình duyệt của học sinh" },
+      { key: "C", text: "Bằng cách kiểm tra thời lượng pin còn lại của máy tính bảng" },
+      { key: "D", text: "Bằng cách kiểm tra xem có bất kỳ thẻ trình duyệt nào được mở trên máy tính bảng hay không" }
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "spark-l1-ot2-27",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 27,
+    order: 57,
+    type: "multiple_choice",
+    text: "Bạn hãy cho biết, tùy chọn nào dưới đây cho phép truy cập và duyệt thông tin trên internet?",
+    options: [
+      { key: "A", text: "Internet Explorer" },
+      { key: "B", text: "Cloud Storage (Lưu trữ đám mây)" },
+      { key: "C", text: "Server (Máy chủ)" },
+      { key: "D", text: "Client (Máy khách)" }
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "spark-l1-ot2-28",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 28,
+    order: 58,
+    type: "yes_no",
+    text: "Xác định xem hành động có phải là định dạng văn bản hay không:",
+    statements: [
+      {
+        text: "In đậm văn bản",
+        correct: "True"
+      },
+      {
+        text: "Xóa một phần của đoạn văn bản",
+        correct: "False"
+      },
+      {
+        text: "Thay đổi kích cỡ và màu sắc của văn bản",
+        correct: "True"
+      }
+    ]
+  },
+  {
+    id: "spark-l1-ot2-29",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 29,
+    order: 59,
+    type: "multiple_choice",
+    text: "Em hãy cho biết, tài liệu điện tử có đặc điểm gì?",
+    options: [
+      { key: "A", text: "Không có điều nào ở trên" },
+      { key: "B", text: "Giúp bảo vệ môi trường bằng cách giảm lãng phí giấy" },
+      { key: "C", text: "Là những tài liệu đã được in và phân phối" },
+      { key: "D", text: "Phải luôn luôn được in" }
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "spark-l1-ot2-30",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 30,
+    order: 60,
+    type: "multiple_choice",
+    text: "Nhi đang viết một báo cáo trên máy tính của mình. Bạn ấy được yêu cầu thụt lề dòng đầu tiên của mỗi đoạn một nửa inch. Nhi nên nhấn phím nào để thụt lề chính xác dòng đầu tiên?",
+    image: "/images/s-lv1-ot2-30.jpg",
+    options: [
+      { key: "A", text: "Phím Tab" },
+      { key: "B", text: "Phím Caps Lock" },
+      { key: "C", text: "Phím Shift" },
+      { key: "D", text: "Phím Spacebar (Thanh khoảng trắng)" }
+    ],
+    correctKeys: ["A"]
+  },
   // ===================== OT3 / GM1: LEVEL 1 (MÁY TÍNH CĂN BẢN) =====================
   {
     id: "spark-l1-ot3-01",

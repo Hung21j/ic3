@@ -1542,11 +1542,11 @@ export default function IC3QuestionBank({
                         <div className="space-y-3 pt-2">
                           {q.correctKeys && q.correctKeys.length > 1 ? (
                             <span className="text-xs sm:text-sm font-black uppercase text-indigo-700 flex items-center gap-1.5 font-mono tracking-wider">
-                              <Compass className="w-4 h-4 text-indigo-600 shrink-0" /> Vui lòng chọn TẤT CẢ các phương án đúng (chọn nhiều đáp án):
+                              <Compass className="w-4 h-4 text-indigo-600 shrink-0" /> chọn nhiều đáp án:
                             </span>
                           ) : (
                             <span className="text-xs sm:text-sm font-black uppercase text-slate-800 flex items-center gap-1.5 font-mono tracking-wider">
-                              <Compass className="w-4 h-4 text-slate-600 shrink-0" /> Vui lòng chọn một phương án đáp án:
+                              <Compass className="w-4 h-4 text-slate-600 shrink-0" /> chọn một đáp án:
                             </span>
                           )}
                           
@@ -1735,7 +1735,7 @@ export default function IC3QuestionBank({
                                 {/* HEADER */}
                                 <div style={gridStyle} className="grid bg-slate-100 border-b-2 border-slate-300 items-center">
                                   <div className="p-3 font-black text-xs uppercase font-mono text-slate-800">
-                                    Danh sách phát biểu / Đối tượng
+                                    Danh sách phát biểu
                                   </div>
                                   {columns.map((colName, cIdx) => {
                                     const colColor = cIdx === 0 
@@ -2106,35 +2106,7 @@ export default function IC3QuestionBank({
                       )}
 
                       {/* Visual Feedback on Answer Selection in Training Mode */}
-                      {appMode === "training" && isChecked && (
-                        <motion.div 
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          className={`p-4 rounded-xl border-2 text-xs md:text-sm shadow-xs ${
-                            isUserCorrect 
-                              ? "bg-emerald-50 text-emerald-950 border-emerald-400" 
-                              : "bg-rose-50 text-rose-950 border-rose-400"
-                          }`}
-                        >
-                          <div className="flex items-start gap-3">
-                            {isUserCorrect ? (
-                              <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-                            ) : (
-                              <XCircle className="w-5 h-5 text-rose-600 shrink-0 mt-0.5" />
-                            )}
-                            <div className="space-y-1">
-                              <p className={`font-black font-mono uppercase tracking-wider text-xs md:text-sm ${
-                                isUserCorrect ? "text-emerald-900" : "text-rose-900"
-                              }`}>
-                                {isUserCorrect ? "ĐÚNG! 🎉" : "CHƯA CHÍNH XÁC!"}
-                              </p>
-                              <p className="font-bold text-slate-900 leading-relaxed text-xs md:text-sm">
-                                <span className="font-black text-indigo-900">Đáp án đúng:</span> {q.correctAnswerText}
-                              </p>
-                            </div>
-                          </div>
-                        </motion.div>
-                      )}
+
                     </motion.div>
                   </AnimatePresence>
                 </div>
