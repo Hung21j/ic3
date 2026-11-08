@@ -566,7 +566,7 @@ export default function AdminDashboard({
       const earnedPoints = h.correctCount;
       const totalPoints = h.totalCount;
       const passText = h.scorePercent >= 70 ? "ĐẠT (Passed)" : "CHƯA ĐẠT";
-      const modeText = h.mode === "testing" ? "Thi thử (Testing)" : "Luyện tập (Training)";
+      const modeText = h.mode === "testing" ? "TESTING" : "TRAINING";
 
       return [
         idx + 1,
@@ -1452,8 +1452,8 @@ export default function AdminDashboard({
                       className="py-2 px-2.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-xs font-semibold text-slate-700 dark:text-slate-200 focus:outline-none cursor-pointer"
                     >
                       <option value="all">Tất cả chế độ</option>
-                      <option value="testing">Thi thử (Testing)</option>
-                      <option value="training">Luyện tập (Training)</option>
+                      <option value="testing">TESTING</option>
+                      <option value="training">TRAINING</option>
                     </select>
 
                     {/* Export Button */}
@@ -1546,7 +1546,7 @@ export default function AdminDashboard({
                                   ? "bg-rose-50 text-rose-700 border border-rose-200"
                                   : "bg-emerald-50 text-emerald-700 border border-emerald-200"
                               }`}>
-                                {h.mode === "testing" ? "Thi thử" : "Luyện tập"}
+                                {h.mode === "testing" ? "TESTING" : "TRAINING"}
                               </span>
                             </td>
                             <td className="py-3 px-3">
