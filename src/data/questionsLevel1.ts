@@ -1119,5 +1119,1139 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
       "C"
     ],
     "correctAnswerText": "A. Tên tác giả | B. Tên sách | C. Ngày xuất bản"
+  },
+
+  // ===================== GM2: LEVEL 1 ) =====================
+  
+  {
+    id: "lv1-gm2-01",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 1,
+    order: 46,
+    type: "matching",
+    text: "Ghép nối thuật ngữ với định nghĩa của nó cho phù hợp.",
+    pairs: [
+      {
+        left: "Internet Service Provider (ISP)",
+        right: "Một công ty kết nối người dùng với Internet"
+      },
+      {
+        left: "HyperText Markup Language (HTML)",
+        right: "Một ngôn ngữ đánh dấu được sử dụng để tạo các trang web"
+      },
+      {
+        left: "Breadcrumb",
+        right: "Cho phép người dùng truy xuất lại các bước của họ trên trang web"
+      },
+      {
+        left: "Cookie",
+        right: "Một tập tin văn bản theo dõi hoạt động của người dùng trên trang web"
+      },
+      {
+        left: "Domain Name Service (DNS)",
+        right: "Một thư mục phân cấp ánh xạ vị trí của các tài nguyên trên Internet"
+      }
+    ]
+  },
+  {
+    id: "lv1-gm2-02",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 2,
+    order: 47,
+    type: "yes_no",
+    text: "Đối với mỗi phát biểu liên quan đến thiết bị nhập, hãy chọn Đúng (Yes) hoặc Sai (No) với mỗi phát biểu sau:",
+    statements: [
+      {
+        text: "Chuột là thiết bị nhập",
+        correct: "True"
+      },
+      {
+        text: "Màn hình là một thiết bị nhập",
+        correct: "False"
+      },
+      {
+        text: "Loa là một thiết bị nhập",
+        correct: "False"
+      },
+      {
+        text: "Bàn phím là thiết bị nhập",
+        correct: "True"
+      },
+      {
+        text: "Micro là một thiết bị nhập",
+        correct: "True"
+      }
+    ]
+  },
+    {
+    id: "lv1-gm2-03",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 3,
+    order: 48,
+    type: "yes_no",
+    text: "Chọn Yes nếu đúng hoặc No nếu sai cho các phát biểu sau:",
+    statements: [
+      {
+        text: "Headphone là một thiết bị xuất",
+        correct: "True"
+      },
+      {
+        text: "Bàn phím là một thiết bị xuất",
+        correct: "False"
+      },
+      {
+        text: "Máy in là một thiết bị xuất",
+        correct: "True"
+      },
+      {
+        text: "Máy quét là một thiết bị xuất",
+        correct: "False"
+      },
+      {
+        text: "Micro là một thiết bị xuất",
+        correct: "False"
+      }
+    ]
+  },
+  {
+    id: "lv1-gm2-04",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 4,
+    order: 49,
+    type: "matching",
+    text: "Quan sát hình sau để xác định các loại cổng kết nối. Ghép tên với loại cổng kết nối của nó.",
+    image: "/images/lv1-gm2-4.png",
+    pairs: [
+      {
+        left: "USB",
+        right: "D"
+      },
+      {
+        left: "Audio Only",
+        right: "E"
+      },
+      {
+        left: "Ethernet",
+        right: "B"
+      },
+      {
+        left: "Display Only",
+        right: "A"
+      },
+      {
+        left: "HDMI",
+        right: "C"
+      }
+    ]
+  },
+  {
+    id: "lv1-gm2-05",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 5,
+    order: 50,
+    type: "matching",
+    text: "Hãy ghép tên với phát biểu tương ứng.",
+    pairs: [
+      {
+        left: "Uploading",
+        right: "Quá trình lấy một tập tin từ thiết bị máy tính của bạn và gửi tập tin đó đến một vị trí trực tuyến"
+      },
+      {
+        left: "Subscribing",
+        right: "Phần mềm thường được lưu trữ trên đám mây và được trả tiền hàng năm hoặc hàng tháng"
+      },
+      {
+        left: "Downloading",
+        right: "Quá trình di chuyển một tập tin từ nguồn trực tuyến của nó sang một thiết bị máy tính"
+      },
+      {
+        left: "Installing",
+        right: "Đưa các chương trình thực thi vào thiết bị máy tính của bạn"
+      }
+    ]
+  },
+  {
+    id: "lv1-gm2-06",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 6,
+    order: 51,
+    type: "matching",
+    text: "Ghép nối thứ tự xếp hạng thiết bị máy tính từ mạnh nhất (#1) đến kém nhất (#4) tương ứng.",
+    pairs: [
+      {
+        left: "Desktop Computer",
+        right: "#1"
+      },
+      {
+        left: "Laptop",
+        right: "#2"
+      },
+      {
+        left: "Tablet",
+        right: "#3"
+      },
+      {
+        left: "Smartphone",
+        right: "#4"
+      }
+    ]
+  },
+  {
+    id: "lv1-gm2-07",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 7,
+    order: 52,
+    type: "multiple_choice",
+    text: "Bạn có một máy tính để bàn và muốn tăng tốc độ của nó để có trải nghiệm chơi game tốt hơn. Bạn quyết định tăng thêm bộ nhớ. Đó là bộ nhớ nào? (Chọn hai)",
+    options: [
+      {
+        key: "A",
+        text: "A. Ổ cứng (Hard Drive)"
+      },
+      {
+        key: "B",
+        text: "B. Ổ đĩa flash USB (USB Flash Drive)"
+      },
+      {
+        key: "C",
+        text: "C. RAM"
+      },
+      {
+        key: "D",
+        text: "D. Ổ cứng thể rắn (Solid State Drive)"
+      },
+      {
+        key: "E",
+        text: "E. ROM"
+      }
+    ],
+    correctKeys: ["C", "E"]
+  },
+  {
+    id: "lv1-gm2-08",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 8,
+    order: 53,
+    type: "matching",
+    text: "Ghép nối từng khái niệm kết nối mạng với định nghĩa của nó.",
+    pairs: [
+      {
+        left: "Router",
+        right: "Kết nối nhiều mạng và chuyển tiếp các gói giữa chúng"
+      },
+      {
+        left: "Cable Service",
+        right: "Một công nghệ mạng chạy trên cáp đồng trục của TV"
+      },
+      {
+        left: "Network Adapter",
+        right: "Bảng mạch cho phép máy tính để bàn kết nối mạng"
+      },
+      {
+        left: "Modem",
+        right: "Một thiết bị gửi và nhận thông tin giữa nhà của bạn và ISP thông qua đường dây điện thoại, cáp quang hoặc cáp đồng trục TV"
+      },
+      {
+        left: "Ethernet",
+        right: "Một dịch vụ kết nối các máy tính với nhau trong một mạng cục bộ"
+      },
+      {
+        left: "Digital Subscriber Line (DSL)",
+        right: "Một công nghệ mạng chạy trên dây điện thoại"
+      }
+    ]
+  },
+  {
+    id: "lv1-gm2-09",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 9,
+    order: 54,
+    type: "multiple_choice",
+    text: "Bạn muốn sử dụng điện thoại thông minh của mình để duyệt internet. Một điện thoại thông minh có thể kết nối internet bằng cách nào? (Chọn hai)",
+    options: [
+      {
+        key: "A",
+        text: "A. Wi-Fi"
+      },
+      {
+        key: "B",
+        text: "B. Gói dữ liệu từ nhà cung cấp dịch vụ di động"
+      },
+      {
+        key: "C",
+        text: "C. Ứng dụng Mobile"
+      },
+      {
+        key: "D",
+        text: "D. Ethernet"
+      },
+      {
+        key: "E",
+        text: "E. Cloud"
+      }
+    ],
+    correctKeys: ["A", "B"]
+  },
+  {
+    id: "lv1-gm2-10",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 10,
+    order: 55,
+    type: "multiple_choice",
+    text: "Bạn đang phân vân để quyết định kết nối internet với máy tính xách tay của mình bằng Wi-Fi hay kết nối có dây. Hai ưu điểm của mạng có dây so với mạng Wi-Fi là gì? (Chọn hai)",
+    options: [
+      {
+        key: "A",
+        text: "A. Tốc độ nhanh hơn"
+      },
+      {
+        key: "B",
+        text: "B. Bảo mật (Security)"
+      },
+      {
+        key: "C",
+        text: "C. Cài đặt (Installation)"
+      },
+      {
+        key: "D",
+        text: "D. Tốn ít tiền hơn để truyền dữ liệu"
+      },
+      {
+        key: "E",
+        text: "E. Tính di động (Mobility)"
+      }
+    ],
+    correctKeys: ["A", "B"]
+  },
+  {
+    id: "lv1-gm2-11",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 11,
+    order: 56,
+    type: "multiple_choice",
+    text: "Cơ sở hạ tầng mạng là gì?",
+    options: [
+      {
+        key: "A",
+        text: "A. Nơi đặt các máy chủ"
+      },
+      {
+        key: "B",
+        text: "B. Chi phí của việc cấp phép một mạng"
+      },
+      {
+        key: "C",
+        text: "C. Phần cứng và phần mềm di chuyển dữ liệu cùng một mạng"
+      },
+      {
+        key: "D",
+        text: "D. Một loạt các loại cáp"
+      }
+    ],
+    correctKeys: ["C"]
+  },
+  {
+    id: "lv1-gm2-12",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 12,
+    order: 57,
+    type: "multiple_choice",
+    text: "Bạn có tài khoản mạng xã hội trên Facebook, Instagram, Twitter và Snapchat. Bạn cũng sử dụng Internet để làm bài tập ở trường, duyệt thông tin và chat trò chơi. Bạn đang quan tâm đến việc bảo vệ về quyền riêng tư của mình. Bạn có thể thực hiện ba hành động nào để giúp duy trì quyền riêng tư và bảo mật kỹ thuật số? (Chọn ba)",
+    options: [
+      {
+        key: "A",
+        text: "A. Có nhiều tài khoản email"
+      },
+      {
+        key: "B",
+        text: "B. Sử dụng Twitter và Snapchat thay vì Facebook"
+      },
+      {
+        key: "C",
+        text: "C. Thay đổi cài đặt quyền riêng tư trên các tài khoản mạng xã hội của bạn"
+      },
+      {
+        key: "D",
+        text: "D. Không lưu trữ dữ liệu cá nhân trên dịch vụ trực tuyến dùng để chia sẻ"
+      },
+      {
+        key: "E",
+        text: "E. Chỉ đăng từ điện thoại, không bao giờ đăng từ máy tính"
+      },
+      {
+        key: "F",
+        text: "F. Sử dụng mật khẩu an toàn"
+      }
+    ],
+    correctKeys: ["C", "D", "F"]
+  },
+  {
+    id: "lv1-gm2-13",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 13,
+    order: 58,
+    type: "multiple_choice",
+    text: "Tối qua, bạn đã đăng một số bức ảnh đáng xấu hổ của một người bạn lên Internet. Sau khi suy nghĩ về nó, bạn quyết định xóa các bức ảnh. Làm thế nào bạn có thể chắc chắn rằng các bức ảnh đã được xóa hoàn toàn khỏi Internet?",
+    options: [
+      {
+        key: "A",
+        text: "A. Bạn có thể chỉ cần xóa những bức ảnh bạn đã đăng"
+      },
+      {
+        key: "B",
+        text: "B. Bạn có 24 giờ để xóa ảnh trước khi chúng hiển thị cho bất kỳ ai khác"
+      },
+      {
+        key: "C",
+        text: "C. Bạn có thể liên hệ với cơ quan quản lý Internet và họ sẽ xóa tất cả ảnh cho bạn"
+      },
+      {
+        key: "D",
+        text: "D. Bạn không thể. Các bản sao và đăng lại có thể giữ cho các bức ảnh lưu hành trực tuyến vô thời hạn"
+      }
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "lv1-gm2-14",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 14,
+    order: 59,
+    type: "multiple_choice",
+    text: "Bạn đã tải xuống một số bài hát mình yêu thích và sử dụng chúng trong bài thuyết trình mà bạn đã gửi tới Hội chợ Khoa học Toàn bang. Bài thuyết trình của bạn bị từ chối vì các bài hát bạn đã chọn vi phạm bản quyền. Ba yếu tố nào được sử dụng để đánh giá việc sử dụng hợp lý (Fair Use)? (Chọn ba)",
+    options: [
+      {
+        key: "A",
+        text: "A. Lượng tác phẩm được sao chép"
+      },
+      {
+        key: "B",
+        text: "B. Ảnh hưởng của việc sử dụng của bạn đối với thị trường tiềm năng của các tác phẩm được sao chép"
+      },
+      {
+        key: "C",
+        text: "C. Lấy từ một trang web đáng tin"
+      },
+      {
+        key: "D",
+        text: "D. Được sao chép từ tác phẩm do một người bạn của bạn đã mua"
+      },
+      {
+        key: "E",
+        text: "E. Nếu nó được sử dụng bởi một giáo viên hoặc học sinh"
+      },
+      {
+        key: "F",
+        text: "F. Mục đích sử dụng của bạn"
+      }
+    ],
+    correctKeys: ["A", "B", "F"]
+  },
+  {
+    id: "lv1-gm2-15",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 15,
+    order: 60,
+    type: "multiple_choice",
+    text: "Bạn đã tham gia một diễn đàn để thảo luận về một số trò chơi kỹ thuật số phổ biến. Trước khi bạn đăng bài trên diễn đàn, bạn phải tạo tên người dùng. Hai lý do thích hợp để sử dụng biệt danh trực tuyến thay vì tên thật của bạn là gì? (Chọn hai)",
+    options: [
+      {
+        key: "A",
+        text: "A. Bạn muốn bình luận theo cách mà bạn thường không gặp trực tiếp"
+      },
+      {
+        key: "B",
+        text: "B. Bạn muốn giả làm người khác"
+      },
+      {
+        key: "C",
+        text: "C. Bạn có một tên thông thường và một biệt danh có thể khiến bạn khác biệt với những người khác"
+      },
+      {
+        key: "D",
+        text: "D. Bạn đang cố gắng giữ riêng biệt danh tính cá nhân và danh tính doanh nghiệp"
+      },
+      {
+        key: "E",
+        text: "E. Bạn đang tải xuống phương tiện vi phạm bản quyền"
+      }
+    ],
+    correctKeys: ["D", "C"]
+  },
+  {
+    id: "lv1-gm2-16",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 16,
+    order: 61,
+    type: "multiple_choice",
+    text: "Bạn nhận thấy nhiều người viết bình luận tiêu cực trên một mạng xã hội. Bạn bị cấm để làm điều tương tự. Giá trị của việc không phản hồi đối với giao tiếp tiêu cực là gì?",
+    options: [
+      {
+        key: "A",
+        text: "A. Tránh xung đột hoặc làm tổn thương cảm xúc của ai đó"
+      },
+      {
+        key: "B",
+        text: "B. Khiến bạn cảm thấy tồi tệ"
+      },
+      {
+        key: "C",
+        text: "C. Giữ danh tính của bạn ẩn danh"
+      },
+      {
+        key: "D",
+        text: "D. Tiết kiệm tiền"
+      }
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "lv1-gm2-17",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 17,
+    order: 62,
+    type: "multiple_choice",
+    text: "Bạn đã được chỉ định viết một bài báo nghiên cứu. Ba loại thông tin nào được yêu cầu để bạn hoàn thành nhiệm vụ này? (Chọn ba)",
+    options: [
+      {
+        key: "A",
+        text: "A. Xác định các nguồn lực sẵn có"
+      },
+      {
+        key: "B",
+        text: "B. Tìm một máy tính"
+      },
+      {
+        key: "C",
+        text: "C. Xác định chủ đề hoặc mục tiêu"
+      },
+      {
+        key: "D",
+        text: "D. Có được một đối tác"
+      },
+      {
+        key: "E",
+        text: "E. Thiết lập lịch trình"
+      },
+      {
+        key: "F",
+        text: "F. Mở tài khoản mạng xã hội"
+      }
+    ],
+    correctKeys: ["A", "C", "E"]
+  },
+  {
+    id: "lv1-gm2-18",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 18,
+    order: 63,
+    type: "multiple_choice",
+    text: "Bạn đang nghiên cứu thông tin trên Internet để có thể viết một bài báo cho khóa học lịch sử của mình. Kết quả tìm kiếm của bạn bao gồm cả thông tin có liên quan và không liên quan. Ba bước nào sẽ giúp bạn phân biệt giữa kết quả tìm kiếm có liên quan và không liên quan? (Chọn ba)",
+    options: [
+      {
+        key: "A",
+        text: "A. Xác định các từ khóa trong kết quả đường như có liên quan đến chủ đề chủ đề"
+      },
+      {
+        key: "B",
+        text: "B. Xác định chủ đề để chỉnh và tìm kiếm nó"
+      },
+      {
+        key: "C",
+        text: "C. Nhờ một giáo viên giúp đỡ"
+      },
+      {
+        key: "D",
+        text: "D. Không có gì trên Internet có liên quan, vì vậy bạn nên sử dụng các tài nguyên khác"
+      },
+      {
+        key: "E",
+        text: "E. Mọi thứ luôn có liên quan, đọc tất cả"
+      },
+      {
+        key: "F",
+        text: "F. Xác định các kết quả không chứa các từ khóa liên quan đến chủ đề chủ đề"
+      }
+    ],
+    correctKeys: ["A", "B", "F"]
+  },
+  {
+    id: "lv1-gm2-19",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 19,
+    order: 64,
+    type: "multiple_choice",
+    text: "Bạn đang thu thập thông tin từ các trang web trên Internet. Giáo viên của bạn yêu cầu bạn cung cấp danh sách từng URL mà bạn truy cập. Nhấp vào tính năng nào trên trang web này đại diện cho URL.",
+    image: "/images/lv1-gm2-19.png",
+    options: [
+      {
+        key: "A",
+        text: "A. Nhấp chuột vào thanh địa chỉ của trình duyệt (Address Bar)"
+      },
+      {
+        key: "B",
+        text: "B. Nhấp vào nội dung trang web / các liên kết trên trang web"
+      }
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "lv1-gm2-20",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 20,
+    order: 65,
+    type: "multiple_choice",
+    text: "Miền công cộng (Public Domain) là nơi chứa những tác phẩm mà không ai giữ bản quyền nữa, ai cũng có thể dùng tự do. Có 3 cách để một tác phẩm nằm trong miền công cộng. Đó là những cách nào?",
+    options: [
+      {
+        key: "A",
+        text: "A. Bản quyền đã không được nộp cho chính phủ (Copyright wasn't filed with the government)"
+      },
+      {
+        key: "B",
+        text: "B. Quyền đã hết hạn (Rights have expired)"
+      },
+      {
+        key: "C",
+        text: "C. Quyền không bao giờ được yêu cầu (Rights were never requested)"
+      },
+      {
+        key: "D",
+        text: "D. Các quyền đã được từ bỏ một cách rõ ràng (Rights were expressly waived)"
+      },
+      {
+        key: "E",
+        text: "E. Quyền không thể áp dụng (Rights were inapplicable)"
+      },
+      {
+        key: "F",
+        text: "F. Quyền không bao giờ bị từ chối (Rights were never denied)"
+      }
+    ],
+    correctKeys: ["B", "D", "E"]
+  },
+  {
+    id: "lv1-gm2-21",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 21,
+    order: 66,
+    type: "multiple_choice",
+    text: "Bạn đang chuẩn bị một bài thuyết trình cho một dự án của lớp. Giáo viên của bạn yêu cầu bạn sử dụng nội dung Creative Commons (CC). Chọn phát biểu đúng khi nói về Creative Commons (CC) là gì? (Chọn hai)",
+    options: [
+      {
+        key: "A",
+        text: "A. Creative Commons (CC) là một tổ chức dành để kiếm tiền từ các tác phẩm sáng tạo"
+      },
+      {
+        key: "B",
+        text: "B. Creative Commons (CC) là một tổ chức chia sẻ các tác phẩm sáng tạo"
+      },
+      {
+        key: "C",
+        text: "C. Creative Commons (CC) là một trường nghệ thuật"
+      },
+      {
+        key: "D",
+        text: "D. Giấy phép Creative Commons (CC) miễn phí cho công chúng"
+      },
+      {
+        key: "E",
+        text: "E. Creative Commons (CC) là phần mềm độc quyền"
+      }
+    ],
+    correctKeys: ["B", "D"]
+  },
+  {
+    id: "lv1-gm2-22",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 22,
+    order: 67,
+    type: "multiple_choice",
+    text: "Bạn cần chọn tab nào để thay đổi kích thước trang chiếu trước khi in?",
+    image: "/images/lv1-gm2-22.png",
+    options: [
+        { key: "A", text: "Design"},
+        { key: "B", text: "Animations"},
+        { key: "C", text: "Review"},
+        { key: "D", text: "Arrange"},
+    ]
+  },
+  {
+    id: "lv1-gm2-23",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 23,
+    order: 68,
+    type: "multiple_choice",
+    text: "Bạn đang viết một bài nghiên cứu và đã được hướng dẫn dẫn về các ghi công và tham khảo. Điều nào sau đây là ghi công và tham khảo? (Chọn hai)",
+    options: [
+      {
+        key: "A",
+        text: "A. Ghi nhận tác giả là mô tả hình ảnh được sử dụng"
+      },
+      {
+        key: "B",
+        text: "B. Tham khảo là ghi công cho người tạo ra hình ảnh hoặc tài liệu khác"
+      },
+      {
+        key: "C",
+        text: "C. Tham khảo là tác giả của các một tác phẩm chỉ rõ cách bạn muốn ghi công cho các tác phẩm của họ"
+      },
+      {
+        key: "D",
+        text: "D. Ghi công là giá trị ghi nhận nguồn của bạn trong nội dung tác phẩm của bạn và liên kết các tác phẩm của bạn với một thư mục"
+      },
+      {
+        key: "E",
+        text: "E. Ghi nhận tác giả là ghi công cho người tạo ra hình ảnh hoặc tài liệu khác"
+      },
+      {
+        key: "F",
+        text: "F. Tham khảo là ghi nhận nguồn trong nội dung tác phẩm của bạn và liên kết đến trích dẫn của bạn trong danh mục tham khảo (bibliography)"
+      }
+    ],
+    correctKeys: ["E", "F"]
+  },
+  {
+    id: "lv1-gm2-24",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 24,
+    order: 69,
+    type: "multiple_choice",
+    text: "Bạn đang viết một bài báo nghiên cứu và đã được hướng dẫn bao gồm các ghi nhận và tài liệu tham khảo. Mục đích của ghi nhận và tham chiếu là gì?",
+    options: [
+      {
+        key: "A",
+        text: "A. Tác giả hoặc người sáng tạo càng có nhiều ghi nhận và tham chiếu, họ càng nhận được nhiều tiền"
+      },
+      {
+        key: "B",
+        text: "B. Nó giúp các tác giả và người sáng tạo duy trì bản quyền của họ"
+      },
+      {
+        key: "C",
+        text: "C. Mục đích là để mua các tác phẩm từ các tác giả và người sáng tạo"
+      },
+      {
+        key: "D",
+        text: "D. Mục đích là để công nhận các tác giả và người sáng tạo tác phẩm không bắt nguồn từ bạn"
+      }
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "lv1-gm2-25",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 25,
+    order: 70,
+    type: "yes_no",
+    text: "Hãy Chọn Đúng (Yes) hoặc Sai (No) cho mỗi phát biểu liên quan đến quy ước đặt tên tập tin sau:",
+    statements: [
+      {
+        text: "Tên tập tin phải có khoảng cách giữa các từ khóa",
+        correct: "False"
+      },
+      {
+        text: "Không sử dụng các ký tự đặc biệt",
+        correct: "True"
+      },
+      {
+        text: "Nếu ngày được bao gồm, hãy sử dụng định dạng: YYYY-MM-DD",
+        correct: "True"
+      },
+      {
+        text: "Bạn không thể đánh số tập tin",
+        correct: "False"
+      },
+      {
+        text: "Không viết hoa toàn bộ tên tập tin",
+        correct: "True"
+      }
+    ]
+  },
+  {
+    id: "lv1-gm2-26",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 26,
+    order: 71,
+    type: "multiple_choice",
+    text: "Bài thuyết trình bạn đang tạo bắt buộc phải để hướng ngang. Mô tả nào dưới đây là đúng với hướng dọc, hướng ngang? (Chọn hai)",
+    options: [
+      {
+        key: "A",
+        text: "A. Portrait là hướng dọc"
+      },
+      {
+        key: "B",
+        text: "B. Landscape là hướng dọc"
+      },
+      {
+        key: "C",
+        text: "C. Portrait là hướng ngang"
+      },
+      {
+        key: "D",
+        text: "D. Landscape là hướng chéo"
+      },
+      {
+        key: "E",
+        text: "E. Portrait là hướng chéo"
+      },
+      {
+        key: "F",
+        text: "F. Landscape là hướng ngang"
+      }
+    ],
+    correctKeys: ["A", "F"]
+  },
+  {
+    id: "lv1-gm2-27",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 27,
+    order: 72,
+    type: "multiple_choice",
+    text: "Một thuật ngữ khác để nói về việc in hai mặt là gì?",
+    options: [
+      {
+        key: "A",
+        text: "A. Printing with a gutter for binding books"
+      },
+      {
+        key: "B",
+        text: "B. Simplex printing"
+      },
+      {
+        key: "C",
+        text: "C. Duplex printing"
+      },
+      {
+        key: "D",
+        text: "D. Printing two lines at a time"
+      }
+    ],
+    correctKeys: ["C"]
+  },
+  {
+    id: "lv1-gm2-28",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 28,
+    order: 73,
+    type: "yes_no",
+    text: "Đối với mỗi tuyên bố liên quan đến Chính sách sử dụng được chấp nhận (Acceptable Use Policies) để đăng trên mạng xã hội, hãy chọn Yes nếu tuyên bố đó đúng, No nếu tuyên bố sai:",
+    statements: [
+      {
+        text: "Các Chính sách Sử dụng được chấp nhận (Acceptable Use Policies) trong trường học nói chung sẽ bao gồm các quy tắc về đe dọa trực tuyến",
+        correct: "True"
+      },
+      {
+        text: "Chính sách sử dụng được chấp nhận (Acceptable Use Policies) là các quy tắc về những gì bạn có thể và không thể thực hiện trực tuyến bằng máy tính của trường học hoặc cơ quan",
+        correct: "True"
+      },
+      {
+        text: "Chính sách sử dụng được chấp nhận (Acceptable Use Policies) cho các trường học và doanh nghiệp thương bao gồm các quy tắc về việc sử dụng các trang mạng xã hội",
+        correct: "True"
+      },
+      {
+        text: "Vi phạm chính sách sử dụng được chấp nhận (Acceptable Use Policy) thường dẫn đến việc tài khoản bạn bị xóa hoặc phạt",
+        correct: "True"
+      },
+      {
+        text: "Chính sách sử dụng được chấp nhận (Acceptable Use Policies) dành cho người lớn giống với chính sách dành cho trẻ vị thành niên",
+        correct: "False"
+      },
+      {
+        text: "Chính sách sử dụng được chấp nhận (Acceptable Use Policies) không thể hạn chế bạn đăng bất kỳ cái gì bạn muốn vì bạn có quyền tự do ngôn luận thứ nhất (1st Amendment rights)",
+        correct: "False"
+      }
+    ]
+  },
+  {
+    id: "lv1-gm2-29",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 29,
+    order: 74,
+    type: "matching",
+    text: "Hãy ghép từng tương tác kỹ thuật số với phát biểu tương ứng.",
+    pairs: [
+      {
+        left: "Email",
+        right: "Cung cấp hướng dẫn từng bước cho đối tác về một dự án"
+      },
+      {
+        left: "Text Message",
+        right: "Thông báo cho bạn bè rằng bạn sẽ đến muộn vài phút"
+      },
+      {
+        left: "Live Chat",
+        right: "Liên hệ hệ với bộ phận hỗ trợ trực tuyến để được hỗ trợ"
+      },
+      {
+        left: "Video Conferencing",
+        right: "Họp nhóm của các thành viên ở các địa điểm khác nhau"
+      }
+    ]
+  },
+  {
+    id: "lv1-gm2-30",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 30,
+    order: 75,
+    type: "yes_no",
+    text: "Chọn Yes nếu đúng và No nếu sai cho mỗi phát biểu sau:",
+    statements: [
+      {
+        text: "Gửi email bằng tất cả các chữ cái viết hoa",
+        correct: "False"
+      },
+      {
+        text: "Quảng cáo thứ gì đó bạn bán trong một nhóm Facebook không liên quan",
+        correct: "False"
+      },
+      {
+        text: "Sử dụng dấu câu và định dạng thích hợp",
+        correct: "True"
+      },
+      {
+        text: "Tôn trọng bảng cách diễn đạt các bài đăng và nhận xét theo cách không đối đầu",
+        correct: "True"
+      }
+    ]
+  },
+  {
+    id: "lv1-gm2-31",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 31,
+    order: 76,
+    type: "multiple_choice",
+    text: "Bạn đã viết một bài blog về cuộc thi Hội chợ Khoa học gần đây. Bạn muốn đăng nó trên trang web trường bạn học. Phương pháp công tác hiệu quả nào bạn có thể sử dụng để nhận phản hồi về blog của mình trước khi đăng nó?",
+    options: [
+      {
+        key: "A",
+        text: "A. Paid review (Đánh giá có trả tiền)"
+      },
+      {
+        key: "B",
+        text: "B. Đăng nó và sau đó yêu cầu phản hồi"
+      },
+      {
+        key: "C",
+        text: "C. Peer review (Đánh giá ngang hàng)"
+      },
+      {
+        key: "D",
+        text: "D. Gửi cho ban tổ chức Hội chợ Khoa học"
+      }
+    ],
+    correctKeys: ["C"]
+  },
+  {
+    id: "lv1-gm2-32",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 32,
+    order: 77,
+    type: "multiple_choice",
+    text: "Bạn đang viết một email để gửi các thành viên trong nhóm của bạn về một dự án của lớp. Câu nào dưới đây thể hiện nghi thức kỹ thuật số thích hợp?",
+    options: [
+      {
+        key: "A",
+        text: "Xin chào, các boneheads, tôi đoán việc này sẽ được thực hiện vào tuần tới vì vậy chúng ta nên khẩn trương hơn"
+      },
+      {
+        key: "B",
+        text: "u guys r so spcl 2 me, My new BFFs!"
+      },
+      {
+        key: "C",
+        text: "Nè mọi người (Hey, everyone)! Vui lòng gửi ý tưởng của bạn bằng cách sử dụng 'Reply All' để chúng ta có thể thảo luận. Cảm ơn!"
+      },
+      {
+        key: "D",
+        text: "HI, ĐÂY LÀ NHỮNG HƯỚNG DẪN TÔI NHẬN ĐƯỢC VỀ DỰ ÁN CỦA CHÚNG TÔI"
+      } 
+    ],
+    correctKeys: ["C"]
+  },
+  {
+    id: "lv1-gm2-33",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 33,
+    order: 78,
+    type: "multiple_choice",
+    text: "Trên video, bạn có thể nhìn thấy giáo viên và bạn học của mình và tất cả họ đều có thể nhìn thấy bạn. Những hành vi nào sau đây bạn nên cẩn thận khi tham gia vào cuộc họp này?",
+    options: [
+        {
+            key: "A",
+            text: "Mặc quần áo có vũ đội thể thao yêu thích của bạn"
+        },
+        {
+            key: "B",
+            text: "Chính tả và chữ viết tay",
+        },
+        {
+            key: "C",
+            text: "Biểu cảm khuôn mặt và ngôn ngữ cơ thể",
+        },
+        {
+            key: "D",
+            text: "Mỉm cười quá nhiều"
+        }
+    ],
+    correctKeys: ["C"],
+  },
+  {
+    id: "lv1-gm2-34",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 34,
+    order: 79,
+    type: "multiple_choice",
+    text: "Bạn đã bị hack! Bạn đã được hướng dẫn để tạo một mật khẩu an toàn mới. Mật khẩu nào sau đây là mật khẩu mạnh nhất?",
+    options: [
+        { key: "A", text: "1234ABCD"},
+        { key: "B", text: "8675309"},
+        { key: "C", text: "Love-U"},
+        { key: "D", text: "pass$$w0rd"},
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "lv1-gm2-35",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 35,
+    order: 80,
+    type: "multiple_choice",
+    text: "Nhấp vào tính năng nào sau đây cho phép bạn khóa máy tính của mình trong trường hợp này.",
+    image: "/images/lv1-gm2-35.png",
+    options: [
+        { key: "A", text: "A"},
+        { key: "B", text: "B"},
+        { key: "C", text: "C"},
+        { key: "D", text: "D"},
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "lv1-gm2-36",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 36,
+    order: 81,
+    type: "matching",
+    text: "Làm cách nào để xóa cài đặt trình duyệt trên máy tính của mình (ở hầu hết các trình duyệt)? Bộ nhớ cache, cookie và history. Sắp xếp các bước theo đúng thứ tự.",
+    pairs: [
+      {
+        left: "BƯỚC 1",
+        right: "Nhấp vào menu ba chấm (...) ở góc trên bên phải của trình duyệt"
+      },
+      {
+        left: "BƯỚC 2",
+        right: "Chọn Settings (PC) hay Options (MacOS)"
+      },
+      {
+        left: "BƯỚC 3",
+        right: "Chọn Privacy & Security"
+      },
+      {
+        left: "BƯỚC 4",
+        right: "Chọn cài đặt nào đó của trình duyệt để xóa"
+      }
+    ]
+  },
+  {
+    id: "lv1-gm2-37",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 37,
+    order: 82,
+    type: "multiple_choice",
+    text: "Rủi ro sức khỏe về tinh thần lớn nhất ở trẻ em và thanh thiếu niên sử dụng công nghệ trực tuyến là gì?",
+    options: [
+      { key: "A", text: "Chấn thương do nhắn tin khi đi bộ"},
+      { key: "B", text: "Nghiện chơi game" },
+      { key: "C", text: "Mệt mỏi" },
+      { key: "D", text: "Bắt nạt trên mạng (Cyberbullying)"}
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "lv1-gm2-38",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 38,
+    order: 83,
+    type: "multiple_choice",
+    text: "Mối đe dọa sức khoẻ thể chất nào có liên quan đến việc sử dụng máy tính và thiết bị máy tính trong thời gian dài? (Chọn hai)",
+    options: [
+      { key: "A", text: "Các vấn đề về cơ bắp" },
+      { key: "B", text: "Các vấn đề về xã hội" },
+      { key: "C", text: "Các vấn đề về thị lực" },
+      { key: "D", text: "Chơi game kiệt sức" },
+      { key: "E", text: "Bàn phím hư hỏng" },
+    ],
+    correctKeys: ["A","C"]
+  },
+  {
+    id: "lv1-gm2-39",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 39,
+    order: 84,
+    type: "yes_no",
+    text: "Chọn Đúng hoặc Sai cho mỗi phát biểu liên quan đến vấn đề an ninh kỹ thuật số.",
+    statements: [
+      { text: "Cookie có thể hữu ích, như lưu trữ username hoặc sở thích của bạn cho một trang web cụ thể", correct: "True" },
+      { text: "Lịch sử trình duyệt có thể được sử dụng để theo dõi mọi trang web bạn đã truy cập và khi bạn đã truy cập", correct: "True" },
+      { text: "Dấu trang cho phép bạn lưu một trang web để truy cập sau", correct: "True" },
+      { text: "Khi bạn đặt tùy chọn trên một trang web, thông tin sẽ được lưu trữ trên trang web", correct: "False" },
+    ]
+  },
+  {
+    id: "lv1-gm2-40",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 40,
+    order: 85,
+    type: "yes_no",
+    text: "Các hệ điều hành phổ biến nhất được phát triển và tiếp thị bởi một số công ty nổi tiếng. Hãy chọn Đúng hoặc Sai với mỗi phát biểu ",
+    statements: [
+      { text: "iOS được phát triển và tiếp thị bởi Android", correct: "False" },
+      { text: "Google không phát triển hệ điều hành", correct: "False" },
+      { text: "Apple là chủ sở hữu đã đăng ký của Mac OS", correct: "True" },
+      { text: "Hệ điều hành Windows là một sản phẩm của Microsoft" , correct: "True" }
+    ]
   }
+
 ];
