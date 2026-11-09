@@ -1158,42 +1158,608 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
   },
   // ===================== OT3 / GM1: LEVEL 1 (MÁY TÍNH CĂN BẢN) =====================
   {
-    id: "spark-l1-ot3-01",
+    id: "spark-l1-ot3-q1",
     levelId: "spark-level-1",
     program: "spark",
     subsetId: "OT3",
     questionNumber: 1,
-    order: 36,
     type: "multiple_choice",
-    text: "Ổ cứng (Hard Drive) và thẻ nhớ USB dùng để làm gì trong hệ thống máy tính?",
+    text: "Bạn nên sử dụng ứng dụng nào để hiển thị ảnh, bản đồ và video từ kỳ nghỉ hè của mình cho các bạn trong lớp học của bạn xem?",
     options: [
-      { key: "A", text: "Lưu trữ dữ liệu và chương trình lâu dài ngay cả khi tắt máy" },
-      { key: "B", text: "Phát ra bài hát" },
-      { key: "C", text: "Tự động lau sạch bụi bẩn màn hình" },
-      { key: "D", text: "Thay thế nguồn điện gia đình" }
+      "A. Tài liệu (Document)",
+      "B. Trang tính (Spreadsheet)",
+      "C. Bài trình chiếu (Slide Presentation)",
+      "D. Áp phích (Poster)"
     ],
-    correctKeys: ["A"],
-    correctAnswerText: "A. Lưu trữ dữ liệu và chương trình lâu dài ngay cả khi tắt máy",
-    explanation: "Ổ cứng và bộ nhớ ngoài (USB) là bộ nhớ lưu trữ thứ cấp, giữ lại dữ liệu an toàn kể cả khi ngắt điện."
+    correctKeys: ["C"]
   },
   {
-    id: "spark-l1-ot3-02",
+    id: "spark-l1-ot3-q2",
     levelId: "spark-level-1",
     program: "spark",
     subsetId: "OT3",
     questionNumber: 2,
-    order: 37,
     type: "multiple_choice",
-    text: "Thanh nằm ngang ở dưới cùng màn hình Desktop trong hệ điều hành Windows chứa nút Start và các biểu tượng ứng dụng gọi là gì?",
+    text: "Nhi muốn tham gia một trang mạng xã hội mới nổi tiếng. Để đăng ký, cô ấy phải điền vào một biểu mẫu trực tuyến. Nhi nên giữ phím nào trong khi gõ để chỉ viết hoa chữ cái đầu tiên trong tên của cô ấy?",
+    image: "/images/s-lv1-ot3-2.jpg",
     options: [
-      { key: "A", text: "Title Bar (Thanh tiêu đề)" },
-      { key: "B", text: "Taskbar (Thanh tác vụ)" },
-      { key: "C", text: "Menu Bar" },
-      { key: "D", text: "Scroll Bar (Thanh cuộn)" }
+      "A. Phím Shift (SHIFT)",
+      "B. Phím Enter",
+      "C. Phím Capslock",
+      "D. Phím Ecs"
     ],
-    correctKeys: ["B"],
-    correctAnswerText: "B. Taskbar (Thanh tác vụ)",
-    explanation: "Thanh Taskbar nằm dọc đáy màn hình, chứa nút Start, các ứng dụng đang mở, đồng hồ hệ thống và thông báo."
+    correctKeys: ["A"]
+  },
+  {
+    id: "spark-l1-ot3-q3",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 3,
+    type: "multiple_choice",
+    text: "Em hãy cho biết, cần sử dụng phần mềm ứng dụng nào để tạo ra các chữ cái tiểu chuẩn thay vì sử dụng máy đánh chữ?",
+    options: [
+      "A. Một ứng dụng CAD",
+      "B. Một ứng dụng trình chiếu",
+      "C. Một ứng dụng xử lý văn bản",
+      "D. Một ứng dụng bảng tính"
+    ],
+    correctKeys: ["C"]
+  },
+  {
+    id: "spark-l1-ot3-q4",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 4,
+    type: "multiple_choice",
+    text: "Em hãy cho biết, đây là loại tập tin gì? (kèm hình ảnh hồ sơ cá nhân/CV)",
+    image: "/images/s-lv1-ot3-4.jpg",
+    options: [
+      "A. Một trang web (A web page)",
+      "B. Một bài trình chiếu (A presentation)",
+      "C. Một trang tính (A spreadsheet)",
+      "D. Một tài liệu (A document)"
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "spark-l1-ot3-q5",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 5,
+    type: "multiple_choice",
+    text: "Em hãy cho biết, tổ hợp phím nào sau đây được sử dụng để chọn tất cả văn bản trong cùng một tài liệu?",
+    options: [
+      "A. ALT + A",
+      "B. CTRL + A",
+      "C. SHIFT + A",
+      "D. TAB + A"
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "spark-l1-ot3-q6",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 6,
+    type: "multiple_choice",
+    text: "Bạn đang tạo một áp phích trên máy tính. Bạn muốn thay đổi giao diện của các chữ cái và số trong tiêu đề áp phích. Bạn nên thay đổi điều gì?",
+    options: [
+      "A. Phông chữ (The Font)",
+      "B. Lề (The Margin)",
+      "C. Kích thước trang (The Page size)",
+      "D. Dãn cách đoạn văn (The Paragraph spacing)"
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "spark-l1-ot3-q7",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 7,
+    type: "multiple_choice",
+    text: "Trolling là gì?",
+    options: [
+      "A. Cố gắng làm cho ai đó tức giận bằng cách đăng những điều có ý nghĩa về họ",
+      "B. Chia sẻ thông tin cá nhân về ai đó mà không có sự cho phép của họ",
+      "C. Đăng nhập vào trang cá nhân của người khác và mạo danh người đó",
+      "D. Cố tình bỏ ai đó ra ngoài"
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "spark-l1-ot3-q8",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 8,
+    type: "yes_no",
+    text: "Tùy chọn nào sau đây là Đúng? (Chọn Có nếu đáp án đúng và Không nếu đáp án sai).",
+    statements: [
+      { text: "Trực tuyến là mãi mãi", correct: "True" },
+      { text: "Bạn có thể xóa vĩnh viễn các tin nhắn độc hại hoặc các bài đăng trên mạng xã hội khỏi internet", correct: "False" },
+      { text: "Thông tin cá nhân như địa chỉ và số điện thoại không nên được đăng trực tuyến", correct: "True" },
+      { text: "Bạn nên gửi tin nhắn riêng cho bạn cùng lớp bằng mật khẩu của mình trong trường hợp bạn quên mật khẩu", correct: "False" }
+    ]
+  },
+  {
+    id: "spark-l1-ot3-q9",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 9,
+    type: "multiple_choice",
+    text: "Bạn nhập tên của mình vào một công cụ tìm kiếm. Kết quả tìm kiếm bao gồm các ảnh mà bạn đã xóa khỏi trang web nơi bạn đã đăng chúng. Điều này có nghĩa là gì?",
+    options: [
+      "A. Dữ liệu công cụ tìm kiếm không được cập nhật gần đây",
+      "B. Bạn cần làm mới trang kết quả tìm kiếm",
+      "C. Chủ sở hữu trang web vẫn chưa xóa xong ảnh",
+      "D. Thông tin được đăng trực tuyến có thể được sao chép hoặc chia sẻ bởi những người khác"
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "spark-l1-ot3-q10",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 10,
+    type: "multiple_choice",
+    text: "Tùy chọn nào đại diện cho một đặc điểm của công dân kỹ thuật số tốt?",
+    options: [
+      "A. Sử dụng P@ssword làm mật khẩu cho tất cả các tài khoản của bạn",
+      "B. Lan truyền tin đồn trên mạng xã hội",
+      "C. Chia sẻ vị trí của bạn trên phương tiện truyền thông xã hội",
+      "D. Biết giá trị mọi thứ bạn đăng sẽ được người khác nhìn thấy và chia sẻ"
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "spark-l1-ot3-q11",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 11,
+    type: "multiple_choice",
+    text: "Bạn thấy những bình luận ác ý trong một cuộc trò chuyện trong nhóm trực tuyến. Là một công dân tốt của thời đại kỷ nguyên số, bạn nên nói gì?",
+    options: [
+      "A. Những bình luận này sẽ trực tuyến mãi mãi",
+      "B. Chúng ta chỉ nên đăng những bình luận ác ý trong một cuộc trò chuyện riêng tư",
+      "C. Bình luận ác ý là OK nếu chúng bị xóa sau khi nhóm đọc chúng",
+      "D. Bạn có thể đăng những bình luận ác ý nếu người khác không nhìn thấy chúng"
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "spark-l1-ot3-q12",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 12,
+    type: "yes_no",
+    text: "Đối với mỗi phát biểu về việc đăng thông tin trên internet, bạn hãy chọn đáp án Đúng hoặc Sai cho mỗi phát biểu dưới đây.",
+    statements: [
+      { text: "Sẽ không ai nhìn thấy nội dụng bạn đã đăng ngoại trừ những người theo dõi bạn", correct: "False" },
+      { text: "Xóa một hình ảnh hoặc video khỏi phương tiện truyền thông xã hội sẽ xóa nó vĩnh viễn", correct: "False" },
+      { text: "Những gì bạn đăng trên internet có thể ảnh hưởng đến những gì mọi người nghĩ về bạn", correct: "True" }
+    ]
+  },
+  {
+    id: "spark-l1-ot3-q13",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 13,
+    type: "multiple_choice",
+    text: "Ai đó đã đăng một bình luận xấu tính trên mạng xã hội hỏi về bạn An. Bạn ấy đã xóa bình luận, nhưng chính người đó đã viết những bình luận ác ý hơn. Một thuật ngữ cho người đã viết các ý kiến có nghĩa là gì?",
+    options: [
+      "A. Bắt nạt trên mạng (A cyberbully)",
+      "B. Một người mạo danh - lừa đảo (A catfish)",
+      "C. Một kẻ lừa đảo (A scammer)",
+      "D. Một hacker (A hacker)"
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "spark-l1-ot3-q14",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 14,
+    type: "multiple_choice",
+    text: "Khi ai đó sử dụng công nghệ để gây ác ý với người khác, việc họ đang làm được gọi là gì?",
+    options: [
+      "A. Trolling",
+      "B. Là một người hành động",
+      "C. Là một người ngoài cuộc",
+      "D. Bắt nạt trên mạng (Cyberbullying)"
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "spark-l1-ot3-q15",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 15,
+    type: "multiple_choice",
+    text: "Hành động nào là một ví dụ về bắt nạt trên mạng?",
+    options: [
+      "A. Bị bỏ rơi khỏi cuộc trò chuyện vào bữa trưa",
+      "B. Thích một bài đăng trên phương tiện truyền thông xã hội của một người bạn cùng lớp mà bạn không biết",
+      "C. Đăng tin nhắn ác ý về ai đó trên phương tiện truyền thông xã hội",
+      "D. Tạo niềm vui cho một người bạn cùng lớp vào giờ ra chơi"
+    ],
+    correctKeys: ["C"]
+  },
+  {
+    id: "spark-l1-ot3-q16",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 16,
+    type: "multiple_choice",
+    text: "Bạn đang trò chuyện trực tuyến với một người bạn và một cuộc tranh cãi nảy sinh. Bạn nên làm gì?",
+    options: [
+      "A. Rời khỏi cuộc trò chuyện",
+      "B. Nhờ một người bạn khác hỗ trợ bạn",
+      "C. Tìm bằng chứng để giành chiến thắng trong cuộc tranh luận",
+      "D. Phớt lờ bạn bè của bạn cho đến khi họ ngừng nói chuyện"
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "spark-l1-ot3-q17",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 17,
+    type: "multiple_choice",
+    text: "Quyền riêng tư kỹ thuật số là gì?",
+    options: [
+      "A. Trở thành bạn bè trực tuyến chỉ với những người bạn biết trong thế giới thực",
+      "B. Bảo vệ thông tin được lưu trữ hoặc chia sẻ trực tuyến",
+      "C. Sử dụng mật khẩu phức tạp",
+      "D. Che camera trên máy tính xách tay khi không sử dụng"
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "spark-l1-ot3-q18",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 18,
+    type: "yes_no",
+    text: "Đối với mỗi phát biểu về tương tác kỹ thuật số, hãy chọn Đúng hoặc Sai.",
+    statements: [
+      { text: "Thật an toàn khi chia sẻ tên đầy đủ và vị trí của bạn với bạn bè trực tuyến của bạn", correct: "False" },
+      { text: "Một công dân kỹ thuật số tốt sẽ xin phép trước khi chia sẻ ảnh của người khác", correct: "True" },
+      { text: "Bạn có thể đưa ra những nhận xét ác ý trực tuyến miễn là bạn không nói trực tiếp", correct: "False" }
+    ]
+  },
+  {
+    id: "spark-l1-ot3-q19",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 19,
+    type: "multiple_choice",
+    text: "Bạn là đội trưởng của đội bóng đá. Bạn cần thay mặt đội bóng hỏi huấn luyện viên của mình một câu hỏi khẩn cấp. Bạn nên đặt URGENT ở đâu để đảm bảo rằng huấn luyện viên của bạn nhận được thông báo và mở email một cách nhanh chóng?",
+    image: "/images/s-lv1-ot3-19.jpg",
+    options: [
+      "A. Vị trí A",
+      "B. Vị trí B",
+      "C. Vị trí C",
+      "D. Vị trí D"
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "spark-l1-ot3-q20",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 20,
+    type: "multiple_choice",
+    text: "Nhi đã xây dựng một mô hình lớp học của mình như một bài tập về nhà. Bạn ấy muốn đưa nó cho anh của bạn ấy, người sống ở xa. Bạn ấy muốn chỉ cho anh ấy nơi bạn ấy ngồi và nói với anh ấy về giáo viên của bạn ấy và bạn bè của mình. Nhi nên thể hiện và nói với anh mình những điều này như thế nào?",
+    options: [
+      "A. Trong cuộc trò chuyện video",
+      "B. Trong thông điệp email",
+      "C. Trong tin nhắn văn bản",
+      "D. Trong một bài đăng trên mạng xã hội"
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "spark-l1-ot3-q21",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 21,
+    type: "multiple_choice",
+    text: "Bạn đang nói chuyện với bạn bè trên thiết bị kỹ thuật số của mình. Với sự trợ giúp của camera tích hợp, bạn có thể chủ động nhìn thấy bạn bè của mình và bạn bè của bạn có thể nhìn thấy bạn. Bạn và bạn bè của bạn đang sử dụng hình thức giao tiếp kỹ thuật số nào?",
+    options: [
+      "A. Gửi thư điện tử (Email)",
+      "B. Trò chuyện video (Video chat)",
+      "C. Gọi điện thoại (Phone call)",
+      "D. Tin nhắn văn bản (Text message)"
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "spark-l1-ot3-q22",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 22,
+    type: "multiple_choice",
+    text: "Bạn của bạn đã gửi một tin nhắn điện tử ngắn từ điện thoại của bạn ấy đến điện thoại của bạn. Tin nhắn chứa các chữ cái, số và biểu tượng cảm xúc. Bạn của bạn đã sử dụng hình thức giao tiếp kỹ thuật số nào?",
+    options: [
+      "A. Gọi điện thoại",
+      "B. Tin nhắn văn bản",
+      "C. Thông báo cập nhật",
+      "D. Trò chuyện Video"
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "spark-l1-ot3-q23",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 23,
+    type: "matching",
+    text: "Nối mỗi từ với định nghĩa thích hợp:",
+    pairs: [
+      { left: "Lời chào (Greeting)", right: "Điều đầu tiên được đọc trong một cuộc giao tiếp. Có thể không chính thức hoặc trang trọng tùy thuộc vào đối tượng" },
+      { left: "Nội dung thư (Message Body)", right: "Nơi bạn nhập thông điệp thực sự bạn muốn gửi" },
+      { left: "Người nhận (Recipient)", right: "Người nhận thư (Địa chỉ email bạn nhập vào trường To:)" },
+      { left: "Dòng chủ đề (Subject line)", right: "Nêu chủ đề của email bằng một vài từ" }
+    ]
+  },
+  {
+    id: "spark-l1-ot3-q24",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 24,
+    type: "multiple_choice",
+    text: "Bạn hãy cho biết, điều gì sau đây là một lợi thế của việc sử dụng email thay vì tin nhắn tức thời?",
+    options: [
+      "A. Có thể đính kèm hình ảnh",
+      "B. Có thể chống lại virus",
+      "C. Hỗ trợ biểu tượng cảm xúc (Emoticons)",
+      "D. Người nhận không cần phải online ngay lúc email được gửi"
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "spark-l1-ot3-q25",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 25,
+    type: "multiple_choice",
+    text: "An cần gửi email cảm ơn đến giáo viên của mình nhưng bạn ấy không biết nên sử dụng phông chữ nào. Phông chữ nào thích hợp nhất cho thông báo này?",
+    options: [
+      "A. Dear Miss Dung (Phông chuẩn / chính thức - Kiểu chữ 1)",
+      "B. DEAR MISS DUNG",
+      "C. Dear Miss Dung",
+      "D. Dear Miss Dung (Chữ nghệ thuật)"
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "spark-l1-ot3-q26",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 26,
+    type: "matching",
+    text: "Hầu hết các thư và email đều có lời chào và lời kết thúc. Bạn hãy chọn cụm từ tương ứng đúng với thể loại câu phù hợp.",
+    pairs: [
+      { left: "Những lời chúc tốt đẹp nhất (Best wishes)", right: "Câu kết thúc (Closing statements)" },
+      { left: "Trân trọng (Sincerely yours)", right: "Câu kết thúc (Closing statements)" },
+      { left: "Cô An thân mến (Dear miss An)", right: "Câu chào hỏi (Greetings)" },
+      { left: "Xin chào (Good morning)", right: "Câu chào hỏi (Greetings)" }
+    ]
+  },
+  {
+    id: "spark-l1-ot3-q27",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 27,
+    type: "multiple_choice",
+    text: "Bạn đang thực hiện một dự án nhóm về động vật. Bạn cần gửi hai bức ảnh và hai đoạn văn về thằn lằn cho bạn cùng lớp của bạn, người đang làm áp phích cho nhóm. Bạn nên gửi thông tin cho bạn cùng lớp của mình như thế nào?",
+    options: [
+      "A. Gửi bằng cách đăng trên phương tiện truyền thông xã hội",
+      "B. Trò chuyện video",
+      "C. Gửi bằng email",
+      "D. Gửi bằng tin nhắn văn bản"
+    ],
+    correctKeys: ["C"]
+  },
+  {
+    id: "spark-l1-ot3-q28",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 28,
+    type: "multiple_choice",
+    text: "Bạn cần gửi một email cho giáo viên của bạn. Bạn nên đặt địa chỉ email của giáo viên ở đâu?",
+    image: "/images/s-lv1-ot3-28.jpg",
+    options: [
+      "A. Vị trí A",
+      "B. Vị trí B",
+      "C. Vị trí C"
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "spark-l1-ot3-q29",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 29,
+    type: "multiple_choice",
+    text: "Rian đang gửi cho cô Dũng một email. Bạn ấy biết có năm phần quan trọng cần đưa vào email. Lời chào là phần nào?",
+    image: "/images/s-lv1-ot3-29.jpg",
+    options: [
+      "A. Vị trí A",
+      "B. Vị trí B",
+      "C. Vị trí C",
+      "D. Vị trí D",
+      "E. Vị trí E"
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "spark-l1-ot3-q30",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 30,
+    type: "multiple_choice",
+    text: "Nhi đang gặp bạn mình sau giờ học để học nhóm. Vào cuối giờ học, giáo viên của Nhi yêu cầu bạn ấy ở lại vài phút để giúp dọn dẹp bàn học. Nhi sẽ đến muộn để gặp bạn mình. Cách nhanh nhất để Nhi nói với bạn mình rằng bạn ấy sẽ đến muộn vài phút là gì?",
+    options: [
+      "A. Gửi tin nhắn văn bản (Text message)",
+      "B. Gửi email",
+      "C. Đăng trên phương tiện truyền thông xã hội (Post on social media)",
+      "D. Trò chuyện video (Video chat)"
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "spark-l1-ot3-q31",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 31,
+    type: "multiple_choice",
+    text: "Giáo viên của bạn gửi một email để nhắc phụ huynh rằng sẽ có một bài kiểm tra vào ngày mai. Bạn muốn sắp xếp một buổi học nhóm trước khi đến lớp. Bạn nhắn tin cho một người bạn, gọi cho người khác và trò chuyện video với người bạn thứ ba để sắp xếp thời gian và địa điểm học nhóm. Quy trình nào đang được sử dụng để gửi và nhận thông tin?",
+    options: [
+      "A. Thời gian sử dụng thiết bị (Screen time)",
+      "B. Cộng tác (Collaboration)",
+      "C. Bắt nạt trên mạng (Cyberbullying)",
+      "D. Truyền thông kỹ thuật số (Digital communication)"
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "spark-l1-ot3-q32",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 32,
+    type: "multiple_choice",
+    text: "Hoạt động nào là một ví dụ về sự hợp tác?",
+    options: [
+      "A. Chạy một cuộc đua để đánh bại thời gian tốt nhất của bạn",
+      "B. Làm bài kiểm tra trong lớp học của bạn",
+      "C. Làm việc trong một dự án nhóm với các bạn cùng lớp",
+      "D. Ăn trưa trong nhà ăn"
+    ],
+    correctKeys: ["C"]
+  },
+  {
+    id: "spark-l1-ot3-q33",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 33,
+    type: "multiple_choice",
+    text: "Bạn và hai người bạn cùng lớp đang làm việc cùng nhau trong một dự án. Nhiệm vụ của bạn là tạo ra một áp phích với thông tin về cá mập. Bạn sẽ in ra những bức ảnh của cá mập. Một người bạn sẽ mua bảng áp phích và dính dán dấu và người kia sẽ lắp ráp áp phích. Mục tiêu của nhóm là gì?",
+    options: [
+      "A. Để thực hiện công việc nhanh nhất có thể",
+      "B. Để tạo áp phích với thông tin về cá mập",
+      "C. Để hòa hợp với từ cách là một nhóm",
+      "D. Để in gọn gàng trên bảng áp phích"
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "spark-l1-ot3-q34",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 34,
+    type: "yes_no",
+    text: "Đối với mỗi phát biểu về mục tiêu cộng tác, bạn hãy chọn Đúng hoặc Sai.",
+    statements: [
+      { text: "Học sinh học hỏi từ ý tưởng của người khác", correct: "True" },
+      { text: "Học sinh học cách giao tiếp với người khác", correct: "True" },
+      { text: "Học sinh học được rằng cách tốt nhất để làm việc là làm việc một mình", correct: "False" }
+    ]
+  },
+  {
+    id: "spark-l1-ot3-q35",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 35,
+    type: "multiple_choice",
+    text: "Bạn đang nghiên cứu trực tuyến cho một bài tập về đại dương. Giáo viên của bạn đã hướng dẫn bạn bao gồm ít nhất ba sự kiện và không có ý kiến. Tùy chọn nào sau đây là một ý kiến?",
+    options: [
+      "A. Có sông trong đại dương",
+      "B. Nhiều loài động vật sống trong đại dương",
+      "C. Đại dương luôn chuyển động",
+      "D. Đại dương tối tăm và đáng sợ"
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "spark-l1-ot3-q36",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 36,
+    type: "multiple_choice",
+    text: "Kịch bản nào là một ví dụ về cộng tác kỹ thuật số?",
+    options: [
+      "A. Thảo luận về một cuốn sách với nhóm đọc của bạn",
+      "B. Đọc sách điện tử từ thư viện trực tuyến",
+      "C. Tạo bản trình bày cho lớp học của bạn",
+      "D. Có một cuộc gọi video với nhóm học tập của bạn trước khi kiểm tra"
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "spark-l1-ot3-q37",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 37,
+    type: "multiple_choice",
+    text: "Mục tiêu là gì?",
+    options: [
+      "A. Thông tin an toàn để chia sẻ trực tuyến",
+      "B. Một kết quả mà bạn muốn đạt được",
+      "C. Thông tin mà bạn cho là đúng/sự thật",
+      "D. Một thực tế đã được chứng minh"
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "spark-l1-ot3-q38",
+    levelId: "spark-level-1",
+    program: "spark",
+    subsetId: "OT3",
+    questionNumber: 38,
+    type: "multiple_choice",
+    text: "Mục đích của sự cộng tác (Collaboration) là gì?",
+    options: [
+      "A. Làm việc một mình để hoàn thành nhiệm vụ",
+      "B. Làm việc với những người khác để hướng tới một mục tiêu chung",
+      "C. Làm việc chăm chỉ hơn các học sinh khác trong lớp",
+      "D. Trở thành học sinh nhanh nhất trong lớp"
+    ],
+    correctKeys: ["B"]
   },
   {
     id: "spark-l1-gm1-01",
