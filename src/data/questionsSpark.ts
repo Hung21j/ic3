@@ -1314,7 +1314,7 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
       "A. Sử dụng P@ssword làm mật khẩu cho tất cả các tài khoản của bạn",
       "B. Lan truyền tin đồn trên mạng xã hội",
       "C. Chia sẻ vị trí của bạn trên phương tiện truyền thông xã hội",
-      "D. Biết giá trị mọi thứ bạn đăng sẽ được người khác nhìn thấy và chia sẻ"
+      "D. Biết giả sử mọi thứ bạn đăng sẽ được người khác nhìn thấy và chia sẻ"
     ],
     correctKeys: ["D"]
   },
@@ -1343,7 +1343,7 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "yes_no",
     text: "Đối với mỗi phát biểu về việc đăng thông tin trên internet, bạn hãy chọn đáp án Đúng hoặc Sai cho mỗi phát biểu dưới đây.",
     statements: [
-      { text: "Sẽ không ai nhìn thấy nội dụng bạn đã đăng ngoại trừ những người theo dõi bạn", correct: "False" },
+      { text: "Sẽ không ai nhìn thấy nội dung bạn đã đăng ngoại trừ những người theo dõi bạn", correct: "False" },
       { text: "Xóa một hình ảnh hoặc video khỏi phương tiện truyền thông xã hội sẽ xóa nó vĩnh viễn", correct: "False" },
       { text: "Những gì bạn đăng trên internet có thể ảnh hưởng đến những gì mọi người nghĩ về bạn", correct: "True" }
     ]
@@ -1457,7 +1457,7 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
       "C. Vị trí C",
       "D. Vị trí D"
     ],
-    correctKeys: ["A"]
+    correctKeys: ["B"]
   },
   {
     id: "spark-l1-ot3-q20",
@@ -1546,11 +1546,12 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     questionNumber: 25,
     type: "multiple_choice",
     text: "An cần gửi email cảm ơn đến giáo viên của mình nhưng bạn ấy không biết nên sử dụng phông chữ nào. Phông chữ nào thích hợp nhất cho thông báo này?",
+    image: "/images/s-lv1-ot3-25.png",
     options: [
-      "A. Dear Miss Dung (Phông chuẩn / chính thức - Kiểu chữ 1)",
-      "B. DEAR MISS DUNG",
-      "C. Dear Miss Dung",
-      "D. Dear Miss Dung (Chữ nghệ thuật)"
+      "Câu A",
+      "Câu B",
+      "Câu C",
+      "Câu D"
     ],
     correctKeys: ["A"]
   },
@@ -1560,14 +1561,16 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     program: "spark",
     subsetId: "OT3",
     questionNumber: 26,
-    type: "matching",
+    type: "yes_no",
     text: "Hầu hết các thư và email đều có lời chào và lời kết thúc. Bạn hãy chọn cụm từ tương ứng đúng với thể loại câu phù hợp.",
-    pairs: [
-      { left: "Những lời chúc tốt đẹp nhất (Best wishes)", right: "Câu kết thúc (Closing statements)" },
-      { left: "Trân trọng (Sincerely yours)", right: "Câu kết thúc (Closing statements)" },
-      { left: "Cô An thân mến (Dear miss An)", right: "Câu chào hỏi (Greetings)" },
-      { left: "Xin chào (Good morning)", right: "Câu chào hỏi (Greetings)" }
-    ]
+    statements: [
+      { text: "Những lời chúc tốt đẹp nhất (Best wishes)", correct: "True" },
+      { text: "Trân trọng (Sincerely yours)", correct: "True" },
+      { text: "Cô An thân mến (Dear miss An)", correct: "False" },
+      { text: "Xin chào (Good morning)", correct: "False" }
+    ],
+    trueColumnLabel: "Câu kết thúc (Closing statements)",
+    falseColumnLabel: "Câu chào hỏi (Greetings)"
   },
   {
     id: "spark-l1-ot3-q27",
@@ -1617,7 +1620,7 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
       "D. Vị trí D",
       "E. Vị trí E"
     ],
-    correctKeys: ["A"]
+    correctKeys: ["C"]
   },
   {
     id: "spark-l1-ot3-q30",
