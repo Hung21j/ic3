@@ -83,16 +83,14 @@ export function normalizeMCQOptions(
 
 import { LEVEL1_OT_QUESTIONS } from "./questionsLevel1";
 import { ALL_SPARK_QUESTIONS } from "./questionsSpark";
+import { LEVEL2_OT_QUESTIONS } from "./questionLevel2";
 
 export const IC3_QUESTIONS: IC3Question[] = [
-  // ==========================================
-  // LEVEL 1: ĐỀ ÔN TẬP OT1, OT2, OT3 (45 CÂU)
-  // ==========================================
+
   ...LEVEL1_OT_QUESTIONS,
-  // ==========================================
-  // IC3 SPARK: CÁC CẤP ĐỘ SPARK 1, 2, 3
-  // ==========================================
+  ...LEVEL2_OT_QUESTIONS,
   ...ALL_SPARK_QUESTIONS,
+
   // ==========================================
   // LEVEL 1: MÁY TÍNH CƠ BẢN (level-1)
   // ==========================================

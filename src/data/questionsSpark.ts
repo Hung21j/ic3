@@ -1166,10 +1166,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Bạn nên sử dụng ứng dụng nào để hiển thị ảnh, bản đồ và video từ kỳ nghỉ hè của mình cho các bạn trong lớp học của bạn xem?",
     options: [
-      "A. Tài liệu (Document)",
-      "B. Trang tính (Spreadsheet)",
-      "C. Bài trình chiếu (Slide Presentation)",
-      "D. Áp phích (Poster)"
+      { key: "A", text: "Tài liệu (Document)" },
+      { key: "B", text: "Trang tính (Spreadsheet)" },
+      { key: "C", text: "Bài trình chiếu (Slide Presentation)" },
+      { key: "D", text: "Áp phích (Poster)" }
     ],
     correctKeys: ["C"]
   },
@@ -1181,12 +1181,12 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     questionNumber: 2,
     type: "multiple_choice",
     text: "Nhi muốn tham gia một trang mạng xã hội mới nổi tiếng. Để đăng ký, cô ấy phải điền vào một biểu mẫu trực tuyến. Nhi nên giữ phím nào trong khi gõ để chỉ viết hoa chữ cái đầu tiên trong tên của cô ấy?",
-    image: "/images/s-lv1-ot3-2.jpg",
+    image: "/imgaes/s-lv1-ot3-2.jpg",
     options: [
-      "A. Phím Shift (SHIFT)",
-      "B. Phím Enter",
-      "C. Phím Capslock",
-      "D. Phím Ecs"
+      { key: "A", text: "Phím Shift (SHIFT)" },
+      { key: "B", text: "Phím Enter" },
+      { key: "C", text: "Phím Capslock" },
+      { key: "D", text: "Phím Ecs" }
     ],
     correctKeys: ["A"]
   },
@@ -1199,10 +1199,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Em hãy cho biết, cần sử dụng phần mềm ứng dụng nào để tạo ra các chữ cái tiểu chuẩn thay vì sử dụng máy đánh chữ?",
     options: [
-      "A. Một ứng dụng CAD",
-      "B. Một ứng dụng trình chiếu",
-      "C. Một ứng dụng xử lý văn bản",
-      "D. Một ứng dụng bảng tính"
+      { key: "A", text: "Một ứng dụng CAD" },
+      { key: "B", text: "Một ứng dụng trình chiếu" },
+      { key: "C", text: "Một ứng dụng xử lý văn bản" },
+      { key: "D", text: "Một ứng dụng bảng tính" }
     ],
     correctKeys: ["C"]
   },
@@ -1216,10 +1216,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     text: "Em hãy cho biết, đây là loại tập tin gì? (kèm hình ảnh hồ sơ cá nhân/CV)",
     image: "/images/s-lv1-ot3-4.jpg",
     options: [
-      "A. Một trang web (A web page)",
-      "B. Một bài trình chiếu (A presentation)",
-      "C. Một trang tính (A spreadsheet)",
-      "D. Một tài liệu (A document)"
+      { key: "A", text: "Một trang web (A web page)" },
+      { key: "B", text: "Một bài trình chiếu (A presentation)" },
+      { key: "C", text: "Một trang tính (A spreadsheet)" },
+      { key: "D", text: "Một tài liệu (A document)" }
     ],
     correctKeys: ["D"]
   },
@@ -1232,10 +1232,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Em hãy cho biết, tổ hợp phím nào sau đây được sử dụng để chọn tất cả văn bản trong cùng một tài liệu?",
     options: [
-      "A. ALT + A",
-      "B. CTRL + A",
-      "C. SHIFT + A",
-      "D. TAB + A"
+      { key: "A", text: "ALT + A" },
+      { key: "B", text: "CTRL + A" },
+      { key: "C", text: "SHIFT + A" },
+      { key: "D", text: "TAB + A" }
     ],
     correctKeys: ["B"]
   },
@@ -1248,10 +1248,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Bạn đang tạo một áp phích trên máy tính. Bạn muốn thay đổi giao diện của các chữ cái và số trong tiêu đề áp phích. Bạn nên thay đổi điều gì?",
     options: [
-      "A. Phông chữ (The Font)",
-      "B. Lề (The Margin)",
-      "C. Kích thước trang (The Page size)",
-      "D. Dãn cách đoạn văn (The Paragraph spacing)"
+      { key: "A", text: "Phông chữ (The Font)" },
+      { key: "B", text: "Lề (The Margin)" },
+      { key: "C", text: "Kích thước trang (The Page size)" },
+      { key: "D", text: "Dãn cách đoạn văn (The Paragraph spacing)" }
     ],
     correctKeys: ["A"]
   },
@@ -1264,10 +1264,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Trolling là gì?",
     options: [
-      "A. Cố gắng làm cho ai đó tức giận bằng cách đăng những điều có ý nghĩa về họ",
-      "B. Chia sẻ thông tin cá nhân về ai đó mà không có sự cho phép của họ",
-      "C. Đăng nhập vào trang cá nhân của người khác và mạo danh người đó",
-      "D. Cố tình bỏ ai đó ra ngoài"
+      { key: "A", text: "Cố gắng làm cho ai đó tức giận bằng cách đăng những điều có ý nghĩa về họ" },
+      { key: "B", text: "Chia sẻ thông tin cá nhân về ai đó mà không có sự cho phép của họ" },
+      { key: "C", text: "Đăng nhập vào trang cá nhân của người khác và mạo danh người đó" },
+      { key: "D", text: "Cố tình bỏ ai đó ra ngoài" }
     ],
     correctKeys: ["A"]
   },
@@ -1295,10 +1295,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Bạn nhập tên của mình vào một công cụ tìm kiếm. Kết quả tìm kiếm bao gồm các ảnh mà bạn đã xóa khỏi trang web nơi bạn đã đăng chúng. Điều này có nghĩa là gì?",
     options: [
-      "A. Dữ liệu công cụ tìm kiếm không được cập nhật gần đây",
-      "B. Bạn cần làm mới trang kết quả tìm kiếm",
-      "C. Chủ sở hữu trang web vẫn chưa xóa xong ảnh",
-      "D. Thông tin được đăng trực tuyến có thể được sao chép hoặc chia sẻ bởi những người khác"
+      { key: "A", text: "Dữ liệu công cụ tìm kiếm không được cập nhật gần đây" },
+      { key: "B", text: "Bạn cần làm mới trang kết quả tìm kiếm" },
+      { key: "C", text: "Chủ sở hữu trang web vẫn chưa xóa xong ảnh" },
+      { key: "D", text: "Thông tin được đăng trực tuyến có thể được sao chép hoặc chia sẻ bởi những người khác" }
     ],
     correctKeys: ["D"]
   },
@@ -1311,10 +1311,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Tùy chọn nào đại diện cho một đặc điểm của công dân kỹ thuật số tốt?",
     options: [
-      "A. Sử dụng P@ssword làm mật khẩu cho tất cả các tài khoản của bạn",
-      "B. Lan truyền tin đồn trên mạng xã hội",
-      "C. Chia sẻ vị trí của bạn trên phương tiện truyền thông xã hội",
-      "D. Biết giả sử mọi thứ bạn đăng sẽ được người khác nhìn thấy và chia sẻ"
+      { key: "A", text: "Sử dụng P@ssword làm mật khẩu cho tất cả các tài khoản của bạn" },
+      { key: "B", text: "Lan truyền tin đồn trên mạng xã hội" },
+      { key: "C", text: "Chia sẻ vị trí của bạn trên phương tiện truyền thông xã hội" },
+      { key: "D", text: "Biết giả sử mọi thứ bạn đăng sẽ được người khác nhìn thấy và chia sẻ" }
     ],
     correctKeys: ["D"]
   },
@@ -1327,10 +1327,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Bạn thấy những bình luận ác ý trong một cuộc trò chuyện trong nhóm trực tuyến. Là một công dân tốt của thời đại kỷ nguyên số, bạn nên nói gì?",
     options: [
-      "A. Những bình luận này sẽ trực tuyến mãi mãi",
-      "B. Chúng ta chỉ nên đăng những bình luận ác ý trong một cuộc trò chuyện riêng tư",
-      "C. Bình luận ác ý là OK nếu chúng bị xóa sau khi nhóm đọc chúng",
-      "D. Bạn có thể đăng những bình luận ác ý nếu người khác không nhìn thấy chúng"
+      { key: "A", text: "Những bình luận này sẽ trực tuyến mãi mãi" },
+      { key: "B", text: "Chúng ta chỉ nên đăng những bình luận ác ý trong một cuộc trò chuyện riêng tư" },
+      { key: "C", text: "Bình luận ác ý là OK nếu chúng bị xóa sau khi nhóm đọc chúng" },
+      { key: "D", text: "Bạn có thể đăng những bình luận ác ý nếu người khác không nhìn thấy chúng" }
     ],
     correctKeys: ["A"]
   },
@@ -1357,10 +1357,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Ai đó đã đăng một bình luận xấu tính trên mạng xã hội hỏi về bạn An. Bạn ấy đã xóa bình luận, nhưng chính người đó đã viết những bình luận ác ý hơn. Một thuật ngữ cho người đã viết các ý kiến có nghĩa là gì?",
     options: [
-      "A. Bắt nạt trên mạng (A cyberbully)",
-      "B. Một người mạo danh - lừa đảo (A catfish)",
-      "C. Một kẻ lừa đảo (A scammer)",
-      "D. Một hacker (A hacker)"
+      { key: "A", text: "Bắt nạt trên mạng (A cyberbully)" },
+      { key: "B", text: "Một người mạo danh - lừa đảo (A catfish)" },
+      { key: "C", text: "Một kẻ lừa đảo (A scammer)" },
+      { key: "D", text: "Một hacker (A hacker)" }
     ],
     correctKeys: ["A"]
   },
@@ -1373,10 +1373,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Khi ai đó sử dụng công nghệ để gây ác ý với người khác, việc họ đang làm được gọi là gì?",
     options: [
-      "A. Trolling",
-      "B. Là một người hành động",
-      "C. Là một người ngoài cuộc",
-      "D. Bắt nạt trên mạng (Cyberbullying)"
+      { key: "A", text: "Trolling" },
+      { key: "B", text: "Là một người hành động" },
+      { key: "C", text: "Là một người ngoài cuộc" },
+      { key: "D", text: "Bắt nạt trên mạng (Cyberbullying)" }
     ],
     correctKeys: ["D"]
   },
@@ -1389,10 +1389,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Hành động nào là một ví dụ về bắt nạt trên mạng?",
     options: [
-      "A. Bị bỏ rơi khỏi cuộc trò chuyện vào bữa trưa",
-      "B. Thích một bài đăng trên phương tiện truyền thông xã hội của một người bạn cùng lớp mà bạn không biết",
-      "C. Đăng tin nhắn ác ý về ai đó trên phương tiện truyền thông xã hội",
-      "D. Tạo niềm vui cho một người bạn cùng lớp vào giờ ra chơi"
+      { key: "A", text: "Bị bỏ rơi khỏi cuộc trò chuyện vào bữa trưa" },
+      { key: "B", text: "Thích một bài đăng trên phương tiện truyền thông xã hội của một người bạn cùng lớp mà bạn không biết" },
+      { key: "C", text: "Đăng tin nhắn ác ý về ai đó trên phương tiện truyền thông xã hội" },
+      { key: "D", text: "Tạo niềm vui cho một người bạn cùng lớp vào giờ ra chơi" }
     ],
     correctKeys: ["C"]
   },
@@ -1405,10 +1405,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Bạn đang trò chuyện trực tuyến với một người bạn và một cuộc tranh cãi nảy sinh. Bạn nên làm gì?",
     options: [
-      "A. Rời khỏi cuộc trò chuyện",
-      "B. Nhờ một người bạn khác hỗ trợ bạn",
-      "C. Tìm bằng chứng để giành chiến thắng trong cuộc tranh luận",
-      "D. Phớt lờ bạn bè của bạn cho đến khi họ ngừng nói chuyện"
+      { key: "A", text: "Rời khỏi cuộc trò chuyện" },
+      { key: "B", text: "Nhờ một người bạn khác hỗ trợ bạn" },
+      { key: "C", text: "Tìm bằng chứng để giành chiến thắng trong cuộc tranh luận" },
+      { key: "D", text: "Phớt lờ bạn bè của bạn cho đến khi họ ngừng nói chuyện" }
     ],
     correctKeys: ["A"]
   },
@@ -1421,10 +1421,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Quyền riêng tư kỹ thuật số là gì?",
     options: [
-      "A. Trở thành bạn bè trực tuyến chỉ với những người bạn biết trong thế giới thực",
-      "B. Bảo vệ thông tin được lưu trữ hoặc chia sẻ trực tuyến",
-      "C. Sử dụng mật khẩu phức tạp",
-      "D. Che camera trên máy tính xách tay khi không sử dụng"
+      { key: "A", text: "Trở thành bạn bè trực tuyến chỉ với những người bạn biết trong thế giới thực" },
+      { key: "B", text: "Bảo vệ thông tin được lưu trữ hoặc chia sẻ trực tuyến" },
+      { key: "C", text: "Sử dụng mật khẩu phức tạp" },
+      { key: "D", text: "Che camera trên máy tính xách tay khi không sử dụng" }
     ],
     correctKeys: ["B"]
   },
@@ -1452,10 +1452,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     text: "Bạn là đội trưởng của đội bóng đá. Bạn cần thay mặt đội bóng hỏi huấn luyện viên của mình một câu hỏi khẩn cấp. Bạn nên đặt URGENT ở đâu để đảm bảo rằng huấn luyện viên của bạn nhận được thông báo và mở email một cách nhanh chóng?",
     image: "/images/s-lv1-ot3-19.jpg",
     options: [
-      "A. Vị trí A",
-      "B. Vị trí B",
-      "C. Vị trí C",
-      "D. Vị trí D"
+      { key: "A", text: "Vị trí A" },
+      { key: "B", text: "Vị trí B" },
+      { key: "C", text: "Vị trí C" },
+      { key: "D", text: "Vị trí D" }
     ],
     correctKeys: ["B"]
   },
@@ -1468,10 +1468,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Nhi đã xây dựng một mô hình lớp học của mình như một bài tập về nhà. Bạn ấy muốn đưa nó cho anh của bạn ấy, người sống ở xa. Bạn ấy muốn chỉ cho anh ấy nơi bạn ấy ngồi và nói với anh ấy về giáo viên của bạn ấy và bạn bè của mình. Nhi nên thể hiện và nói với anh mình những điều này như thế nào?",
     options: [
-      "A. Trong cuộc trò chuyện video",
-      "B. Trong thông điệp email",
-      "C. Trong tin nhắn văn bản",
-      "D. Trong một bài đăng trên mạng xã hội"
+      { key: "A", text: "Trong cuộc trò chuyện video" },
+      { key: "B", text: "Trong thông điệp email" },
+      { key: "C", text: "Trong tin nhắn văn bản" },
+      { key: "D", text: "Trong một bài đăng trên mạng xã hội" }
     ],
     correctKeys: ["A"]
   },
@@ -1484,10 +1484,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Bạn đang nói chuyện với bạn bè trên thiết bị kỹ thuật số của mình. Với sự trợ giúp của camera tích hợp, bạn có thể chủ động nhìn thấy bạn bè của mình và bạn bè của bạn có thể nhìn thấy bạn. Bạn và bạn bè của bạn đang sử dụng hình thức giao tiếp kỹ thuật số nào?",
     options: [
-      "A. Gửi thư điện tử (Email)",
-      "B. Trò chuyện video (Video chat)",
-      "C. Gọi điện thoại (Phone call)",
-      "D. Tin nhắn văn bản (Text message)"
+      { key: "A", text: "Gửi thư điện tử (Email)" },
+      { key: "B", text: "Trò chuyện video (Video chat)" },
+      { key: "C", text: "Gọi điện thoại (Phone call)" },
+      { key: "D", text: "Tin nhắn văn bản (Text message)" }
     ],
     correctKeys: ["B"]
   },
@@ -1500,10 +1500,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Bạn của bạn đã gửi một tin nhắn điện tử ngắn từ điện thoại của bạn ấy đến điện thoại của bạn. Tin nhắn chứa các chữ cái, số và biểu tượng cảm xúc. Bạn của bạn đã sử dụng hình thức giao tiếp kỹ thuật số nào?",
     options: [
-      "A. Gọi điện thoại",
-      "B. Tin nhắn văn bản",
-      "C. Thông báo cập nhật",
-      "D. Trò chuyện Video"
+      { key: "A", text: "Gọi điện thoại" },
+      { key: "B", text: "Tin nhắn văn bản" },
+      { key: "C", text: "Thông báo cập nhật" },
+      { key: "D", text: "Trò chuyện Video" }
     ],
     correctKeys: ["B"]
   },
@@ -1531,10 +1531,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Bạn hãy cho biết, điều gì sau đây là một lợi thế của việc sử dụng email thay vì tin nhắn tức thời?",
     options: [
-      "A. Có thể đính kèm hình ảnh",
-      "B. Có thể chống lại virus",
-      "C. Hỗ trợ biểu tượng cảm xúc (Emoticons)",
-      "D. Người nhận không cần phải online ngay lúc email được gửi"
+      { key: "A", text: "Có thể đính kèm hình ảnh" },
+      { key: "B", text: "Có thể chống lại virus" },
+      { key: "C", text: "Hỗ trợ biểu tượng cảm xúc (Emoticons)" },
+      { key: "D", text: "Người nhận không cần phải online ngay lúc email được gửi" }
     ],
     correctKeys: ["D"]
   },
@@ -1548,10 +1548,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     text: "An cần gửi email cảm ơn đến giáo viên của mình nhưng bạn ấy không biết nên sử dụng phông chữ nào. Phông chữ nào thích hợp nhất cho thông báo này?",
     image: "/images/s-lv1-ot3-25.png",
     options: [
-      "Câu A",
-      "Câu B",
-      "Câu C",
-      "Câu D"
+      { key: "A", text: "Câu A" },
+      { key: "B", text: "Câu B" },
+      { key: "C", text: "Câu C" },
+      { key: "D", text: "Câu D" }
     ],
     correctKeys: ["D"]
   },
@@ -1581,10 +1581,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Bạn đang thực hiện một dự án nhóm về động vật. Bạn cần gửi hai bức ảnh và hai đoạn văn về thằn lằn cho bạn cùng lớp của bạn, người đang làm áp phích cho nhóm. Bạn nên gửi thông tin cho bạn cùng lớp của mình như thế nào?",
     options: [
-      "A. Gửi bằng cách đăng trên phương tiện truyền thông xã hội",
-      "B. Trò chuyện video",
-      "C. Gửi bằng email",
-      "D. Gửi bằng tin nhắn văn bản"
+      { key: "A", text: "Gửi bằng cách đăng trên phương tiện truyền thông xã hội" },
+      { key: "B", text: "Trò chuyện video" },
+      { key: "C", text: "Gửi bằng email" },
+      { key: "D", text: "Gửi bằng tin nhắn văn bản" }
     ],
     correctKeys: ["C"]
   },
@@ -1598,9 +1598,9 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     text: "Bạn cần gửi một email cho giáo viên của bạn. Bạn nên đặt địa chỉ email của giáo viên ở đâu?",
     image: "/images/s-lv1-ot3-28.jpg",
     options: [
-      "A. Vị trí A",
-      "B. Vị trí B",
-      "C. Vị trí C"
+      { key: "A", text: "Vị trí A" },
+      { key: "B", text: "Vị trí B" },
+      { key: "C", text: "Vị trí C" }
     ],
     correctKeys: ["A"]
   },
@@ -1614,11 +1614,11 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     text: "Rian đang gửi cho cô Dũng một email. Bạn ấy biết có năm phần quan trọng cần đưa vào email. Lời chào là phần nào?",
     image: "/images/s-lv1-ot3-29.jpg",
     options: [
-      "A. Vị trí A",
-      "B. Vị trí B",
-      "C. Vị trí C",
-      "D. Vị trí D",
-      "E. Vị trí E"
+      { key: "A", text: "Vị trí A" },
+      { key: "B", text: "Vị trí B" },
+      { key: "C", text: "Vị trí C" },
+      { key: "D", text: "Vị trí D" },
+      { key: "E", text: "Vị trí E" }
     ],
     correctKeys: ["C"]
   },
@@ -1631,10 +1631,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Nhi đang gặp bạn mình sau giờ học để học nhóm. Vào cuối giờ học, giáo viên của Nhi yêu cầu bạn ấy ở lại vài phút để giúp dọn dẹp bàn học. Nhi sẽ đến muộn để gặp bạn mình. Cách nhanh nhất để Nhi nói với bạn mình rằng bạn ấy sẽ đến muộn vài phút là gì?",
     options: [
-      "A. Gửi tin nhắn văn bản (Text message)",
-      "B. Gửi email",
-      "C. Đăng trên phương tiện truyền thông xã hội (Post on social media)",
-      "D. Trò chuyện video (Video chat)"
+      { key: "A", text: "Gửi tin nhắn văn bản (Text message)" },
+      { key: "B", text: "Gửi email" },
+      { key: "C", text: "Đăng trên phương tiện truyền thông xã hội (Post on social media)" },
+      { key: "D", text: "Trò chuyện video (Video chat)" }
     ],
     correctKeys: ["A"]
   },
@@ -1647,10 +1647,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Giáo viên của bạn gửi một email để nhắc phụ huynh rằng sẽ có một bài kiểm tra vào ngày mai. Bạn muốn sắp xếp một buổi học nhóm trước khi đến lớp. Bạn nhắn tin cho một người bạn, gọi cho người khác và trò chuyện video với người bạn thứ ba để sắp xếp thời gian và địa điểm học nhóm. Quy trình nào đang được sử dụng để gửi và nhận thông tin?",
     options: [
-      "A. Thời gian sử dụng thiết bị (Screen time)",
-      "B. Cộng tác (Collaboration)",
-      "C. Bắt nạt trên mạng (Cyberbullying)",
-      "D. Truyền thông kỹ thuật số (Digital communication)"
+      { key: "A", text: "Thời gian sử dụng thiết bị (Screen time)" },
+      { key: "B", text: "Cộng tác (Collaboration)" },
+      { key: "C", text: "Bắt nạt trên mạng (Cyberbullying)" },
+      { key: "D", text: "Truyền thông kỹ thuật số (Digital communication)" }
     ],
     correctKeys: ["D"]
   },
@@ -1663,10 +1663,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Hoạt động nào là một ví dụ về sự hợp tác?",
     options: [
-      "A. Chạy một cuộc đua để đánh bại thời gian tốt nhất của bạn",
-      "B. Làm bài kiểm tra trong lớp học của bạn",
-      "C. Làm việc trong một dự án nhóm với các bạn cùng lớp",
-      "D. Ăn trưa trong nhà ăn"
+      { key: "A", text: "Chạy một cuộc đua để đánh bại thời gian tốt nhất của bạn" },
+      { key: "B", text: "Làm bài kiểm tra trong lớp học của bạn" },
+      { key: "C", text: "Làm việc trong một dự án nhóm với các bạn cùng lớp" },
+      { key: "D", text: "Ăn trưa trong nhà ăn" }
     ],
     correctKeys: ["C"]
   },
@@ -1679,10 +1679,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Bạn và hai người bạn cùng lớp đang làm việc cùng nhau trong một dự án. Nhiệm vụ của bạn là tạo ra một áp phích với thông tin về cá mập. Bạn sẽ in ra những bức ảnh của cá mập. Một người bạn sẽ mua bảng áp phích và dính dán dấu và người kia sẽ lắp ráp áp phích. Mục tiêu của nhóm là gì?",
     options: [
-      "A. Để thực hiện công việc nhanh nhất có thể",
-      "B. Để tạo áp phích với thông tin về cá mập",
-      "C. Để hòa hợp với từ cách là một nhóm",
-      "D. Để in gọn gàng trên bảng áp phích"
+      { key: "A", text: "Để thực hiện công việc nhanh nhất có thể" },
+      { key: "B", text: "Để tạo áp phích với thông tin về cá mập" },
+      { key: "C", text: "Để hòa hợp với từ cách là một nhóm" },
+      { key: "D", text: "Để in gọn gàng trên bảng áp phích" }
     ],
     correctKeys: ["B"]
   },
@@ -1709,10 +1709,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Bạn đang nghiên cứu trực tuyến cho một bài tập về đại dương. Giáo viên của bạn đã hướng dẫn bạn bao gồm ít nhất ba sự kiện và không có ý kiến. Tùy chọn nào sau đây là một ý kiến?",
     options: [
-      "A. Có sông trong đại dương",
-      "B. Nhiều loài động vật sống trong đại dương",
-      "C. Đại dương luôn chuyển động",
-      "D. Đại dương tối tăm và đáng sợ"
+      { key: "A", text: "Có sông trong đại dương" },
+      { key: "B", text: "Nhiều loài động vật sống trong đại dương" },
+      { key: "C", text: "Đại dương luôn chuyển động" },
+      { key: "D", text: "Đại dương tối tăm và đáng sợ" }
     ],
     correctKeys: ["D"]
   },
@@ -1725,10 +1725,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Kịch bản nào là một ví dụ về cộng tác kỹ thuật số?",
     options: [
-      "A. Thảo luận về một cuốn sách với nhóm đọc của bạn",
-      "B. Đọc sách điện tử từ thư viện trực tuyến",
-      "C. Tạo bản trình bày cho lớp học của bạn",
-      "D. Có một cuộc gọi video với nhóm học tập của bạn trước khi kiểm tra"
+      { key: "A", text: "Thảo luận về một cuốn sách với nhóm đọc của bạn" },
+      { key: "B", text: "Đọc sách điện tử từ thư viện trực tuyến" },
+      { key: "C", text: "Tạo bản trình bày cho lớp học của bạn" },
+      { key: "D", text: "Có một cuộc gọi video với nhóm học tập của bạn trước khi kiểm tra" }
     ],
     correctKeys: ["D"]
   },
@@ -1741,10 +1741,10 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Mục tiêu là gì?",
     options: [
-      "A. Thông tin an toàn để chia sẻ trực tuyến",
-      "B. Một kết quả mà bạn muốn đạt được",
-      "C. Thông tin mà bạn cho là đúng/sự thật",
-      "D. Một thực tế đã được chứng minh"
+      { key: "A", text: "Thông tin an toàn để chia sẻ trực tuyến" },
+      { key: "B", text: "Một kết quả mà bạn muốn đạt được" },
+      { key: "C", text: "Thông tin mà bạn cho là đúng/sự thật" },
+      { key: "D", text: "Một thực tế đã được chứng minh" }
     ],
     correctKeys: ["B"]
   },
@@ -1757,50 +1757,12 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
     type: "multiple_choice",
     text: "Mục đích của sự cộng tác (Collaboration) là gì?",
     options: [
-      "A. Làm việc một mình để hoàn thành nhiệm vụ",
-      "B. Làm việc với những người khác để hướng tới một mục tiêu chung",
-      "C. Làm việc chăm chỉ hơn các học sinh khác trong lớp",
-      "D. Trở thành học sinh nhanh nhất trong lớp"
+      { key: "A", text: "Làm việc một mình để hoàn thành nhiệm vụ" },
+      { key: "B", text: "Làm việc với những người khác để hướng tới một mục tiêu chung" },
+      { key: "C", text: "Làm việc chăm chỉ hơn các học sinh khác trong lớp" },
+      { key: "D", text: "Trở thành học sinh nhanh nhất trong lớp" }
     ],
     correctKeys: ["B"]
-  },
-  {
-    id: "spark-l1-gm1-01",
-    levelId: "spark-level-1",
-    program: "spark",
-    subsetId: "GM1",
-    questionNumber: 1,
-    order: 38,
-    type: "multiple_choice",
-    text: "Hệ điều hành phổ biến được cài đặt trên hầu hết các máy tính học đường hiện nay là gì?",
-    options: [
-      { key: "A", text: "Microsoft Windows" },
-      { key: "B", text: "Microsoft Word" },
-      { key: "C", text: "Google Chrome" },
-      { key: "D", text: "Scratch" }
-    ],
-    correctKeys: ["A"],
-    correctAnswerText: "A. Microsoft Windows",
-    explanation: "Microsoft Windows là hệ điều hành (Operating System) quản lý toàn bộ phần cứng và phần mềm của máy tính."
-  },
-  {
-    id: "spark-l1-gm2-01",
-    levelId: "spark-level-1",
-    program: "spark",
-    subsetId: "GM2",
-    questionNumber: 1,
-    order: 39,
-    type: "multiple_choice",
-    text: "Để điều chỉnh độ lớn âm thanh phát ra từ loa máy tính, em chọn biểu tượng nào trên góc phải thanh Taskbar?",
-    options: [
-      { key: "A", text: "Biểu tượng hình chiếc Loa (Volume)" },
-      { key: "B", text: "Biểu tượng quả Pin" },
-      { key: "C", text: "Biểu tượng chiếc Đồng hồ" },
-      { key: "D", text: "Biểu tượng sóng Wi-Fi" }
-    ],
-    correctKeys: ["A"],
-    correctAnswerText: "A. Biểu tượng hình chiếc Loa (Volume)",
-    explanation: "Biểu tượng loa trên khay hệ thống giúp người dùng kéo thanh trượt để tăng hoặc giảm âm lượng."
   }
 ];
 
