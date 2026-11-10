@@ -1553,7 +1553,7 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
       "Câu C",
       "Câu D"
     ],
-    correctKeys: ["A"]
+    correctKeys: ["D"]
   },
   {
     id: "spark-l1-ot3-q26",
