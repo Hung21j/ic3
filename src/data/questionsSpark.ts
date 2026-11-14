@@ -2342,43 +2342,571 @@ export const SPARK_LEVEL2_QUESTIONS: IC3Question[] = [
   },
 
   // ===================== OT2 / OT3: LEVEL 2 =====================
+  // Dữ liệu câu hỏi IC3 Spark — SPARK LEVEL 2 TRAINING 02 (Đầy đủ 36 câu hỏi)
   {
-    id: "spark-l2-ot2-01",
+    id: "spark-l2-ot2-q1",
     levelId: "spark-level-2",
     program: "spark",
     subsetId: "OT2",
     questionNumber: 1,
-    order: 7,
     type: "multiple_choice",
-    text: "Phần mềm bảng tính Microsoft Excel thường được dùng tốt nhất cho công việc nào sau đây?",
+    text: "Em hãy cho biết, chương trình nào sau đây sử dụng từ khóa để tìm kết quả trong các trang web trên internet?",
     options: [
-      { key: "A", text: "Lập danh sách, tính toán điểm số và vẽ biểu đồ" },
-      { key: "B", text: "Xem phim hoạt hình" },
-      { key: "C", text: "Nghe đài phát thanh" },
-      { key: "D", text: "Cắt tỉa ảnh chân dung chuyên nghiệp" }
+      { key: "A", text: "Diễn đàn (Forum)" },
+      { key: "B", text: "Trình chặn cửa sổ bật lên (Pop-up blocker)" },
+      { key: "C", text: "Phần mềm diệt virus (Anti-virus software)" },
+      { key: "D", text: "Công cụ tìm kiếm (Search engine)" }
     ],
-    correctKeys: ["A"],
-    correctAnswerText: "A. Lập danh sách, tính toán điểm số và vẽ biểu đồ",
-    explanation: "Microsoft Excel là phần mềm bảng tính gồm các hàng và cột, chuyên dùng để tính toán và quản lý dữ liệu số liệu."
+    correctKeys: ["D"]
   },
   {
-    id: "spark-l2-ot2-02",
+    id: "spark-l2-ot2-q2",
     levelId: "spark-level-2",
     program: "spark",
     subsetId: "OT2",
     questionNumber: 2,
-    order: 8,
     type: "multiple_choice",
-    text: "Trong Microsoft Word, tổ hợp phím tắt Ctrl + Z có tác dụng gì?",
+    text: "Em hãy cho biết, tùy chọn nào sau đây là đúng khi nói về tập tin đính kèm email? (Chọn 2)",
     options: [
-      { key: "A", text: "Hoàn tác (Undo) lại thao tác vừa làm sai" },
-      { key: "B", text: "Xóa toàn bộ văn bản" },
-      { key: "C", text: "In bài ra giấy" },
-      { key: "D", text: "Tắt máy tính" }
+      { key: "A", text: "Các tập tin như hình ảnh, video và tài liệu có thể được đính kèm" },
+      { key: "B", text: "Không có giới hạn về kích thước của các tập tin đính kèm" },
+      { key: "C", text: "Em chỉ có thể đính kèm một tập tin cho mỗi email" },
+      { key: "D", text: "Người nhận email có thể tải xuống tập tin đính kèm" }
     ],
-    correctKeys: ["A"],
-    correctAnswerText: "A. Hoàn tác (Undo) lại thao tác vừa làm sai",
-    explanation: "Ctrl + Z (Undo) giúp quay lại bước trước đó nếu em lỡ tay xóa nhầm hoặc thao tác sai."
+    correctKeys: ["A", "D"]
+  },
+  {
+    id: "spark-l2-ot2-q3",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 3,
+    type: "multiple_choice",
+    text: "Em hãy cho biết điều nào sau đây là sự khác biệt giữa Wiki và Forum?",
+    options: [
+      { key: "A", text: "Forum là một phần của trang web, trong khi Wiki tạo nên toàn bộ trang web" },
+      { key: "B", text: "Wiki là một phần của trang web, trong khi Forum tạo nên toàn bộ trang web" },
+      { key: "C", text: "Forum cho phép em nói về một chủ đề cụ thể trong khi Wiki thì không" },
+      { key: "D", text: "Wiki cho phép em nói về một chủ đề cụ thể trong khi Forum thì không" }
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "spark-l2-ot2-q4",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 4,
+    type: "yes_no",
+    text: "Với mỗi câu phát biểu về việc tinh chỉnh phạm vi tìm kiếm trên web, hãy chọn Đúng hoặc Sai.",
+    statements: [
+      { text: "Công cụ tìm kiếm thực hiện tìm theo đúng trình tự từ khóa mà bạn nhập vào", correct: "False" },
+      { text: "Khi thêm từ \"or\" (hoặc), công cụ tìm kiếm sẽ kết hợp nhiều kết quả tìm kiếm thành một", correct: "True" },
+      { text: "Kết quả tìm kiếm trả phí (quảng cáo) trông giống các kết quả tìm kiếm không trả phí và được sắp xếp chung với nhau", correct: "False" }
+    ]
+  },
+  {
+    id: "spark-l2-ot2-q5",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 5,
+    type: "multiple_choice",
+    text: "Bạn nên làm gì nếu trang web chỉ tải được một nửa?",
+    options: [
+      { key: "A", text: "Khởi động lại máy tính" },
+      { key: "B", text: "Tải lại trang web" },
+      { key: "C", text: "Dừng lại, tạm dừng, nói chuyện với người lớn" },
+      { key: "D", text: "Hãy thử lại vào một ngày khác" }
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "spark-l2-ot2-q6",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 6,
+    type: "yes_no",
+    text: "Với mỗi câu phát biểu về quy tắc chọn hình ảnh phù hợp trong tài liệu và bài trình chiếu, hãy chọn Đúng hoặc Sai.",
+    statements: [
+      { text: "Hình ảnh nên bị vỡ nét", correct: "False" },
+      { text: "Hình ảnh nên liên quan đến chủ đề", correct: "True" },
+      { text: "Hình ảnh nên có dấu ấn mờ (Watermark) từ các trang kho hình ảnh", correct: "False" }
+    ]
+  },
+  {
+    id: "spark-l2-ot2-q7",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 7,
+    type: "multiple_choice",
+    text: "Bạn nên dùng loại định dạng nào để nhấn mạnh một từ trên trang web?",
+    options: [
+      { key: "A", text: "Danh sách đánh số" },
+      { key: "B", text: "Phông chữ nhỏ" },
+      { key: "C", text: "Gạch ngang giữa thân chữ (Strikethrough)" },
+      { key: "D", text: "Phông in đậm" }
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "spark-l2-ot2-q8",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 8,
+    type: "multiple_choice",
+    text: "Bạn nên định dạng tiêu đề như thế nào để trông nổi bật hơn?",
+    options: [
+      { key: "A", text: "Đính siêu liên kết (Hyperlink) vào tiêu đề" },
+      { key: "B", text: "Chuyển tiêu đề xuống cuối trang" },
+      { key: "C", text: "Đổi định dạng thành in đậm" },
+      { key: "D", text: "Giảm kích cỡ phông chữ" }
+    ],
+    correctKeys: ["C"]
+  },
+  {
+    id: "spark-l2-ot2-q9",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 9,
+    type: "multiple_choice",
+    text: "Bạn cần chỉ ra các phần của một tài liệu. Hãy chọn đúng đề mục cho danh sách đánh số từ 1 đến 10 các loài vật được nuôi làm thú cưng phổ biến nhất ở Mỹ.",
+    options: [
+      { key: "A", text: "Loài Vật Được Nuôi Làm Thú Cưng Phổ Biến Nhất ở Mỹ" },
+      { key: "B", text: "Thú cưng được yêu thích" },
+      { key: "C", text: "Danh sách động vật" },
+      { key: "D", text: "Phần mở đầu tài liệu" }
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "spark-l2-ot2-q10",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 10,
+    type: "matching",
+    text: "Hãy di chuyển từng thuật ngữ về tạo nội dung từ danh sách ở bên phải sang định nghĩa tương ứng ở bên trái.",
+    pairs: [
+      { left: "Một chuỗi các câu nói về một luận điểm hoặc chủ đề cụ thể", right: "Đoạn văn (Paragraph)" },
+      { left: "Tóm tắt các ý chính trong nội dung của bạn", right: "Tiêu đề (Title)" },
+      { left: "Tính năng cho phép người dùng căn đều từng dòng văn bản", right: "Căn lề (Alignment)" }
+    ]
+  },
+  {
+    id: "spark-l2-ot2-q11",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 11,
+    type: "matching",
+    text: "Hãy di chuyển từng thuật ngữ từ danh sách ở bên phải sang định nghĩa tương ứng ở bên trái.",
+    pairs: [
+      { left: "Một trang đơn lẻ của một bài trình chiếu", right: "Trang chiếu (Slide)" },
+      { left: "Một tài liệu có thể hiển thị bằng trình duyệt", right: "Trang (Page)" },
+      { left: "Một đoạn mô tả ngắn về trang web, xuất hiện ở phía trên đầu cửa sổ trình duyệt", right: "Tiêu đề (Title)" },
+      { left: "Cách sắp xếp hoặc đặt vị trí văn bản", right: "Căn lề (Alignment)" }
+    ]
+  },
+  {
+    id: "spark-l2-ot2-q12",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 12,
+    type: "multiple_choice",
+    text: "Giáo viên yêu cầu bạn tìm hiểu về rừng mưa nhiệt đới, rồi chia sẻ những điều học được với bạn cùng lớp qua một bài trình chiếu. Mục đích của bài trình chiếu này là gì?",
+    options: [
+      { key: "A", text: "Để giải trí" },
+      { key: "B", text: "Để cung cấp thông tin" },
+      { key: "C", text: "Để thuyết phục" },
+      { key: "D", text: "Để giao tiếp" }
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "spark-l2-ot2-q13",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 13,
+    type: "multiple_choice",
+    text: "Bạn được yêu cầu tạo một bài trình chiếu về các chú chó đang chơi đùa. Hãy chọn hình ảnh phù hợp nhất với chủ đề này trong phần trả lời.",
+    image: "/iamges/s-lv2-ot2-13.jpg",
+    options: [
+      { key: "A", text: "Hình A" },
+      { key: "B", text: "Hình B" },
+      { key: "C", text: "Hình C" },
+      { key: "D", text: "Hình D" }
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "spark-l2-ot2-q14",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 14,
+    type: "yes_no",
+    text: "Với mỗi câu phát biểu về cách thức định dạng tài liệu, hãy chọn Đúng hoặc Sai.",
+    statements: [
+      { text: "Tiêu đề tài liệu nên được đặt ở đầu trang", correct: "True" },
+      { text: "Việc định dạng văn bản, như in đậm, in nghiêng, màu chữ và kích cỡ to nhỏ, có thể giúp xác định thứ tự tầm quan trọng cho các phần khác nhau ở tài liệu", correct: "True" },
+      { text: "Dùng kích cỡ phông chữ khác nhau cho từng đoạn văn giúp dễ đọc và hiểu những phần quan trọng nhất của tài liệu", correct: "False" }
+    ]
+  },
+  {
+    id: "spark-l2-ot2-q15",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 15,
+    type: "multiple_choice",
+    text: "Khi viết tài liệu, bạn nên dùng gì để cho người đọc biết về nội dung sẽ được trình bày trong từng phần?",
+    options: [
+      { key: "A", text: "Đoạn văn (Paragraph)" },
+      { key: "B", text: "Tóm lược (Summary)" },
+      { key: "C", text: "Tiêu đề (Title)" },
+      { key: "D", text: "Đầu đề (Heading)" }
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "spark-l2-ot2-q16",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 16,
+    type: "multiple_choice",
+    text: "Bạn làm việc cho tiệm bánh Doe's Bakery. Bạn đã thêm 4 ảnh mẫu vào tài liệu về cửa hàng bánh, nhưng thực tế chỉ cần 1. Bạn nên giữ lại hình nào?",
+    image: "/iamges/s-lv2-ot2-16.jpg",
+    options: [
+      { key: "A", text: "Máy ảnh" },
+      { key: "B", text: "Cái bánh" },
+      { key: "C", text: "Bóng bay" },
+      { key: "D", text: "Hộp quà" }
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "spark-l2-ot2-q17",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 17,
+    type: "multiple_choice",
+    text: "Bạn làm việc tại tiệm bánh Doe's Bakery. Người chủ nhờ bạn đổi danh sách menu từ kiểu có ký hiệu đầu hàng thành đánh số. Đâu là danh sách có ký hiệu đầu hàng (Bullet list) dùng cho món bánh?",
+    image: "/iamges/s-lv2-ot2-17.jpg",
+    options: [
+      { key: "A", text: "Hình A" },
+      { key: "B", text: "Hình B" },
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "spark-l2-ot2-q18",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 18,
+    type: "multiple_choice",
+    text: "Ứng dụng nào được dùng để tạo bài trình chiếu?",
+    image: "/iamges/s-lv2-ot2-18.jpg",
+    options: [
+      { key: "A", text: "Edge" },
+      { key: "B", text: "Word" },
+      { key: "C", text: "Powerpoint" },
+      { key: "D", text: "Excel" },
+      { key: "E", text: "Mail" },
+      { key: "F", text: "Calendar" }
+    ],
+    correctKeys: ["C"]
+  },
+  {
+    id: "spark-l2-ot2-q19",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 19,
+    type: "multiple_choice",
+    text: "Bạn đang chuẩn bị một bài trình chiếu dài 5 phút, mỗi trang chiếu sẽ có một hình ảnh. Bạn nên làm gì để cung cấp thông tin về từng hình ảnh?",
+    options: [
+      { key: "A", text: "Đổi màu nền" },
+      { key: "B", text: "Viết một đoạn văn dài về từng ảnh" },
+      { key: "C", text: "Dùng phông chữ đậm" },
+      { key: "D", text: "Đính kèm chú thích" }
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "spark-l2-ot2-q20",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 20,
+    type: "matching",
+    text: "Hãy di chuyển từng thuật ngữ từ danh sách ở bên phải sang định nghĩa tương ứng ở bên trái.",
+    pairs: [
+      { left: "Một chuỗi các câu đều liên quan đến một chủ đề duy nhất", right: "Đoạn văn (Paragraph)" },
+      { left: "Kiểm soát cách hiển thị và hướng của một mục, ví dụ như đoạn văn hoặc hình ảnh", right: "Căn lề (Alignment)" },
+      { left: "Một chuỗi các mục có ký hiệu hoặc số ở đầu", right: "Danh sách (List)" },
+      { left: "Một từ, cụm từ hoặc câu tóm tắt nội dung sẽ trình bày ở phần tiếp theo", right: "Đầu đề (Heading)" }
+    ]
+  },
+  {
+    id: "spark-l2-ot2-q21",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 21,
+    type: "yes_no",
+    text: "Với mỗi câu phát biểu về cách sử dụng hình ảnh phù hợp trong tài liệu và bài trình chiếu, hãy chọn Đúng hoặc Sai.",
+    statements: [
+      { text: "Hình ảnh nên phù hợp với đối tượng khán giả", correct: "True" },
+      { text: "Hình ảnh nên đặt gần những nội dung văn bản phù hợp nhất", correct: "True" },
+      { text: "Hình ảnh nên hài hước và không cần liên quan đến chủ đề", correct: "False" }
+    ]
+  },
+  {
+    id: "spark-l2-ot2-q22",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 22,
+    type: "matching",
+    text: "Ở mỗi tình huống bạn cần tạo danh sách, hãy chọn xem bạn nên tạo dưới dạng Danh sách đánh số hoặc Danh sách có ký hiệu đầu hàng.",
+    pairs: [
+      { left: "Danh sách những món đồ ăn nhẹ bạn yêu thích", right: "Danh sách có ký hiệu đầu hàng" },
+      { left: "Danh sách hướng dẫn cách nướng bánh quy", right: "Danh sách đánh số" },
+      { left: "Danh sách các bước lắp ráp một món đồ chơi mới", right: "Danh sách đánh số" },
+      { left: "Danh sách các món đồ bạn cần xếp vào hành lý để đi chơi", right: "Danh sách có ký hiệu đầu hàng" }
+    ]
+  },
+  {
+    id: "spark-l2-ot2-q23",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 23,
+    type: "yes_no",
+    text: "Với mỗi câu phát biểu về nội dung trực tuyến, hãy chọn Có nếu nội dung đó nhằm mục đích giải trí hoặc Không nếu không phải.",
+    statements: [
+      { text: "Sách điện tử", correct: "True" },
+      { text: "Hướng dẫn sử dụng", correct: "False" },
+      { text: "Meme", correct: "True" },
+      { text: "Lời chứng thực (Testimonial)", correct: "False" }
+    ]
+  },
+  {
+    id: "spark-l2-ot2-q24",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 24,
+    type: "multiple_choice",
+    text: "Khi em sao chép hoặc di chuyển văn bản từ một tài liệu. Em hãy cho biết, tùy chọn nào sau đây được máy tính sử dụng để tạm thời lưu trữ văn bản đã được sao chép?",
+    options: [
+      { key: "A", text: "USB Drive" },
+      { key: "B", text: "Driver" },
+      { key: "C", text: "Clipboard" },
+      { key: "D", text: "GPU" }
+    ],
+    correctKeys: ["C"]
+  },
+  {
+    id: "spark-l2-ot2-q25",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 25,
+    type: "yes_no",
+    text: "Với mỗi câu phát biểu về các loại danh sách khác nhau, hãy chọn Đúng hoặc Sai.",
+    statements: [
+      { text: "Nên dùng danh sách đánh số (Numbering) khi thứ tự các mục đóng vai trò quan trọng", correct: "True" },
+      { text: "Danh sách đánh số (Numbering) dùng để biểu thị các bước trong một quy trình", correct: "True" },
+      { text: "Danh sách có ký hiệu đầu hàng (Bullet) dùng để chỉ ra các ý chính trong văn bản", correct: "True" },
+      { text: "Nên dùng danh sách có ký hiệu đầu hàng (Bullet) khi thứ tự các mục đóng vai trò quan trọng", correct: "False" }
+    ]
+  },
+  {
+    id: "spark-l2-ot2-q26",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 26,
+    type: "multiple_choice",
+    text: "Em hãy cho biết, tùy chọn nào sau đây sẽ di chuyển con trỏ xuống hàng bên dưới trong Excel?",
+    options: [
+      { key: "A", text: "Backspace" },
+      { key: "B", text: "Tab" },
+      { key: "C", text: "Shift" },
+      { key: "D", text: "Enter" }
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "spark-l2-ot2-q27",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 27,
+    type: "multiple_choice",
+    text: "Em hãy cho biết, thẻ nào trong các tùy chọn sau sẽ thêm một video vào bài trình chiếu PowerPoint?",
+    options: [
+      { key: "A", text: "Insert" },
+      { key: "B", text: "Design" },
+      { key: "C", text: "File" },
+      { key: "D", text: "Home" }
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "spark-l2-ot2-q28",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 28,
+    type: "multiple_choice",
+    text: "Em hãy cho biết, nhấp chuột ba lần trong tài liệu Word sẽ dẫn đến hành động nào sau đây?",
+    options: [
+      { key: "A", text: "Chọn một từ duy nhất" },
+      { key: "B", text: "Chọn một đoạn văn bản duy nhất" },
+      { key: "C", text: "Chọn toàn bộ tài liệu" },
+      { key: "D", text: "Chọn một dòng duy nhất" }
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "spark-l2-ot2-q29",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 29,
+    type: "multiple_choice",
+    text: "Em hãy cho biết, tính năng nào trong chương trình Microsoft Word cho phép tìm và thay thế các từ trong toàn bộ tài liệu?",
+    options: [
+      { key: "A", text: "Replace" },
+      { key: "B", text: "Undo" },
+      { key: "C", text: "Spelling & Grammar" },
+      { key: "D", text: "Redo" }
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "spark-l2-ot2-q30",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 30,
+    type: "multiple_choice",
+    text: "Em hãy cho biết, tùy chọn nào sau đây biểu diễn tiêu đề cột trong Excel?",
+    options: [
+      { key: "A", text: "Ký tự (Letters)" },
+      { key: "B", text: "Số La Mã (Roman numerals)" },
+      { key: "C", text: "Màu sắc (Colors)" },
+      { key: "D", text: "Con số (Numbers)" }
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "spark-l2-ot2-q31",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 31,
+    type: "multiple_choice",
+    text: "Em hãy cho biết, tùy chọn nào trong chương trình Microsoft Word cho phép người khác đọc hoặc chỉnh sửa bản sao tập tin của em?",
+    options: [
+      { key: "A", text: "Share" },
+      { key: "B", text: "Save" },
+      { key: "C", text: "Export" },
+      { key: "D", text: "Save As" }
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "spark-l2-ot2-q32",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 32,
+    type: "multiple_choice",
+    text: "Mục đích của việc chỉnh sửa là gì?",
+    options: [
+      { key: "A", text: "Chia sẻ ý tưởng của bạn" },
+      { key: "B", text: "Nhận được điểm số tuyệt đối" },
+      { key: "C", text: "Phối hợp với nhau để hướng đến một mục tiêu" },
+      { key: "D", text: "Khắc phục lỗi và làm cho bài tập hoàn chỉnh hơn" }
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "spark-l2-ot2-q33",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 33,
+    type: "multiple_choice",
+    text: "Em hãy cho biết, chức năng nào trong PowerPoint cho phép em áp dụng một hiệu ứng chuyển slide (Transition) cho tất cả các slide trong bài trình chiếu?",
+    options: [
+      { key: "A", text: "Timing Duration" },
+      { key: "B", text: "Advance slide" },
+      { key: "C", text: "Effect Options" },
+      { key: "D", text: "Apply To All" }
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "spark-l2-ot2-q34",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 34,
+    type: "multiple_choice",
+    text: "Em hãy cho biết, hành động nào trong các tùy chọn sau được dùng để di chuyển một slide trong PowerPoint?",
+    options: [
+      { key: "A", text: "Reset bài trình chiếu" },
+      { key: "B", text: "Tính năng Reorder Slides Appropriately" },
+      { key: "C", text: "Nhấp (Click) và kéo (Drag) một Slide sang vị trí mới" },
+      { key: "D", text: "Tính năng Layout" }
+    ],
+    correctKeys: ["C"]
+  },
+  {
+    id: "spark-l2-ot2-q35",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 35,
+    type: "multiple_choice",
+    text: "Em hãy cho biết, tùy chọn nào sau đây sẽ tăng độ rộng cột trong Excel? (Chọn 2)",
+    options: [
+      { key: "A", text: "Nhấp đúp chuột (Double_Click) lên ranh giới cột" },
+      { key: "B", text: "Nhấp (Click) và kéo (Drag) chuột lên ranh giới cột" },
+      { key: "C", text: "Sử dụng tổ hợp phím Ctrl+Shift+R" },
+      { key: "D", text: "Nhấp chuột một lần (Single_Click) lên ranh giới cột" }
+    ],
+    correctKeys: ["A", "B"]
+  },
+  {
+    id: "spark-l2-ot2-q36",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT2",
+    questionNumber: 36,
+    type: "multiple_choice",
+    text: "Em hãy cho biết, trong các tùy chọn sau, tùy chọn nào là ứng dụng đám mây?",
+    options: [
+      { key: "A", text: "Văn bản sửa đổi" },
+      { key: "B", text: "Microsoft Word" },
+      { key: "C", text: "Notepad" },
+      { key: "D", text: "Google tài liệu" }
+    ],
+    correctKeys: ["D"]
   },
   {
     id: "spark-l2-ot3-01",
