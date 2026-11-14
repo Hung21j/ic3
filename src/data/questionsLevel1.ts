@@ -2252,6 +2252,21 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
       { text: "Apple là chủ sở hữu đã đăng ký của Mac OS", correct: "True" },
       { text: "Hệ điều hành Windows là một sản phẩm của Microsoft" , correct: "True" }
     ]
+  },
+  {
+    id: "lv1-gm2-41",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 41,
+    type: "yes_no",
+    text: "Hãy chọn Đúng hoặc Sai cho các phát biểu sau:",
+    statements: [
+      { text: "Một hệ thống quản lý cơ sở dữ liệu truy cập thông tin trên internet", correct: "False"},
+      { text: "Phần mềm trình chiếu hiển thị văn bản, hình ảnh và đa phương tiện dưới dạng trình chiếu", correct: "True" },
+      { text: "Mục đích của trình duyệt web là lưu trữ, sắp xếp và thao tác các tập dữ liệu liên quan", correct: "False" },
+      { text: "Phần mềm bảng tính phân tích và thực hiện các phép tính, đồng thời hiển thị dữ liệu dưới dạng biểu đồ", correct: "True" },
+      { text: "Một chương trình xử lý văn bản xuất ra văn bản ở định dạng tài liệu", correct: "True" },
+    ]
   }
 
 ];

@@ -1769,116 +1769,576 @@ export const SPARK_LEVEL1_QUESTIONS: IC3Question[] = [
 export const SPARK_LEVEL2_QUESTIONS: IC3Question[] = [
   // ===================== OT1: LEVEL 2 (CÁC ỨNG DỤNG CỐT LÕI) =====================
   {
-    id: "spark-l2-ot1-01",
+    id: "spark-l2-ot1-q1",
     levelId: "spark-level-2",
     program: "spark",
     subsetId: "OT1",
     questionNumber: 1,
-    order: 1,
     type: "multiple_choice",
-    text: "Phần mềm nào sau đây là ứng dụng chuyên dùng để soạn thảo thư từ, đoạn văn bản và bài học?",
+    text: "Em hãy cho biết, tùy chọn nào sau đây là thành phần quan trọng nhất được sử dụng để chạy các ứng dụng?",
     options: [
-      { key: "A", text: "Microsoft Word" },
-      { key: "B", text: "Máy tính bỏ túi (Calculator)" },
-      { key: "C", text: "Trình phát nhạc (Windows Media Player)" },
-      { key: "D", text: "Phần mềm quét virus" }
+      { key: "A", text: "Thẻ SIM" },
+      { key: "B", text: "Bộ nhớ" },
+      { key: "C", text: "Bộ lưu trữ" },
+      { key: "D", text: "Card màn hình" }
     ],
-    correctKeys: ["A"],
-    correctAnswerText: "A. Microsoft Word",
-    explanation: "Microsoft Word là phần mềm soạn thảo văn bản thông dụng nhất, cung cấp đầy đủ công cụ định dạng chữ và chèn hình ảnh."
+    correctKeys: ["B"]
   },
   {
-    id: "spark-l2-ot1-02",
+    id: "spark-l2-ot1-q2",
     levelId: "spark-level-2",
     program: "spark",
     subsetId: "OT1",
     questionNumber: 2,
-    order: 2,
     type: "multiple_choice",
-    text: "Trong Microsoft Word, biểu tượng chữ B đậm (Bold) trên thanh công cụ dùng để làm gì cho đoạn chữ được chọn?",
+    text: "Em hãy cho biết, trong các tùy chọn sau, tùy chọn nào là phương pháp cho phép truy cập và cập nhật các tập tin trực tuyến?",
     options: [
-      { key: "A", text: "Gạch chân chữ" },
-      { key: "B", text: "Làm cho chữ in đậm" },
-      { key: "C", text: "Làm cho chữ in nghiêng" },
-      { key: "D", text: "Xóa đoạn chữ đó đi" }
+      { key: "A", text: "Lưu trữ đám mây" },
+      { key: "B", text: "Ổ cứng ngoài" },
+      { key: "C", text: "Email" },
+      { key: "D", text: "Bộ lưu trữ USB" }
     ],
-    correctKeys: ["B"],
-    correctAnswerText: "B. Làm cho chữ in đậm",
-    explanation: "Nút B (Bold - phím tắt Ctrl + B) dùng để định dạng chữ đậm để nhấn mạnh tiêu đề hoặc ý chính."
+    correctKeys: ["A"]
   },
   {
-    id: "spark-l2-ot1-03",
+    id: "spark-l2-ot1-q3",
     levelId: "spark-level-2",
     program: "spark",
     subsetId: "OT1",
     questionNumber: 3,
-    order: 3,
     type: "multiple_choice",
-    text: "Tổ hợp phím tắt nào giúp em lưu nhanh bài làm (Save) vào máy tính để không bị mất dữ liệu?",
+    text: "Em hãy cho biết, thiết bị chuột trên máy tính bảng đã được thay thế bằng những tùy chọn nào đây? (Chọn 2)",
     options: [
-      { key: "A", text: "Ctrl + S" },
-      { key: "B", text: "Ctrl + P" },
-      { key: "C", text: "Ctrl + C" },
-      { key: "D", text: "Ctrl + Z" }
+      { key: "A", text: "Bút cảm ứng (Stylus)" },
+      { key: "B", text: "Bút chì (Pencil)" },
+      { key: "C", text: "Màn hình cảm ứng (Touch screen)" },
+      { key: "D", text: "Chuột kỹ thuật số (Digital mouse)" }
     ],
-    correctKeys: ["A"],
-    correctAnswerText: "A. Ctrl + S",
-    explanation: "Ctrl + S (Save) là phím tắt quốc tế dùng để lưu lại tệp tin đang làm việc trên máy tính."
+    correctKeys: ["A", "C"]
   },
   {
-    id: "spark-l2-ot1-04",
+    id: "spark-l2-ot1-q4",
     levelId: "spark-level-2",
     program: "spark",
     subsetId: "OT1",
     questionNumber: 4,
-    order: 4,
-    type: "matching",
-    text: "Ghép nối các công cụ trong phần mềm đồ họa Paint với chức năng đúng của chúng:",
-    pairs: [
-      { left: "Công cụ Bút chì (Pencil)", right: "Vẽ các đường nét mảnh tự do theo nét tay chuột" },
-      { left: "Thùng sơn (Fill with color)", right: "Đổ màu nhanh vào một vùng hình khép kín" },
-      { left: "Công cụ Tẩy (Eraser)", right: "Xóa đi những nét vẽ hoặc vùng màu vẽ sai" },
-      { left: "Hộp hình khối (Shapes)", right: "Vẽ nhanh hình ngôi sao, hình tròn, hình vuông và tam giác" }
+    type: "multiple_choice",
+    text: "Em hãy cho biết, loại kết nối không dây nào sau đây sẽ cho phép em tải hình ảnh từ máy ảnh vào máy tính?",
+    options: [
+      { key: "A", text: "RCA" },
+      { key: "B", text: "VGA" },
+      { key: "C", text: "Bluetooth" },
+      { key: "D", text: "HDMI" }
     ],
-    explanation: "Phần mềm vẽ Paint trang bị các công cụ trực quan giúp học sinh thỏa sức sáng tạo và vẽ hình mỹ thuật."
+    correctKeys: ["C"]
   },
   {
-    id: "spark-l2-ot1-05",
+    id: "spark-l2-ot1-q5",
     levelId: "spark-level-2",
     program: "spark",
     subsetId: "OT1",
     questionNumber: 5,
-    order: 5,
-    type: "yes_no",
-    text: "Xác định các nhận định sau về các thao tác trong soạn thảo văn bản là ĐÚNG hay SAI:",
-    trueColumnLabel: "ĐÚNG",
-    falseColumnLabel: "SAI",
-    statements: [
-      { text: "Để căn chỉnh dòng chữ vào chính giữa trang giấy, em dùng lệnh Center (Căn giữa).", correct: "True" },
-      { text: "Muốn sao chép một đoạn chữ, em dùng lệnh Copy rồi dùng lệnh Paste.", correct: "True" },
-      { text: "Khi đóng tệp Word mà không nhấn Save, bài làm vẫn tự động in ra máy in.", correct: "False" },
-      { text: "Phông chữ (Font) giúp em thay đổi kiểu dáng chữ đẹp mắt hơn.", correct: "True" }
+    type: "multiple_choice",
+    text: "Em hãy cho biết, trong các tùy chọn sau, tùy chọn nào là loại lưu trữ dữ liệu được truy cập từ xa thông qua kết nối internet?",
+    options: [
+      { key: "A", text: "Ổ cứng ngoài" },
+      { key: "B", text: "Bộ lưu trữ USB" },
+      { key: "C", text: "Đĩa CD" },
+      { key: "D", text: "Lưu trữ đám mây" }
     ],
-    explanation: "Định dạng căn lề giữa, sao chép (Copy-Paste) và chọn phông chữ là những kỹ năng cốt lõi trong soạn thảo văn bản."
+    correctKeys: ["D"]
   },
   {
-    id: "spark-l2-ot1-06",
+    id: "spark-l2-ot1-q6",
     levelId: "spark-level-2",
     program: "spark",
     subsetId: "OT1",
     questionNumber: 6,
-    order: 6,
     type: "multiple_choice",
-    text: "Phần mềm nào sau đây giúp tạo các bài trình chiếu (Slide) có hình ảnh, chữ viết và hiệu ứng sinh động để thuyết trình trước lớp?",
+    text: "Hầu hết các điện thoại thông minh đều có tùy chọn gói dữ liệu di động. Em hãy cho biết, tùy chọn nào sau đây mô tả chính xác dữ liệu di động là gì?",
     options: [
-      { key: "A", text: "Microsoft PowerPoint" },
-      { key: "B", text: "Notepad" },
-      { key: "C", text: "Paint" },
-      { key: "D", text: "Windows Calculator" }
+      { key: "A", text: "Em được phân bổ bao nhiêu thời gian để gọi điện thoại" },
+      { key: "B", text: "Điện thoại của em có bao nhiêu bộ nhớ" },
+      { key: "C", text: "Em được phép gửi bao nhiêu tin nhắn văn bản" },
+      { key: "D", text: "Truy cập internet không dây có tính phí, được đo bằng mức tiêu thụ dữ liệu" }
     ],
-    correctKeys: ["A"],
-    correctAnswerText: "A. Microsoft PowerPoint",
-    explanation: "Microsoft PowerPoint là ứng dụng tạo bài trình diễn trực quan gồm các trang chiếu sinh động."
+    correctKeys: ["D"]
+  },
+  {
+    id: "spark-l2-ot1-q7",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 7,
+    type: "multiple_choice",
+    text: "Em hãy cho biết, hai lợi ích của việc tải xuống (Download) tập tin thay vì phát trực tuyến (Stream) tập tin đó là gì? (Chọn 2)",
+    options: [
+      { key: "A", text: "Không yêu cầu dung lượng lưu trữ" },
+      { key: "B", text: "Phát trực tuyến có khả năng phát lại mượt mà hơn" },
+      { key: "C", text: "Không cần phải đợi trước khi chạy tập tin" },
+      { key: "D", text: "Sau khi tải xuống hoàn tất, quá trình phát lại đáng tin cậy hơn" },
+      { key: "E", text: "Tập tin đã được tải xuống không yêu cầu kết nối internet để phát lại" }
+    ],
+    correctKeys: ["D", "E"]
+  },
+  {
+    id: "spark-l2-ot1-q8",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 8,
+    type: "multiple_choice",
+    text: "Em hãy cho biết, tùy chọn nào sau đây là cách để tăng không gian lưu trữ cho điện thoại thông minh? (Chọn 2)",
+    options: [
+      { key: "A", text: "Xóa ảnh cũ mà em không cần" },
+      { key: "B", text: "Đóng tất cả các chương trình nền đang chạy" },
+      { key: "C", text: "Gỡ cài đặt bất kỳ trò chơi nào mà em không chơi nữa" },
+      { key: "D", text: "Truyền phát Video ở định dạng SD" }
+    ],
+    correctKeys: ["A", "C"]
+  },
+  {
+    id: "spark-l2-ot1-q9",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 9,
+    type: "multiple_choice",
+    text: "Em hãy cho biết, phần mềm virus ảnh hưởng đến hệ thống máy tính như thế nào? (Chọn 2)",
+    options: [
+      { key: "A", text: "Phá hủy bo mạch chủ" },
+      { key: "B", text: "Xóa hoặc làm hỏng dữ liệu" },
+      { key: "C", text: "Liên quan đến một cuộc tấn công DoS" },
+      { key: "D", text: "Thu thập và chuyển thông tin cá nhân" }
+    ],
+    correctKeys: ["B", "D"]
+  },
+  {
+    id: "spark-l2-ot1-q10",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 10,
+    type: "multiple_choice",
+    text: "Em hãy cho biết, thiết bị lưu trữ được đo lường bằng đơn vị nào sau đây? (Chọn 2)",
+    options: [
+      { key: "A", text: "Gigabytes" },
+      { key: "B", text: "Feet" },
+      { key: "C", text: "Centimeters" },
+      { key: "D", text: "Terabytes" },
+      { key: "E", text: "Inches" }
+    ],
+    correctKeys: ["A", "D"]
+  },
+  {
+    id: "spark-l2-ot1-q11",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 11,
+    type: "multiple_choice",
+    text: "Các thiết bị di động có dung lượng bộ nhớ hạn chế so với máy tính để bàn. Em hãy cho biết, tùy chọn nào sau đây có khả năng làm cho thiết bị di động của em hết dung lượng bộ nhớ?",
+    options: [
+      { key: "A", text: "Thường xuyên quên xóa bộ nhớ đệm" },
+      { key: "B", text: "Sạc thiết bị di động trước khi hết pin" },
+      { key: "C", text: "Cài quá nhiều game" },
+      { key: "D", text: "Truyền phát các video HD" }
+    ],
+    correctKeys: ["C"]
+  },
+  {
+    id: "spark-l2-ot1-q12",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 12,
+    type: "multiple_choice",
+    text: "Những thông tin nào là một phần của dấu chân kỹ thuật số?",
+    options: [
+      { key: "A", text: "Điểm số của bạn ở trường" },
+      { key: "B", text: "Những lượt/nội dung tìm kiếm mà bạn thực hiện trên internet" },
+      { key: "C", text: "Những điều bạn nói trong tin nhắn dạng chữ với bạn bè" },
+      { key: "D", text: "Số đôi giày mà bạn sở hữu" }
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "spark-l2-ot1-q13",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 13,
+    type: "multiple_choice",
+    text: "Chọn ra hai câu trả lời thể hiện những thông tin thuộc dấu chân kỹ thuật số. (Chọn 2)",
+    options: [
+      { key: "A", text: "Cuộc gọi điện thoại mà bạn nhận được" },
+      { key: "B", text: "Trang web mà bạn truy cập" },
+      { key: "C", text: "Bài tập ở trường mà bạn nộp" },
+      { key: "D", text: "Email mà bạn gửi đi" }
+    ],
+    correctKeys: ["B", "D"]
+  },
+  {
+    id: "spark-l2-ot1-q14",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 14,
+    type: "multiple_choice",
+    text: "Bạn đặt mua một game mới, nhưng khi nhận được thì phát hiện rằng đó là một bản sao chép trái phép, không phải game chính hãng. Là một công dân tốt trên môi trường số, đâu là cách phản ứng thích hợp?",
+    options: [
+      { key: "A", text: "Chạy phần mềm chống virus cho đĩa game rồi mới cài đặt, vì có thể có virus trong game" },
+      { key: "B", text: "Trước khi cài đặt, thiết lập tường lửa cho máy tính để chặn kết nối đến internet" },
+      { key: "C", text: "Loan trên mạng xã hội để mọi người biết nơi mua được bản sao giá rẻ của trò chơi đó" },
+      { key: "D", text: "Yêu cầu hoàn tiền và thông báo cho cửa hàng rằng game bạn nhận được không phải loại chính hãng" }
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "spark-l2-ot1-q15",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 15,
+    type: "multiple_choice",
+    text: "Em hãy cho biết, trong các tùy chọn sau, tùy chọn nào là những ưu điểm của điện toán đám mây? (Chọn 4)",
+    options: [
+      { key: "A", text: "Cần có kết nối internet để hoạt động" },
+      { key: "B", text: "Khả năng chia sẻ mọi thứ với nhiều người" },
+      { key: "C", text: "Tự động sao lưu dự phòng" },
+      { key: "D", text: "Nhóm quyền truy cập vào cùng một tài liệu" },
+      { key: "E", text: "Truy cập bất cứ nơi nào có kết nối internet" },
+      { key: "F", text: "Dung lượng lưu trữ có trả phí" }
+    ],
+    correctKeys: ["B", "C", "D", "E"]
+  },
+  {
+    id: "spark-l2-ot1-q16",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 16,
+    type: "yes_no",
+    text: "Với mỗi câu phát biểu, hãy chọn Đúng hoặc Sai.",
+    statements: [
+      { text: "Bình luận, hình ảnh và các thông tin khác mà bạn đăng trên mạng được gọi là dấu chân kỹ thuật số của bạn", correct: "True" },
+      { text: "Bạn có thể xóa vĩnh viễn những bình luận tiêu cực khỏi internet bất cứ khi nào bạn muốn", correct: "False" },
+      { text: "Mỗi bài tập ở trường mà bạn hoàn thành đều là một phần của dấu chân kỹ thuật số", correct: "False" }
+    ]
+  },
+  {
+    id: "spark-l2-ot1-q17",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 17,
+    type: "multiple_choice",
+    text: "Em hãy cho biết, trong các tùy chọn sau, tùy chọn nào là đúng khi nói đến duyệt web trực tuyến an toàn? (Chọn 2)",
+    options: [
+      { key: "A", text: "Em phải xóa các tập tin internet tạm thời" },
+      { key: "B", text: "Các trình duyệt có tính năng bảo mật có thể an toàn hơn các trình duyệt khác" },
+      { key: "C", text: "Em hoàn toàn an toàn miễn là em không tải xuống bất cứ thứ gì" },
+      { key: "D", text: "Chỉ cung cấp thông tin cá nhân cho các trang web an toàn" }
+    ],
+    correctKeys: ["B", "D"]
+  },
+  {
+    id: "spark-l2-ot1-q18",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 18,
+    type: "multiple_choice",
+    text: "Em hãy cho biết, tùy chọn nào sau đây là dịch vụ dựa trên internet?",
+    options: [
+      { key: "A", text: "Microsoft" },
+      { key: "B", text: "Thư điện tử (Email)" },
+      { key: "C", text: "Bách khoa toàn thư (Encyclopedia)" },
+      { key: "D", text: "Chia đôi màn hình chơi game (Split-screen gaming)" }
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "spark-l2-ot1-q19",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 19,
+    type: "multiple_choice",
+    text: "Em hãy cho biết, vì sao người dùng nên bảo vệ danh tính trực tuyến của họ? (Chọn 2)",
+    options: [
+      { key: "A", text: "Người dùng không cần bảo vệ danh tính trực tuyến" },
+      { key: "B", text: "Người dùng thường không sử dụng hình ảnh thật của họ" },
+      { key: "C", text: "Người dùng luôn nói thật khi trực tuyến" },
+      { key: "D", text: "Internet có bộ nhớ lâu dài" }
+    ],
+    correctKeys: ["B", "D"]
+  },
+  {
+    id: "spark-l2-ot1-q20",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 20,
+    type: "multiple_choice",
+    text: "Trong việc sử dụng công nghệ kỹ thuật số ở trường, chọn hai đáp án chỉ những hành vi đúng đắn mà mọi người nên làm? (Chọn 2)",
+    options: [
+      { key: "A", text: "Học sinh và giáo viên không nên dùng mạng xã hội trong lớp học" },
+      { key: "B", text: "Học sinh không nên đánh cắp hoặc làm hư hại tài sản của người khác" },
+      { key: "C", text: "Học sinh nên mở loa ngoài khi xem Video, thay vì đeo tai nghe" },
+      { key: "D", text: "Học sinh nên chia sẻ mật khẩu cho nhau biết" }
+    ],
+    correctKeys: ["A", "B"]
+  },
+  {
+    id: "spark-l2-ot1-q21",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 21,
+    type: "matching",
+    text: "Ghép nối các tình huống với hướng dẫn thực hành phép xã giao trực tuyến tương ứng.",
+    pairs: [
+      { left: "Hai người bạn trò chuyện về một bạn cùng lớp trong phần nhắn tin trực tiếp", right: "Không trao đổi thông tin về người khác mà chưa hỏi ý kiến của họ" },
+      { left: "Gửi tin nhắn trực tiếp cho giáo viên vào nửa đêm ngày cuối tuần", right: "Gửi tin nhắn vào thời gian thích hợp" },
+      { left: "Một bạn cùng lớp đăng ảnh về bạn mà chưa hỏi ý kiến", right: "Tôn trọng quyền riêng tư của người khác" },
+      { left: "KÍNH GỬI THẦY/CÔ", right: "Tránh ghi toàn chữ IN HOA" }
+    ]
+  },
+  {
+    id: "spark-l2-ot1-q22",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 22,
+    type: "multiple_choice",
+    text: "Đâu là một dạng phép xã giao trên môi trường kỹ thuật số?",
+    options: [
+      { key: "A", text: "Duy trì tính tích cực trong tin nhắn và bài đăng của bạn" },
+      { key: "B", text: "Đưa sự hài hước và châm biếm vào tin nhắn" },
+      { key: "C", text: "Đăng các thông điệp có tính phỉ báng trên mạng" },
+      { key: "D", text: "Dùng các nguồn giả trên mạng" }
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "spark-l2-ot1-q23",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 23,
+    type: "multiple_choice",
+    text: "Thông tin nào là một phần của dấu chân kỹ thuật số (Digital footprint) của bạn?",
+    options: [
+      { key: "A", text: "Biên lai mua hàng tại một cửa hàng địa phương" },
+      { key: "B", text: "Nhạc được lưu trên ổ cứng máy tính" },
+      { key: "C", text: "Bưu thiếp và thư bạn gửi cho một người bạn qua thư" },
+      { key: "D", text: "Bài đăng trên mạng xã hội" }
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "spark-l2-ot1-q24",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 24,
+    type: "multiple_choice",
+    text: "Khi bắt đầu làm dự án nghiên cứu, giáo viên đưa cho bạn http://orchestramusic.org để sử dụng. Thứ mà giáo viên đưa cho bạn là gì?",
+    options: [
+      { key: "A", text: "Mã nguồn" },
+      { key: "B", text: "Tiêu đề một trang" },
+      { key: "C", text: "Một tác giả" },
+      { key: "D", text: "Một URL" }
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "spark-l2-ot1-q25",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 25,
+    type: "multiple_choice",
+    text: "Khi nghiên cứu để làm bài tập, bạn tìm thấy một trang web có thông tin liên quan mà bạn muốn dùng. Giáo viên yêu cầu bạn đính kèm URL đó vào bài nộp. Câu nào bên dưới là ví dụ về một URL?",
+    options: [
+      { key: "A", text: "CoolPlaces.com" },
+      { key: "B", text: "com.CoolPlaces.www" },
+      { key: "C", text: "http://www.coolplaces.com/visit-the-pyramids" },
+      { key: "D", text: "www.coolplaces" }
+    ],
+    correctKeys: ["C"]
+  },
+  {
+    id: "spark-l2-ot1-q26",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 26,
+    type: "multiple_choice",
+    text: "Bạn được bạn của mình giới thiệu một trang web mới cho phép chơi game trực tuyến miễn phí. Đó là loại trang web gì?",
+    options: [
+      { key: "A", text: "Mạng xã hội" },
+      { key: "B", text: "Giao tiếp" },
+      { key: "C", text: "Thông tin" },
+      { key: "D", text: "Giải trí" }
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "spark-l2-ot1-q27",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 27,
+    type: "matching",
+    text: "Hãy di chuyển từng thuật ngữ từ danh sách ở bên phải sang định nghĩa tương ứng ở bên trái.",
+    pairs: [
+      { left: "Lưu địa chỉ một trang web (danh sách yêu thích)", right: "Dấu trang (Bookmark)" },
+      { left: "Cung cấp bản mới nhất của trang web", right: "Tải lại (Reload)" },
+      { left: "Một cửa sổ chứa nhiều trường hoặc ô trống để nhập dữ liệu", right: "Biểu mẫu (Form)" },
+      { left: "Khám phá để nắm rõ một ứng dụng hoặc trang web", right: "Điều hướng (Navigate)" }
+    ]
+  },
+  {
+    id: "spark-l2-ot1-q28",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 28,
+    type: "yes_no",
+    text: "Với mỗi câu phát biểu về trình duyệt web, hãy chọn Đúng hoặc Sai.",
+    statements: [
+      { text: "Dấu trang (Bookmark) cho phép người dùng điều hướng lại các trang web yêu thích của họ", correct: "True" },
+      { text: "Chức năng tải lại cho phép người dùng truy cập một trang web mà họ thường xem", correct: "False" },
+      { text: "Tự động điền (Autofill) cho phép trình duyệt tự điền thông tin mà không phải gõ lại", correct: "True" }
+    ]
+  },
+  {
+    id: "spark-l2-ot1-q29",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 29,
+    type: "multiple_choice",
+    text: "Bạn cần hoàn thành một dự án nghiên cứu, vì vậy bạn mở trình duyệt web trên máy tính để bắt đầu làm. Để bắt đầu tìm kiếm, bạn phải điều hướng đến một trang trên internet. Bạn đang đọc tài liệu nghiên cứu thì trang bị đứng hoàn toàn, nên bạn phải tải lại trang đó. Bạn muốn sau này có thể truy cập lại vào trang web, nên bạn đánh dấu trang web. Hành động lưu trang web đó được gọi là gì?",
+    options: [
+      { key: "A", text: "Đánh dấu trang (Bookmark)" },
+      { key: "B", text: "In trang (Print)" },
+      { key: "C", text: "Chia sẻ trang (Share)" },
+      { key: "D", text: "Đóng trang (Close)" }
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "spark-l2-ot1-q30",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 30,
+    type: "multiple_choice",
+    text: "Bạn chạy xong một lượt tìm kiếm trên web, nhưng không tìm được kết quả mình cần. Bạn nên thực hiện 2 bước nào để giúp tinh chỉnh phạm vi tìm kiếm? (Chọn 2)",
+    options: [
+      { key: "A", text: "Dùng các bộ lọc" },
+      { key: "B", text: "Thử lại mà không thay đổi gì cả" },
+      { key: "C", text: "Nhấp vào một quảng cáo" },
+      { key: "D", text: "Dùng từ đồng nghĩa hoặc các từ thay thế khác" }
+    ],
+    correctKeys: ["A", "D"]
+  },
+  {
+    id: "spark-l2-ot1-q31",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 31,
+    type: "multiple_choice",
+    text: "Bạn muốn mua một vật phẩm mới cho trò chơi trực tuyến yêu thích của mình và vật phẩm đó sẽ được khuyến mãi trong 5 phút nữa. Bạn đã mở sẵn trang đó ra chờ. Khi hết 5 phút đó, bạn nên làm gì để nhanh chóng hiển thị mức giá mới?",
+    options: [
+      { key: "A", text: "Đánh dấu trang đó" },
+      { key: "B", text: "Gửi email cho công ty bán hàng" },
+      { key: "C", text: "Tải lại trang" },
+      { key: "D", text: "In trang đó ra" }
+    ],
+    correctKeys: ["C"]
+  },
+  {
+    id: "spark-l2-ot1-q32",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 32,
+    type: "multiple_choice",
+    text: "Nếu muốn lưu trang web để quay lại sau thì bạn có thể làm gì?",
+    options: [
+      { key: "A", text: "Nói cho một người bạn biết" },
+      { key: "B", text: "Cố nhớ vào lần đăng nhập tới" },
+      { key: "C", text: "Nhờ ai đó gợi nhắc cho bạn" },
+      { key: "D", text: "Đánh dấu trang (Bookmark) cho URL đó" }
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "spark-l2-ot1-q33",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 33,
+    type: "multiple_choice",
+    text: "Bạn đang tìm một số thông tin trên mạng, nhưng kết quả trả về không cung cấp thông tin mà bạn cần. Bạn nên làm gì?",
+    options: [
+      { key: "A", text: "Đóng trình duyệt của bạn" },
+      { key: "B", text: "Dùng từ đồng nghĩa để thay đổi thuật ngữ tìm" },
+      { key: "C", text: "Bấm vào đường liên kết của những kết quả quảng cáo" },
+      { key: "D", text: "Kiểm tra kết nối internet của bạn" }
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "spark-l2-ot1-q34",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 34,
+    type: "multiple_choice",
+    text: "Bạn đang đọc một bài viết trên trang web. Bên dưới bài viết đó có nhiều đường liên kết cung cấp thêm thông tin ngoài. Bạn nên bấm vào liên kết nào để tìm hiểu về người viết bài báo?",
+    options: [
+      { key: "A", text: "Tác giả (Author)" },
+      { key: "B", text: "Phiên bản di động (Mobile version)" },
+      { key: "C", text: "Chính sách quyền riêng tư (Privacy policy)" },
+      { key: "D", text: "Điều khoản sử dụng (Terms of use)" }
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "spark-l2-ot1-q35",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 35,
+    type: "matching",
+    text: "Hãy di chuyển từng hoạt động trực tuyến từ danh sách ở bên phải sang mục đích tương ứng ở bên trái.",
+    pairs: [
+      { left: "Dùng Google Scholar để tìm kiếm một chủ đề cho bài tập", right: "Thông tin" },
+      { left: "Gửi email cho giáo viên của bạn về bài tập bị thiếu", right: "Giao tiếp" },
+      { left: "Xem đoạn video hài hước về một chú chó đi xe máy", right: "Giải trí" }
+    ]
+  },
+  {
+    id: "spark-l2-ot1-q36",
+    levelId: "spark-level-2",
+    program: "spark",
+    subsetId: "OT1",
+    questionNumber: 36,
+    type: "multiple_choice",
+    text: "Em hãy cho biết, tùy chọn nào sau đây là ví dụ về công cụ tìm kiếm? (Chọn 2)",
+    options: [
+      { key: "A", text: "Bing" },
+      { key: "B", text: "Safari" },
+      { key: "C", text: "Firefox" },
+      { key: "D", text: "Google" }
+    ],
+    correctKeys: ["A", "D"]
   },
 
   // ===================== OT2 / OT3: LEVEL 2 =====================
