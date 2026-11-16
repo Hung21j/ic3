@@ -2536,7 +2536,7 @@ export const SPARK_LEVEL2_QUESTIONS: IC3Question[] = [
     questionNumber: 13,
     type: "multiple_choice",
     text: "Bạn được yêu cầu tạo một bài trình chiếu về các chú chó đang chơi đùa. Hãy chọn hình ảnh phù hợp nhất với chủ đề này trong phần trả lời.",
-    image: "/iamges/s-lv2-ot2-13.jpg",
+    image: "/images/s-lv2-ot2-13.jpg",
     options: [
       { key: "A", text: "Hình A" },
       { key: "B", text: "Hình B" },
@@ -2583,7 +2583,7 @@ export const SPARK_LEVEL2_QUESTIONS: IC3Question[] = [
     questionNumber: 16,
     type: "multiple_choice",
     text: "Bạn làm việc cho tiệm bánh Doe's Bakery. Bạn đã thêm 4 ảnh mẫu vào tài liệu về cửa hàng bánh, nhưng thực tế chỉ cần 1. Bạn nên giữ lại hình nào?",
-    image: "/iamges/s-lv2-ot2-16.jpg",
+    image: "/images/s-lv2-ot2-16.jpg",
     options: [
       { key: "A", text: "Máy ảnh" },
       { key: "B", text: "Cái bánh" },
@@ -2600,7 +2600,7 @@ export const SPARK_LEVEL2_QUESTIONS: IC3Question[] = [
     questionNumber: 17,
     type: "multiple_choice",
     text: "Bạn làm việc tại tiệm bánh Doe's Bakery. Người chủ nhờ bạn đổi danh sách menu từ kiểu có ký hiệu đầu hàng thành đánh số. Đâu là danh sách có ký hiệu đầu hàng (Bullet list) dùng cho món bánh?",
-    image: "/iamges/s-lv2-ot2-17.jpg",
+    image: "/images/s-lv2-ot2-17.jpg",
     options: [
       { key: "A", text: "Hình A" },
       { key: "B", text: "Hình B" },
@@ -2615,7 +2615,7 @@ export const SPARK_LEVEL2_QUESTIONS: IC3Question[] = [
     questionNumber: 18,
     type: "multiple_choice",
     text: "Ứng dụng nào được dùng để tạo bài trình chiếu?",
-    image: "/iamges/s-lv2-ot2-18.jpg",
+    image: "/images/s-lv2-ot2-18.jpg",
     options: [
       { key: "A", text: "Edge" },
       { key: "B", text: "Word" },
