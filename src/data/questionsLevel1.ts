@@ -2267,6 +2267,36 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
       { text: "Phần mềm bảng tính phân tích và thực hiện các phép tính, đồng thời hiển thị dữ liệu dưới dạng biểu đồ", correct: "True" },
       { text: "Một chương trình xử lý văn bản xuất ra văn bản ở định dạng tài liệu", correct: "True" },
     ]
+  },
+  {
+    id: "lv1-gm2-42",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 42,
+    type: "multiple_choice",
+    text: "Hệ điều hành Windows có một thanh taskbar xuất hiện theo mặc định ở cuối màn hình. Mục đích của thanh taskbar của hệ điều hành Windows là gì?",
+    options:[
+      { key: "A", text: "Cho phép bạn khởi chạy chương trình hoặc xem bất kỳ chương trình nào hiện đang mở" },
+      { key: "B", text: "Duyệt internet" },
+      { key: "C", text: "Duyệt các tập tin được lưu trữ trên máy tính của bạn" },
+      { key: "D", text: "Cho phép bạn tìm kiếm nội dung trong một tập tin" }
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "lv1-gm2-43",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 43,
+    type: "multiple_choice",
+    text: "Điều nào sau đây sẽ bảo vệ quyền riêng tư kỹ thuật số của bạn và tăng cường bảo mật khi duyệt các trang web?",
+    options:[
+      { key: "A", text: "Xóa lịch sử trình duyệt của bạn" },
+      { key: "B", text: "Chuyển sang trình duyệt nguồn mở" },
+      { key: "C", text: "Tiện ích mở rộng trình duyệt chống theo dõi" },
+      { key: "D", text: "Một giấy phép Creative Commons" }
+    ],
+    correctKeys: ["C"]
   }
 
 ];

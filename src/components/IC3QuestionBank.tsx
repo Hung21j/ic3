@@ -348,7 +348,7 @@ export default function IC3QuestionBank({
   const handleDeleteQuestion = (a: any) => {};
   const handleRestoreDefaults = () => {};
 
-  // Dynamic Subsets choices matching user request (GM1, GM2, OT1, OT2, OT3, OT4, OT5, FULL)
+  // Dynamic Subsets choices matching user request (GM1, GM2, OT1, OT2, OT3, OT4, OT5, FULL, exam)
   const SUBSETS: SubsetConfig[] = [
     { id: "GM1", name: "GM1" },
     { id: "GM2", name: "GM2" },
@@ -357,8 +357,29 @@ export default function IC3QuestionBank({
     { id: "OT3", name: "OT3" },
     { id: "OT4", name: "OT4" },
     { id: "OT5", name: "OT5" },
-    { id: "FULL", name: "Tổng hợp FULL" }
+    { id: "FULL", name: "Tổng hợp FULL" },
+    { id: "exam", name: "Thi thử" }
   ];
+
+  // Số lượng câu hỏi cho đề "Thi thử" theo từng chương trình và cấp độ
+  const getExamQuestionLimit = (levelId: string): number => {
+    switch (levelId) {
+      case "spark-level-1":
+        return 31;
+      case "spark-level-2":
+        return 36;
+      case "spark-level-3":
+        return 42;
+      case "level-1":
+        return 45;
+      case "level-2":
+        return 45;
+      case "level-3":
+        return 40;
+      default:
+        return 45;
+    }
+  };
 
   // Load questions directly from the static IC3_QUESTIONS file and customQuestions
   useEffect(() => {
@@ -388,6 +409,10 @@ export default function IC3QuestionBank({
   const getSubsetQuestions = (subsetId: string, questionsList: IC3Question[]): IC3Question[] => {
     if (questionsList.length === 0) return [];
     if (subsetId === "FULL") return questionsList;
+    if (subsetId === "exam") {
+      const pool = questionsList.filter((q) => q.subsetId !== "FULL" && q.subsetId !== "exam");
+      return pool.slice(0, getExamQuestionLimit(activeLevelId));
+    }
     return questionsList.filter((q) => q.subsetId === subsetId);
   };
 
@@ -590,22 +615,31 @@ export default function IC3QuestionBank({
 
   // Handle active sub-selection click
   const handleStartSubset = (subsetId: string) => {
-    const rawList = getSubsetQuestions(subsetId, levelQuestions);
-
-    // Sắp xếp thứ tự câu hỏi theo level và subset (dựa trên questionNumber hoặc order)
-    const sortedList = [...rawList].sort((a, b) => {
-      const numA = typeof a.questionNumber === "number" ? a.questionNumber : (typeof a.order === "number" ? a.order : 999999);
-      const numB = typeof b.questionNumber === "number" ? b.questionNumber : (typeof b.order === "number" ? b.order : 999999);
-      return numA - numB;
-    });
-
     let prepared: IC3Question[];
-    if (selectedPracticeMode === "training") {
-      // Training: Giữ nguyên số thứ tự của câu hỏi, xáo trộn thứ tự các câu trả lời trong từng câu
-      prepared = sortedList.map((q) => shuffleQuestionOptions(q));
+
+    if (subsetId === "exam") {
+      // Lấy ngẫu nhiên các câu hỏi từ các subset còn lại (ngoại trừ tổng hợp FULL và exam)
+      const pool: IC3Question[] = levelQuestions.filter((q) => q.subsetId !== "FULL" && q.subsetId !== "exam");
+      const limit = getExamQuestionLimit(activeLevelId);
+      const picked = shuffleArray<IC3Question>(pool).slice(0, limit);
+      prepared = picked.map((q) => shuffleQuestionOptions(q));
     } else {
-      // Testing: Xáo trộn cả số thứ tự câu hỏi và thứ tự các câu trả lời trong từng câu
-      prepared = shuffleArray(sortedList).map((q) => shuffleQuestionOptions(q));
+      const rawList = getSubsetQuestions(subsetId, levelQuestions);
+
+      // Sắp xếp thứ tự câu hỏi theo level và subset (dựa trên questionNumber hoặc order)
+      const sortedList = [...rawList].sort((a, b) => {
+        const numA = typeof a.questionNumber === "number" ? a.questionNumber : (typeof a.order === "number" ? a.order : 999999);
+        const numB = typeof b.questionNumber === "number" ? b.questionNumber : (typeof b.order === "number" ? b.order : 999999);
+        return numA - numB;
+      });
+
+      if (selectedPracticeMode === "training") {
+        // Training: Giữ nguyên số thứ tự của câu hỏi, xáo trộn thứ tự các câu trả lời trong từng câu
+        prepared = sortedList.map((q) => shuffleQuestionOptions(q));
+      } else {
+        // Testing: Xáo trộn cả số thứ tự câu hỏi và thứ tự các câu trả lời trong từng câu
+        prepared = shuffleArray(sortedList).map((q) => shuffleQuestionOptions(q));
+      }
     }
 
     setSessionQuestions(prepared);
@@ -762,7 +796,7 @@ export default function IC3QuestionBank({
         className: currentUser.className,
         school: currentUser.school,
         level: selectedLevel,
-        subset: selectedSubSet || "ALL",
+        subset: selectedSubSet === "exam" ? "Thi thử" : (selectedSubSet || "ALL"),
         mode: "training",
         correctCount: correct,
         wrongCount: wrong,
@@ -816,7 +850,7 @@ export default function IC3QuestionBank({
         className: currentUser.className,
         school: currentUser.school,
         level: selectedLevel,
-        subset: selectedSubSet || "ALL",
+        subset: selectedSubSet === "exam" ? "Thi thử" : (selectedSubSet || "ALL"),
         mode: "testing",
         correctCount: correct,
         wrongCount: wrong,
@@ -880,7 +914,7 @@ export default function IC3QuestionBank({
 
                 {selectedSubSet && (
                   <span className="text-[10px] font-black uppercase font-mono px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-700 border border-indigo-200">
-                    {selectedSubSet}
+                    {selectedSubSet === "exam" ? "Thi thử" : selectedSubSet}
                   </span>
                 )}
               </div>
@@ -2199,7 +2233,7 @@ export default function IC3QuestionBank({
                     KẾT QUẢ BÀI THI
                   </h4>
                   <p className="text-xs text-slate-600 font-bold font-mono uppercase tracking-wider">
-                    {selectedSubSet} - {selectedPracticeMode === "training" ? "TRAINING" : "TESTING"}
+                    {selectedSubSet === "exam" ? "Thi thử" : selectedSubSet} - {selectedPracticeMode === "training" ? "TRAINING" : "TESTING"}
                   </p>
                 </div>
 
