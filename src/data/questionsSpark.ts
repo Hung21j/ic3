@@ -2677,14 +2677,16 @@ export const SPARK_LEVEL2_QUESTIONS: IC3Question[] = [
     program: "spark",
     subsetId: "OT2",
     questionNumber: 22,
-    type: "matching",
+    type: "yes_no",
     text: "Ở mỗi tình huống bạn cần tạo danh sách, hãy chọn xem bạn nên tạo dưới dạng Danh sách đánh số hoặc Danh sách có ký hiệu đầu hàng.",
-    pairs: [
-      { left: "Danh sách những món đồ ăn nhẹ bạn yêu thích", right: "Danh sách có ký hiệu đầu hàng" },
-      { left: "Danh sách hướng dẫn cách nướng bánh quy", right: "Danh sách đánh số" },
-      { left: "Danh sách các bước lắp ráp một món đồ chơi mới", right: "Danh sách đánh số" },
-      { left: "Danh sách các món đồ bạn cần xếp vào hành lý để đi chơi", right: "Danh sách có ký hiệu đầu hàng" }
-    ]
+    statements: [
+      { text: "Danh sách những món đồ ăn nhẹ bạn yêu thích", correct: "True" },
+      { text: "Danh sách hướng dẫn cách nướng bánh quy", correct: "False" },
+      { text: "Danh sách các bước lắp ráp một món đồ chơi mới", correct: "False" },
+      { text: "Danh sách các món đồ bạn cần xếp vào hành lý để đi chơi", correct: "True" }
+    ],
+    trueColumnLabel: "Danh sách ký hiệu",
+    falseColumnLabel: "Danh sách đánh số"
   },
   {
     id: "spark-l2-ot2-q23",
@@ -2778,7 +2780,7 @@ export const SPARK_LEVEL2_QUESTIONS: IC3Question[] = [
       { key: "C", text: "Chọn toàn bộ tài liệu" },
       { key: "D", text: "Chọn một dòng duy nhất" }
     ],
-    correctKeys: ["B"]
+    correctKeys: ["C"]
   },
   {
     id: "spark-l2-ot2-q29",

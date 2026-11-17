@@ -2297,6 +2297,2854 @@ export const LEVEL1_OT_QUESTIONS: IC3Question[] = [
       { key: "D", text: "Một giấy phép Creative Commons" }
     ],
     correctKeys: ["C"]
+  },
+  {
+    id: "lv1-gm2-44",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 44,
+    type: "yes_no",
+    text: "Bạn gặp khó khăn trong việc xác định xem các trang web có chứa thông tin chính xác hay không. Chọn Đúng hoặc Sai cho mỗi phát biểu sau:",
+    statements:[
+      { text: "Trang web có ngữ pháp tiếng Anh kém và nêu một số tuyên bố không thực tế", correct: "False" },
+      { text: "Trang web có miền .gov hoặc .edu", correct: "True" },
+      { text: "Các tài liệu tham khảo trên trang web chuyển đến các trang web tương tự của tài liệu tham khảo thay vì nguồn thông tin ban đầu", correct: "False" }
+    ]
+  },
+  {
+    id: "lv1-gm2-45",
+    levelId: "level-1",
+    subsetId: "GM2",
+    questionNumber: 45,
+    type: "multiple_choice",
+    text: "Lựa chọn nào sau đây thường được các trang web sử dụng để theo dõi thói quen duyệt web của khách truy cập?",
+    options: [
+      { key: "A", text: "Đánh dấu (Bookmarks)" },
+      { key: "B", text: "Nhận dạng khuôn mặt (Facial recognition)" }, 
+      { key: "C", text: "Cookies" },
+      { key: "D", text: "Đường hầm VPN (VPN tunneling)" }
+    ],
+    correctKeys: ["C"]
+  },
+
+
+
+  {
+    id: "lv1-ot2-01",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 1,
+    text: "Bạn cần tuân thủ các tiêu chuẩn đạo đức về cư xử để bảo vệ danh tiếng kỹ thuật số của bản thân. Đâu là hành động đáp ứng được những yêu cầu trên?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Tuân thủ các điều khoản trong chính sách sử dụng được chấp nhận khi sử dụng wifi của nhà trường",
+      },
+      {
+        key: "B",
+        text: "Đưa phiên bản đầy đủ của bài hát bạn yêu thích vào hồ sơ video cá nhân trên mạng xã hội",
+      },
+      {
+        key: "C",
+        text: "Sử dụng hình ảnh thuộc phạm vi công cộng cho trang web của công ty bạn",
+      },
+      {
+        key: "D",
+        text: "Cải thiện phần kinh nghiệm làm việc trong sơ yếu lý lịch trực tuyến bằng cách liệt kê cả các nhiệm vụ bạn dự định hoàn thành",
+      },
+    ],
+    correctKeys: ["C"],
+  },
+  {
+    id: "lv1-ot2-02",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 2,
+    text: "Bạn đang thu thập thông tin trực tuyến cho một bài nghiên cứu. Bạn cần thu thập thông tin về từng nguồn để có thể tạo danh sách tham khảo sau này. Đây là 3 thông tin về mỗi trang web mà bạn cần lưu? (Chọn 3)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Mục đích của thông tin",
+      },
+      {
+        key: "B",
+        text: "Nguồn nội dung trang",
+      },
+      {
+        key: "C",
+        text: "Những nhận xét hỗ trợ tính xác thực của nội dung trang",
+      },
+      {
+        key: "D",
+        text: "URL",
+      },
+      {
+        key: "E",
+        text: "Tiêu đề trang",
+      },
+      {
+        key: "F",
+        text: "Tác giả, nếu có",
+      },
+    ],
+    correctKeys: ["D", "E", "F"],
+  },
+  {
+    id: "lv1-ot2-03",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 3,
+    text: "Bạn đăng tải một bức ảnh hài hước và đáng xấu hổ của bạn bè lên mạng xã hội. Những thông tin đó sẽ tồn tại trên mạng internet trong vòng bao lâu?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "24 giờ",
+      },
+      {
+        key: "B",
+        text: "Vĩnh viễn, ngay cả sau khi bạn đã xóa thông tin",
+      },
+      {
+        key: "C",
+        text: "Cho đến khi bạn của bạn xóa thông tin",
+      },
+      {
+        key: "D",
+        text: "07 năm",
+      },
+    ],
+    correctKeys: ["B"],
+  },
+  {
+    id: "lv1-ot2-04",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 4,
+    text: "Hai hoạt động nào là ví dụ về bắt nạt trên mạng? (Chọn 2)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Tạo trang web để chế nhạo ai đó",
+      },
+      {
+        key: "B",
+        text: "Báo cáo người nào đó bạn không thích vì đăng tải nội dung không phù hợp",
+      },
+      {
+        key: "C",
+        text: "Đăng video đáng xấu hổ về một người nào đó",
+      },
+      {
+        key: "D",
+        text: "Hủy kết bạn với một người trên mạng xã hội sau khi họ đăng điều gì đó mà bạn không đồng tình",
+      },
+    ],
+    correctKeys: ["A", "C"],
+  },
+  {
+    id: "lv1-ot2-05",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 5,
+    text: "Hãy chọn cụm từ thích hợp vào khẳng định sau: Đe doạ trực tuyến xảy ra khi một người hoặc nhiều người sử dụng từ ngữ hoặc hình người khác một cách ảnh có hại để làm tổn thương, xấu hổ hoặc ______________________ người khác một cách cố ý, trực tuyến.",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Thỏa mãn (Satisfy)",
+      },
+      {
+        key: "B",
+        text: "Dọa nạt (Intimidate)",
+      },
+      {
+        key: "C",
+        text: "Khuyến khích (Encourage)",
+      },
+      {
+        key: "D",
+        text: "Nâng cao (Uplift)",
+      },
+    ],
+    correctKeys: ["B"],
+  },
+  {
+    id: "lv1-ot2-06",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 6,
+    text: "Trời đã về khuya. Bạn cảm thấy khó ngủ và quyết định lướt xem các bài đăng của bạn bè trên mạng xã hội. Một học sinh cùng trường với bạn vừa đăng bài thông báo rằng trường học đã bị phá hoại và giờ học sẽ bị lùi lại hai tiếng vào hôm sau. Bạn cần phải xác định xem liệu thông tin đó có chính xác hay không. Bạn nên làm gì?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Nhắn mẹ của bạn kiểm tra vấn đề này và đặt báo thức muộn hơn hai tiếng so với ngày thường",
+      },
+      {
+        key: "B",
+        text: "Kiểm tra trang web của nhà trường và các trang web tin tức địa phương để biết thông tin chính thức",
+      },
+      {
+        key: "C",
+        text: "Trả lời bài đăng gốc và hỏi người bạn đó về nguồn tin",
+      },
+      {
+        key: "D",
+        text: "Đăng lại thông tin, gắn thẻ bạn bè của bạn và hỏi xem có ai khác biết về việc giờ học bị lùi lại hay không",
+      },
+    ],
+    correctKeys: ["B"],
+  },
+  {
+    id: "lv1-ot2-07",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 7,
+    text: "Bạn hãy chọn Đúng hoặc Sai với các công cụ có thể giúp bảo vệ quyền riêng tư kỹ thuật số của mình?",
+    type: "yes_no",
+    statements: [
+      {
+        text: "Trình chống phân mảnh đĩa",
+        correct: "False",
+      },
+      {
+        text: "Chương trình quản lý mật khẩu",
+        correct: "True",
+      },
+      {
+        text: "Tiện ích bổ sung chống theo dõi của trình duyệt",
+        correct: "True",
+      },
+    ],
+  },
+  {
+    id: "lv1-ot2-08",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 8,
+    text: "Đâu là nhân tố đóng góp chính vào danh tính số của bạn?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Dữ liệu được lưu trữ trên máy tính của bạn cho phép bạn đăng nhập vào một trang web bảo mật thông qua một tài khoản bảo mật",
+      },
+      {
+        key: "B",
+        text: "Tài liệu được lưu trữ trên máy tính của bạn",
+      },
+      {
+        key: "C",
+        text: "Tên người dùng và mật khẩu của bạn trong mỗi trang web hoặc dịch vụ bạn sử dụng",
+      },
+      {
+        key: "D",
+        text: "Thông tin bạn đăng tải trên các trang mạng xã hội, blog và diễn đàn",
+      },
+    ],
+    correctKeys: ["D"],
+  },
+  {
+    id: "lv1-ot2-09",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 9,
+    text: "Bạn đang biên soạn một nghiên cứu. Bạn cần thêm tài liệu tham khảo cho bài viết của mình. Với mỗi trường hợp, hãy chọn Có nếu bạn phải thêm nguồn tham khảo hoặc Không nếu không cần thiết.",
+    type: "yes_no",
+    statements: [
+      {
+        text: "Sử dụng ý tưởng từ mốt bài báo",
+        correct: "True",
+      },
+      {
+        text: "Nội dung bạn viết hoàn toàn mới mẻ và riêng biệt",
+        correct: "False",
+      },
+      {
+        text: "Bạn sao chép đoạn văn từ một trang web",
+        correct: "True",
+      },
+      {
+        text: "Bạn diễn đạt lại một nội dung từ một bài viết trên tạp chí",
+        correct: "True",
+      },
+    ],
+  },
+  {
+    id: "lv1-ot2-10",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 10,
+    text: "Những thông tin về bạn được lưu trữ trực tuyến được gọi là dấu chân kỹ thuật số. Với mỗi câu phát biểu về dấu chân kỹ thuật số, hãy chọn Đúng hoặc Sai.",
+    type: "yes_no",
+    statements: [
+      {
+        text: "Cập nhật trình duyệt sáu tháng một lần sẽ giúp xóa sạch dấu chân kỹ thuật số của bạn",
+        correct: "False",
+      },
+      {
+        text: "Nếu bạn sử dụng bộ lọc web, sẽ không thể truy vết từ những nhận xét trực tuyến ẩn danh mà bạn đăng tải",
+        correct: "False",
+      },
+      {
+        text: "Các nhà tuyển dụng tiềm năng có thể tìm kiếm hình ảnh và thông điệp được các ứng viên dưới 18 tuổi đăng tải trên mạng xã hội",
+        correct: "True",
+      },
+      {
+        text: "Những công ty mà bạn chia sẻ dữ liệu cá nhân để đổi lấy quyền dùng ứng dụng và dịch vụ không được phép cung cấp dữ liệu cho bất kỳ ai",
+        correct: "True",
+      },
+    ],
+  },
+  {
+    id: "lv1-ot2-11",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 11,
+    text: "Bạn đang thực hiện một dự án nghiên cứu và cần xác minh liệu một nguồn thông tin có thuộc phạm vi công cộng hay không. Với mỗi câu phát biểu, hãy chọn Đúng nếu đó là lý do khiến một tác phẩm bản quyền có thể rơi vào phạm vi công cộng và Sai nếu không phải.",
+    type: "yes_no",
+    statements: [
+      {
+        text: "Bản quyền đã hết hạn",
+        correct: "True",
+      },
+      {
+        text: "Chủ sở hữu bản quyền không thực hiện quy trình gia hạn bản quyền",
+        correct: "False",
+      },
+      {
+        text: "Chủ sở hữu bản quyền lựa chọn chuyển tác phẩm sang phạm vi công cộng",
+        correct: "True",
+      },
+    ],
+  },
+  {
+    id: "lv1-ot2-12",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 12,
+    text: "Một số lợi ích của ẩn danh trực tuyến là gì? (Chọn 2)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Nó cho phép mọi người sống thật và trung thực mà không sợ bị trả thù hoặc xấu hổ",
+      },
+      {
+        key: "B",
+        text: "Nó cho phép mọi người bắt nạt trên mạng mà không phải chịu trách nhiệm",
+      },
+      {
+        key: "C",
+        text: "Nó cho phép thảo luận và bày tỏ về những ý tưởng không phổ biến",
+      },
+      {
+        key: "D",
+        text: "Nó cho phép mọi người đánh giá người khác mà không bị ảnh hưởng",
+      },
+    ],
+    correctKeys: ["A", "C"],
+  },
+  {
+    id: "lv1-ot2-13",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 13,
+    text: "Bạn cần thêm một tác phẩm nghệ thuật vào bài trình chiếu mà bạn đang làm cho lớp học của mình. Bạn Không có thời gian để xin giấy phép sử dụng tác phẩm nghệ thuật. Với mỗi câu phát biểu, hãy chọn Có nếu bạn có thể sử dụng tác phẩm nghệ thuật một cách hợp pháp mà không cần phải xin giấy phép hoặc chọn Không nếu bạn không.",
+    type: "yes_no",
+    statements: [
+      {
+        text: "Tác giả là người quen của bạn",
+        correct: "False",
+      },
+      {
+        text: "Các tác phẩm nghệ thuật được bản quyền bảo vệ",
+        correct: "False",
+      },
+      {
+        text: "Chủ sở hữu bản quyền đã chuyển tác phẩm nghệ thuật sang phạm vì công cộng",
+        correct: "True",
+      },
+    ],
+  },
+  {
+    id: "lv1-ot2-14",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 14,
+    text: "Đâu là hai tác động tiêu cực của việc đăng tải ảnh meme hoặc bình luận xúc phạm lên mạng xã hội? (Chọn 2)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Hình ảnh hoặc bình luận đó thể hiện sự thông minh và kỹ năng nghệ thuật số của bạn",
+      },
+      {
+        key: "B",
+        text: "Bạn có thể dễ dàng xác định một nhóm người có tín ngưỡng cụ thể",
+      },
+      {
+        key: "C",
+        text: "Khi xem ảnh, những người khác nhau có thể suy diễn hình ảnh meme theo những cách khác nhau",
+      },
+      {
+        key: "D",
+        text: "Hình ảnh hoặc bình luận đó sẽ tồn tại mãi ngay cả khi đã qua sự kiện tạo cảm hứng cho bạn đăng tải",
+      },
+    ],
+    correctKeys: ["C", "D"],
+    
+  },
+  {
+    id: "lv1-ot2-15",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 15,
+    text: "Bạn đang nghiên cứu thông tin trong một tài liệu dài. Với mỗi câu phát biểu, hãy chọn Có nếu bạn có thể sử dụng tính năng tìm kiếm để hoàn thành công việc hoặc chọn Không nếu bạn không thể.",
+    type: "yes_no",
+    statements: [
+      {
+        text: "Xác định một từ khóa hoặc cụm từ trong tài liệu",
+        correct: "True",
+      },
+      {
+        text: "Thay đổi định dạng của tất cả các trích dẫn trong tài liệu của bạn",
+        correct: "False",
+      },
+      {
+        text: "Xác định các trang có tài liệu tham khảo của một tác giả cụ thể",
+        correct: "True",
+      },
+    ],
+  },
+  {
+    id: "lv1-ot2-16",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 16,
+    text: "Bạn đang biên soạn một nghiên cứu. Bạn thu thập thông tin từ nhiều nguồn khác nhau để đưa vào bài nghiên cứu của mình. Bạn cần đưa tài liệu gốc vào mục tài liệu tham khảo trong bài viết của bạn. Đây là hai lý do bạn nên đưa tài liệu gốc vào mục tài liệu tham khảo? (Chọn 2)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Điều này thể hiện bài nghiên cứu là tác phẩm gốc của bạn",
+      },
+      {
+        key: "B",
+        text: "Điều này cung cấp khoản thanh toán tài chính cho những người thực hiện nghiên cứu",
+      },
+      {
+        key: "C",
+        text: "Điều này giúp người đọc tìm thấy nguồn thông tin ban đầu",
+      },
+      {
+        key: "D",
+        text: "Điều này thể hiện sự tôn trọng đối với các tác giả của nghiên cứu mà bạn đang tham khảo",
+      },
+    ],
+    correctKeys: ["C", "D"],
+  },
+  {
+    id: "lv1-ot2-17",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 17,
+    text: "Một bạn nam trong lớp học nghệ thuật đăng tải hình ảnh khuôn mặt của bạn được dán lên mình một con lợn trên trang mạng xã hội. Bạn nên làm gì?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Coi bài đăng là một lời chỉ trích gián tiếp về cân nặng của bạn và thực hiện chế độ ăn kiêng",
+      },
+      {
+        key: "B",
+        text: "Đăng hình ảnh khuôn mặt của bạn nam đó dán trên một miếng thịt xông khói trên cùng trang mạng xã hội đó để xem cậu ấy sẽ làm gì tiếp theo",
+      },
+      {
+        key: "C",
+        text: "Trả lời bài đăng ban đầu bằng một bình luận trung lập để bạn nam biết rằng bạn đã xem bài đăng và sẽ không trả đũa",
+      },
+      {
+        key: "D",
+        text: "Nói với bạn nam rằng bạn tò mò và muốn biết lý do tại sao cậu ấy đăng bức ảnh",
+      },
+    ],
+    correctKeys: ["C"],
+  },
+  {
+    id: "lv1-ot2-18",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 18,
+    text: "Hãy chọn cụm từ thích hợp vào khẳng định sau: Bản quyền cung cấp cho tác giả quyền hợp pháp độc quyền đối với ________________________ Chủ sở hữu có quyền kiểm soát người in, phân tích, phê bình tác phẩm của họ.",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Sự sáng tạo (Creation)",
+      },
+      {
+        key: "B",
+        text: "Quyền sở hữu (Ownership)",
+      },
+    ],
+    correctKeys: ["A"],
+  },
+  {
+    id: "lv1-ot2-19",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 19,
+    text: "Nội dung nào đúng với nội dung miền công cộng (Public Domain)? (Chọn 3)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Nó được bảo vệ bởi luật sở hữu trí tuệ",
+      },
+      {
+        key: "B",
+        text: "Nó là miễn phí để sử dụng",
+      },
+      {
+        key: "C",
+        text: "Nó thuộc sở hữu của công chúng chứ không phải của bất kỳ cá nhân hay công ty nào",
+      },
+      {
+        key: "D",
+        text: "Nó tự động trở thành miền công cộng 50-100 năm sau khi tác giả ban đầu qua đời",
+      },
+      {
+        key: "E",
+        text: "Nó có thể được mua để sở hữu sau 50 năm",
+      },
+    ],
+    correctKeys: ["B", "C", "D"],
+  },
+  {
+    id: "lv1-ot2-20",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 20,
+    text: "Chọn đúng/sai:",
+    type: "yes_no",
+    statements: [
+      {
+        text: "Bản quyền tồn tại ngay sau khi một tác phẩm được tạo ra",
+        correct: "True",
+      },
+      {
+        text: "Luật bản quyền bảo vệ quyền sao chép tác phẩm có bản quyền",
+        correct: "True",
+      },
+      {
+        text: "Luật bản quyền chỉ bảo vệ các tác phẩm nghệ thuật, chẳng hạn như tranh vẽ và tác phẩm điêu khắc",
+        correct: "False",
+      },
+    ],
+  },
+  {
+    id: "lv1-ot2-21",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 21,
+    text: "Đối với từng loại hình sử dụng nội dung, hãy chọn Có nếu giấy phép tài sản sáng tạo công cộng cho phép bạn sử dụng hoặc Không nếu không cho phép.",
+    type: "yes_no",
+    statements: [
+      {
+        text: "Trưng bày một áp phích trong đêm chiếu phim miễn phí tại trường học của bạn",
+        correct: "True",
+      },
+      {
+        text: "Cho một bài thơ vào danh mục tác phẩm gốc của bạn",
+        correct: "False",
+      },
+      {
+        text: "Biểu diễn một tác phẩm kịch cho phụ huynh tại chương trình tài năng của lớp",
+        correct: "True",
+      },
+      {
+        text: "Trình bày hình ảnh cho các học sinh khác trong bài thuyết trình trước lớp",
+        correct: "True",
+      },
+    ],
+  },
+  {
+    id: "lv1-ot2-22",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 22,
+    text: "Với mỗi câu phát biểu về các hình ảnh được bảo vệ bởi giấy phép tài sản sáng tạo công cộng và không thuộc phạm vi công cộng, hãy chọn Đúng hoặc Sai.",
+    type: "yes_no",
+    statements: [
+      {
+        text: "Bạn có thể sử dụng hình ảnh miễn phí",
+        correct: "True",
+      },
+      {
+        text: "Bạn có thể sử dụng hình ảnh vô điều kiện",
+        correct: "False",
+      },
+      {
+        text: "Nếu sử dụng hình ảnh, bạn phải trích dẫn nguồn của hình ảnh đó",
+        correct: "True",
+      },
+    ],
+  },
+  {
+    id: "lv1-ot2-23",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 23,
+    text: "Người dùng có thể thực hiện các bước nào để xác định tính hợp lệ của thông tin trực tuyến hay theo cách khác? (Chọn 3)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Xác định tác giả và thẩm quyền của họ về chủ đề thông tin",
+      },
+      {
+        key: "B",
+        text: "Xác định xem tác giả có viết những cuốn sách nổi tiếng hay không",
+      },
+      {
+        key: "C",
+        text: "Xác định xem thông tin đã được cập nhật mới nhất hay chưa",
+      },
+      {
+        key: "D",
+        text: "Làm mất uy tín của các tác giả mà bạn bè của người dùng không tin tưởng",
+      },
+      {
+        key: "E",
+        text: "Xác định thông tin đến từ đâu",
+      },
+    ],
+    correctKeys: ["A", "C", "E"],
+  },
+  {
+    id: "lv1-ot2-24",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 24,
+    text: "Bạn đang thực hiện một nghiên cứu trực tuyến. Bạn cần phải điều chỉnh cài đặt tìm kiếm để nhận được kết quả phù hợp hơn với đối tượng nghiên cứu của mình. Đây là hai kỹ thuật bạn nên sử dụng? (Chọn 2)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Đặt các cụm từ tìm kiếm quan trọng nhất trong dấu ngoặc vuông",
+      },
+      {
+        key: "B",
+        text: "Đặt các cụm từ tìm kiếm dài trong dấu ngoặc kép",
+      },
+      {
+        key: "C",
+        text: "Tìm kiếm các thuật ngữ chung chung",
+      },
+      {
+        key: "D",
+        text: "Tìm kiếm các từ gốc và loại trừ hậu tổ",
+      },
+    ],
+    correctKeys: ["B", "D"],
+  },
+  {
+    id: "lv1-ot2-25",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 25,
+    text: "Bạn đang tìm kiếm thông tin trên các trang web về cách tự trồng rau. Thao tác tìm kiếm của bạn trả về một số trang kết quả. Bạn cần xác định kết quả nào liên quan đến tìm kiếm của bạn. Với mỗi mô tả về trang web, hãy chọn Có nếu trang web đó liên quan đến tìm kiếm của bạn hoặc Không nếu không phải.",
+    type: "yes_no",
+    statements: [
+      {
+        text: "Một bài báo trên tạp chí lá cải viết về khu vườn của những người nổi tiếng",
+        correct: "False",
+      },
+      {
+        text: "Một bài viết hướng dẫn do trường đại học danh tiếng xuất bản",
+        correct: "True",
+      },
+      {
+        text: "Một trang web được tài trợ cho một cửa hàng trang trí nhà cửa có bán hạt giống",
+        correct: "False",
+      },
+    ],
+  },
+  {
+    id: "lv1-ot2-26",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 26,
+    text: "Bạn đang thực hiện một dự án nghiên cứu. Bạn tìm thấy một bài báo trực tuyến dài chứa thông tin liên quan đến chủ đề nghiên cứu của bạn. Bạn có thể tìm thấy những thông tin nào trên trang web bằng cách sử dụng tính năng tìm kiếm của trình duyệt?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Số lần bài báo đề cập đến một chủ đề cụ thể",
+      },
+      {
+        key: "B",
+        text: "Đáp án chọn một Chủ đề hỏi cụ thể liên quan đến chủ đề bài viết",
+      },
+      {
+        key: "C",
+        text: "Bình luận liên quan trên các trang mạng xã hội",
+      },
+      {
+        key: "D",
+        text: "Danh sách các chủ đề phụ liên quan đến chủ đề nghiên cứu chính của bạn",
+      },
+    ],
+    correctKeys: ["D"],
+  },
+  {
+    id: "lv1-ot2-27",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 27,
+    text: "Người ta có thể sử dụng toán tử tìm kiếm nào để tìm kiếm các từ đồng nghĩa của một từ?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Dấu ~",
+      },
+      {
+        key: "B",
+        text: "AND",
+      },
+      {
+        key: "C",
+        text: "Dấu ?",
+      },
+      {
+        key: "D",
+        text: "Dấu *",
+      },
+    ],
+    correctKeys: ["A"],
+  },
+  {
+    id: "lv1-ot2-28",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 28,
+    text: "Bạn đang tìm kiếm trên web để tổng hợp thông tin cho một bài nghiên cứu. Bạn cần xác định các trang web có khả năng chứa thông tin chính xác và trung lập cho nghiên cứu của bạn. Với mỗi câu phát biểu, hãy chọn Có nếu trang web đáp ứng được các yêu cầu hoặc Không nếu không thể đáp ứng.",
+    type: "yes_no",
+    statements: [
+      {
+        text: "Trang web có lỗi sai chính tả",
+        correct: "False",
+      },
+      {
+        text: "Nội dung trang web được viết một cách khách quan",
+        correct: "True",
+      },
+      {
+        text: "Trang web bao gồm một danh sách các tài liệu tham khảo",
+        correct: "True",
+      },
+    ],
+  },
+  {
+    id: "lv1-ot2-29",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 29,
+    text: "Bạn đang đưa ra đề xuất, sửa chữa và nhận xét về bài nghiên cứu của một bạn học trong lớp. Bạn đang thực hiện quy trình nào?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Đồng tác giả",
+      },
+      {
+        key: "B",
+        text: "Bình duyệt",
+      },
+      {
+        key: "C",
+        text: "Xác minh dữ kiện",
+      },
+      {
+        key: "D",
+        text: "Quy kết",
+      },
+    ],
+    correctKeys: ["B"],
+  },
+  {
+    id: "lv1-ot2-30",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 30,
+    text: "Bạn cần tạo một bản sao chính xác của hệ điều hành Windows trên máy tính để đảm bảo rằng bạn có thể khôi phục máy tính, ứng dụng và tập tin về trạng thái hiện tại trong trường hợp hệ thống gặp sự cố nghiêm trọng. Bạn nên làm gì?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Thiết lập trình sao lưu của Windows (Windows Backup)",
+      },
+      {
+        key: "B",
+        text: "Tạo một đĩa sửa hệ thống",
+      },
+      {
+        key: "C",
+        text: "Bật lịch sử tập tin",
+      },
+      {
+        key: "D",
+        text: "Tạo hình ảnh hệ thống",
+      },
+    ],
+    correctKeys: ["A"],
+  },
+  {
+    id: "lv1-ot2-31",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 31,
+    text: "Với mỗi câu phát biểu về quy tắc tạo bài trình chiếu cơ bản, hãy chọn Đúng hoặc Sai.",
+    type: "yes_no",
+    statements: [
+      {
+        text: "Bạn nên giảm thiểu nội dung văn bản trong bài trình chiếu",
+        correct: "True",
+      },
+      {
+        text: "Bạn chỉ có thể tạo bài trình chiếu Microsoft PowerPoint trên máy tính chạy Windows",
+        correct: "False",
+      },
+      {
+        text: "Bạn có thể truy cập các bài thuyết trình Apple Keynote từ máy tính chạy Windows qua iCloud",
+        correct: "True",
+      },
+      {
+        text: "Bạn nên để màu văn bản và màu nền của bài trình chiếu không quá tương phản",
+        correct: "False",
+      },
+    ],
+  },
+  {
+    id: "lv1-ot2-32",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 32,
+    text: "Hãy chọn cụm từ thích hợp vào khẳng định sau: Chính tả và ngữ pháp (Spelling and Grammar) kém khiến một người trông giống ________________________ và những người khác sẽ không coi trọng chúng.",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Am hiểu công nghệ (Tech savvy)",
+      },
+      {
+        key: "B",
+        text: "Chịu trách nhiệm",
+      },
+      {
+        key: "C",
+        text: "Chuyên nghiệp",
+      },
+      {
+        key: "D",
+        text: "Không chuyên nghiệp",
+      },
+    ],
+    correctKeys: ["D"],
+  },
+  {
+    id: "lv1-ot2-33",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 33,
+    text: "Khi tham khảo một cuốn sách, những yếu tố nào phải có trong phần trích dẫn (Citation)? (Chọn 3)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Ngày bản quyền (Copyright date)",
+      },
+      {
+        key: "B",
+        text: "Tên sách (Book title)",
+      },
+      {
+        key: "C",
+        text: "Tên tác giả (Author's name)",
+      },
+      {
+        key: "D",
+        text: "Ngày xuất bản (Publication date)",
+      },
+      {
+        key: "E",
+        text: "Tên nhà xuất bản (Publisher's name)",
+      },
+      {
+        key: "F",
+        text: "Số chương (Chapter number)",
+      },
+    ],
+    correctKeys: ["B", "C", "D"],
+    
+  },
+  {
+    id: "lv1-ot2-34",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 34,
+    text: "Bạn tên là Sam Grey. Bạn đang cập nhật dự án của trường và muốn lưu một phiên bản mới. Bạn cần đặt tên cho tập tin sao cho trong đó phải bao gồm tên tác giả, dễ đọc và hỗ trợ khả năng sử dụng trên web cũng như khả năng tương thích với nhiều nền tảng. Bạn nên sử dụng tên tập tin như thế nào?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Samgreyprojectoneversionthree15/04/2025.docx",
+      },
+      {
+        key: "B",
+        text: "SamGreyv3.docx",
+      },
+      {
+        key: "C",
+        text: "SamGreyProject1v3.docx",
+      },
+      {
+        key: "D",
+        text: "Sam Grey Project1-version3.docx",
+      },
+    ],
+    correctKeys: ["C"],
+  },
+  {
+    id: "lv1-ot2-35",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 35,
+    text: "Giáo viên hướng dẫn bạn chỉnh sửa bài nghiên cứu của một người bạn cùng lớp. Đâu là hai công cụ bạn nên sử dụng? (Chọn 2)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Trình soát chính tả",
+      },
+      {
+        key: "B",
+        text: "Nhận xét",
+      },
+      {
+        key: "C",
+        text: "Chế độ thiết kế",
+      },
+      {
+        key: "D",
+        text: "Ghi chú nối kết",
+      },
+    ],
+    correctKeys: ["A", "B"],
+    
+  },
+  {
+    id: "lv1-ot2-36",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 36,
+    text: "Bạn nhập một công thức nấu ăn vào tài liệu Microsoft Word dưới dạng một đoạn văn và chuyển đồi đoạn văn đó thành một danh sách đánh số như trong hình 1. Bạn cần tách đoạn văn thành từng mục danh sách đánh số như trong hình 2. Bạn sử dụng phím hoặc tổ hợp phím nào ở cuối mỗi câu?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Tab",
+      },
+      {
+        key: "B",
+        text: "Shift + Enter",
+      },
+      {
+        key: "C",
+        text: "Shift + Tab",
+      },
+      {
+        key: "D",
+        text: "Enter",
+      },
+    ],
+    correctKeys: ["D"],
+  },
+  {
+    id: "lv1-ot2-37",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 37,
+    text: "Máy chủ lưu trữ đám mây sử dụng những loại phòng thủ nào để bảo vệ dữ liệu của người dùng? (Chọn 2)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Firewalls",
+      },
+      {
+        key: "B",
+        text: "Safety Nets",
+      },
+      {
+        key: "C",
+        text: "Encryption",
+      },
+      {
+        key: "D",
+        text: "Malware",
+      },
+    ],
+    correctKeys: ["A", "C"],
+    
+  },
+  {
+    id: "lv1-ot2-38",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 38,
+    text: "Bạn cần xác định quy ước đặt tên tập tin nhất quán cho hệ thống quản lý tập tin dùng chung để có thể hỗ trợ nhiều ứng dụng phần mềm và hệ điều hành. Với mỗi câu phát biểu, hãy chọn Có nếu quy ước đặt tên giúp thực hiện được mục tiêu này hoặc Không nếu không thể.",
+    type: "yes_no",
+    statements: [
+      {
+        text: "Chèn khoảng cách giữa các từ",
+        correct: "False",
+      },
+      {
+        text: "Sử dụng tên tập tin dài, chỉ tiết",
+        correct: "False",
+      },
+      {
+        text: "Đối với chuỗi tên tập tin bao gồm ngày tháng, hãy sử dụng định dạng MMDDYY",
+        correct: "True",
+      },
+      {
+        text: "KHÔNG sử dụng ký tự đặc biệt (~!@#$%^&*(); < > ? , []{} và |",
+        correct: "True",
+      },
+    ],
+  },
+  {
+    id: "lv1-ot2-39",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 39,
+    text: "Những khía cạnh quan trọng của nghi thức giao tiếp bằng văn bản là gì? (Chọn 3)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Từ viết tắt (Abbreviations)",
+      },
+      {
+        key: "B",
+        text: "Sự tôn trọng (Respect)",
+      },
+      {
+        key: "C",
+        text: "Đúng giờ (Timelines)",
+      },
+      {
+        key: "D",
+        text: "Ngữ pháp (Grammar)",
+      },
+      {
+        key: "E",
+        text: "Chính tả (Spelling)",
+      },
+    ],
+    correctKeys: ["B", "D", "E"],
+   
+  },
+  {
+    id: "lv1-ot2-40",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 40,
+    text: "Tham khảo hình ảnh bên dưới. Người dùng có thể tìm thấy các tùy chọn để kết hợp các tài liệu trong nhóm nào dưới tab Review?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Proofing",
+      },
+      {
+        key: "B",
+        text: "Changes",
+      },
+      {
+        key: "C",
+        text: "Compare",
+      },
+      {
+        key: "D",
+        text: "Tracking",
+      },
+    ],
+    correctKeys: ["C"],
+  },
+  {
+    id: "lv1-ot2-41",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 41,
+    text: "Lựa chọn từng thuật ngữ cộng tác với mô tả tương ứng.",
+    type: "yes_no",
+    statements: [
+      {
+        text: "Tạo năm trang trình chiếu cho bài trình chiếu PowerPoint nhóm được lưu trên OneDrive",
+        correct: "False",
+      },
+      {
+        text: "Chụp ảnh và chèn ảnh đó vào bài trình chiếu Google trang trình chiếu do bạn cùng lớp của bạn tạo nên",
+        correct: "False",
+      },
+      {
+        text: "Soát lỗi tài liệu Google cho một người bạn cùng lớp",
+        correct: "True",
+      },
+      {
+        text: "Sử dụng công cụ kiểm tra chính tả & ngữ pháp để sửa lỗi trong tài liệu Word Online của bạn cùng lớp",
+        correct: "True",
+      },
+    ],
+  },
+  {
+    id: "lv1-ot2-42",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 42,
+    text: "Chọn từng hình ảnh thích hợp với hướng trang tương ứng.",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Hình 2 - Khổ dọc (Portrait)",
+      },
+      {
+        key: "B",
+        text: "Hình 1 -Khổ dọc (Portrait)",
+      },
+      {
+        key: "C",
+        text: "Hình 2 - Khổ ngang (Landscape)",
+      },
+      {
+        key: "D",
+        text: "Hình 1 - Khổ ngang (Landscape)",
+      },
+    ],
+    correctKeys: ["A", "D"],
+  },
+  {
+    id: "lv1-ot2-43",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 43,
+    text: "Với mỗi câu phát biểu về cách thức in tài liệu, hãy chọn Đúng hoặc Sai.",
+    type: "yes_no",
+    statements: [
+      {
+        text: "In hai mặt (Duplex) cho phép in nội dung tập tin trên cả hai mặt giấy",
+        correct: "True",
+      },
+      {
+        text: "Bạn có thể thay đồi lẽ của tài liệu trong phần cài đặt in",
+        correct: "True",
+      },
+      {
+        text: "Bạn chỉ có thể thay đổi khổ giấy từ tùy chọn thiết lập trang",
+        correct: "False",
+      },
+      {
+        text: "Để duy trì định dạng của tập tin khi phân phối tài liệu theo hình thức điện tử, hãy in tài liệu thành tập tin PDF",
+        correct: "True",
+      },
+    ],
+  },
+  {
+    id: "lv1-ot2-44",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 44,
+    text: "Bạn chụp ảnh kỷ yếu cho trường bằng điện thoại. Bạn chụp hơn 50 bức ảnh mỗi ngày. Bạn cần sử dụng phương pháp nhanh nhất và đáng tin cậy nhất để sao lưu các bức ảnh và xóa chúng khỏi điện thoại mỗi ngày. Bạn nên làm gì?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Tải ảnh xuống ổ flash USB",
+      },
+      {
+        key: "B",
+        text: "Gửi ảnh qua email cho giáo viên của bạn",
+      },
+      {
+        key: "C",
+        text: "Chỉ xóa những ảnh bạn không muốn sử dụng",
+      },
+      {
+        key: "D",
+        text: "Đồng bộ hóa điện thoại của bạn với dịch vụ lưu trữ đám mây",
+      },
+    ],
+    correctKeys: ["D"],
+  },
+  {
+    id: "lv1-ot2-45",
+    levelId: "level-1",
+    subsetId: "OT2",
+    questionNumber: 45,
+    text: "Hãy chọn cụm từ thích hợp vào khẳng định sau: Một bản sao carbon (CC) được gửi _____________________ có nghĩa là người nhận hoặc những người nhận ở dòng To sẽ thấy rằng một bản sao đã được gửi và nó đã được gửi cho ai.",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Cố ý (Intentionally)",
+      },
+      {
+        key: "B",
+        text: "Tĩnh lặng (Statically)",
+      },
+      {
+        key: "C",
+        text: "Riêng tư (Privately)",
+      },
+      {
+        key: "D",
+        text: "Công khai (Publicly)",
+      },
+    ],
+    correctKeys: ["D"],
+  },
+  {
+    id: "lv1-ot3-01",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 1,
+    text: "Ngôn ngữ hòa nhập tránh   _______________________  đối với mọi người bất kể chủng tộc hay giới tính của họ.",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Lòng biết ơn (Gratitude)",
+      },
+      {
+        key: "B",
+        text: "Thiên kiến (Bias)",
+      },
+      {
+        key: "C",
+        text: "Lòng hiếu khách (Hospitality)",
+      },
+      {
+        key: "D",
+        text: "Sự tôn trọng (Respect)",
+      },
+    ],
+    correctKeys: ["B"],
+  },
+  {
+    id: "lv1-ot3-02",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 2,
+    text: "Ba điều nào thể hiện giao tiếp phi ngôn ngữ? (Chọn 3)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Nét mặt",
+      },
+      {
+        key: "B",
+        text: "Màu tóc",
+      },
+      {
+        key: "C",
+        text: "Giao tiếp bằng mắt",
+      },
+      {
+        key: "D",
+        text: "Ngôn ngữ cơ thể",
+      },
+      {
+        key: "E",
+        text: "Email",
+      },
+    ],
+    correctKeys: ["A", "C", "D"],
+    
+  },
+  {
+    id: "lv1-ot3-03",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 3,
+    text: "Người dùng được yêu cầu đọc gì khi đăng ký tài khoản trực tuyến? (Chọn 3)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Người dùng đánh giá",
+      },
+      {
+        key: "B",
+        text: "Thoả thuận người dùng",
+      },
+      {
+        key: "C",
+        text: "Điều khoản sử dụng",
+      },
+      {
+        key: "D",
+        text: "Các nguyên tắc khác",
+      },
+      {
+        key: "E",
+        text: "Phương châm nền tảng",
+      },
+    ],
+    correctKeys: ["B", "C", "D"],
+   
+  },
+  {
+    id: "lv1-ot3-04",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 4,
+    text: "Đối với mỗi đăng kí tài khoản trực tuyến (Acceptable Use Policies) để đăng trên mạng xã hội, hãy chọn Đúng nếu tuyên bố đó đúng, chọn Sai nếu tuyên bố đó sai.",
+    type: "yes_no",
+    statements: [
+      {
+        text: "Các chính sách sử dụng được chấp nhận trong trường học nói chung sẽ bao gồm các quy tắc về đe doạ trực tuyến",
+        correct: "True",
+      },
+      {
+        text: "Chính sách sử dụng được chấp nhận (Là các quy tắc về những gì bạn có thể và không thể thực hiện trực tuyến bằng máy tính của trường học hoặc cơ quan)",
+        correct: "True",
+      },
+      {
+        text: "Chính sách sử dụng được chấp nhận không thể hạn chế bạn đăng bất kỳ thứ gì bạn muốn vì bạn có quyền sửa đổi một lần",
+        correct: "False",
+      },
+    ],
+  },
+  {
+    id: "lv1-ot3-05",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 5,
+    text: "Bạn sử dụng mạng xã hội để giữ liên lạc với bạn bè và gia đình. Bạn đang có kế hoạch đi du lịch vào tháng tới. Đâu là cách an toàn nhất để bạn tự bảo vệ mình khỏi những tên tội phạm trực tuyến khi đăng thông tin về các hoạt động trong kỳ nghỉ của mình?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Đợi đến khi về nhà mới đăng ảnh về chuyến đi",
+      },
+      {
+        key: "B",
+        text: "Đăng kế hoạch nghỉ trước khi đi để bạn bè của bạn biết rằng bạn không có ở nhà",
+      },
+      {
+        key: "C",
+        text: "Check in trực tuyến tại mỗi điểm đến để gia đình bạn biết được vị trí của bạn",
+      },
+      {
+        key: "D",
+        text: "Đặt bản đồ vị trí trên mạng xã hội 'Công khai'",
+      },
+    ],
+    correctKeys: ["A"],
+  },
+  {
+    id: "lv1-ot3-06",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 6,
+    text: "Giao tiếp không đồng bộ có thể được sử dụng cho những mục đích nào? (Chọn 2)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Tin nhắn tức thời",
+      },
+      {
+        key: "B",
+        text: "Trò chuyện Video",
+      },
+      {
+        key: "C",
+        text: "Chia sẻ màn hình",
+      },
+      {
+        key: "D",
+        text: "Chỉnh sửa tài liệu",
+      },
+      {
+        key: "E",
+        text: "Đánh giá ngang hang (Peer reviewing)",
+      },
+    ],
+    correctKeys: ["D", "E"],
+    
+  },
+  {
+    id: "lv1-ot3-07",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 7,
+    text: "Khi quyết định giữa việc gửi thông tin qua email hoặc tổ chức một hội nghị, hai câu hỏi cần xem xét là gì? (Chọn 2)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Khán giả sẽ ở đâu?",
+      },
+      {
+        key: "B",
+        text: "Đối tượng bao nhiêu tuổi?",
+      },
+      {
+        key: "C",
+        text: "Sẽ có câu hỏi về thông tin được trình bày?",
+      },
+      {
+        key: "D",
+        text: "Có cần sự hợp tác không?",
+      },
+    ],
+    correctKeys: ["C", "D"],
+    
+  },
+  {
+    id: "lv1-ot3-08",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 8,
+    text: "Để sử dụng ứng dụng, mạng hoặc dịch vụ, bạn có thể phải đồng ý tuân thủ chính sách sử dụng được chấp nhận. Chính sách sử dụng được chấp nhận đề cập đến hai loại thông tin nào? (Chọn 2)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Hậu quả của hành vi vi phạm chính sách",
+      },
+      {
+        key: "B",
+        text: "Cách bảo vệ bản quyền dữ liệu mà bạn gửi tới ứng dụng, mạng hoặc dịch vụ",
+      },
+      {
+        key: "C",
+        text: "Hành vi sử dụng ứng dụng, mạng hoặc dịch vụ không được chấp nhận",
+      },
+      {
+        key: "D",
+        text: "Cách kiếm tiền từ thông tin thông qua ứng dụng, mạng hoặc dịch vụ",
+      },
+    ],
+    correctKeys: ["A", "C"],
+   
+  },
+  {
+    id: "lv1-ot3-09",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 9,
+    text: "Đối với mỗi tuyên bố liên quan đến chính sách sử dụng được chấp nhận (Acceptable Use Policies) để đăng trên mạng xã hội, hãy chọn Đúng nếu tuyên bố đó đúng và Sai nếu tuyên bố đó sai.",
+    type: "yes_no",
+    statements: [
+      {
+        text: "Các chính sách sử dụng được chấp nhận cho các trường học và doanh nghiệp thường bao gồm các quy tắc về việc sử dụng các trang mạng xã hội",
+        correct: "True",
+      },
+      {
+        text: "Vi phạm chính sách sử dụng được chấp nhận (Acceptable Use Policy) thường dẫn đến việc tài khoản của bạn bị xóa như một hình phạt",
+        correct: "True",
+      },
+      {
+        text: "Chính sách sử dụng được chấp nhận dành cho người lớn giống với chính sách dành cho trẻ vị thành niên",
+        correct: "False",
+      },
+    ],
+  },
+  {
+    id: "lv1-ot3-10",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 10,
+    text: "Đâu là ba yếu tố quan trọng của chính sách sử dụng được chấp nhận? (Chọn 3)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Danh mục tham khảo",
+      },
+      {
+        key: "B",
+        text: "Tuyên bố về bản quyền và nhãn hiệu",
+      },
+      {
+        key: "C",
+        text: "Phần định nghĩa",
+      },
+      {
+        key: "D",
+        text: "Phần vi phạm trừng phạt",
+      },
+      {
+        key: "E",
+        text: "Tuyên bố chính sách",
+      },
+      {
+        key: "F",
+        text: "Thỏa thuận cấp phép",
+      },
+    ],
+    correctKeys: ["D", "E", "F"],
+   
+  },
+  {
+    id: "lv1-ot3-11",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 11,
+    text: "Tham khảo hình ảnh bên dưới. Nếu người dùng chọn tùy chọn Reply, ai sẽ nhận được phản hồi?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Ben Walt and Sally Smith",
+      },
+      {
+        key: "B",
+        text: "Sally Smith",
+      },
+      {
+        key: "C",
+        text: "UAC Admin",
+      },
+      {
+        key: "D",
+        text: "Ben Walt",
+      },
+    ],
+    correctKeys: ["D"],
+  },
+  {
+    id: "lv1-ot3-12",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 12,
+    text: "Bạn cần hợp tác với các bạn học và chia sẻ nhật ký lớp học. Nền tảng kỹ thuật số nào thích hợp với hoạt động trong lớp học này?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Google tài liệu",
+      },
+      {
+        key: "B",
+        text: "Twitter",
+      },
+      {
+        key: "C",
+        text: "Instagram",
+      },
+      {
+        key: "D",
+        text: "Facebook",
+      },
+    ],
+    correctKeys: ["A"],
+  },
+  {
+    id: "lv1-ot3-13",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 13,
+    text: "Mục đích của các chính sách sử dụng được chấp nhận (Acceptable Use Policies) là gì?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Để xua đuổi những kẻ săn mồi trực tuyến",
+      },
+      {
+        key: "B",
+        text: "Để bảo vệ các doanh nghiệp hoặc tổ chức khỏi việc lạm dụng mạng",
+      },
+      {
+        key: "C",
+        text: "Để ngăn chặn hành vi trộm cắp danh tính",
+      },
+      {
+        key: "D",
+        text: "Để giúp người dùng hiểu các nguyên tắc về tài khoản mạng xã hội",
+      },
+    ],
+    correctKeys: ["B"],
+  },
+  {
+    id: "lv1-ot3-14",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 14,
+    text: "Khi bắt đầu năm học, giáo viên khoa học sẽ gửi một email đến tất cả các học sinh trong lớp của bạn. Trong thư có đính kèm một mẫu giấy phép dưới dạng tập tin PDF. Bạn không có quyền truy cập vào máy in và phải gửi biểu mẫu cho cha mẹ của bạn để in. Trong email của giáo viên, bạn nên sử dụng tùy chọn nào dưới đây để gửi biểu mẫu cho phụ huynh của mình?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Follow Up",
+      },
+      {
+        key: "B",
+        text: "Reply All",
+      },
+      {
+        key: "C",
+        text: "Reply",
+      },
+      {
+        key: "D",
+        text: "Forward",
+      },
+    ],
+    correctKeys: ["D"],
+  },
+  {
+    id: "lv1-ot3-15",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 15,
+    text: "Bạn cần xác định đúng trường địa chỉ email để sử dụng cho các mục đích cụ thể. Ghép từng trường địa chỉ với mục đích tương ứng.",
+    type: "matching",
+    pairs: [
+      {
+        left: "",
+        right: "",
+      },
+      {
+        left: "",
+        right: "",
+      },
+      {
+        left: "",
+        right: "",
+      },
+      {
+        left: "",
+        right: "",
+      },
+      {
+        left: "",
+        right: "",
+      },
+    ],
+  },
+  {
+    id: "lv1-ot3-16",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 16,
+    text: "Cách nào hiệu quả nhất để hỏi đồng nghiệp từ xa một câu hỏi đơn giản với mong muốn họ sẽ trả lời nhanh chóng?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Tin nhắn tức thời (Instant Messaging)",
+      },
+      {
+        key: "B",
+        text: "Mặt đối mặt (In-person)",
+      },
+      {
+        key: "C",
+        text: "Bản ghi nhớ",
+      },
+      {
+        key: "D",
+        text: "E-mail",
+      },
+    ],
+    correctKeys: ["A"],
+  },
+  {
+    id: "lv1-ot3-17",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 17,
+    text: "Đâu là hai phát biểu đúng nhất về hệ điều hành Android?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Android là hệ điều hành mã nguồn mở",
+      },
+      {
+        key: "B",
+        text: "Android là hệ điều hành dựa trên nền tảng Linux",
+      },
+      {
+        key: "C",
+        text: "Android là hệ điều hành của Microsoft",
+      },
+      {
+        key: "D",
+        text: "Android là hệ điều hành của máy tính",
+      },
+    ],
+    correctKeys: ["A", "B"],
+  },
+  {
+    id: "lv1-ot3-18",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 18,
+    text: "Đạo đức máy tính là gì?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Âm báo do chủ tài khoản được ủy quyền đặt trong một trang web",
+      },
+      {
+        key: "B",
+        text: "Tập hợp các nguyên tắc giúp người dùng xác định đúng sai trong sử dụng công nghệ",
+      },
+      {
+        key: "C",
+        text: "Cookie lưu trữ dữ liệu duyệt web",
+      },
+      {
+        key: "D",
+        text: "Bộ quy tắc ở nơi làm việc hoặc cơ quan khác mà người dùng phải tuân thủ",
+      },
+    ],
+    correctKeys: ["B"],
+  },
+  {
+    id: "lv1-ot3-19",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 19,
+    text: "Câu nào thể hiện ngôn ngữ bao hàm?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Tôi muốn cảm ơn các sĩ quan cảnh sát cũ đã giữ cho thành phố của chúng ta an toàn.",
+      },
+      {
+        key: "B",
+        text: "Tôi muốn cảm ơn các nữ cảnh sát đã giữ cho thành phố của chúng ta an toàn.",
+      },
+      {
+        key: "C",
+        text: "Tôi muốn cảm ơn các sĩ quan cảnh sát đã giữ cho thành phố của chúng ta an toàn",
+      },
+      {
+        key: "D",
+        text: "Tôi muốn cảm ơn các cảnh sát đã giữ cho thành phố của chúng ta an toàn",
+      },
+    ],
+    correctKeys: ["D"],
+  },
+  {
+    id: "lv1-ot3-20",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 20,
+    text: "Bạn đang cộng tác với các học sinh khác trong một dự án khoa học. Nhóm của bạn sẽ gặp nhau để thảo luận về dự án thông qua ứng dụng họp video của nhà trường. Bạn sẽ đóng vai trò là người chủ trì. Bạn cần đảm bảo rằng mọi học sinh đều được thảo luận về dự án mà không bị các học sinh khác làm gián đoạn. Mỗi học sinh phải làm gì để đạt được mục tiêu này?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Tắt tiếng micro của người tham gia cho đến khi bạn gọi họ",
+      },
+      {
+        key: "B",
+        text: "Không rời khỏi camera trong suốt hội thảo",
+      },
+      {
+        key: "C",
+        text: "Đăng nhập sớm để xác minh rằng công nghệ âm thanh và video đều hoạt động",
+      },
+      {
+        key: "D",
+        text: "Giới thiệu tên bản thân khi phát biểu",
+      },
+    ],
+    correctKeys: ["A"],
+  },
+  {
+    id: "lv1-ot3-21",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 21,
+    text: "Trong trường hợp nào thì chia sẻ màn hình là tuỳ chọn tốt nhất giải quyết sự cố?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Một cặp vợ chồng muốn nói chuyện trong giời gian rảnh rỗi của họ",
+      },
+      {
+        key: "B",
+        text: "Sếp cần thông báo cho nhân viên của họ về cuộc họp",
+      },
+      {
+        key: "C",
+        text: "Một người mẹ đang tranh cãi với con gái của mình",
+      },
+      {
+        key: "D",
+        text: "Một kỹ thuật viên CNTT cần thực hiện các bản sửa lỗi cơ bản cho máy tính của nhân viên từ xa",
+      },
+    ],
+    correctKeys: ["D"],
+  },
+  {
+    id: "lv1-ot3-22",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 22,
+    text: "Ba lợi ích khi cộng tác kỹ thuật số là gì? (chọn 3)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Tăng năng suất của nhân viên",
+      },
+      {
+        key: "B",
+        text: "Các công ty ít có khả năng duy trì kết nối",
+      },
+      {
+        key: "C",
+        text: "Các công ty có nhiều địa điểm có thể triệu tập thường xuyên hơn",
+      },
+      {
+        key: "D",
+        text: "Giao tiếp kỹ thuật số tiết kiệm thời gian",
+      },
+      {
+        key: "E",
+        text: "Giao tiếp trực tiếp tăng lên",
+      },
+    ],
+    correctKeys: ["A", "C", "D"],
+  },
+  {
+    id: "lv1-ot3-23",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 23,
+    text: "Khi giao tiếp trực tuyến trở nên tiêu cực, cách xử lý chuyên nghiệp nhất là gì?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Yêu cầu những người khác tham gia và đứng về phía mình",
+      },
+      {
+        key: "B",
+        text: "Đảm bảo rằng các từ cuối cùng là phủ định",
+      },
+      {
+        key: "C",
+        text: "Tạm dừng các cuộc tranh luận và quay lại cuộc tranh luận sau",
+      },
+      {
+        key: "D",
+        text: "Xoá chính mình khỏi cuộc trò chuyện",
+      },
+    ],
+    correctKeys: ["D"],
+  },
+  {
+    id: "lv1-ot3-24",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 24,
+    text: "Với mỗi câu phát biểu liên quan đến tương tác kỹ thuật số, hãy chọn Đúng hoặc Sai cho mỗi phát biểu sau:",
+    type: "yes_no",
+    statements: [
+      {
+        text: "Gửi email bằng tất cả các chữ cái viết hoa",
+        correct: "False",
+      },
+      {
+        text: "Quảng cáo thứ gì đó bạn bản trong một nhóm Facebook không liên quan",
+        correct: "False",
+      },
+      {
+        text: "Sử dụng dẫu câu và định dạng thích hợp",
+        correct: "True",
+      },
+      {
+        text: "Tôn trọng bằng cách diễn đạt các bài đăng và nhận xét theo cách không đối đâu",
+        correct: "True",
+      },
+    ],
+  },
+  {
+    id: "lv1-ot3-25",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 25,
+    text: "Với mỗi câu phát biểu, chọn Đúng hoặc Sai.",
+    type: "yes_no",
+    statements: [
+      {
+        text: "Những người được thừa hưởng chung một nền di sản thường có cùng niềm tin và mỗi ưu tiên",
+        correct: "True",
+      },
+      {
+        text: "Ngôn ngữ trung lập thể hiện những định kiến rập khuôn, kỳ vọng và cả những giới hạn",
+        correct: "False",
+      },
+      {
+        text: "Văn hóa là một khái niệm không ngừng thay đổi và có thể không phản ánh hoàn toàn bản sắc của một cá nhân nào đó",
+        correct: "True",
+      },
+    ],
+  },
+  {
+    id: "lv1-ot3-26",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 26,
+    text: "Đâu là hai tình huống giao tiếp bằng phương tiện điện tử thích hợp để sử dụng biểu tượng cảm xúc hoặc từ viết tắt? (Chọn 2)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Khi trả lời bài đăng bình thường trên mạng xã hội",
+      },
+      {
+        key: "B",
+        text: "Khi nhắn tin cho bạn bè hỏi họ đang làm gì",
+      },
+      {
+        key: "C",
+        text: "Khi viết email trang trọng cho giáo viên hoặc cán bộ quản lý",
+      },
+      {
+        key: "D",
+        text: "Khi gửi đơn khiếu nại đến một doanh nghiệp hoặc biểu mẫu trực tuyến",
+      },
+    ],
+    correctKeys: ["A", "B"],
+  },
+  {
+    id: "lv1-ot3-27",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 27,
+    text: "Hai bạn cùng làm báo cáo khoa học. Bạn tạo tài liệu dùng chung và lưu trữ trên đám mây. Hai bạn dự định làm vào những thời điểm khác nhau. Đây là hình thức cộng tác gì?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Ngoại tuyến",
+      },
+      {
+        key: "B",
+        text: "Không đồng bộ",
+      },
+      {
+        key: "C",
+        text: "Đồng thời",
+      },
+      {
+        key: "D",
+        text: "Đồng bộ",
+      },
+    ],
+    correctKeys: ["B"],
+  },
+  {
+    id: "lv1-ot3-28",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 28,
+    text: "Trong cuộc họp, hành động nào khiến người khác nghĩ rằng một người đang không quan tâm hoặc bị phân tâm? (Chọn 3)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Hạ cái nhìn một người (giảm giao tiếp ánh mắt)",
+      },
+      {
+        key: "B",
+        text: "Lo lắng",
+      },
+      {
+        key: "C",
+        text: "Loay hoay loanh quanh trong một chiếc ghế",
+      },
+      {
+        key: "D",
+        text: "Mỉm cười và gật đầu",
+      },
+      {
+        key: "E",
+        text: "Ngồi thẳng lưng, đối mặt với người thuyết trình",
+      },
+    ],
+    correctKeys: ["A", "B", "C"],
+  },
+  {
+    id: "lv1-ot3-29",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 29,
+    text: "Ba cách để chuẩn bị cho cuộc họp kỹ thuật số chuyên nghiệp? (Chọn 3)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Gửi khiếu nại đến người thuyết trình",
+      },
+      {
+        key: "B",
+        text: "Ăn mặc chuyên nghiệp",
+      },
+      {
+        key: "C",
+        text: "Chuẩn bị thiết bị",
+      },
+      {
+        key: "D",
+        text: "Đến đúng giờ",
+      },
+      {
+        key: "E",
+        text: "Đăng xuất khỏi tài khoản của nền tảng cuộc họp",
+      },
+    ],
+    correctKeys: ["B", "C", "D"],
+   
+  },
+  {
+    id: "lv1-ot3-30",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 30,
+    text: "Phần mềm gián điệp là gì?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Nội dung lừa đảo khiến bạn tiết lộ mã tài khoản và mật khẩu, núp dưới vẻ ngoài hợp pháp",
+      },
+      {
+        key: "B",
+        text: "Một chương trình có thể tự sao chép và lây lan sang các máy tính khác",
+      },
+      {
+        key: "C",
+        text: "Một chương trình được thiết kế với vẻ ngoài vô hại nhưng lại cho phép truy cập trái phép vào máy tính của bạn",
+      },
+      {
+        key: "D",
+        text: "Một chương trình tự cài đặt trên hệ thống và âm thầm theo dõi thói quen trực tuyến của bạn với mục đích tự động hiển thị/tải xuống quảng cáo",
+      },
+    ],
+    correctKeys: ["D"],
+  },
+  {
+    id: "lv1-ot3-31",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 31,
+    text: "Rủi ro sức khoẻ về tinh thần lớn nhất ở trẻ em khi sử dụng Internet?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Bắt nạt trên mạng (Cyberbullying)",
+      },
+      {
+        key: "B",
+        text: "Mệt mỏi",
+      },
+      {
+        key: "C",
+        text: "Chấn thương do nhắn tin khi đi bộ",
+      },
+      {
+        key: "D",
+        text: "Nghiện chơi game",
+      },
+    ],
+    correctKeys: ["A"],
+  },
+  {
+    id: "lv1-ot3-32",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 32,
+    text: "Một khi phần mềm độc hại được cài đặt qua Trojan, nó có thể làm gì? (chọn 3)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Mở các trang web không mong muốn",
+      },
+      {
+        key: "B",
+        text: "Xem người dùng qua webcam của họ",
+      },
+      {
+        key: "C",
+        text: "Xâm nhập vào máy tính khác",
+      },
+      {
+        key: "D",
+        text: "Xoá các tập tin",
+      },
+      {
+        key: "E",
+        text: "Bảo vệ máy tính khỏi các loại virus",
+      },
+    ],
+    correctKeys: ["B", "C", "D"],
+  },
+  {
+    id: "lv1-ot3-33",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 33,
+    text: "Bạn nên sử dụng 2 phương pháp nào để ngăn ngừa các chấn thương liên quan đến máy tính (chọn 2)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Điều chỉnh ghế sao cho bàn chân bạn đặt thẳng trên sàn",
+      },
+      {
+        key: "B",
+        text: "Nâng cấp card đồ hoạ để giảm tình trạng mỏi mắt",
+      },
+      {
+        key: "C",
+        text: "Sử dụng bàn phím công thái học để cổ tay được đặt ở vị trí tự nhiên",
+      },
+      {
+        key: "D",
+        text: "Sử dụng bàn phím silicon để giảm thiểu tác động khi nhấn phím",
+      },
+    ],
+    correctKeys: ["A", "C"],
+  },
+  {
+    id: "lv1-ot3-34",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 34,
+    text: "Những cách nào để thiết lập máy tính tránh chấn thương (Chọn 4)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Đặt cánh tay góc 90 độ và đảm bảo cổ tay thẳng ghi gõ",
+      },
+      {
+        key: "B",
+        text: "Bắt chéo chân khi gõ",
+      },
+      {
+        key: "C",
+        text: "Tựa lưng vào ghế khi làm việc",
+      },
+      {
+        key: "D",
+        text: "Đặt ghế sao cho chân đặt thoải mái trên sàn",
+      },
+      {
+        key: "E",
+        text: "Đặt màn hình cách tầm mắt khoảng một cánh tay",
+      },
+      {
+        key: "F",
+        text: "Nghỉ giải lao khi ngồi trong thời gian dài",
+      },
+    ],
+    correctKeys: ["A", "D", "E", "F"],
+  },
+  {
+    id: "lv1-ot3-35",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 35,
+    text: "Hai hoạt động trực tuyến phổ biến nào cho biết khả năng bảo mật cá nhân của bạn bằng cách theo dõi điều hướng? (Chọn 2)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Chơi trò chơi trực tuyến",
+      },
+      {
+        key: "B",
+        text: "Đăng lên blog",
+      },
+      {
+        key: "C",
+        text: "Tải lên ảnh kỳ nghỉ hè năm ngoái",
+      },
+      {
+        key: "D",
+        text: "'Kiểm tra' vị trí thực của bạn trên các trang mạng xã hội",
+      },
+      {
+        key: "E",
+        text: "Đăng thông tin vị trí với một bức ảnh tự sướng bạn vừa chụp",
+      },
+    ],
+    correctKeys: ["D", "E"],
+
+  },
+  {
+    id: "lv1-ot3-36",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 36,
+    text: "Bạn cần duy trì bảo mật cho điện thoại. Đâu là ba nguyên tắc cần tuân thủ? (Chọn 3)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Tắt wifi và Bluetooth khi không sử dụng",
+      },
+      {
+        key: "B",
+        text: "Không để thiết bị của bạn ngoài tầm giám sát ở nơi công cộng",
+      },
+      {
+        key: "C",
+        text: "Sử dụng cáp kết nối USB 3.0 trở lên khi kết nối máy tính",
+      },
+      {
+        key: "D",
+        text: "Tránh sử dụng wifi công cộng",
+      },
+      {
+        key: "E",
+        text: "Chỉ cập nhật HĐH khi bạn cần xài tính năng mới",
+      },
+      {
+        key: "F",
+        text: "Luôn sử dụng chống sốc điện khi sạc",
+      },
+    ],
+    correctKeys: ["A", "B", "D"],
+
+  },
+  {
+    id: "lv1-ot3-37",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 37,
+    text: "Bạn nên sử dụng hai phương pháp nào để ngăn ngừa các chấn thương liên quan đến máy tính. (chọn 2)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Sử dụng chuột có công tắc để điều chỉnh DPI khi cần",
+      },
+      {
+        key: "B",
+        text: "Sử dụng bàn phím công thái học để cổ tay được đặt tự nhiên",
+      },
+      {
+        key: "C",
+        text: "Nâng cấp lên card đồ hoạ cao cấp để giảm tình trạng mỏi mắt",
+      },
+      {
+        key: "D",
+        text: "Thường xuyên nghỉ giải lao ngắn bằng cách đi lại xung quanh",
+      },
+    ],
+    correctKeys: ["B", "D"],
+
+  },
+  {
+    id: "lv1-ot3-38",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 38,
+    text: "Người dùng tiết lộ thông tin gì cho người khác khi họ đăng vị trí trực tuyến?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Khi một doanh nghiệp địa phương mở ra",
+      },
+      {
+        key: "B",
+        text: "Họ không có ở nhà",
+      },
+      {
+        key: "C",
+        text: "Nơi mọi người có thể tìm thấy họ",
+      },
+      {
+        key: "D",
+        text: "Nơi mọi người có thể thấy thú cưng của họ",
+      },
+    ],
+    correctKeys: ["B", "C"],
+  },
+  {
+    id: "lv1-ot3-39",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 39,
+    text: "Các bên thứ ba làm gì với thông tin được tìm thấy thông qua phần mềm gián điệp?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Thay đổi chức năng máy tính",
+      },
+      {
+        key: "B",
+        text: "Mở các trang web không mong muốn",
+      },
+      {
+        key: "C",
+        text: "Tải xuống miễn phí",
+      },
+      {
+        key: "D",
+        text: "Bảo vệ thông tin người dùng",
+      },
+      {
+        key: "E",
+        text: "Làm đầy máy tính bằng các quảng cáo bật lên",
+      },
+    ],
+    correctKeys: ["A", "B", "E"],
+  },
+  {
+    id: "lv1-ot3-40",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 40,
+    text: "Bạn nên làm gì để tránh mỏi mắt khi sử dụng màn hình kỹ thuật số? (Chọn 2)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Đặt màn hình cao hơn tầm mắt một chút",
+      },
+      {
+        key: "B",
+        text: "Đảm bảo nguồn sáng không chiếu trực tiếp vào mắt bạn",
+      },
+      {
+        key: "C",
+        text: "Đảm bảo màn hình không quá gần bạn",
+      },
+      {
+        key: "D",
+        text: "Chiếu trực tiếp nguồn sáng chính vào màn hình",
+      },
+    ],
+    correctKeys: ["B", "C"],
+  },
+  {
+    id: "lv1-ot3-41",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 41,
+    text: "Worm máy tính là gì?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Một chương trình có thể tự sao chép và lây lan sang các máy tính khác",
+      },
+      {
+        key: "B",
+        text: "Một chương trình tự cài đặt trên hệ thống và âm thầm theo dõi thói quen sử dụng máy tính của bạn mà bạn không hề biết",
+      },
+      {
+        key: "C",
+        text: "Một chương trình được thiết kế với vẻ ngoài vô hại nhưng lại cho phép truy cập trái phép vào máy tính của bạn",
+      },
+      {
+        key: "D",
+        text: "Nội dung lừa đảo khiến bạn tiết lộ mã tài khoản và mật khẩu, núp dưới vẻ ngoài hợp pháp",
+      },
+    ],
+    correctKeys: ["A"],
+  },
+  {
+    id: "lv1-ot3-42",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 42,
+    text: "Người dùng có thể làm gì để bảo vệ mình khỏi các cuộc tấn công lừa đảo (Phishing)?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Sử dụng cùng một mật khẩu cho tất cả các tài khoản",
+      },
+      {
+        key: "B",
+        text: "Chuyển tiếp tất cả các email không quen thuộc cho một người biết nhiều về công nghệ",
+      },
+      {
+        key: "C",
+        text: "Đăng nhập vào tài khoản trực tiếp từ trang web của nền tảng",
+      },
+      {
+        key: "D",
+        text: "Đăng nhập vào tài khoản bằng liên kết được gửi trong email",
+      },
+    ],
+    correctKeys: ["C"],
+  },
+  {
+    id: "lv1-ot3-43",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 43,
+    text: "Chấn thương căng thẳng lặp đi lặp lại phổ biến nhất do sử dụng máy tính và thiết bị là gì?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Rách dây chằng phụ hướng tâm",
+      },
+      {
+        key: "B",
+        text: "Rách dây chằng chéo trước",
+      },
+      {
+        key: "C",
+        text: "Hội chứng ống cổ tay",
+      },
+      {
+        key: "D",
+        text: "Gãy xương hông",
+      },
+    ],
+    correctKeys: ["C"],
+  },
+  {
+    id: "lv1-ot3-44",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 44,
+    text: "Hai cách mà mọi người có thể vô tình xâm phạm bảo mật trực tuyến của họ là gì? (Chọn 2)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Mã hóa email bằng PII",
+      },
+      {
+        key: "B",
+        text: "Chỉ nhập thông tin vào các trang web an toàn",
+      },
+      {
+        key: "C",
+        text: "Theo dõi những người họ biết",
+      },
+      {
+        key: "D",
+        text: "Sử dụng wifi công cộng để truy cập ngân hàng và các tài khoản cá nhân khác",
+      },
+      {
+        key: "E",
+        text: "Điền và đăng",
+      },
+    ],
+    correctKeys: ["D", "E"],
+  },
+  {
+    id: "lv1-ot3-45",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 45,
+    text: "Bạn nên sử dụng hai phương pháp nào để giảm tình trạng mỏi mắt khi sử dụng màn hình kỹ thuật số? (Chọn 2)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Đều đặn rời mắt khỏi màn hình và tập trung nhìn vào một vật thể ở xa",
+      },
+      {
+        key: "B",
+        text: "Nghiêng màn hình trực tiếp về phía mắt của bạn",
+      },
+      {
+        key: "C",
+        text: "Điều chỉnh độ phân giải màn hình để đặt kích thước văn bản tạo cảm giác thoải mái cho mắt",
+      },
+      {
+        key: "D",
+        text: "Chiếu trực tiếp nguồn sáng chính trong phòng vào màn hình",
+      },
+    ],
+    correctKeys: ["A", "C"],
+  },
+  {
+    id: "lv1-ot3-46",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 46,
+    text: "Hãy chọn cụm từ thích hợp vào khẳng định sau: Theo dõi điều hướng sử dụng ___________________ để truyền tín hiệu xác định vị trí của thiết bị.",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Lực hấp dẫn",
+      },
+      {
+        key: "B",
+        text: "Vệ tinh",
+      },
+      {
+        key: "C",
+        text: "Định vị toàn cầu",
+      },
+      {
+        key: "D",
+        text: "Vòng quay của trái đất",
+      },
+    ],
+    correctKeys: ["C"],
+  },
+  {
+    id: "lv1-ot3-47",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 47,
+    text: "Bạn sử dụng máy tính công cộng tại thư viện để kiểm tra email và số dư tài khoản ngân hàng của mình. Bạn muốn ngăn ngừa những người sử dụng máy tính sau đó truy cập vào email và tài khoản ngân hàng của bạn. Bạn nên hoàn thành hai tác vụ nào trước khi rời khỏi máy tính?<br>(Chọn 2)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Xóa bộ đệm ẩn và cookie của trình duyệt",
+      },
+      {
+        key: "B",
+        text: "Xóa lịch sử trình duyệt",
+      },
+      {
+        key: "C",
+        text: "Đăng xuất khỏi email và các trang web ngân hàng",
+      },
+      {
+        key: "D",
+        text: "Đóng tất cả các cửa sổ trình duyệt đang mở",
+      },
+    ],
+    correctKeys: ["A", "C"],
+  },
+  {
+    id: "lv1-ot3-48",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 48,
+    text: "Dịch vụ GPS nào cung cấp cho người dùng vị trí của họ, chỉ đường đến nơi họ sẽ đến và thời gian đến ước tính của họ dựa trên tốc độ hiện tại của người dùng và điều kiện giao thông trên tuyến đường của họ?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Google Planet",
+      },
+      {
+        key: "B",
+        text: "Google Drive",
+      },
+      {
+        key: "C",
+        text: "Google Maps",
+      },
+      {
+        key: "D",
+        text: "IMAP",
+      },
+    ],
+    correctKeys: ["C"],
+  },
+  {
+    id: "lv1-ot3-49",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 49,
+    text: "Những cách nào mà người dùng có thể sử dụng theo dõi điều hướng trong cuộc sống hàng ngày của họ? (Chọn 3)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Để truy cập chỉ đường",
+      },
+      {
+        key: "B",
+        text: "Đặt đồ ăn và vật dụng",
+      },
+      {
+        key: "C",
+        text: "Để theo dõi thiết bị hoặc thành viên gia đình",
+      },
+      {
+        key: "D",
+        text: "Để gọi cho bạn bè của họ",
+      },
+      {
+        key: "E",
+        text: "Để tìm các doanh nghiệp gần người dùng",
+      },
+    ],
+    correctKeys: ["A", "C", "E"],
+  },
+  {
+    id: "lv1-ot3-50",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 50,
+    text: "Virus có thể tải vào máy tính bằng những phương pháp nào? (Chọn 3)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Phần mềm an toàn",
+      },
+      {
+        key: "B",
+        text: "Phần mềm lỗi thời",
+      },
+      {
+        key: "C",
+        text: "Tệp đính kèm email",
+      },
+      {
+        key: "D",
+        text: "Các trang web không an toàn",
+      },
+      {
+        key: "E",
+        text: "Phần mềm chống virus",
+      },
+    ],
+    correctKeys: ["B", "C", "D"],
+  },
+  {
+    id: "lv1-ot3-51",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 51,
+    text: "Virus máy tính là gì?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Một chương trình tự cài đặt trên hệ thống và âm thầm theo dõi thói quen trực tuyến của bạn với mục đích tự động hiển thị/tải xuống quảng cáo",
+      },
+      {
+        key: "B",
+        text: "Một chương trình có thể tự sao chép và lây lan sang các máy tính khác",
+      },
+      {
+        key: "C",
+        text: "Một chương trình được thiết kế với vẻ ngoài vô hại nhưng lại cho phép truy cập trái phép vào máy tính của bạn",
+      },
+      {
+        key: "D",
+        text: "Nội dung lừa đảo khiến bạn tiết lộ mã tài khoản và mật khẩu, núp dưới vẻ ngoài hợp pháp",
+      },
+    ],
+    correctKeys: ["B"],
+  },
+  {
+    id: "lv1-ot3-52",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 52,
+    text: "Với mỗi câu phát biểu, hãy chọn Đúng hoặc Sai.",
+    type: "yes_no",
+    statements: [
+      {
+        text: "Android là một phần mềm mã nguồn mở",
+        correct: "True",
+      },
+      {
+        text: "Android là hệ điều hành dùng cho máy tính để bàn",
+        correct: "False",
+      },
+      {
+        text: "Android là hệ điều hành được phát triển dựa trên nền tảng Linux",
+        correct: "True",
+      },
+      {
+        text: "Android cần phải có cửa hàng Google để cài đặt ứng dụng",
+        correct: "False",
+      },
+    ],
+  },
+  {
+    id: "lv1-ot3-53",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 53,
+    text: "Đâu là ba thiết bị XUẤT khi kết nối với máy tính không có màn hình cảm ứng? (Chọn 3)",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "area1",
+      },
+      {
+        key: "B",
+        text: "area2",
+      },
+      {
+        key: "C",
+        text: "area3",
+      },
+    ],
+    correctKeys: ["A", "B", "C"],
+  },
+  {
+    id: "lv1-ot3-54",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 54,
+    text: "Với mỗi câu phát biểu về sự khác biệt giữa kết nổi Intranet và Internet, hãy chọn Đúng hoặc Sai.",
+    type: "yes_no",
+    statements: [
+      {
+        text: "Kết nối Intranet (mạng nội bộ) thường an toàn hơn Internet",
+        correct: "True",
+      },
+      {
+        text: "Kết nối Intranet ít xảy ra độ trễ hơn Internet",
+        correct: "True",
+      },
+      {
+        text: "Tốc độ kết nối Internet luôn nhanh hơn Intranet",
+        correct: "False",
+      },
+    ],
+  },
+  {
+    id: "lv1-ot3-55",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 55,
+    text: "Những lựa chọn nào sau đây có thể bị hacker lợi dụng để thu thập thông tin người dùng?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Nhận dạng khuôn mặt",
+      },
+      {
+        key: "B",
+        text: "Cookie bên thứ ba",
+      },
+      {
+        key: "C",
+        text: "Cookie bên thứ nhất",
+      },
+      {
+        key: "D",
+        text: "Đường hầm VPN",
+      },
+    ],
+    correctKeys: ["B", "C"],
+  },
+  {
+    id: "lv1-ot3-56",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 56,
+    text: "Bạn cần làm việc nhóm với bạn học để ghi lại nhật ký lớp học. Những nền tảng trực tuyến nào sau đây có thể giúp bạn làm việc và chia sẻ dễ dàng hơn?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Facebook",
+      },
+      {
+        key: "B",
+        text: "Microsoft Teams",
+      },
+      {
+        key: "C",
+        text: "Instagram",
+      },
+      {
+        key: "D",
+        text: "Google Tài liệu (Google Docs)",
+      },
+    ],
+    correctKeys: ["B", "D"],
+  },
+  {
+    id: "lv1-ot3-57",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 57,
+    text: "Giáo viên của bạn tổ chức một chuyến tham quan dã ngoại. Tuy nhiên có nhiều bạn không tham gia được, do đó giáo viên quyết định tạo một cuộc họp kỹ thuật số. Bạn tham gia vào cuộc hợp này. Chọn Đúng/Sai với mỗi câu phát biểu về tuân thủ tiêu chuẩn kỹ thuật số?",
+    type: "yes_no",
+    statements: [
+      {
+        text: "Kiểm tra micro, camera và phần mềm trước khi bắt đầu buổi họp",
+        correct: "True",
+      },
+      {
+        text: "Điều chỉnh camera sao cho khuôn mặt bạn ở giữa màn hình, ngang với tầm mắt",
+        correct: "True",
+      },
+      {
+        text: "Luôn bật micro trong suốt buổi họp để sẵn sàng phát biểu",
+        correct: "False",
+      },
+      {
+        text: "Khi đến lượt phát biểu, hãy chào hỏi, giới thiệu tên và nhìn vào màn hình khi nói chuyện",
+        correct: "True",
+      },
+    ],
+  },
+  {
+    id: "lv1-ot3-58",
+    levelId: "level-1",
+    subsetId: "OT3",
+    questionNumber: 58,
+    text: "Các công ty có thể thu thập thông tin của bạn dựa vào những yếu tố nào sau đây?",
+    type: "multiple_choice",
+    options: [
+      {
+        key: "A",
+        text: "Cookie",
+      },
+      {
+        key: "B",
+        text: "Ẩn danh",
+      },
+      {
+        key: "C",
+        text: "VPN",
+      },
+      {
+        key: "D",
+        text: "GPS",
+      },
+    ],
+    correctKeys: ["A", "D"],
   }
 
 ];
