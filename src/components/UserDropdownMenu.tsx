@@ -1,20 +1,22 @@
 import React, { useState, useRef, useEffect } from "react";
-import { 
-  ChevronDown, 
-  ArrowLeft, 
-  KeyRound, 
-  ShieldCheck, 
-  LogOut, 
+import {
+  ChevronDown,
+  ArrowLeft,
+  KeyRound,
+  ShieldCheck,
+  LogOut,
   GraduationCap,
-  Layers,
-  Sparkles
+  Palette
 } from "lucide-react";
 import { User } from "../types";
+import { LampColor, LAMP_COLOR_OPTIONS } from "../utils/lampTheme";
 
 interface UserDropdownMenuProps {
   currentUser: User;
   selectedProgram?: "gs6" | "spark" | null;
   selectedLevel?: string | null;
+  lampColor?: LampColor;
+  onChangeLampColor?: (color: LampColor) => void;
   onSwitchProgram: () => void;
   onSwitchLevel?: () => void;
   onChangePassword: () => void;
@@ -27,12 +29,13 @@ export const UserDropdownMenu: React.FC<UserDropdownMenuProps> = ({
   currentUser,
   selectedProgram,
   selectedLevel,
+  lampColor = "amber",
+  onChangeLampColor,
   onSwitchProgram,
   onSwitchLevel,
   onChangePassword,
   onOpenAdmin,
-  onLogout,
-  align = "right"
+  onLogout
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -65,7 +68,7 @@ export const UserDropdownMenu: React.FC<UserDropdownMenuProps> = ({
   }, [isOpen]);
 
   const programLabel = selectedProgram === "spark" ? "IC3 SPARK" : selectedProgram === "gs6" ? "IC3 GS6" : null;
-  const isSpark = selectedProgram === "spark";
+  const activeColorMeta = LAMP_COLOR_OPTIONS.find((c) => c.id === lampColor) || LAMP_COLOR_OPTIONS[0];
 
   const getLevelDisplay = (lvl: string) => {
     if (lvl.toLowerCase().includes("level 1")) return "Level 1";
@@ -76,200 +79,223 @@ export const UserDropdownMenu: React.FC<UserDropdownMenuProps> = ({
 
   return (
     <div className="relative inline-block text-left" ref={menuRef}>
-      {/* Trigger Button - Mobile Compact & High Contrast */}
+      {/* Trigger Button */}
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
         aria-expanded={isOpen}
         aria-haspopup="true"
-        className={`flex items-center gap-2 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl border-2 transition shadow-xs cursor-pointer select-none active:scale-95 shrink-0 ${
+        className={`flex items-center gap-2 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl border transition shadow-sm cursor-pointer select-none active:scale-95 shrink-0 backdrop-blur-md ${
           isOpen
-            ? "bg-slate-100 border-indigo-600 text-slate-900 ring-2 ring-indigo-300/60"
-            : "bg-white hover:bg-slate-50 border-slate-300 text-slate-800 hover:border-slate-400"
+            ? "bg-white/12 border-[var(--lamp-accent)] text-white ring-2 ring-[var(--lamp-focus-glow)]"
+            : "bg-white/6 hover:bg-white/10 border-white/15 text-slate-100 hover:border-white/25"
         }`}
-        title="Menu tài khoản & Thao tác"
+        title="Menu tài khoản & Bảng màu giao diện"
       >
         {/* User Avatar Circle */}
-        <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center font-mono font-black text-xs sm:text-sm text-white shrink-0 shadow-xs ${
-          currentUser.role === "admin" 
-            ? "bg-amber-600" 
-            : isSpark 
-              ? "bg-emerald-600" 
-              : "bg-indigo-600"
-        }`}>
+        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center font-mono font-black text-xs sm:text-sm shrink-0 shadow-xs lamp-accent-btn">
           {currentUser.name ? currentUser.name.trim().charAt(0).toUpperCase() : "U"}
         </div>
 
-        {/* User Info Label (Compact on small phones, full on larger) */}
+        {/* User Info Label */}
         <div className="text-left leading-tight hidden sm:block">
-          <p className="text-xs sm:text-sm font-black text-slate-950 max-w-[110px] sm:max-w-[150px] truncate">
+          <p className="text-xs sm:text-sm font-black text-white max-w-[110px] sm:max-w-[155px] truncate">
             {currentUser.name}
           </p>
-          <p className="text-[10px] sm:text-[11px] font-bold text-slate-500 font-mono truncate">
-            {currentUser.className ? `Lớp ${currentUser.className}` : currentUser.role === "admin" ? "Quản trị viên" : "Học sinh"}
+          <p className="text-[10px] sm:text-[11px] font-bold text-slate-400 font-mono truncate">
+            {currentUser.className
+              ? `Lớp ${currentUser.className}`
+              : currentUser.role === "admin"
+              ? "Quản trị viên"
+              : "Học sinh"}
           </p>
         </div>
 
         {/* Dropdown Chevron */}
-        <ChevronDown 
-          className={`w-4 h-4 text-slate-600 transition-transform duration-200 shrink-0 ${
-            isOpen ? "rotate-180 text-indigo-600" : ""
-          }`} 
+        <ChevronDown
+          className={`w-4 h-4 transition-transform duration-200 shrink-0 ${
+            isOpen ? "rotate-180 text-[var(--lamp-accent)]" : "text-slate-400"
+          }`}
         />
       </button>
 
       {/* Popover Menu */}
       {isOpen && (
         <>
-          <div 
-            className="fixed inset-0 z-40 bg-slate-950/30 backdrop-blur-xs" 
-            onClick={() => setIsOpen(false)} 
+          <div
+            className="fixed inset-0 z-40 bg-black/45 backdrop-blur-[2px]"
+            onClick={() => setIsOpen(false)}
           />
-          <div 
-            className={`fixed right-3 top-16 sm:inset-auto sm:absolute sm:top-full sm:right-0 sm:mt-2 w-72 max-w-[calc(100vw-24px)] bg-white rounded-2xl shadow-2xl border-2 border-slate-300 py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150 select-none overflow-hidden`}
-          >
-          {/* User Profile Card Header */}
-          <div className="px-4 py-3 bg-slate-50 border-b border-slate-200 -mt-2 mb-1.5">
-            <div className="flex items-center justify-between gap-2">
-              <span className="text-xs font-mono font-black text-slate-500 uppercase tracking-wider">
-                Tài khoản
-              </span>
-              <span className={`text-[10px] font-mono font-black uppercase px-2 py-0.5 rounded-full border ${
-                currentUser.role === "admin" 
-                  ? "bg-amber-100 text-amber-900 border-amber-300" 
-                  : "bg-emerald-100 text-emerald-900 border-emerald-300"
-              }`}>
-                {currentUser.role === "admin" ? "Admin" : "Học sinh"}
-              </span>
+          <div className="fixed right-3 top-16 sm:inset-auto sm:absolute sm:top-full sm:right-0 sm:mt-2 w-76 max-w-[calc(100vw-24px)] bg-[#12161c]/95 backdrop-blur-2xl rounded-2xl shadow-[0_24px_60px_rgba(0,0,0,0.75)] border border-white/15 py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150 select-none overflow-hidden text-slate-100">
+            {/* User Profile Card Header */}
+            <div className="px-4 py-3 bg-white/[0.04] border-b border-white/10 -mt-2 mb-2">
+              <div className="flex items-center justify-between gap-2">
+                <span className="text-[11px] font-mono font-black text-slate-400 uppercase tracking-wider">
+                  Tài khoản
+                </span>
+                <span className="text-[10px] font-mono font-black uppercase px-2 py-0.5 rounded-full border border-[var(--lamp-accent)]/40 bg-[var(--lamp-focus-glow)] text-[var(--lamp-glow)]">
+                  {currentUser.role === "admin" ? "Admin" : "Học sinh"}
+                </span>
+              </div>
+
+              <p className="text-sm font-black text-white mt-1 truncate">
+                {currentUser.name}
+              </p>
+
+              {(currentUser.className || currentUser.school) && (
+                <p className="text-xs font-semibold text-slate-400 font-mono mt-0.5 truncate">
+                  {currentUser.className ? `Lớp ${currentUser.className}` : ""}{" "}
+                  {currentUser.school ? `• ${currentUser.school}` : ""}
+                </p>
+              )}
+
+              {programLabel && (
+                <div className="mt-2 flex items-center gap-1.5 text-[11px] font-mono font-bold text-slate-200 bg-white/[0.05] border border-white/10 rounded-lg px-2.5 py-1">
+                  <span className="text-slate-400">Đang học:</span>
+                  <span className="font-black uppercase text-[var(--lamp-accent)]">
+                    {programLabel}
+                  </span>
+                  {selectedLevel && (
+                    <>
+                      <span className="text-white/25">•</span>
+                      <span className="text-white font-black">{getLevelDisplay(selectedLevel)}</span>
+                    </>
+                  )}
+                </div>
+              )}
             </div>
 
-            <p className="text-sm font-black text-slate-900 mt-1 truncate">
-              {currentUser.name}
-            </p>
-
-            <p className="text-xs font-semibold text-slate-600 font-mono mt-0.5 truncate">
-              {currentUser.className ? `Lớp ${currentUser.className}` : ""} {currentUser.school ? `• ${currentUser.school}` : ""}
-            </p>
-
-            {programLabel && (
-              <div className="mt-2 flex items-center gap-1.5 text-[11px] font-mono font-bold text-slate-700 bg-white border border-slate-200 rounded-lg px-2.5 py-1">
-                <span className="text-slate-400">Đang học:</span>
-                <span className={`font-black uppercase ${isSpark ? "text-emerald-700" : "text-indigo-700"}`}>
-                  {programLabel}
-                </span>
-                {selectedLevel && (
-                  <>
-                    <span className="text-slate-300">•</span>
-                    <span className="text-slate-800 font-black">{getLevelDisplay(selectedLevel)}</span>
-                  </>
-                )}
+            {/* Integrated 5-Color Lamp Theme Palette inside Student Menu */}
+            {onChangeLampColor && (
+              <div className="px-3 pb-2.5 mb-1.5 border-b border-white/10">
+                <div className="flex items-center justify-between mb-2 px-1">
+                  <span className="text-[11px] font-mono font-bold text-slate-300 flex items-center gap-1.5">
+                    <Palette className="w-3.5 h-3.5 text-[var(--lamp-accent)]" />
+                    <span>Bảng màu ánh sáng</span>
+                  </span>
+                  <span className="text-[10px] font-mono font-bold text-[var(--lamp-glow)]">
+                    {activeColorMeta.name}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between gap-2 bg-white/[0.05] border border-white/10 rounded-xl px-3 py-2">
+                  {LAMP_COLOR_OPTIONS.map((c) => (
+                    <button
+                      key={c.id}
+                      type="button"
+                      data-color={c.id}
+                      onClick={() => onChangeLampColor(c.id)}
+                      className={`lamp-menu-dot ${lampColor === c.id ? "active" : ""}`}
+                      title={c.label}
+                      aria-label={c.label}
+                    />
+                  ))}
+                </div>
               </div>
             )}
-          </div>
 
-          {/* Action List */}
-          <div className="px-1.5 space-y-1">
-            {/* 1. Đổi chương trình */}
-            <button
-              type="button"
-              onClick={() => {
-                setIsOpen(false);
-                onSwitchProgram();
-              }}
-              className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm font-bold font-mono text-slate-800 hover:bg-slate-100 transition text-left cursor-pointer active:scale-98"
-            >
-              <div className="w-7 h-7 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center shrink-0 border border-slate-200">
-                <ArrowLeft className="w-4 h-4" />
-              </div>
-              <div className="leading-tight">
-                <div className="font-black text-slate-900">Đổi chương trình</div>
-                <div className="text-[10px] text-slate-500 font-sans">Chọn giữa IC3 GS6 & IC3 SPARK</div>
-              </div>
-            </button>
-
-            {/* 2. Đổi Level (nếu đang ở trong màn hình làm bài) */}
-            {onSwitchLevel && (
+            {/* Action List */}
+            <div className="px-1.5 space-y-1">
+              {/* 1. Đổi chương trình */}
               <button
                 type="button"
                 onClick={() => {
                   setIsOpen(false);
-                  onSwitchLevel();
+                  onSwitchProgram();
                 }}
-                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm font-bold font-mono text-indigo-800 hover:bg-indigo-50 transition text-left cursor-pointer active:scale-98"
+                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm font-bold font-mono text-slate-200 hover:bg-white/[0.08] transition text-left cursor-pointer active:scale-98"
               >
-                <div className="w-7 h-7 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center shrink-0 border border-indigo-200">
-                  <GraduationCap className="w-4 h-4" />
+                <div className="w-7 h-7 rounded-lg bg-white/10 text-[var(--lamp-accent)] flex items-center justify-center shrink-0 border border-white/10">
+                  <ArrowLeft className="w-4 h-4" />
                 </div>
                 <div className="leading-tight">
-                  <div className="font-black text-indigo-950">Đổi Level</div>
-                  <div className="text-[10px] text-indigo-600 font-sans">Chuyển sang Level khác</div>
+                  <div className="font-black text-white">Đổi chương trình</div>
+                  <div className="text-[10px] text-slate-400 font-sans">Chọn giữa IC3 GS6 &amp; IC3 SPARK</div>
                 </div>
               </button>
-            )}
 
-            {/* 3. Đổi mật khẩu */}
-            <button
-              type="button"
-              onClick={() => {
-                setIsOpen(false);
-                onChangePassword();
-              }}
-              className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm font-bold font-mono text-slate-800 hover:bg-slate-100 transition text-left cursor-pointer active:scale-98"
-            >
-              <div className="w-7 h-7 rounded-lg bg-slate-100 text-indigo-700 flex items-center justify-center shrink-0 border border-slate-200">
-                <KeyRound className="w-4 h-4" />
-              </div>
-              <div className="leading-tight">
-                <div className="font-black text-slate-900">Đổi mật khẩu</div>
-                <div className="text-[10px] text-slate-500 font-sans">Cập nhật mật khẩu tài khoản</div>
-              </div>
-            </button>
+              {/* 2. Đổi Level */}
+              {onSwitchLevel && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsOpen(false);
+                    onSwitchLevel();
+                  }}
+                  className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm font-bold font-mono text-slate-200 hover:bg-white/[0.08] transition text-left cursor-pointer active:scale-98"
+                >
+                  <div className="w-7 h-7 rounded-lg bg-[var(--lamp-focus-glow)] text-[var(--lamp-accent)] flex items-center justify-center shrink-0 border border-[var(--lamp-accent)]/30">
+                    <GraduationCap className="w-4 h-4" />
+                  </div>
+                  <div className="leading-tight">
+                    <div className="font-black text-white">Đổi Level</div>
+                    <div className="text-[10px] text-slate-400 font-sans">Chuyển sang Level khác</div>
+                  </div>
+                </button>
+              )}
 
-            {/* 4. Trang Quản Trị (dành cho Admin) */}
-            {currentUser.role === "admin" && onOpenAdmin && (
+              {/* 3. Đổi mật khẩu */}
               <button
                 type="button"
                 onClick={() => {
                   setIsOpen(false);
-                  onOpenAdmin();
+                  onChangePassword();
                 }}
-                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm font-bold font-mono text-amber-900 hover:bg-amber-50 transition text-left cursor-pointer active:scale-98"
+                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm font-bold font-mono text-slate-200 hover:bg-white/[0.08] transition text-left cursor-pointer active:scale-98"
               >
-                <div className="w-7 h-7 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 border border-amber-300">
-                  <ShieldCheck className="w-4 h-4" />
+                <div className="w-7 h-7 rounded-lg bg-white/10 text-slate-200 flex items-center justify-center shrink-0 border border-white/10">
+                  <KeyRound className="w-4 h-4" />
                 </div>
                 <div className="leading-tight">
-                  <div className="font-black text-amber-950">Trang Quản Trị</div>
-                  <div className="text-[10px] text-amber-700 font-sans">Quản lý câu hỏi & người dùng</div>
+                  <div className="font-black text-white">Đổi mật khẩu</div>
+                  <div className="text-[10px] text-slate-400 font-sans">Cập nhật mật khẩu tài khoản</div>
                 </div>
               </button>
-            )}
-          </div>
 
-          <div className="my-1.5 border-t border-slate-200" />
+              {/* 4. Trang Quản Trị */}
+              {currentUser.role === "admin" && onOpenAdmin && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsOpen(false);
+                    onOpenAdmin();
+                  }}
+                  className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm font-bold font-mono text-amber-200 hover:bg-amber-500/15 transition text-left cursor-pointer active:scale-98"
+                >
+                  <div className="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-300 flex items-center justify-center shrink-0 border border-amber-400/30">
+                    <ShieldCheck className="w-4 h-4" />
+                  </div>
+                  <div className="leading-tight">
+                    <div className="font-black text-amber-200">Trang Quản Trị</div>
+                    <div className="text-[10px] text-amber-300/75 font-sans">Quản lý câu hỏi &amp; người dùng</div>
+                  </div>
+                </button>
+              )}
+            </div>
 
-          {/* 5. Đăng xuất */}
-          <div className="px-1.5">
-            <button
-              type="button"
-              onClick={() => {
-                setIsOpen(false);
-                onLogout();
-              }}
-              className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm font-bold font-mono text-rose-700 hover:bg-rose-50 transition text-left cursor-pointer active:scale-98"
-            >
-              <div className="w-7 h-7 rounded-lg bg-rose-100 text-rose-700 flex items-center justify-center shrink-0 border border-rose-200">
-                <LogOut className="w-4 h-4" />
-              </div>
-              <div className="leading-tight">
-                <div className="font-black text-rose-900">Đăng xuất</div>
-                <div className="text-[10px] text-rose-600 font-sans">Thoát khỏi phiên làm việc</div>
-              </div>
-            </button>
+            <div className="my-1.5 border-t border-white/10" />
+
+            {/* 5. Đăng xuất */}
+            <div className="px-1.5">
+              <button
+                type="button"
+                onClick={() => {
+                  setIsOpen(false);
+                  onLogout();
+                }}
+                className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs sm:text-sm font-bold font-mono text-rose-300 hover:bg-rose-500/15 transition text-left cursor-pointer active:scale-98"
+              >
+                <div className="w-7 h-7 rounded-lg bg-rose-500/20 text-rose-300 flex items-center justify-center shrink-0 border border-rose-400/30">
+                  <LogOut className="w-4 h-4" />
+                </div>
+                <div className="leading-tight">
+                  <div className="font-black text-rose-200">Đăng xuất</div>
+                  <div className="text-[10px] text-rose-300/75 font-sans">Thoát khỏi phiên làm việc</div>
+                </div>
+              </button>
+            </div>
           </div>
-        </div>
-      </>
-    )}
+        </>
+      )}
     </div>
   );
 };

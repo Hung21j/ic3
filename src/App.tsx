@@ -33,6 +33,8 @@ import { ShieldCheck, LogOut, KeyRound } from "lucide-react";
 import { ChangePasswordModal } from "./components/ChangePasswordModal";
 import { firestoreService } from "./services/firestoreService";
 import UserDropdownMenu from "./components/UserDropdownMenu";
+import LampAmbientBackground from "./components/LampAmbientBackground";
+import { LampColor, getStoredLampColor, saveLampColor } from "./utils/lampTheme";
 
 // Academic/solving status indicators during analysis
 const STATUS_INDICATORS = [
@@ -167,6 +169,12 @@ export default function App() {
   const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
   const [showUserChangePassword, setShowUserChangePassword] = useState(false);
   const [userToast, setUserToast] = useState<string | null>(null);
+  const [lampColor, setLampColor] = useState<LampColor>(() => getStoredLampColor());
+
+  const handleChangeLampColor = (color: LampColor) => {
+    setLampColor(color);
+    saveLampColor(color);
+  };
 
   // Level-specific accent configurations to tie the theme color all the way from Level Selection
   const isL1 = selectedLevel?.includes("Level 1");
@@ -421,7 +429,13 @@ export default function App() {
   };
 
   if (!currentUser) {
-    return <AuthPage onAuthSuccess={handleAuthSuccess} />;
+    return (
+      <AuthPage
+        onAuthSuccess={handleAuthSuccess}
+        lampColor={lampColor}
+        onChangeLampColor={handleChangeLampColor}
+      />
+    );
   }
 
   if (currentUser.role === "admin" && currentView === "admin") {
@@ -440,6 +454,8 @@ export default function App() {
       <>
         <ProgramSelectMenu
           currentUser={currentUser}
+          lampColor={lampColor}
+          onChangeLampColor={handleChangeLampColor}
           onSelectProgram={handleSelectProgram}
           onLogout={handleLogout}
           onOpenChangePassword={() => setShowUserChangePassword(true)}
@@ -469,41 +485,44 @@ export default function App() {
 
   if (!selectedLevel) {
     return (
-      <div className="min-h-screen bg-[#f0f3f8] text-slate-900 flex items-center justify-center p-4 md:p-8 font-sans select-none border-4 md:border-8 border-slate-300">
-        <motion.div 
+      <div
+        className="lamp-inner-root min-h-screen flex items-center justify-center p-4 md:p-8 font-sans select-none"
+        data-color={lampColor}
+      >
+        <LampAmbientBackground color={lampColor} />
+
+        <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="max-w-5xl w-full bg-white border-2 border-slate-300 rounded-3xl p-6 md:p-8 space-y-6 md:space-y-8 shadow-sm relative overflow-hidden"
+          className="inner-foreground max-w-5xl w-full bg-[#12161c]/75 backdrop-blur-2xl border border-white/12 rounded-3xl p-6 md:p-8 space-y-6 md:space-y-8 shadow-[0_28px_70px_rgba(0,0,0,0.6)] relative"
         >
-          {/* Subtle decoration lines */}
-          <div className={`absolute top-0 left-0 right-0 h-2 ${isSparkProgram ? "bg-emerald-600" : "bg-indigo-700"}`} />
-          
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b-2 border-slate-200 pb-5">
+          {/* Subtle glowing accent line */}
+          <div className="absolute top-0 left-8 right-8 h-1 rounded-b-full bg-gradient-to-r from-transparent via-[var(--lamp-accent)] to-transparent opacity-90" />
+
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-5">
             <div className="flex items-center gap-4">
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
-                  <span className={`text-[11px] font-black uppercase tracking-widest font-mono px-2 py-0.5 rounded-md border ${
-                    isSparkProgram 
-                      ? "bg-emerald-50 text-emerald-800 border-emerald-300" 
-                      : "bg-indigo-50 text-indigo-700 border-indigo-200"
-                  }`}>
+                  <span className="text-[11px] font-black uppercase tracking-widest font-mono px-2.5 py-0.5 rounded-md border bg-[var(--lamp-focus-glow)] text-[var(--lamp-glow)] border-[var(--lamp-accent)]/35">
                     BƯỚC 2: CHỌN CẤP ĐỘ {isSparkProgram ? "IC3 SPARK" : "IC3 GS6"}
                   </span>
                 </div>
 
-                <p className="text-xs md:text-sm text-slate-700 font-semibold leading-relaxed">
-                  Xin chào <strong className="text-slate-950 font-black">{currentUser.name}</strong>
-                  {currentUser.className && <> (Lớp <strong className="text-slate-950 font-black">{currentUser.className}</strong>)</>}
-                  {currentUser.school && <> • <span className="text-slate-800 font-bold">{currentUser.school}</span></>}
+                <p className="text-xs md:text-sm text-slate-300 font-semibold leading-relaxed">
+                  Xin chào <strong className="text-white font-black">{currentUser.name}</strong>
+                  {currentUser.className && <> (Lớp <strong className="text-[var(--lamp-glow)] font-black">{currentUser.className}</strong>)</>}
+                  {currentUser.school && <> • <span className="text-slate-300 font-bold">{currentUser.school}</span></>}
                 </p>
               </div>
             </div>
-            
+
             <div className="flex items-center gap-2.5 self-end md:self-center">
               <UserDropdownMenu
                 currentUser={currentUser}
                 selectedProgram={selectedProgram}
                 selectedLevel={null}
+                lampColor={lampColor}
+                onChangeLampColor={handleChangeLampColor}
                 onSwitchProgram={handleSwitchProgram}
                 onChangePassword={() => setShowUserChangePassword(true)}
                 onOpenAdmin={currentUser.role === "admin" ? () => setCurrentView("admin") : undefined}
@@ -521,37 +540,37 @@ export default function App() {
                   localStorage.setItem("student_level_ic3", level.name);
                   setSelectedLevel(level.name);
                 }}
-                className={`bg-white hover:bg-[#f8fafc] border-2 border-slate-300 hover:border-emerald-600 rounded-2xl p-5 flex flex-col justify-between transition-all cursor-pointer relative overflow-hidden group select-none shadow-xs hover:shadow-md ${level.hoverBorder}`}
+                className="bg-white/[0.04] hover:bg-white/[0.08] border border-white/12 hover:border-[var(--lamp-accent)] rounded-2xl p-5 flex flex-col justify-between transition-all cursor-pointer relative overflow-hidden group select-none shadow-[0_14px_35px_rgba(0,0,0,0.35)] hover:shadow-[0_18px_45px_var(--beam-color)]"
               >
                 <div className="space-y-4">
                   <div className="flex justify-between items-start">
-                    <span className={`px-2.5 py-1 text-[11px] font-black border rounded-md uppercase font-mono ${level.badgeColor}`}>
+                    <span className="px-2.5 py-1 text-[11px] font-black border rounded-md uppercase font-mono bg-[var(--lamp-focus-glow)] text-[var(--lamp-glow)] border-[var(--lamp-accent)]/35">
                       {level.id.replace("spark-", "").replace("-", " ")}
                     </span>
-                    <div className="w-2.5 h-2.5 rounded-full bg-slate-400 group-hover:bg-emerald-600 transition-colors" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-white/25 group-hover:bg-[var(--lamp-accent)] transition-colors shadow-xs" />
                   </div>
 
                   <div className="space-y-1">
-                    <h3 className="text-base font-extrabold text-slate-900 leading-snug group-hover:text-emerald-700 transition-colors">
+                    <h3 className="text-base font-extrabold text-white leading-snug group-hover:text-[var(--lamp-glow)] transition-colors">
                       {level.name}
                     </h3>
-                    <p className="text-xs font-bold text-slate-500 font-mono italic">
+                    <p className="text-xs font-bold text-slate-400 font-mono italic">
                       {level.englishName}
                     </p>
                   </div>
 
-                  <p className="text-xs md:text-sm text-slate-700 leading-relaxed font-semibold">
+                  <p className="text-xs md:text-sm text-slate-300 leading-relaxed font-medium">
                     {level.description}
                   </p>
 
-                  <div className="space-y-1.5 pt-2">
-                    <span className="text-xs font-extrabold uppercase tracking-wider text-slate-500 block font-mono">
+                  <div className="space-y-1.5 pt-2 border-t border-white/10">
+                    <span className="text-xs font-extrabold uppercase tracking-wider text-slate-400 block font-mono">
                       Chủ đề trọng tâm:
                     </span>
                     <ul className="space-y-1.5">
                       {level.skills.map((skill, sIdx) => (
-                        <li key={sIdx} className="text-xs md:text-sm text-slate-800 flex items-center gap-2 font-semibold">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 shrink-0" />
+                        <li key={sIdx} className="text-xs md:text-sm text-slate-200 flex items-center gap-2 font-medium">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[var(--lamp-accent)] shrink-0" />
                           <span className="truncate">{skill}</span>
                         </li>
                       ))}
@@ -561,7 +580,8 @@ export default function App() {
 
                 <div className="pt-5 mt-auto">
                   <button
-                    className={`w-full py-2.5 rounded-xl text-xs md:text-sm font-black uppercase tracking-wider text-white transition duration-200 ${level.buttonColor}`}
+                    type="button"
+                    className="lamp-accent-btn w-full py-2.5 rounded-xl text-xs md:text-sm font-black uppercase tracking-wider cursor-pointer"
                   >
                     BẮT ĐẦU
                   </button>
@@ -570,7 +590,7 @@ export default function App() {
             ))}
           </div>
 
-          <div className="text-center text-xs text-slate-500 font-mono border-t border-slate-300 pt-4 flex items-center justify-center gap-2">
+          <div className="text-center text-xs text-slate-400 font-mono border-t border-white/10 pt-4 flex items-center justify-center gap-2">
             <span>Chương trình ôn luyện {isSparkProgram ? "IC3 SPARK" : "IC3 GS6"} chuẩn quốc tế Certiport Hoa Kỳ.</span>
           </div>
         </motion.div>
@@ -594,21 +614,21 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-[#f0f3f8] flex flex-col font-sans text-slate-900 border-4 md:border-8 border-slate-300">
-      
-      {/* 🚀 Visual Header Bar - Soft Surface, High Contrast */}
-      <header className="app-header h-14 sm:h-16 bg-white border-b-2 border-slate-300 px-3 sm:px-6 md:px-8 flex items-center justify-between gap-2 shadow-xs z-20 shrink-0 select-none flex-nowrap">
+    <div
+      className="lamp-inner-root min-h-screen flex flex-col font-sans"
+      data-color={lampColor}
+    >
+      <LampAmbientBackground color={lampColor} />
+
+      {/* 🚀 Visual Header Bar - Illuminated Glass */}
+      <header className="app-header h-14 sm:h-16 bg-[#12161c]/80 backdrop-blur-2xl border-b border-white/10 px-3 sm:px-6 md:px-8 flex items-center justify-between gap-2 shadow-md z-20 shrink-0 select-none flex-nowrap relative">
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <div className="flex flex-col">
             <div className="flex items-center gap-1.5 sm:gap-2">
-              <span className={`text-[10px] font-black uppercase font-mono px-1.5 py-0.5 rounded border ${
-                isSparkProgram 
-                  ? "bg-emerald-50 text-emerald-800 border-emerald-300" 
-                  : "bg-slate-100 text-slate-800 border-slate-300"
-              }`}>
+              <span className="text-[10px] font-black uppercase font-mono px-2 py-0.5 rounded border bg-[var(--lamp-focus-glow)] text-[var(--lamp-glow)] border-[var(--lamp-accent)]/35">
                 {isSparkProgram ? "SPARK" : "GS6"}
               </span>
-              <h1 className="text-xs sm:text-base font-black tracking-tight text-slate-900 leading-none">
+              <h1 className="text-xs sm:text-base font-black tracking-tight text-white leading-none">
                 ÔN TẬP IC3
               </h1>
             </div>
@@ -621,6 +641,8 @@ export default function App() {
             currentUser={currentUser}
             selectedProgram={selectedProgram}
             selectedLevel={selectedLevel}
+            lampColor={lampColor}
+            onChangeLampColor={handleChangeLampColor}
             onSwitchProgram={handleSwitchProgram}
             onSwitchLevel={() => {
               setSelectedLevel(null);
@@ -634,12 +656,12 @@ export default function App() {
       </header>
 
       {/* 🔮 Center Focused Layout Main Workspace - Single Column */}
-      <main className="app-main flex-1 overflow-y-auto bg-[#f0f3f8] py-6 px-4 md:px-8">
+      <main className="app-main inner-foreground flex-1 overflow-y-auto py-6 px-4 md:px-8">
         <div className="max-w-7xl mx-auto w-full space-y-6">
           
           {/* 1. Main Focused Question Bank Display - Expanded */}
           {selectedLevel && (
-            <div className="shadow-sm rounded-2xl overflow-hidden bg-white border-2 border-slate-300">
+            <div className="shadow-[0_26px_65px_rgba(0,0,0,0.55)] rounded-2xl overflow-hidden bg-[#12161c]/75 backdrop-blur-2xl border border-white/12">
               <IC3QuestionBank 
                 selectedLevel={selectedLevel}
                 selectedProgram={selectedProgram || "gs6"}
@@ -674,17 +696,17 @@ export default function App() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
-                className="bg-white rounded-xl border border-slate-200 p-8 text-center flex flex-col items-center justify-center min-h-[220px] space-y-4 shadow-md"
+                className="bg-[#12161c]/80 backdrop-blur-xl rounded-xl border border-white/15 p-8 text-center flex flex-col items-center justify-center min-h-[220px] space-y-4 shadow-xl"
               >
                 <div className="relative">
-                  <div className="w-10 h-10 rounded-full border-4 border-indigo-100 border-t-indigo-600 animate-spin" />
-                  <Sparkles className="absolute inset-0 m-auto w-3.5 h-3.5 text-indigo-500 animate-pulse" />
+                  <div className="w-10 h-10 rounded-full border-4 border-white/10 border-t-[var(--lamp-accent)] animate-spin" />
+                  <Sparkles className="absolute inset-0 m-auto w-3.5 h-3.5 text-[var(--lamp-accent)] animate-pulse" />
                 </div>
                 <div>
-                  <h3 className="text-xs font-black text-slate-800 uppercase tracking-widest font-mono">
+                  <h3 className="text-xs font-black text-white uppercase tracking-widest font-mono">
                     HỆ THỐNG TRÍ TUỆ ĐANG PHÂN TÍCH...
                   </h3>
-                  <p className="text-xs text-indigo-600 font-bold mt-1 max-w-md mx-auto leading-relaxed">
+                  <p className="text-xs text-[var(--lamp-glow)] font-bold mt-1 max-w-md mx-auto leading-relaxed">
                     {statusText}
                   </p>
                 </div>
@@ -697,24 +719,24 @@ export default function App() {
                 key="error-state"
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-rose-50 border border-rose-200 rounded-xl p-5 shadow-sm space-y-3"
+                className="bg-rose-500/15 border border-rose-400/35 rounded-xl p-5 shadow-sm space-y-3"
               >
                 <div className="flex gap-3">
-                  <div className="p-1.5 bg-rose-100 text-rose-600 rounded">
+                  <div className="p-1.5 bg-rose-500/20 text-rose-300 rounded">
                     <HelpCircle className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-xs font-black text-rose-800 uppercase tracking-wider font-mono">
+                    <h3 className="text-xs font-black text-rose-200 uppercase tracking-wider font-mono">
                       CÓ LỖI XẢY RA KHI GIẢI BẰNG AI
                     </h3>
-                    <p className="text-xs text-rose-700 leading-relaxed font-semibold mt-1">
+                    <p className="text-xs text-rose-200/80 leading-relaxed font-semibold mt-1">
                       {error}
                     </p>
                   </div>
                 </div>
                 <button
                   onClick={() => setError(null)}
-                  className="text-xs font-bold text-indigo-600 hover:underline flex items-center gap-1"
+                  className="text-xs font-bold text-[var(--lamp-accent)] hover:underline flex items-center gap-1"
                 >
                   Bỏ qua lỗi này
                 </button>
@@ -736,13 +758,13 @@ export default function App() {
                       setActiveResult(null);
                       setActiveItem(null);
                     }}
-                    className="bg-slate-205 border border-slate-300 text-slate-650 hover:bg-red-50 hover:text-red-700 px-3 py-1.5 rounded-lg text-xs font-bold shadow-sm transition"
+                    className="bg-white/10 border border-white/15 text-slate-200 hover:bg-rose-500/20 hover:text-rose-200 px-3 py-1.5 rounded-lg text-xs font-bold shadow-sm transition cursor-pointer"
                   >
                     Đóng giải thích AI [X]
                   </button>
                 </div>
 
-                <div className="shadow-lg rounded-xl overflow-hidden border border-indigo-100">
+                <div className="shadow-lg rounded-xl overflow-hidden border border-white/15">
                   <QuestionResultView 
                     result={activeResult} 
                     student={{ name: currentUser.name, className: currentUser.className }} 
@@ -757,9 +779,8 @@ export default function App() {
       </main>
 
       {/* 🚀 Distraction-Free Simple Footer */}
-      <footer className="h-10 bg-slate-800 text-slate-200 flex items-center justify-between px-6 text-xs uppercase tracking-wider font-semibold font-mono shrink-0 select-none">
-        <span>{currentUser.className ? `${currentUser.className} // ` : ""}{currentUser.name}</span>        
-        
+      <footer className="inner-foreground h-10 bg-[#0d1016]/90 border-t border-white/10 text-slate-300 flex items-center justify-between px-6 text-xs uppercase tracking-wider font-semibold font-mono shrink-0 select-none">
+        <span>{currentUser.className ? `${currentUser.className} // ` : ""}{currentUser.name}</span>
       </footer>
 
       {/* Change Password Modal for logged-in user */}

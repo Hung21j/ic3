@@ -891,29 +891,25 @@ export default function IC3QuestionBank({
   const wrongTrainingCount = checkedCount - correctTrainingCount;
 
   return (
-    <div id="ic3-study-page-deck" className="bg-white rounded-2xl border-2 border-slate-300 shadow-sm overflow-hidden flex flex-col min-h-[500px]">
+    <div id="ic3-study-page-deck" className="bg-transparent rounded-2xl overflow-hidden flex flex-col min-h-[500px] text-slate-100">
       
       {/* ================= 🌟 TOP HEADER BANNER ================= */}
-      <div className={`bg-gradient-to-r ${themeConfig.bgBanner} border-b-2 border-slate-300 p-4 md:p-5`}>
+      <div className="bg-white/[0.04] border-b border-white/10 p-4 md:p-5">
         <div className="flex items-center justify-between gap-3 flex-wrap sm:flex-nowrap">
           <div className="flex items-center gap-3">
             
             <div>
-              <div className="flex items-center gap-2">
-                <span className={`text-[10px] font-black uppercase font-mono px-2 py-0.5 rounded-md border ${
-                  isSpark 
-                    ? "bg-emerald-100 text-emerald-800 border-emerald-300" 
-                    : "bg-slate-100 text-slate-800 border-slate-300"
-                }`}>
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="text-[10px] font-black uppercase font-mono px-2 py-0.5 rounded-md border bg-[var(--lamp-focus-glow)] text-[var(--lamp-glow)] border-[var(--lamp-accent)]/35">
                   {isSpark ? "IC3 SPARK" : "IC3 GS6"}
                 </span>
 
-                <span className={`inline-block text-xs font-black uppercase font-mono px-3 py-1 rounded-md text-emerald-800 bg-emerald-50 border border-emerald-200`}>
+                <span className="inline-block text-xs font-black uppercase font-mono px-3 py-1 rounded-md text-white bg-white/10 border border-white/15">
                   {appMode === "training" ? "TRAINING" : appMode === "testing" ? "TESTING" : "MODE"}
                 </span>
 
                 {selectedSubSet && (
-                  <span className="text-[10px] font-black uppercase font-mono px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-700 border border-indigo-200">
+                  <span className="text-[10px] font-black uppercase font-mono px-2.5 py-0.5 rounded-md bg-[var(--lamp-focus-glow)] text-[var(--lamp-accent)] border border-[var(--lamp-accent)]/35">
                     {selectedSubSet === "exam" ? "Thi thử" : selectedSubSet}
                   </span>
                 )}
@@ -927,8 +923,8 @@ export default function IC3QuestionBank({
 
             {/* Running timer stopwatch */}
             {isTimerActive && (
-              <div className="flex items-center gap-1.5 bg-slate-900 border border-slate-800 text-emerald-400 font-mono text-xs px-3 py-1.5 rounded-lg shadow-sm font-black">
-                <Timer className="w-4 h-4 text-emerald-400 animate-pulse shrink-0" />
+              <div className="flex items-center gap-1.5 bg-black/45 border border-[var(--lamp-accent)]/35 text-[var(--lamp-glow)] font-mono text-xs px-3 py-1.5 rounded-lg shadow-sm font-black">
+                <Timer className="w-4 h-4 text-[var(--lamp-accent)] animate-pulse shrink-0" />
                 <span>{formatTimer(timeElapsed)}</span>
               </div>
             )}
@@ -939,38 +935,40 @@ export default function IC3QuestionBank({
                 <button
                   type="button"
                   onClick={() => setShowQuestionDropdown(!showQuestionDropdown)}
-                  className={`flex items-center gap-1.5 sm:gap-2 shrink-0 bg-white border-2 border-slate-300 hover:bg-slate-50 px-2.5 sm:px-3 py-1.5 rounded-xl shadow-xs transition active:scale-95 text-slate-800 font-mono text-xs font-black cursor-pointer ${
-                    showQuestionDropdown ? "ring-2 ring-indigo-400 border-indigo-600 bg-indigo-50/30" : ""
+                  className={`flex items-center gap-1.5 sm:gap-2 shrink-0 border px-2.5 sm:px-3 py-1.5 rounded-xl shadow-xs transition active:scale-95 text-slate-100 font-mono text-xs font-black cursor-pointer ${
+                    showQuestionDropdown
+                      ? "ring-2 ring-[var(--lamp-focus-glow)] border-[var(--lamp-accent)] bg-white/12"
+                      : "bg-white/[0.06] border-white/15 hover:bg-white/12"
                   }`}
                   title="Xem bản đồ câu hỏi (dạng lưới)"
                 >
-                  <LayoutGrid className="w-3.5 h-3.5 text-indigo-600 shrink-0" />
-                  <span className="text-[10px] text-slate-500 uppercase tracking-wider hidden sm:inline">Bản đồ:</span>
-                  <span className="text-sm font-black text-indigo-700">{safeIndex + 1}</span>
-                  <span className="text-slate-300 font-light">/</span>
-                  <span className="text-xs font-black text-slate-700">{activeQuestions.length}</span>
-                  <ChevronDown className={`w-3.5 h-3.5 text-slate-500 shrink-0 transition-transform duration-200 ${showQuestionDropdown ? "rotate-180 text-indigo-600" : ""}`} />
+                  <LayoutGrid className="w-3.5 h-3.5 text-[var(--lamp-accent)] shrink-0" />
+                  <span className="text-[10px] text-slate-400 uppercase tracking-wider hidden sm:inline">Bản đồ:</span>
+                  <span className="text-sm font-black text-[var(--lamp-glow)]">{safeIndex + 1}</span>
+                  <span className="text-white/25 font-light">/</span>
+                  <span className="text-xs font-black text-slate-300">{activeQuestions.length}</span>
+                  <ChevronDown className={`w-3.5 h-3.5 text-slate-400 shrink-0 transition-transform duration-200 ${showQuestionDropdown ? "rotate-180 text-[var(--lamp-accent)]" : ""}`} />
                 </button>
 
                 {/* BẢN ĐỒ CÂU HỎI (DẠNG XEM LƯỚI) TRONG DROPDOWN DANH SÁCH CÂU HỎI */}
                 {showQuestionDropdown && (
                   <>
                     <div 
-                      className="fixed inset-0 z-40 bg-slate-950/40 backdrop-blur-xs" 
+                      className="fixed inset-0 z-40 bg-black/55 backdrop-blur-[2px]" 
                       onClick={() => setShowQuestionDropdown(false)}
                     />
-                    <div className="fixed inset-x-3 top-20 max-w-sm sm:max-w-md mx-auto sm:inset-auto sm:absolute sm:top-full sm:right-0 sm:mt-2 sm:w-96 bg-white border-2 border-slate-300 rounded-2xl shadow-2xl p-4 sm:p-5 z-50 font-sans select-none animate-in fade-in slide-in-from-top-2 duration-150">
+                    <div className="fixed inset-x-3 top-20 max-w-sm sm:max-w-md mx-auto sm:inset-auto sm:absolute sm:top-full sm:right-0 sm:mt-2 sm:w-96 bg-[#12161c]/95 backdrop-blur-2xl border border-white/15 rounded-2xl shadow-[0_24px_60px_rgba(0,0,0,0.8)] p-4 sm:p-5 z-50 font-sans select-none animate-in fade-in slide-in-from-top-2 duration-150 text-slate-100">
                       {/* Header */}
-                      <div className="flex items-center justify-between border-b-2 border-slate-200 pb-3">
+                      <div className="flex items-center justify-between border-b border-white/10 pb-3">
                         <div className="flex items-center gap-2">
-                          <div className="w-7 h-7 rounded-lg bg-indigo-600 text-white flex items-center justify-center shadow-xs">
+                          <div className="w-7 h-7 rounded-lg lamp-accent-btn flex items-center justify-center shadow-xs">
                             <LayoutGrid className="w-4 h-4" />
                           </div>
                           <div>
-                            <h4 className="text-xs font-black uppercase font-mono tracking-wider text-slate-900 leading-none">
+                            <h4 className="text-xs font-black uppercase font-mono tracking-wider text-white leading-none">
                               Bản đồ câu hỏi
                             </h4>
-                            <span className="text-[10px] font-bold text-slate-500 font-mono">
+                            <span className="text-[10px] font-bold text-slate-400 font-mono">
                               {appMode === "training"
                                 ? `Đã nộp ${checkedCount}/${activeQuestions.length} câu`
                                 : `Đã làm ${answeredCount}/${activeQuestions.length} câu`}
@@ -979,13 +977,13 @@ export default function IC3QuestionBank({
                         </div>
 
                         <div className="flex items-center gap-2">
-                          <span className="px-2 py-0.5 rounded-md bg-indigo-100 text-indigo-800 text-xs font-black font-mono">
+                          <span className="px-2 py-0.5 rounded-md bg-[var(--lamp-focus-glow)] border border-[var(--lamp-accent)]/35 text-[var(--lamp-glow)] text-xs font-black font-mono">
                             {Math.round(((appMode === "training" ? checkedCount : answeredCount) / (activeQuestions.length || 1)) * 100)}%
                           </span>
                           <button
                             type="button"
                             onClick={() => setShowQuestionDropdown(false)}
-                            className="w-6 h-6 rounded-md hover:bg-slate-100 flex items-center justify-center text-slate-400 hover:text-slate-700 cursor-pointer text-sm font-bold"
+                            className="w-6 h-6 rounded-md hover:bg-white/10 flex items-center justify-center text-slate-400 hover:text-white cursor-pointer text-sm font-bold"
                           >
                             ✕
                           </button>
@@ -993,9 +991,9 @@ export default function IC3QuestionBank({
                       </div>
 
                       {/* Progress Bar */}
-                      <div className="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden my-2.5">
+                      <div className="w-full bg-white/10 rounded-full h-1.5 overflow-hidden my-2.5">
                         <div
-                          className={`${appMode === "training" ? "bg-emerald-600" : "bg-indigo-600"} h-full rounded-full transition-all duration-300`}
+                          className="bg-[var(--lamp-accent)] h-full rounded-full transition-all duration-300"
                           style={{
                             width: `${((appMode === "training" ? checkedCount : answeredCount) / (activeQuestions.length || 1)) * 100}%`
                           }}
@@ -1005,28 +1003,28 @@ export default function IC3QuestionBank({
                       {/* Quick Summary Pill Counters */}
                       {appMode === "training" ? (
                         <div className="grid grid-cols-4 gap-1 text-center text-[10px] font-mono font-bold mb-3">
-                          <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 py-1 px-0.5 rounded-lg">
+                          <div className="bg-emerald-500/15 border border-emerald-400/35 text-emerald-300 py-1 px-0.5 rounded-lg">
                             Đúng: <span className="font-black">{correctTrainingCount}</span>
                           </div>
-                          <div className="bg-rose-50 border border-rose-200 text-rose-800 py-1 px-0.5 rounded-lg">
+                          <div className="bg-rose-500/15 border border-rose-400/35 text-rose-300 py-1 px-0.5 rounded-lg">
                             Sai: <span className="font-black">{wrongTrainingCount}</span>
                           </div>
-                          <div className="bg-slate-100 border border-slate-300 text-slate-700 py-1 px-0.5 rounded-lg">
+                          <div className="bg-white/[0.06] border border-white/15 text-slate-300 py-1 px-0.5 rounded-lg">
                             Chưa: <span className="font-black">{activeQuestions.length - checkedCount}</span>
                           </div>
-                          <div className="bg-amber-50 border border-amber-200 text-amber-800 py-1 px-0.5 rounded-lg">
+                          <div className="bg-amber-500/15 border border-amber-400/35 text-amber-300 py-1 px-0.5 rounded-lg">
                             Cờ: <span className="font-black">{flaggedCount}</span>
                           </div>
                         </div>
                       ) : (
                         <div className="grid grid-cols-3 gap-1.5 text-center text-[10px] font-mono font-bold mb-3">
-                          <div className="bg-indigo-50 border border-indigo-200 text-indigo-900 py-1 px-1 rounded-lg">
+                          <div className="bg-[var(--lamp-focus-glow)] border border-[var(--lamp-accent)]/35 text-[var(--lamp-glow)] py-1 px-1 rounded-lg">
                             Đã làm: <span className="font-black">{answeredCount}</span>
                           </div>
-                          <div className="bg-slate-100 border border-slate-300 text-slate-700 py-1 px-1 rounded-lg">
+                          <div className="bg-white/[0.06] border border-white/15 text-slate-300 py-1 px-1 rounded-lg">
                             Chưa: <span className="font-black">{unansweredCount}</span>
                           </div>
-                          <div className="bg-rose-50 border border-rose-200 text-rose-800 py-1 px-1 rounded-lg">
+                          <div className="bg-rose-500/15 border border-rose-400/35 text-rose-300 py-1 px-1 rounded-lg">
                             Cờ: <span className="font-black">{flaggedCount}</span>
                           </div>
                         </div>
@@ -1034,7 +1032,7 @@ export default function IC3QuestionBank({
 
                       {/* Grid of Questions */}
                       <div>
-                        <span className="text-[10px] font-extrabold uppercase font-mono text-slate-500 block mb-1.5">
+                        <span className="text-[10px] font-extrabold uppercase font-mono text-slate-400 block mb-1.5">
                           Chọn câu hỏi:
                         </span>
                         <div className="grid grid-cols-5 sm:grid-cols-6 gap-2 max-h-[260px] overflow-y-auto pr-1 py-1">
@@ -1051,23 +1049,23 @@ export default function IC3QuestionBank({
                             const isActive = idx === safeIndex;
                             const isFlagged = !!flaggedQuestions[item.id];
 
-                            let bubbleStyle = "bg-white text-slate-800 border-2 border-slate-300 hover:border-slate-400 font-bold hover:bg-slate-50";
+                            let bubbleStyle = "bg-white/[0.05] text-slate-200 border border-white/15 hover:border-white/35 font-bold hover:bg-white/10";
                             if (isActive) {
-                              bubbleStyle = "bg-indigo-100 border-2 border-indigo-600 text-indigo-950 font-black ring-2 ring-indigo-400 shadow-sm scale-105 z-10";
+                              bubbleStyle = "bg-[var(--lamp-focus-glow)] border-2 border-[var(--lamp-accent)] text-white font-black ring-2 ring-[var(--lamp-focus-glow)] shadow-sm scale-105 z-10";
                             } else if (appMode === "training") {
                               const isCheckedItem = !!checkedQuestions[item.id];
                               if (isCheckedItem) {
                                 const isCorrect = checkIfQuestionIsCorrect(item, selectedAnswers[item.id]);
                                 if (isCorrect) {
-                                  bubbleStyle = "bg-emerald-600 text-white border-2 border-emerald-600 font-black shadow-xs hover:bg-emerald-700";
+                                  bubbleStyle = "bg-emerald-500/80 text-white border border-emerald-400 font-black shadow-xs hover:bg-emerald-500";
                                 } else {
-                                  bubbleStyle = "bg-rose-600 text-white border-2 border-rose-600 font-black shadow-xs hover:bg-rose-700";
+                                  bubbleStyle = "bg-rose-500/80 text-white border border-rose-400 font-black shadow-xs hover:bg-rose-500";
                                 }
                               } else if (hasAns) {
-                                bubbleStyle = "bg-indigo-600 text-white border-2 border-indigo-600 font-black shadow-xs hover:bg-indigo-700";
+                                bubbleStyle = "lamp-accent-btn border border-transparent font-black shadow-xs";
                               }
                             } else if (hasAns) {
-                              bubbleStyle = "bg-indigo-600 text-white border-2 border-indigo-600 font-black shadow-xs hover:bg-indigo-700";
+                              bubbleStyle = "lamp-accent-btn border border-transparent font-black shadow-xs";
                             }
 
                             return (
@@ -1079,12 +1077,12 @@ export default function IC3QuestionBank({
                                   setCurrentIndex(idx);
                                   setShowQuestionDropdown(false);
                                 }}
-                                className={`h-8 sm:h-9 rounded-xl border text-xs font-mono flex items-center justify-center transition active:scale-95 relative cursor-pointer ${bubbleStyle}`}
+                                className={`h-8 sm:h-9 rounded-xl text-xs font-mono flex items-center justify-center transition active:scale-95 relative cursor-pointer ${bubbleStyle}`}
                                 title={`Câu ${idx + 1}${hasAns ? " (Đã làm)" : " (Chưa làm)"}${isFlagged ? " - Đã gắn cờ" : ""}`}
                               >
                                 <span>{idx + 1}</span>
                                 {isFlagged && (
-                                  <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-rose-500 rounded-full border border-white flex items-center justify-center text-[7px] text-white">
+                                  <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-rose-500 rounded-full border border-[#12161c] flex items-center justify-center text-[7px] text-white">
                                     🚩
                                   </span>
                                 )}
@@ -1095,21 +1093,21 @@ export default function IC3QuestionBank({
                       </div>
 
                       {/* Legend */}
-                      <div className="border-t border-slate-200 mt-2.5 pt-2 text-[10px] font-mono font-semibold text-slate-600">
+                      <div className="border-t border-white/10 mt-2.5 pt-2 text-[10px] font-mono font-semibold text-slate-400">
                         <div className="flex items-center justify-between gap-1 flex-wrap">
                           {appMode === "training" ? (
                             <>
                               <span className="flex items-center gap-1">
-                                <span className="w-2.5 h-2.5 rounded bg-emerald-600 inline-block" /> Đúng
+                                <span className="w-2.5 h-2.5 rounded bg-emerald-500 inline-block" /> Đúng
                               </span>
                               <span className="flex items-center gap-1">
-                                <span className="w-2.5 h-2.5 rounded bg-rose-600 inline-block" /> Sai
+                                <span className="w-2.5 h-2.5 rounded bg-rose-500 inline-block" /> Sai
                               </span>
                               <span className="flex items-center gap-1">
-                                <span className="w-2.5 h-2.5 rounded bg-indigo-600 inline-block" /> Đã chọn
+                                <span className="w-2.5 h-2.5 rounded bg-[var(--lamp-accent)] inline-block" /> Đã chọn
                               </span>
                               <span className="flex items-center gap-1">
-                                <span className="w-2.5 h-2.5 rounded bg-white border border-slate-400 inline-block" /> Chưa
+                                <span className="w-2.5 h-2.5 rounded bg-white/10 border border-white/30 inline-block" /> Chưa
                               </span>
                               <span className="flex items-center gap-1">
                                 <span className="text-[10px]">🚩</span> Cờ
@@ -1118,13 +1116,13 @@ export default function IC3QuestionBank({
                           ) : (
                             <>
                               <span className="flex items-center gap-1">
-                                <span className="w-2.5 h-2.5 rounded bg-indigo-600 inline-block" /> Đã làm
+                                <span className="w-2.5 h-2.5 rounded bg-[var(--lamp-accent)] inline-block" /> Đã làm
                               </span>
                               <span className="flex items-center gap-1">
-                                <span className="w-2.5 h-2.5 rounded bg-white border border-slate-400 inline-block" /> Chưa
+                                <span className="w-2.5 h-2.5 rounded bg-white/10 border border-white/30 inline-block" /> Chưa
                               </span>
                               <span className="flex items-center gap-1">
-                                <span className="w-2.5 h-2.5 rounded bg-indigo-100 border border-indigo-600 inline-block" /> Đang xem
+                                <span className="w-2.5 h-2.5 rounded bg-[var(--lamp-focus-glow)] border border-[var(--lamp-accent)] inline-block" /> Đang xem
                               </span>
                               <span className="flex items-center gap-1">
                                 <span className="text-[10px]">🚩</span> Cờ
@@ -1153,9 +1151,9 @@ export default function IC3QuestionBank({
                     setTimeElapsed(0);
                   }
                 }}
-                className="text-xs font-black uppercase text-slate-600 bg-white border border-slate-200 shadow-sm hover:bg-slate-50 hover:text-slate-805 px-3 py-1.5 rounded-lg transition active:scale-95 flex items-center gap-1.5 font-mono"
+                className="text-xs font-black uppercase text-slate-200 bg-white/[0.06] border border-white/15 shadow-sm hover:bg-rose-500/20 hover:border-rose-400/40 hover:text-rose-200 px-3 py-1.5 rounded-lg transition active:scale-95 flex items-center gap-1.5 font-mono cursor-pointer"
               >
-                <X className="w-4 h-4 text-red-500" />
+                <X className="w-4 h-4 text-rose-400" />
                 <span>Thoát</span>
               </button>
             )}
@@ -1384,36 +1382,35 @@ export default function IC3QuestionBank({
         </div>
       ) : (
         /* ================= 🎓 CHÍNH THỨC PANEL CHỌN CHẾ ĐỘ & 6 SUBSETS ================= */
-        <div className="flex-1 flex flex-col bg-[#f0f3f8] min-h-[420px]">
+        <div className="flex-1 flex flex-col bg-transparent min-h-[420px]">
           {appMode === "menu" && (
             <div className="p-6 md:p-8 space-y-8 flex-1 flex flex-col justify-center">
               
               {/* UPPER SECTION: PRACTICE MODAL CHOOSER */}
               <div className="text-center space-y-3.5 max-w-xl mx-auto">
-                <span className="text-xs font-black tracking-widest font-mono text-indigo-700 uppercase bg-indigo-50 border border-indigo-200 px-3 py-1 rounded-full inline-block shadow-xs">
+                <span className="text-xs font-black tracking-widest font-mono text-[var(--lamp-glow)] uppercase bg-[var(--lamp-focus-glow)] border border-[var(--lamp-accent)]/35 px-3 py-1 rounded-full inline-block shadow-xs">
                   BƯỚC 1: CHỌN CHẾ ĐỘ ÔN TẬP
                 </span>
                 
-                <div className="inline-flex bg-slate-200/90 p-1.5 rounded-2xl border-2 border-slate-300 w-full max-w-lg shadow-inner">
+                <div className="inline-flex bg-black/35 p-1.5 rounded-2xl border border-white/10 w-full max-w-lg shadow-inner">
                   <button
                     type="button"
                     onClick={() => setSelectedPracticeMode("training")}
                     className={`flex-1 flex flex-col items-center justify-center py-3.5 px-4 rounded-xl transition duration-150 relative cursor-pointer ${
                       selectedPracticeMode === "training"
-                        ? `bg-white shadow-md text-slate-950 border-2 border-indigo-600 font-black`
-                        : "text-slate-700 hover:text-slate-950 hover:bg-white/60 font-bold"
+                        ? "bg-white/12 shadow-[0_0_20px_var(--beam-color)] text-white border-2 border-[var(--lamp-accent)] font-black"
+                        : "text-slate-400 hover:text-white hover:bg-white/[0.05] font-bold border-2 border-transparent"
                     }`}
                   >
-                    {/* Tick icon indicator for active mode */}
                     {selectedPracticeMode === "training" && (
-                      <div className={`absolute top-2.5 right-2.5 w-2.5 h-2.5 rounded-full ${themeConfig.iconBg}`} />
+                      <div className="absolute top-2.5 right-2.5 w-2.5 h-2.5 rounded-full bg-[var(--lamp-accent)]" />
                     )}
                     <span className="text-sm md:text-base font-black uppercase font-mono tracking-wide flex items-center gap-1.5">
-                      <BookOpen className="w-4 h-4 text-indigo-600" />
+                      <BookOpen className="w-4 h-4 text-[var(--lamp-accent)]" />
                       TRAINING
                     </span>
-                    <span className={`text-xs font-bold mt-1 sm:block hidden leading-none ${
-                      selectedPracticeMode === "training" ? "text-slate-700" : "text-slate-600"
+                    <span className={`text-xs font-semibold mt-1 sm:block hidden leading-none ${
+                      selectedPracticeMode === "training" ? "text-slate-200" : "text-slate-400"
                     }`}>
                       Xem đáp án ngay khi chọn câu
                     </span>
@@ -1424,19 +1421,19 @@ export default function IC3QuestionBank({
                     onClick={() => setSelectedPracticeMode("testing")}
                     className={`flex-1 flex flex-col items-center justify-center py-3.5 px-4 rounded-xl transition duration-150 relative cursor-pointer ${
                       selectedPracticeMode === "testing"
-                        ? `bg-white shadow-md text-slate-950 border-2 border-indigo-600 font-black`
-                        : "text-slate-700 hover:text-slate-950 hover:bg-white/60 font-bold"
+                        ? "bg-white/12 shadow-[0_0_20px_var(--beam-color)] text-white border-2 border-[var(--lamp-accent)] font-black"
+                        : "text-slate-400 hover:text-white hover:bg-white/[0.05] font-bold border-2 border-transparent"
                     }`}
                   >
                     {selectedPracticeMode === "testing" && (
-                      <div className={`absolute top-2.5 right-2.5 w-2.5 h-2.5 rounded-full ${themeConfig.iconBg}`} />
+                      <div className="absolute top-2.5 right-2.5 w-2.5 h-2.5 rounded-full bg-[var(--lamp-accent)]" />
                     )}
                     <span className="text-sm md:text-base font-black uppercase font-mono tracking-wide flex items-center gap-1.5">
-                      <Timer className="w-4 h-4 text-amber-600" />
+                      <Timer className="w-4 h-4 text-[var(--lamp-accent)]" />
                       TESTING
                     </span>
-                    <span className={`text-xs font-bold mt-1 sm:block hidden leading-none ${
-                      selectedPracticeMode === "testing" ? "text-slate-700" : "text-slate-600"
+                    <span className={`text-xs font-semibold mt-1 sm:block hidden leading-none ${
+                      selectedPracticeMode === "testing" ? "text-slate-200" : "text-slate-400"
                     }`}>
                       Nộp bài biết tổng điểm
                     </span>
@@ -1447,7 +1444,7 @@ export default function IC3QuestionBank({
               {/* LOWER SECTION: THE DYNAMIC MODULE CHANNELS */}
               <div className="space-y-4">
                 <div className="text-center">
-                  <span className="text-xs font-black tracking-widest font-mono text-slate-800 uppercase">
+                  <span className="text-xs font-black tracking-widest font-mono text-slate-300 uppercase">
                     BƯỚC 2: CHỌN ĐỀ THI ĐỂ BẮT ĐẦU
                   </span>
                 </div>
@@ -1468,17 +1465,17 @@ export default function IC3QuestionBank({
                           }
                           handleStartSubset(sub.id);
                         }}
-                        className={`group bg-white border-2 border-slate-300 hover:border-indigo-600 rounded-2xl p-5 flex flex-col justify-between shadow-xs hover:shadow-md transition duration-200 cursor-pointer relative overflow-hidden min-h-[130px] ${
+                        className={`group bg-white/[0.04] hover:bg-white/[0.08] border border-white/12 hover:border-[var(--lamp-accent)] rounded-2xl p-5 flex flex-col justify-between shadow-[0_12px_30px_rgba(0,0,0,0.35)] hover:shadow-[0_16px_38px_var(--beam-color)] transition duration-200 cursor-pointer relative overflow-hidden min-h-[130px] ${
                           qCount > 0 
                             ? "active:scale-[0.98]" 
-                            : "opacity-60 cursor-not-allowed"
+                            : "opacity-50 cursor-not-allowed"
                         }`}
                       >
                         <div>
-                          <h5 className="text-sm md:text-base font-black text-slate-950 group-hover:text-indigo-700 transition leading-snug">
+                          <h5 className="text-sm md:text-base font-black text-white group-hover:text-[var(--lamp-glow)] transition leading-snug">
                             {sub.name}
                           </h5>
-                          <span className="inline-block text-xs font-bold font-mono px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-700 border border-indigo-200 mt-1.5">
+                          <span className="inline-block text-xs font-bold font-mono px-2 py-0.5 rounded-md bg-[var(--lamp-focus-glow)] text-[var(--lamp-glow)] border border-[var(--lamp-accent)]/35 mt-1.5">
                             {qCount} câu hỏi
                           </span>
                         </div>
@@ -1486,7 +1483,7 @@ export default function IC3QuestionBank({
                         <div className="mt-auto pt-4">
                           <button
                             type="button"
-                            className={`w-full py-2.5 px-3 rounded-xl font-black text-xs md:text-sm uppercase font-mono tracking-wider transition ${themeConfig.nextBtnActive} shadow-sm text-white cursor-pointer`}
+                            className="lamp-accent-btn w-full py-2.5 px-3 rounded-xl font-black text-xs md:text-sm uppercase font-mono tracking-wider cursor-pointer"
                           >
                             BẮT ĐẦU
                           </button>
@@ -1528,7 +1525,7 @@ export default function IC3QuestionBank({
                       className="space-y-5"
                     >
                       {/* Flag to highlight button */}
-                      <div className="flex items-center justify-end border-b-2 border-slate-200 pb-3">
+                      <div className="flex items-center justify-end border-b border-white/10 pb-3">
                         <button
                           type="button"
                           onClick={() => {
@@ -1537,31 +1534,31 @@ export default function IC3QuestionBank({
                               [q.id]: !prev[q.id]
                             }));
                           }}
-                          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border-2 text-xs font-bold font-mono transition active:scale-95 uppercase tracking-wide select-none cursor-pointer ${
+                          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-bold font-mono transition active:scale-95 uppercase tracking-wide select-none cursor-pointer ${
                             flaggedQuestions[q.id]
-                              ? "bg-rose-50 border-rose-300 text-rose-800 font-black"
-                              : "bg-white border-slate-300 text-slate-700 hover:bg-slate-100"
+                              ? "bg-rose-500/20 border-rose-400/50 text-rose-200 font-black"
+                              : "bg-white/[0.05] border-white/15 text-slate-300 hover:bg-white/10 hover:text-white"
                           }`}
                         >
-                          <Flag className={`w-4 h-4 ${flaggedQuestions[q.id] ? "text-rose-600 fill-rose-600" : "text-slate-500"}`} />
+                          <Flag className={`w-4 h-4 ${flaggedQuestions[q.id] ? "text-rose-400 fill-rose-400" : "text-slate-400"}`} />
                           <span>{flaggedQuestions[q.id] ? "Đã Đánh Dấu" : "Đánh Dấu"}</span>
                         </button>
                       </div>
 
                       {/* Question Text - Enlarged & prominent */}
                       <div className="space-y-3">
-                        <div className="bg-white border-2 border-slate-300 rounded-2xl p-6 sm:p-8 text-base md:text-lg lg:text-xl text-slate-950 leading-relaxed font-bold shadow-xs">
+                        <div className="bg-white/[0.05] border border-white/15 rounded-2xl p-6 sm:p-8 text-base md:text-lg lg:text-xl text-white leading-relaxed font-bold shadow-[0_12px_35px_rgba(0,0,0,0.3)]">
                           <p className="whitespace-pre-wrap leading-relaxed">{q.text}</p>
                           {q.image && (
                             <div className="mt-5 flex flex-col items-center justify-center">
-                              <div className="relative group max-w-full overflow-hidden rounded-xl border-2 border-slate-300 bg-slate-50 p-1.5 shadow-xs">
+                              <div className="relative group max-w-full overflow-hidden rounded-xl border border-white/25 bg-white/95 p-2 shadow-lg">
                                 <img
                                   src={normalizeImagePath(q.image)}
                                   alt="Hình ảnh minh họa câu hỏi"
                                   className="max-h-80 sm:max-h-96 md:max-h-[460px] w-auto max-w-full rounded-lg object-contain cursor-pointer transition-transform hover:scale-[1.01]"
                                   onClick={() => setPreviewImage(normalizeImagePath(q.image)!)}
                                 />
-                                <div className="absolute bottom-2 right-2 px-2.5 py-1 bg-slate-900/75 text-white text-[11px] font-mono rounded-md backdrop-blur-xs flex items-center gap-1.5 pointer-events-none">
+                                <div className="absolute bottom-2 right-2 px-2.5 py-1 bg-slate-900/80 text-white text-[11px] font-mono rounded-md backdrop-blur-xs flex items-center gap-1.5 pointer-events-none">
                                   <ZoomIn className="w-3.5 h-3.5" />
                                   <span>Bấm để phóng to</span>
                                 </div>
@@ -1575,12 +1572,12 @@ export default function IC3QuestionBank({
                       {q.type === "multiple_choice" && q.options && (
                         <div className="space-y-3 pt-2">
                           {q.correctKeys && q.correctKeys.length > 1 ? (
-                            <span className="text-xs sm:text-sm font-black uppercase text-indigo-700 flex items-center gap-1.5 font-mono tracking-wider">
-                              <Compass className="w-4 h-4 text-indigo-600 shrink-0" /> chọn nhiều đáp án:
+                            <span className="text-xs sm:text-sm font-black uppercase text-[var(--lamp-glow)] flex items-center gap-1.5 font-mono tracking-wider">
+                              <Compass className="w-4 h-4 text-[var(--lamp-accent)] shrink-0" /> chọn nhiều đáp án:
                             </span>
                           ) : (
-                            <span className="text-xs sm:text-sm font-black uppercase text-slate-800 flex items-center gap-1.5 font-mono tracking-wider">
-                              <Compass className="w-4 h-4 text-slate-600 shrink-0" /> chọn một đáp án:
+                            <span className="text-xs sm:text-sm font-black uppercase text-slate-300 flex items-center gap-1.5 font-mono tracking-wider">
+                              <Compass className="w-4 h-4 text-[var(--lamp-accent)] shrink-0" /> chọn một đáp án:
                             </span>
                           )}
                           
@@ -1597,33 +1594,31 @@ export default function IC3QuestionBank({
                                 : userAns === letterKey;
                               const isCorrectOption = q.correctKeys?.includes(letterKey);
 
-                              let btnStyle = "border-slate-300 text-slate-900 bg-white hover:bg-slate-50 hover:border-indigo-400 font-semibold";
-                              let circleStyle = "bg-slate-100 text-slate-800 border-slate-300 font-bold";
+                              let btnStyle = "border-white/15 text-slate-100 bg-white/[0.04] hover:bg-white/[0.08] hover:border-[var(--lamp-accent)]/60 font-semibold";
+                              let circleStyle = "bg-white/10 text-slate-200 border-white/15 font-bold";
 
                               if (appMode === "training") {
                                 if (isChecked) {
-                                  // Highlight locked incorrect and correct answers clearly
                                   if (isCorrectOption) {
-                                    btnStyle = "border-emerald-500 bg-emerald-50 text-emerald-950 font-bold pointer-events-none";
-                                    circleStyle = "bg-emerald-600 text-white border-emerald-600";
+                                    btnStyle = "border-emerald-400/75 bg-emerald-500/15 text-emerald-100 font-bold pointer-events-none";
+                                    circleStyle = "bg-emerald-500 text-white border-emerald-400";
                                   } else if (isSelected) {
-                                    btnStyle = "border-rose-400 bg-rose-50 text-rose-950 font-semibold pointer-events-none";
-                                    circleStyle = "bg-rose-600 text-white border-rose-600";
+                                    btnStyle = "border-rose-400/75 bg-rose-500/15 text-rose-100 font-semibold pointer-events-none";
+                                    circleStyle = "bg-rose-500 text-white border-rose-400";
                                   } else {
-                                    btnStyle = "border-slate-200 text-slate-400 bg-slate-50/80 opacity-60 pointer-events-none";
-                                    circleStyle = "bg-slate-100 text-slate-400 border-slate-200";
+                                    btnStyle = "border-white/10 text-slate-500 bg-white/[0.02] opacity-50 pointer-events-none";
+                                    circleStyle = "bg-white/5 text-slate-500 border-white/10";
                                   }
                                 } else {
                                   if (isSelected) {
-                                    btnStyle = `border-indigo-600 bg-indigo-50/40 text-indigo-950 font-bold ring-2 ring-indigo-500/20`;
-                                    circleStyle = "bg-indigo-600 text-white border-indigo-600";
+                                    btnStyle = "border-[var(--lamp-accent)] bg-[var(--lamp-focus-glow)] text-white font-bold ring-2 ring-[var(--lamp-focus-glow)]";
+                                    circleStyle = "lamp-accent-btn border-transparent";
                                   }
                                 }
                               } else {
-                                // Strictly Testing Mode: simple highlighted active style, no reveals
                                 if (isSelected) {
-                                  btnStyle = "border-indigo-600 bg-indigo-50/40 text-slate-950 font-bold ring-2 ring-indigo-500/20";
-                                  circleStyle = "bg-indigo-600 text-white border-indigo-600";
+                                  btnStyle = "border-[var(--lamp-accent)] bg-[var(--lamp-focus-glow)] text-white font-bold ring-2 ring-[var(--lamp-focus-glow)]";
+                                  circleStyle = "lamp-accent-btn border-transparent";
                                 }
                               }
 
@@ -1666,8 +1661,8 @@ export default function IC3QuestionBank({
                                     <span
                                       className={`w-6 h-6 rounded-lg border-2 flex items-center justify-center text-xs shrink-0 transition ${
                                         isSelected
-                                          ? "bg-indigo-600 border-indigo-600 text-white font-bold"
-                                          : "border-slate-400 bg-white text-transparent"
+                                          ? "lamp-accent-btn border-transparent font-bold"
+                                          : "border-white/30 bg-white/5 text-transparent"
                                       }`}
                                     >
                                       ✓
@@ -1754,8 +1749,8 @@ export default function IC3QuestionBank({
                         return (
                           <div className="space-y-3 pt-1">
                             <div className="flex items-center gap-1.5">
-                              <Compass className="w-4 h-4 text-slate-600" />
-                              <span className="text-xs font-black uppercase text-slate-800 font-mono tracking-wider">
+                              <Compass className="w-4 h-4 text-[var(--lamp-accent)]" />
+                              <span className="text-xs font-black uppercase text-slate-200 font-mono tracking-wider">
                                 {numCols > 2
                                   ? `Hãy phân loại theo các nhóm: [ ${columns.join(" ] - [ ")} ]:`
                                   : q.trueColumnLabel && q.falseColumnLabel
@@ -1764,23 +1759,23 @@ export default function IC3QuestionBank({
                               </span>
                             </div>
 
-                            <div className="overflow-x-auto rounded-xl border-2 border-slate-300">
+                            <div className="overflow-x-auto rounded-xl border border-white/15 bg-white/[0.03]">
                               <div className="min-w-[420px]">
                                 {/* HEADER */}
-                                <div style={gridStyle} className="grid bg-slate-100 border-b-2 border-slate-300 items-center">
-                                  <div className="p-3 font-black text-xs uppercase font-mono text-slate-800">
+                                <div style={gridStyle} className="grid bg-white/[0.07] border-b border-white/15 items-center">
+                                  <div className="p-3 font-black text-xs uppercase font-mono text-slate-200">
                                     Danh sách phát biểu
                                   </div>
                                   {columns.map((colName, cIdx) => {
                                     const colColor = cIdx === 0 
-                                      ? "text-emerald-700" 
+                                      ? "text-emerald-300" 
                                       : cIdx === 1 
-                                        ? (numCols === 2 ? "text-rose-700" : "text-blue-700") 
+                                        ? (numCols === 2 ? "text-rose-300" : "text-sky-300") 
                                         : cIdx === 2 
-                                          ? "text-purple-700" 
-                                          : "text-amber-700";
+                                          ? "text-purple-300" 
+                                          : "text-amber-300";
                                     return (
-                                      <div key={cIdx} className={`p-2 sm:p-3 text-center font-black text-xs uppercase font-mono ${colColor} border-l border-slate-300 leading-tight`}>
+                                      <div key={cIdx} className={`p-2 sm:p-3 text-center font-black text-xs uppercase font-mono ${colColor} border-l border-white/15 leading-tight`}>
                                         {colName}
                                       </div>
                                     );
@@ -1811,20 +1806,20 @@ export default function IC3QuestionBank({
                                     <div
                                       key={index}
                                       style={gridStyle}
-                                      className={`grid border-b border-slate-200 last:border-b-0 transition ${
+                                      className={`grid border-b border-white/10 last:border-b-0 transition ${
                                         appMode === "training" && isChecked
                                           ? isRowCorrect
-                                            ? "bg-emerald-50/70"
-                                            : "bg-rose-50/70"
-                                          : "bg-white"
+                                            ? "bg-emerald-500/15"
+                                            : "bg-rose-500/15"
+                                          : "bg-transparent hover:bg-white/[0.03]"
                                       }`}
                                     >
                                       {/* STATEMENT */}
                                       <div className="p-3.5 sm:p-4 flex items-center min-w-0">
-                                        <span className="mr-2.5 sm:mr-3 w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-slate-100 border border-slate-300 flex items-center justify-center text-xs font-black font-mono shrink-0">
+                                        <span className="mr-2.5 sm:mr-3 w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-white/10 border border-white/15 text-slate-200 flex items-center justify-center text-xs font-black font-mono shrink-0">
                                           {index + 1}
                                         </span>
-                                        <span className="text-xs sm:text-sm font-semibold leading-relaxed text-slate-900 break-words flex-1 min-w-0">
+                                        <span className="text-xs sm:text-sm font-semibold leading-relaxed text-slate-100 break-words flex-1 min-w-0">
                                           {statement.text}
                                         </span>
                                       </div>
@@ -1840,23 +1835,23 @@ export default function IC3QuestionBank({
                                           (cIdx === 1 && (statement.correct === "False" || statement.correct === (q.falseColumnLabel || "False")));
 
                                         let btnStyle = isSelected
-                                          ? "bg-emerald-600 border-emerald-600 text-white"
-                                          : "bg-white border-slate-400 hover:border-emerald-500";
+                                          ? "lamp-accent-btn border-transparent"
+                                          : "bg-white/[0.05] border-white/30 hover:border-[var(--lamp-accent)]";
 
                                         if (appMode === "training" && isChecked) {
                                           if (isTarget) {
                                             btnStyle = isSelected
-                                              ? "bg-emerald-600 border-emerald-600 text-white shadow-xs"
-                                              : "bg-emerald-100 border-emerald-500 text-emerald-800 ring-2 ring-emerald-400/50";
+                                              ? "bg-emerald-500 border-emerald-400 text-white shadow-xs"
+                                              : "bg-emerald-500/25 border-emerald-400 text-emerald-300 ring-2 ring-emerald-400/40";
                                           } else if (isSelected) {
-                                            btnStyle = "bg-rose-600 border-rose-600 text-white";
+                                            btnStyle = "bg-rose-500 border-rose-400 text-white";
                                           } else {
-                                            btnStyle = "bg-slate-50 border-slate-200 text-transparent opacity-40";
+                                            btnStyle = "bg-white/5 border-white/10 text-transparent opacity-40";
                                           }
                                         }
 
                                         return (
-                                          <div key={cIdx} className="border-l border-slate-200 flex items-center justify-center p-2.5 sm:p-3">
+                                          <div key={cIdx} className="border-l border-white/10 flex items-center justify-center p-2.5 sm:p-3">
                                             <button
                                               type="button"
                                               disabled={appMode === "training" && isChecked}
@@ -1897,7 +1892,7 @@ export default function IC3QuestionBank({
                           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 items-start">
                             {/* Left Column: Terms to Match */}
                             <div className="md:col-span-1 lg:col-span-7 space-y-3">
-                              <span className="text-xs font-black text-slate-800 block uppercase font-mono tracking-wider">
+                              <span className="text-xs font-black text-slate-300 block uppercase font-mono tracking-wider">
                                 DANH SÁCH THUẬT NGỮ ({q.pairs.length})
                               </span>
                               {q.pairs.map((pair) => {
@@ -1913,24 +1908,23 @@ export default function IC3QuestionBank({
                                 const isThisPairCorrect = matchedDef === pair.right;
 
                                 // Style drop area
-                                let slotStyle = "border-dashed border-2 border-slate-300 bg-slate-50 hover:bg-slate-100 hover:border-slate-400";
+                                let slotStyle = "border-dashed border-2 border-white/25 bg-black/25 hover:bg-white/[0.06] hover:border-[var(--lamp-accent)]/60";
                                 if (matchedDef) {
-                                  slotStyle = "border-solid border-2 border-indigo-500 bg-white shadow-xs";
+                                  slotStyle = "border-solid border-2 border-[var(--lamp-accent)] bg-white/[0.07] shadow-xs";
                                 }
 
                                 if (appMode === "training" && isChecked) {
-                                  // Reveal colors on submit
                                   if (isThisPairCorrect) {
-                                    slotStyle = "border-emerald-500 bg-emerald-50 text-emerald-950 font-bold pointer-events-none";
+                                    slotStyle = "border-emerald-400/75 bg-emerald-500/15 text-emerald-100 font-bold pointer-events-none";
                                   } else {
-                                    slotStyle = "border-rose-400 bg-rose-50 text-rose-950 font-semibold pointer-events-none";
+                                    slotStyle = "border-rose-400/75 bg-rose-500/15 text-rose-100 font-semibold pointer-events-none";
                                   }
                                 }
 
                                 return (
                                   <div 
                                     key={pair.left} 
-                                    className="flex flex-col sm:flex-row items-stretch gap-2.5 bg-white p-3 rounded-xl border-2 border-slate-200 transition-all hover:border-slate-300 shadow-xs"
+                                    className="flex flex-col sm:flex-row items-stretch gap-2.5 bg-white/[0.04] p-3 rounded-xl border border-white/12 transition-all hover:border-white/25 shadow-xs"
                                     onDragOver={(e) => {
                                       handleDragOver(e);
                                       handleDragAutoScroll(e);
@@ -1946,10 +1940,10 @@ export default function IC3QuestionBank({
                                         : pair.left;
 
                                       return (
-                                        <div className="sm:w-2/5 md:w-1/3 min-w-[130px] flex flex-col items-center justify-center p-3 bg-indigo-600 text-white rounded-xl shadow-xs shrink-0 font-mono font-bold text-xs sm:text-sm text-center break-words gap-2">
+                                        <div className="sm:w-2/5 md:w-1/3 min-w-[130px] flex flex-col items-center justify-center p-3 bg-[var(--lamp-focus-glow)] border border-[var(--lamp-accent)]/40 text-white rounded-xl shadow-xs shrink-0 font-mono font-bold text-xs sm:text-sm text-center break-words gap-2">
                                           {termImage && (
                                             <div 
-                                              className="relative group/termImg bg-white rounded-xl p-1.5 border-2 border-indigo-200/90 shadow-sm cursor-pointer hover:border-white transition flex items-center justify-center"
+                                              className="relative group/termImg bg-white rounded-xl p-1.5 border border-white/30 shadow-sm cursor-pointer hover:border-[var(--lamp-accent)] transition flex items-center justify-center"
                                               onClick={(e) => {
                                                 e.stopPropagation();
                                                 setPreviewImage(termImage);
@@ -1961,7 +1955,7 @@ export default function IC3QuestionBank({
                                                 alt={displayLabel}
                                                 className="w-20 h-20 sm:w-24 sm:h-24 object-contain rounded-lg transition-transform group-hover/termImg:scale-105"
                                               />
-                                              <div className="absolute inset-0 bg-slate-950/30 opacity-0 group-hover/termImg:opacity-100 rounded-lg flex items-center justify-center transition">
+                                              <div className="absolute inset-0 bg-slate-950/35 opacity-0 group-hover/termImg:opacity-100 rounded-lg flex items-center justify-center transition">
                                                 <ZoomIn className="w-5 h-5 text-white drop-shadow" />
                                               </div>
                                             </div>
@@ -1977,7 +1971,7 @@ export default function IC3QuestionBank({
                                         if (appMode === "training" && isChecked) return;
                                         if (selectedPoolDef) {
                                           handleMatch(pair.left, selectedPoolDef);
-                                          setSelectedPoolDef(null); // Reset selection
+                                          setSelectedPoolDef(null);
                                         } else if (matchedDef) {
                                           handleUnmatch(pair.left);
                                         }
@@ -1995,7 +1989,7 @@ export default function IC3QuestionBank({
                                                   <img
                                                     src={rightImg}
                                                     alt={matchedDef}
-                                                    className="w-10 h-10 rounded-md object-contain bg-slate-100 border border-slate-300 p-0.5 shrink-0 cursor-pointer hover:opacity-90"
+                                                    className="w-10 h-10 rounded-md object-contain bg-white border border-white/30 p-0.5 shrink-0 cursor-pointer hover:opacity-90"
                                                     onClick={(e) => {
                                                       e.stopPropagation();
                                                       setPreviewImage(rightImg);
@@ -2006,7 +2000,7 @@ export default function IC3QuestionBank({
                                               }
                                               return null;
                                             })()}
-                                            <span className="flex-1 font-bold text-slate-950 break-words">{matchedDef}</span>
+                                            <span className="flex-1 font-bold text-white break-words">{matchedDef}</span>
                                           </div>
                                           {!(appMode === "training" && isChecked) && (
                                             <button 
@@ -2015,7 +2009,7 @@ export default function IC3QuestionBank({
                                                 e.stopPropagation();
                                                 handleUnmatch(pair.left);
                                               }}
-                                              className="p-1 hover:bg-slate-100 text-slate-500 hover:text-red-600 rounded transition shrink-0 cursor-pointer"
+                                              className="p-1 hover:bg-white/10 text-slate-400 hover:text-rose-300 rounded transition shrink-0 cursor-pointer"
                                               title="Gỡ ghép nối"
                                             >
                                               <X className="w-4 h-4" />
@@ -2023,7 +2017,7 @@ export default function IC3QuestionBank({
                                           )}
                                         </>
                                       ) : (
-                                        <div className="w-full flex items-center justify-center gap-1.5 py-2 text-slate-500 font-semibold italic text-xs text-center">
+                                        <div className="w-full flex items-center justify-center gap-1.5 py-2 text-slate-400 font-semibold italic text-xs text-center">
                                           <span>{selectedPoolDef ? "👉 Nhấp để thả định nghĩa đã chọn" : "🫳 Thả định nghĩa vào đây"}</span>
                                         </div>
                                       )}
@@ -2036,7 +2030,7 @@ export default function IC3QuestionBank({
                             {/* Right Column: Unassigned pool of definitions */}
                             <div className="md:col-span-1 lg:col-span-5 flex flex-col space-y-3">
                               <div className="flex items-center justify-between">
-                                <span className="text-xs font-black text-slate-800 block uppercase font-mono tracking-wider">
+                                <span className="text-xs font-black text-slate-300 block uppercase font-mono tracking-wider">
                                   ĐỊNH NGHĨA CHỜ GHÉP ({matchingPool.filter(p => {
                                     try {
                                       const parsed = JSON.parse(userAns || "{}");
@@ -2050,18 +2044,18 @@ export default function IC3QuestionBank({
                                   <button
                                     type="button"
                                     onClick={() => setSelectedPoolDef(null)}
-                                    className="text-xs font-black uppercase text-red-600 bg-red-50 hover:bg-red-100 px-2.5 py-1 rounded border border-red-200 transition cursor-pointer"
+                                    className="text-xs font-black uppercase text-rose-300 bg-rose-500/15 hover:bg-rose-500/25 px-2.5 py-1 rounded border border-rose-400/35 transition cursor-pointer"
                                   >
                                     Hủy chọn
                                   </button>
                                 )}
                               </div>
 
-                              <div className="text-[11px] font-semibold text-indigo-900 bg-indigo-50 border border-indigo-200 p-2.5 rounded-xl flex items-center gap-2">
+                              <div className="text-[11px] font-semibold text-slate-200 bg-[var(--lamp-focus-glow)] border border-[var(--lamp-accent)]/30 p-2.5 rounded-xl flex items-center gap-2">
                                 <span>💡 <b>Mẹo:</b> Kéo thả hoặc nhấp chọn đáp án rồi nhấp vào ô thuật ngữ cần ghép!</span>
                               </div>
 
-                              <div className="flex-1 space-y-2.5 max-h-[480px] overflow-y-auto pr-1 bg-slate-100 p-3 rounded-xl border-2 border-slate-300 min-h-[220px]">
+                              <div className="flex-1 space-y-2.5 max-h-[480px] overflow-y-auto pr-1 bg-black/25 p-3 rounded-xl border border-white/12 min-h-[220px]">
                                 {matchingPool.filter(p => {
                                   try {
                                     const parsed = JSON.parse(userAns || "{}");
@@ -2072,13 +2066,13 @@ export default function IC3QuestionBank({
                                 }).map((defItem) => {
                                   const isCurrentlySelected = selectedPoolDef === defItem.text;
 
-                                  let itemClass = "border-2 border-slate-300 bg-white hover:border-indigo-400 hover:shadow-xs active:scale-[0.99] cursor-grab text-slate-900";
+                                  let itemClass = "border border-white/15 bg-white/[0.06] hover:bg-white/[0.1] hover:border-[var(--lamp-accent)]/60 shadow-xs active:scale-[0.99] cursor-grab text-slate-100";
                                   if (isCurrentlySelected) {
-                                    itemClass = "border-2 border-indigo-600 bg-indigo-50 text-indigo-950 font-bold ring-2 ring-indigo-500/20 shadow-xs";
+                                    itemClass = "border-2 border-[var(--lamp-accent)] bg-[var(--lamp-focus-glow)] text-white font-bold ring-2 ring-[var(--lamp-focus-glow)] shadow-xs";
                                   }
 
                                   if (appMode === "training" && isChecked) {
-                                    itemClass = "border-2 border-slate-200 bg-slate-50 text-slate-400 cursor-not-allowed pointer-events-none";
+                                    itemClass = "border border-white/10 bg-white/[0.02] text-slate-500 cursor-not-allowed pointer-events-none";
                                   }
 
                                   return (
@@ -2095,14 +2089,14 @@ export default function IC3QuestionBank({
                                           setSelectedPoolDef(defItem.text);
                                         }
                                       }}
-                                      className={`p-2.5 sm:p-3 rounded-xl border text-xs md:text-sm leading-relaxed font-semibold transition flex items-center justify-between gap-3 shadow-xs select-none ${itemClass}`}
+                                      className={`p-2.5 sm:p-3 rounded-xl text-xs md:text-sm leading-relaxed font-semibold transition flex items-center justify-between gap-3 select-none ${itemClass}`}
                                     >
                                       <div className="flex items-center gap-2.5 min-w-0 flex-1">
                                         {defItem.image && (
                                           <img
                                             src={normalizeImagePath(defItem.image)}
                                             alt={defItem.text}
-                                            className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg border border-slate-300 object-contain bg-slate-50 p-0.5 shrink-0 cursor-pointer hover:opacity-90"
+                                            className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg border border-white/30 object-contain bg-white p-0.5 shrink-0 cursor-pointer hover:opacity-90"
                                             onClick={(e) => {
                                               e.stopPropagation();
                                               setPreviewImage(normalizeImagePath(defItem.image)!);
@@ -2113,7 +2107,7 @@ export default function IC3QuestionBank({
                                         <span className="flex-1 break-words">{defItem.text}</span>
                                       </div>
                                       {!(appMode === "training" && isChecked) && (
-                                        <div className="w-5 h-5 bg-slate-100 rounded border border-slate-300 text-slate-500 flex items-center justify-center font-bold text-xs shrink-0 font-mono">
+                                        <div className="w-5 h-5 bg-white/10 rounded border border-white/15 text-slate-400 flex items-center justify-center font-bold text-xs shrink-0 font-mono">
                                           ⠿
                                         </div>
                                       )}
@@ -2129,8 +2123,8 @@ export default function IC3QuestionBank({
                                     return true;
                                   }
                                 }).length === 0 && (
-                                  <div className="py-12 px-4 text-center text-slate-500 text-xs italic font-medium leading-relaxed">
-                                    🌟 Bạn đã phân bổ toàn bộ định nghĩa!<br/>Hãy nộp bài hoặc nhấn dấu <span className="font-bold text-red-600">✕</span> ở đáp án đã ghép để đổi ý.
+                                  <div className="py-12 px-4 text-center text-slate-400 text-xs italic font-medium leading-relaxed">
+                                    🌟 Bạn đã phân bổ toàn bộ định nghĩa!<br/>Hãy nộp bài hoặc nhấn dấu <span className="font-bold text-rose-300">✕</span> ở đáp án đã ghép để đổi ý.
                                   </div>
                                 )}
                               </div>
@@ -2139,25 +2133,23 @@ export default function IC3QuestionBank({
                         </div>
                       )}
 
-                      {/* Visual Feedback on Answer Selection in Training Mode */}
-
                     </motion.div>
                   </AnimatePresence>
                 </div>
 
                 {/* Bottom Footer Action Controllers - Always horizontal single row, non-wrapping on mobile */}
-                <div className="bg-white border-t-2 border-slate-300 px-3 sm:px-5 py-2.5 sm:py-3.5 flex items-center justify-between gap-1.5 sm:gap-3 select-none shrink-0">
+                <div className="bg-white/[0.04] border-t border-white/10 px-3 sm:px-5 py-2.5 sm:py-3.5 flex items-center justify-between gap-1.5 sm:gap-3 select-none shrink-0">
                   
-                  {/* Left Side: Specific controls like submitting answers in training */}
+                  {/* Left Side */}
                   <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
                     <button
                       type="button"
                       disabled={safeIndex === 0}
                       onClick={handlePrev}
-                      className={`flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-black uppercase px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-xl border-2 font-mono transition shadow-xs cursor-pointer shrink-0 whitespace-nowrap active:scale-95 ${
+                      className={`flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-black uppercase px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-xl border font-mono transition shadow-xs cursor-pointer shrink-0 whitespace-nowrap active:scale-95 ${
                         safeIndex === 0 
-                          ? "bg-slate-100 text-slate-400 border-slate-200 cursor-not-allowed opacity-60" 
-                          : "bg-white text-slate-800 border-slate-300 hover:bg-slate-100"
+                          ? "bg-white/[0.03] text-slate-500 border-white/10 cursor-not-allowed opacity-50" 
+                          : "bg-white/[0.08] text-slate-100 border-white/15 hover:bg-white/15"
                       }`}
                     >
                       <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
@@ -2171,7 +2163,7 @@ export default function IC3QuestionBank({
                       <button
                         type="button"
                         onClick={() => handleCheckOptionTraining(q.id)}
-                        className="text-xs sm:text-sm font-black text-white bg-indigo-600 hover:bg-indigo-700 px-2.5 sm:px-5 py-2 sm:py-2.5 rounded-xl font-mono transition shadow-sm flex items-center gap-1 sm:gap-1.5 active:scale-95 text-center uppercase cursor-pointer shrink-0 whitespace-nowrap"
+                        className="lamp-accent-btn text-xs sm:text-sm font-black px-2.5 sm:px-5 py-2 sm:py-2.5 rounded-xl font-mono transition flex items-center gap-1 sm:gap-1.5 text-center uppercase cursor-pointer shrink-0 whitespace-nowrap"
                       >
                         <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
                         <span>Nộp bài</span>
@@ -2185,27 +2177,27 @@ export default function IC3QuestionBank({
                         <button
                           type="button"
                           onClick={handleFinishTraining}
-                          className="bg-indigo-600 text-white hover:bg-indigo-700 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-black uppercase font-mono transition shadow-sm active:scale-95 flex items-center gap-1 sm:gap-1.5 cursor-pointer shrink-0 whitespace-nowrap"
+                          className="lamp-accent-btn px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-black uppercase font-mono transition flex items-center gap-1 sm:gap-1.5 cursor-pointer shrink-0 whitespace-nowrap"
                         >
                           <span>NỘP BÀI</span>
-                          <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0" />
+                          <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
                         </button>
                       ) : (
                         <button
                           type="button"
                           onClick={handleSubmitTestingExam}
-                          className="bg-emerald-600 text-white hover:bg-emerald-700 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-black uppercase font-mono transition shadow-sm active:scale-95 flex items-center gap-1 sm:gap-1.5 cursor-pointer shrink-0 whitespace-nowrap"
+                          className="lamp-accent-btn px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-black uppercase font-mono transition flex items-center gap-1 sm:gap-1.5 cursor-pointer shrink-0 whitespace-nowrap"
                         >
                           <span className="hidden sm:inline">NỘP BÀI THI CHÍNH THỨC</span>
                           <span className="sm:hidden">NỘP BÀI THI</span>
-                          <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0" />
+                          <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
                         </button>
                       )
                     ) : (
                       <button
                         type="button"
                         onClick={handleNext}
-                        className={`flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-black uppercase px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl border font-mono transition shadow-sm cursor-pointer shrink-0 whitespace-nowrap active:scale-95 ${themeConfig.nextBtnActive}`}
+                        className="lamp-accent-btn flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm font-black uppercase px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl font-mono transition cursor-pointer shrink-0 whitespace-nowrap"
                       >
                         <span>TIẾP THEO</span>
                         <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
@@ -2220,38 +2212,38 @@ export default function IC3QuestionBank({
 
           {/* ================= 📊 EXAM RESULTS AND REVIEW REPORT CARD SCREEN ================= */}
           {appMode === "result" && examResults && (
-            <div className="p-6 md:p-8 space-y-8 max-h-[600px] overflow-y-auto">
+            <div className="p-6 md:p-8 space-y-8 max-h-[680px] overflow-y-auto">
               
               {/* Score breakdown segment panel */}
-              <div className="bg-white border-2 border-slate-300 rounded-2xl p-6 shadow-sm max-w-xl mx-auto text-center space-y-4">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 border-2 border-emerald-200 shadow-inner">
-                  <Award className="w-8 h-8 text-emerald-600" />
+              <div className="bg-white/[0.05] border border-white/15 rounded-2xl p-6 shadow-lg max-w-xl mx-auto text-center space-y-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[var(--lamp-focus-glow)] text-[var(--lamp-accent)] border border-[var(--lamp-accent)]/40 shadow-inner">
+                  <Award className="w-8 h-8 text-[var(--lamp-accent)]" />
                 </div>
 
                 <div className="space-y-1">
-                  <h4 className="text-base font-black uppercase font-mono tracking-widest text-indigo-700">
+                  <h4 className="text-base font-black uppercase font-mono tracking-widest text-[var(--lamp-glow)]">
                     KẾT QUẢ BÀI THI
                   </h4>
-                  <p className="text-xs text-slate-600 font-bold font-mono uppercase tracking-wider">
+                  <p className="text-xs text-slate-300 font-bold font-mono uppercase tracking-wider">
                     {selectedSubSet === "exam" ? "Thi thử" : selectedSubSet} - {selectedPracticeMode === "training" ? "TRAINING" : "TESTING"}
                   </p>
                 </div>
 
                 {/* Score metrics grid */}
                 <div className="grid grid-cols-3 gap-3.5 pt-2">
-                  <div className="bg-emerald-50 border-2 border-emerald-300 p-3 rounded-xl shadow-xs">
-                    <span className="text-xs font-black uppercase font-mono text-emerald-900 block text-center">Câu Đúng</span>
-                    <span className="text-xl font-black font-mono text-emerald-700 block text-center mt-1">{examResults.correctCount}</span>
+                  <div className="bg-emerald-500/15 border border-emerald-400/40 p-3 rounded-xl shadow-xs">
+                    <span className="text-xs font-black uppercase font-mono text-emerald-300 block text-center">Câu Đúng</span>
+                    <span className="text-xl font-black font-mono text-emerald-200 block text-center mt-1">{examResults.correctCount}</span>
                   </div>
 
-                  <div className="bg-red-50 border-2 border-red-300 p-3 rounded-xl shadow-xs">
-                    <span className="text-xs font-black uppercase font-mono text-red-900 block text-center">Câu Sai</span>
-                    <span className="text-xl font-black font-mono text-red-700 block text-center mt-1">{examResults.wrongCount}</span>
+                  <div className="bg-rose-500/15 border border-rose-400/40 p-3 rounded-xl shadow-xs">
+                    <span className="text-xs font-black uppercase font-mono text-rose-300 block text-center">Câu Sai</span>
+                    <span className="text-xl font-black font-mono text-rose-200 block text-center mt-1">{examResults.wrongCount}</span>
                   </div>
 
-                  <div className="bg-slate-100 border-2 border-slate-300 p-3 rounded-xl shadow-xs">
-                    <span className="text-xs font-black uppercase font-mono text-slate-800 block text-center">Thời Gian</span>
-                    <span className="text-xl font-black font-mono text-slate-900 block text-center mt-1">{formatTimer(examResults.timeTaken)}</span>
+                  <div className="bg-white/[0.06] border border-white/15 p-3 rounded-xl shadow-xs">
+                    <span className="text-xs font-black uppercase font-mono text-slate-300 block text-center">Thời Gian</span>
+                    <span className="text-xl font-black font-mono text-white block text-center mt-1">{formatTimer(examResults.timeTaken)}</span>
                   </div>
                 </div>
 
@@ -2264,7 +2256,7 @@ export default function IC3QuestionBank({
                         handleStartSubset(selectedSubSet);
                       }
                     }}
-                    className={`text-xs md:text-sm font-black uppercase font-mono px-5 py-2.5 rounded-xl border-2 flex items-center gap-2 shadow-xs transition active:scale-95 cursor-pointer ${themeConfig.btnOutline}`}
+                    className="text-xs md:text-sm font-black uppercase font-mono px-5 py-2.5 rounded-xl border border-[var(--lamp-accent)]/50 text-[var(--lamp-glow)] hover:bg-[var(--lamp-focus-glow)] flex items-center gap-2 shadow-xs transition active:scale-95 cursor-pointer"
                   >
                     <RefreshCw className="w-4 h-4 animate-spin-slow" />
                     Thi lại đề này
@@ -2277,7 +2269,7 @@ export default function IC3QuestionBank({
                       setSelectedSubSet(null);
                       setTimeElapsed(0);
                     }}
-                    className="text-xs md:text-sm font-black uppercase font-mono px-5 py-2.5 rounded-xl text-white bg-slate-900 border-2 border-slate-900 hover:bg-slate-800 transition shadow-sm active:scale-95 cursor-pointer"
+                    className="lamp-accent-btn text-xs md:text-sm font-black uppercase font-mono px-5 py-2.5 rounded-xl transition cursor-pointer"
                   >
                     Quay về danh sách đề
                   </button>
@@ -2286,9 +2278,9 @@ export default function IC3QuestionBank({
 
               {/* LIST REVIEW ACCORDION DETAIL CARDS */}
               <div className="space-y-4">
-                <div className="border-b-2 border-slate-300 pb-2.5">
-                  <h5 className="text-sm font-black uppercase tracking-widest font-mono text-slate-900 flex items-center gap-2">
-                    <BookOpenCheck className="w-5 h-5 text-indigo-700" />
+                <div className="border-b border-white/15 pb-2.5">
+                  <h5 className="text-sm font-black uppercase tracking-widest font-mono text-white flex items-center gap-2">
+                    <BookOpenCheck className="w-5 h-5 text-[var(--lamp-accent)]" />
                     <span>Xem lại chi tiết bài làm:</span>
                   </h5>
                 </div>
@@ -2299,33 +2291,33 @@ export default function IC3QuestionBank({
                     const isCorrect = checkIfQuestionIsCorrect(q, ans);
 
                     return (
-                      <div key={q.id} className="bg-white border-2 border-slate-300 rounded-2xl p-5 space-y-3 shadow-xs hover:border-slate-400 transition relative">
+                      <div key={q.id} className="bg-white/[0.04] border border-white/12 rounded-2xl p-5 space-y-3 shadow-xs hover:border-white/25 transition relative">
                         {/* Correct incorrect floating badge */}
                         <div className="absolute top-4 right-4 flex items-center gap-1">
                           {ans ? (
                             isCorrect ? (
-                              <span className="flex items-center gap-1 text-xs font-black uppercase font-mono px-2.5 py-1 bg-emerald-50 text-emerald-800 border-2 border-emerald-300 rounded-lg">
+                              <span className="flex items-center gap-1 text-xs font-black uppercase font-mono px-2.5 py-1 bg-emerald-500/20 text-emerald-300 border border-emerald-400/40 rounded-lg">
                                 <Check className="w-3.5 h-3.5" /> ĐÚNG
                               </span>
                             ) : (
-                              <span className="flex items-center gap-1 text-xs font-black uppercase font-mono px-2.5 py-1 bg-rose-50 text-rose-800 border-2 border-rose-300 rounded-lg">
+                              <span className="flex items-center gap-1 text-xs font-black uppercase font-mono px-2.5 py-1 bg-rose-500/20 text-rose-300 border border-rose-400/40 rounded-lg">
                                 <X className="w-3.5 h-3.5" /> SAI
                               </span>
                             )
                           ) : (
-                            <span className="text-xs font-black uppercase font-mono px-2.5 py-1 bg-slate-100 text-slate-600 border-2 border-slate-300 rounded-lg">
+                            <span className="text-xs font-black uppercase font-mono px-2.5 py-1 bg-white/10 text-slate-300 border border-white/15 rounded-lg">
                               BỎ QUA
                             </span>
                           )}
                         </div>
 
                         {/* Title index */}
-                        <span className="text-xs font-black font-mono tracking-wider text-slate-800 block">
+                        <span className="text-xs font-black font-mono tracking-wider text-[var(--lamp-glow)] block">
                           CÂU HỎI {idx + 1}
                         </span>
 
                         {/* Text */}
-                        <p className="text-sm md:text-base font-bold text-slate-950 leading-relaxed bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <p className="text-sm md:text-base font-bold text-white leading-relaxed bg-black/25 p-4 rounded-xl border border-white/10">
                           {q.text}
                         </p>
 
@@ -2343,21 +2335,21 @@ export default function IC3QuestionBank({
                                 ? selectedKeysList.includes(letter)
                                 : ans === letter;
 
-                              let cellStyle = "border-2 border-slate-300 text-slate-800 bg-white";
+                              let cellStyle = "border border-white/12 text-slate-200 bg-white/[0.03]";
                               if (isThisAnswerCorrect) {
-                                cellStyle = "border-2 border-emerald-500 bg-emerald-50 text-emerald-950 font-bold";
+                                cellStyle = "border-2 border-emerald-400/70 bg-emerald-500/15 text-emerald-100 font-bold";
                               } else if (isThisAnswerUserChoice && !isThisAnswerCorrect) {
-                                cellStyle = "border-2 border-rose-400 bg-rose-50 text-rose-950 line-through font-semibold";
+                                cellStyle = "border-2 border-rose-400/70 bg-rose-500/15 text-rose-100 line-through font-semibold";
                               }
 
                               return (
-                                <div key={letter} className={`p-3 rounded-xl border text-xs md:text-sm font-semibold flex items-center gap-2.5 ${cellStyle}`}>
+                                <div key={letter} className={`p-3 rounded-xl text-xs md:text-sm font-semibold flex items-center gap-2.5 ${cellStyle}`}>
                                   <span className={`w-5.5 h-5.5 rounded flex items-center justify-center font-mono font-black text-xs shrink-0 border ${
                                     isThisAnswerCorrect 
-                                      ? "bg-emerald-600 text-white border-emerald-600" 
+                                      ? "bg-emerald-500 text-white border-emerald-400" 
                                       : isThisAnswerUserChoice 
-                                        ? "bg-rose-600 text-white border-rose-600" 
-                                        : "bg-slate-100 text-slate-700 border-slate-300"
+                                        ? "bg-rose-500 text-white border-rose-400" 
+                                        : "bg-white/10 text-slate-300 border-white/15"
                                   }`}>
                                     {letter}
                                   </span>
@@ -2376,16 +2368,16 @@ export default function IC3QuestionBank({
                               const isThisAnswerCorrect = q.correctKeys?.includes(cellVal);
                               const isThisAnswerUserChoice = ans === cellVal;
 
-                              let cellStyle = "border-2 border-slate-300 text-slate-800 bg-white";
+                              let cellStyle = "border border-white/12 text-slate-200 bg-white/[0.03]";
                               if (isThisAnswerCorrect) {
-                                cellStyle = "border-2 border-emerald-500 bg-emerald-50 text-emerald-950 font-bold";
+                                cellStyle = "border-2 border-emerald-400/70 bg-emerald-500/15 text-emerald-100 font-bold";
                               } else if (isThisAnswerUserChoice && !isThisAnswerCorrect) {
-                                cellStyle = "border-2 border-rose-400 bg-rose-50 text-rose-950 font-semibold";
+                                cellStyle = "border-2 border-rose-400/70 bg-rose-500/15 text-rose-100 font-semibold";
                               }
 
                               return (
-                                <div key={cellVal} className={`p-3 rounded-xl border text-xs md:text-sm font-semibold text-center uppercase tracking-wide flex items-center justify-center gap-2 ${cellStyle}`}>
-                                  <span className={`w-2.5 h-2.5 rounded-full shrink-0 ${isThisAnswerCorrect ? "bg-emerald-600" : isThisAnswerUserChoice ? "bg-rose-600" : "bg-slate-400"}`} />
+                                <div key={cellVal} className={`p-3 rounded-xl text-xs md:text-sm font-semibold text-center uppercase tracking-wide flex items-center justify-center gap-2 ${cellStyle}`}>
+                                  <span className={`w-2.5 h-2.5 rounded-full shrink-0 ${isThisAnswerCorrect ? "bg-emerald-400" : isThisAnswerUserChoice ? "bg-rose-400" : "bg-slate-500"}`} />
                                   <span>{cellText}</span>
                                 </div>
                               );
@@ -2396,7 +2388,7 @@ export default function IC3QuestionBank({
                         {/* Matching answers breakdown */}
                         {q.type === "matching" && q.pairs && (
                           <div className="space-y-2.5 pt-1">
-                            <span className="text-xs font-bold text-slate-700 block uppercase font-mono">Chi tiết ghép đôi của bạn:</span>
+                            <span className="text-xs font-bold text-slate-300 block uppercase font-mono">Chi tiết ghép đôi của bạn:</span>
                             <div className="grid grid-cols-1 gap-2.5">
                               {q.pairs.map((pair) => {
                                 const matchedDef = (() => {
@@ -2410,19 +2402,19 @@ export default function IC3QuestionBank({
 
                                 const isThisCorrect = matchedDef === pair.right;
 
-                                let rowStyle = "border-2 border-slate-300 bg-white";
+                                let rowStyle = "border border-white/15 bg-white/[0.04]";
                                 if (matchedDef) {
                                   if (isThisCorrect) {
-                                    rowStyle = "border-2 border-emerald-500 bg-emerald-50/40";
+                                    rowStyle = "border border-emerald-400/60 bg-emerald-500/15";
                                   } else {
-                                    rowStyle = "border-2 border-rose-400 bg-rose-50/40";
+                                    rowStyle = "border border-rose-400/60 bg-rose-500/15";
                                   }
                                 } else {
-                                  rowStyle = "border-2 border-slate-200 bg-slate-50 opacity-80";
+                                  rowStyle = "border border-white/10 bg-white/[0.02] opacity-80";
                                 }
 
                                 return (
-                                  <div key={pair.left} className={`p-3.5 rounded-xl border text-xs md:text-sm flex flex-col gap-2 ${rowStyle}`}>
+                                  <div key={pair.left} className={`p-3.5 rounded-xl text-xs md:text-sm flex flex-col gap-2 ${rowStyle}`}>
                                     <div className="flex items-center justify-between gap-2 flex-wrap">
                                       {(() => {
                                         const reviewImg = normalizeImagePath(pair.leftImage || (isImageSource(pair.left) ? pair.left : undefined));
@@ -2437,41 +2429,41 @@ export default function IC3QuestionBank({
                                               <img
                                                 src={reviewImg}
                                                 alt={displayLabel}
-                                                className="w-12 h-12 rounded-lg object-contain bg-white border border-slate-300 p-1 shrink-0 cursor-pointer hover:opacity-90 shadow-2xs"
+                                                className="w-12 h-12 rounded-lg object-contain bg-white border border-white/30 p-1 shrink-0 cursor-pointer hover:opacity-90 shadow-2xs"
                                                 onClick={() => setPreviewImage(reviewImg)}
                                                 title="Bấm để phóng to ảnh"
                                               />
                                             )}
-                                            <span className="font-bold text-indigo-950 font-mono text-xs md:text-sm">{displayLabel}</span>
+                                            <span className="font-bold text-white font-mono text-xs md:text-sm">{displayLabel}</span>
                                           </div>
                                         );
                                       })()}
                                       
                                       {matchedDef ? (
                                         isThisCorrect ? (
-                                          <span className="px-2.5 py-0.5 text-xs font-black uppercase font-mono rounded bg-emerald-100 text-emerald-900 border border-emerald-300">
+                                          <span className="px-2.5 py-0.5 text-xs font-black uppercase font-mono rounded bg-emerald-500/20 text-emerald-300 border border-emerald-400/40">
                                             CHÍNH XÁC
                                           </span>
                                         ) : (
-                                          <span className="px-2.5 py-0.5 text-xs font-black uppercase font-mono rounded bg-rose-100 text-rose-900 border border-rose-300">
+                                          <span className="px-2.5 py-0.5 text-xs font-black uppercase font-mono rounded bg-rose-500/20 text-rose-300 border border-rose-400/40">
                                             CHƯA CHÍNH XÁC
                                           </span>
                                         )
                                       ) : (
-                                        <span className="px-2.5 py-0.5 text-xs font-black uppercase font-mono rounded bg-slate-200 text-slate-700 border border-slate-300">
+                                        <span className="px-2.5 py-0.5 text-xs font-black uppercase font-mono rounded bg-white/10 text-slate-300 border border-white/15">
                                           CHƯA GHÉP ĐÔI
                                         </span>
                                       )}
                                     </div>
                                     
-                                    <div className="space-y-1.5 bg-white p-2.5 rounded-lg border border-slate-200 font-semibold text-slate-900 text-xs md:text-sm leading-relaxed">
+                                    <div className="space-y-1.5 bg-black/25 p-2.5 rounded-lg border border-white/10 font-semibold text-slate-200 text-xs md:text-sm leading-relaxed">
                                       <p className="flex gap-2">
-                                        <span className="text-slate-500 shrink-0 select-none">Đã ghép:</span>
-                                        <span className="font-bold">{matchedDef || <span className="italic text-slate-400 font-medium">Bỏ trống</span>}</span>
+                                        <span className="text-slate-400 shrink-0 select-none">Đã ghép:</span>
+                                        <span className="font-bold text-white">{matchedDef || <span className="italic text-slate-500 font-medium">Bỏ trống</span>}</span>
                                       </p>
                                       {!isThisCorrect && (
-                                        <p className="text-emerald-950 flex gap-2 border-t border-slate-200 pt-1.5 mt-1 font-bold">
-                                          <span className="text-emerald-700 shrink-0 select-none font-semibold">Đáp án chuẩn:</span>
+                                        <p className="text-emerald-200 flex gap-2 border-t border-white/10 pt-1.5 mt-1 font-bold">
+                                          <span className="text-emerald-400 shrink-0 select-none font-semibold">Đáp án chuẩn:</span>
                                           <span>{pair.right}</span>
                                         </p>
                                       )}
@@ -2497,7 +2489,7 @@ export default function IC3QuestionBank({
                       setSelectedSubSet(null);
                       setTimeElapsed(0);
                     }}
-                    className="text-xs md:text-sm font-black uppercase font-mono px-6 py-3 rounded-xl text-white bg-slate-900 border-2 border-slate-900 hover:bg-slate-800 transition shadow-sm active:scale-95 cursor-pointer"
+                    className="lamp-accent-btn text-xs md:text-sm font-black uppercase font-mono px-6 py-3 rounded-xl transition cursor-pointer"
                   >
                     HOÀN TẤT VÀ VỀ MỤC CHỌN ĐỀ ÔN THI
                   </button>
@@ -2509,20 +2501,20 @@ export default function IC3QuestionBank({
       )}
 
       {showExitConfirm && (
-        <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="bg-white border border-slate-200 rounded-2xl max-w-sm w-full p-6 shadow-2xl space-y-4"
+            className="bg-[#12161c]/95 backdrop-blur-2xl border border-white/15 rounded-2xl max-w-sm w-full p-6 shadow-2xl space-y-4 text-slate-100"
           >
             <div className="text-center space-y-2">
-              <div className="w-12 h-12 bg-red-100 text-red-650 rounded-full flex items-center justify-center mx-auto mb-2">
+              <div className="w-12 h-12 bg-rose-500/20 border border-rose-400/40 text-rose-300 rounded-full flex items-center justify-center mx-auto mb-2">
                 <X className="w-6 h-6" />
               </div>
-              <h3 className="text-sm font-black uppercase text-slate-800 font-mono tracking-wide">
+              <h3 className="text-sm font-black uppercase text-white font-mono tracking-wide">
                 Xác nhận thoát?
               </h3>
-              <p className="text-xs text-slate-500 font-semibold leading-relaxed">
+              <p className="text-xs text-slate-300 font-medium leading-relaxed">
                 Bạn có chắc chắn muốn dừng bài thi này? Mọi kết quả hiện tại sẽ không được lưu trữ.
               </p>
             </div>
@@ -2530,7 +2522,7 @@ export default function IC3QuestionBank({
               <button
                 type="button"
                 onClick={() => setShowExitConfirm(false)}
-                className="py-2 px-3 border border-slate-200 rounded-lg text-xs font-bold text-slate-500 hover:bg-slate-50 transition active:scale-95 uppercase font-mono"
+                className="py-2 px-3 border border-white/15 bg-white/[0.06] rounded-lg text-xs font-bold text-slate-200 hover:bg-white/12 transition active:scale-95 uppercase font-mono cursor-pointer"
               >
                 Hủy
               </button>
@@ -2543,7 +2535,7 @@ export default function IC3QuestionBank({
                   setIsTimerActive(false);
                   setTimeElapsed(0);
                 }}
-                className="py-2 px-3 bg-red-600 hover:bg-red-700 text-white rounded-lg text-xs font-bold transition active:scale-95 uppercase font-mono shadow-md shadow-red-650/10"
+                className="py-2 px-3 bg-rose-600 hover:bg-rose-500 text-white rounded-lg text-xs font-bold transition active:scale-95 uppercase font-mono shadow-md cursor-pointer"
               >
                 Thoát luôn
               </button>
