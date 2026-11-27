@@ -663,5 +663,679 @@ export const LEVEL2_OT_QUESTIONS: IC3Question[] = [
       { right: "Our.news", left: "Cung cấp nhãn dinh dưỡng tương tác đính kèm với tất cả các tin bài trực tuyến dưới dạng tiện ích mở rộng" },
       { right: "Tineye.com", left: "Tìm kiếm hình ảnh đã tải lên và cung cấp kết quả hiển thị các bài báo và ngày tháng mà hình ảnh xuất hiện" }
     ]
+  },
+  // Dữ liệu câu hỏi Level 2 — LV2_OT1 (id: "lv2-ot1-01" -> "lv2-ot1-45", subsetId: "OT1")
+  {
+    id: "lv2-ot1-01",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 1,
+    type: "multiple_choice",
+    text: "Bạn hãy cho biết, loại máy in nào phân tán mực dạng bột (Powdered Toner) lên trang khi in?",
+    options: [
+      { key: "A", text: "Máy in 3D" },
+      { key: "B", text: "Máy in laser" },
+      { key: "C", text: "Máy in phun (Inkjet)" },
+      { key: "D", text: "Máy in nhiệt (Thermal)" }
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "lv2-ot1-02",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 2,
+    type: "multiple_choice",
+    text: "Loại máy in nào phun mực lên giấy khi in?",
+    options: [
+      { key: "A", text: "Inkjet" },
+      { key: "B", text: "Laser" },
+      { key: "C", text: "3D" },
+      { key: "D", text: "Thermal" }
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "lv2-ot1-03",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 3,
+    type: "multiple_choice",
+    text: "Bạn hãy nhấp chọn vào tính năng chia sẻ toàn bộ lịch của bạn với người khác trong hình sau đây?",
+    options: [
+      { key: "A", text: "Vùng 1" },
+      { key: "B", text: "Vùng 2" },
+      { key: "C", text: "Vùng 3" },
+      { key: "D", text: "Vùng 4" }
+    ],
+    correctKeys: ["C"]
+  },
+  {
+    id: "lv2-ot1-04",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 4,
+    type: "multiple_choice",
+    text: "Người dùng nhận thấy rằng máy in mặc định cứ liên tục thay đổi. Bạn hãy cho biết, tuỳ chọn nào cần được tắt để người dùng có thể quản lý được máy in mặc định?",
+    options: [
+      { key: "A", text: "Chọn máy in mặc định một cách tự động (Set the default printer automatically)" },
+      { key: "B", text: "Để Windows quản lý máy in mặc định của tôi (Let Windows manage my default printer)" },
+      { key: "C", text: "Đặt máy in mặc định theo địa chỉ" },
+      { key: "D", text: "Chọn máy in mặc định là máy in gần nhất (Let the closest printer be my default printer)" }
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "lv2-ot1-05",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 5,
+    type: "multiple_choice",
+    text: "Trên thiết bị Windows, người ta có thể truy cập thông tin hiển thị từ khu vực nào của Settings?",
+    options: [
+      { key: "A", text: "Privacy" },
+      { key: "B", text: "System" },
+      { key: "C", text: "Personalization" },
+      { key: "D", text: "Devices" }
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "lv2-ot1-06",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 6,
+    type: "multiple_choice",
+    text: "Bạn hãy điền vào chỗ trống để hoàn thiện phát biểu sau đây: Đề xuất của Google là một tính năng ______________ được sử dụng phổ biến trong các tìm kiếm.",
+    options: [
+      { key: "A", text: "Tự động hoàn thành (Autocomplete)" },
+      { key: "B", text: "Tự động tìm kiếm (Autosearch)" },
+      { key: "C", text: "Tự động chỉnh đúng (Autocorrect)" },
+      { key: "D", text: "Tự động sửa lỗi (Autofix)" }
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "lv2-ot1-07",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 7,
+    type: "multiple_choice",
+    text: "Bạn hãy cho biết, vùng nào trong cài đặt (Setting) là tuỳ chọn được sử dụng để kết nổi máy in?",
+    options: [
+      { key: "A", text: "Networks" },
+      { key: "B", text: "Installations" },
+      { key: "C", text: "Devices" },
+      { key: "D", text: "Printers" }
+    ],
+    correctKeys: ["C"]
+  },
+  {
+    id: "lv2-ot1-08",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 8,
+    type: "multiple_choice",
+    text: "Phát biểu nào sau đây là đúng khi nói về Google Calendars? (Chọn 2)",
+    options: [
+      { key: "A", text: "Mã màu chỉ có thể thay đổi trong vùng cài đặt (Setting)" },
+      { key: "B", text: "Bạn có thể đăng ký lịch trực tuyến" },
+      { key: "C", text: "Chỉ có thể đăng ký lịch bằng cách sử dụng URL" },
+      { key: "D", text: "Những ngày lễ có thể được thêm vào" }
+    ],
+    correctKeys: ["B", "D"]
+  },
+  {
+    id: "lv2-ot1-09",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 9,
+    type: "multiple_choice",
+    text: "Bạn hãy cho biết, phát biểu nào sau đây là đúng về điện toán đám mây? (Chọn 2)",
+    options: [
+      { key: "A", text: "Điện toán đám mây chỉ giới hạn trong Database" },
+      { key: "B", text: "Dữ liệu trong điện toán đám mây được lưu trữ trên một máy chủ từ xa" },
+      { key: "C", text: "Máy chủ có thể được truy cập thông qua internet" },
+      { key: "D", text: "Luôn phải trả phí cho dung lượng trên điện toán đám mây" }
+    ],
+    correctKeys: ["B", "C"]
+  },
+  {
+    id: "lv2-ot1-10",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 10,
+    type: "yes_no",
+    text: "Với mỗi câu phát biểu về tính bảo mật của thiết bị đa phương tiện di động, hãy chọn Đúng hoặc Sai.",
+    statements: [
+      { text: "Bạn nên tắt tính năng tự động chạy và tự động phát cho tất cả các thiết bị đa phương tiện di động", correct: "True" },
+      { text: "Bạn nên lưu trữ các công việc và tập tin cá nhân của mình trên các thiết bị riêng biệt, không được cắm thiết bị cá nhân vào máy tính làm việc hoặc ngược lại", correct: "True" },
+      { text: "Nếu bạn tìm thấy một thiết bị lưu trữ phương tiện truyền thông và không biết nó thuộc về ai, hãy cắm thiết bị đó vào máy tính của bạn để tìm thông tin về chủ nhân của nó", correct: "False" }
+    ]
+  },
+  {
+    id: "lv2-ot1-11",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 11,
+    type: "multiple_choice",
+    text: "Hai nguyên tắc thiết kế chung cho phần cứng máy tính là gì? (Chọn 2)",
+    options: [
+      { key: "A", text: "Sử dụng công bằng: Thiết kế hữu ích và có thể bán được cho nhiều người với các khả năng khác nhau" },
+      { key: "B", text: "Duy trì chi phí thấp: Sử dụng các bộ phận ít tốn kém hơn bất cứ khi nào có thể để giảm chi phí lắp ráp" },
+      { key: "C", text: "Khả năng chịu lỗi: Giảm thiểu các mối nguy hiểm và hậu quả bất lợi của các hành động ngẫu nhiên hoặc ngoài ý muốn" },
+      { key: "D", text: "Liên kết với internet vạn vật: Triển khai chức năng trực tuyến bất cứ khi nào có thể để cải thiện trải nghiệm người dùng" }
+    ],
+    correctKeys: ["A", "C"]
+  },
+  {
+    id: "lv2-ot1-12",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 12,
+    type: "yes_no",
+    text: "Xác định ưu điểm của Máy in phun và Máy in laser. Để trả lời, bạn hãy chọn loại máy in tương ứng với từng ưu điểm.",
+    statements: [
+      { text: "Tài liệu khô mực ngay khi in ra", correct: "False" },
+      { text: "Thân thiện với môi trường hơn", correct: "True" },
+      { text: "Phù hợp để in ảnh chất lượng cao", correct: "True" },
+      { text: "Thích hợp để in tài liệu số lượng lớn với chi phí thấp", correct: "False" }
+    ]
+  },
+  {
+    id: "lv2-ot1-13",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 13,
+    type: "multiple_choice",
+    text: "Loại USB nào có tốc độ truyền có thể lên đến 12 Mbps?",
+    options: [
+      { key: "A", text: "USB 3.1" },
+      { key: "B", text: "USB 3.0" },
+      { key: "C", text: "USB 2.0" },
+      { key: "D", text: "USB 1.0" }
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "lv2-ot1-14",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 14,
+    type: "yes_no",
+    text: "Với mỗi câu phát biểu về hệ thống lưu trữ dữ liệu trung tâm, hãy chọn Đúng hoặc Sai.",
+    statements: [
+      { text: "Khi bạn tải một tập tin lên hệ thống lưu trữ dữ liệu trung tâm, tập tin sẽ bị xóa khỏi máy tính của bạn", correct: "False" },
+      { text: "Bạn có thể sử dụng chương trình FTP để tải lên và tải xuống các tập tin từ hệ thống lưu trữ dữ liệu trung tâm", correct: "True" },
+      { text: "Nhiều hệ thống lưu trữ dữ liệu trung tâm có thể tự động sao lưu các tập tin từ máy tính và cập nhật phiên bản tập tin mới nhất cho máy tính của bạn", correct: "True" }
+    ]
+  },
+  {
+    id: "lv2-ot1-15",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 15,
+    type: "multiple_choice",
+    text: "Bạn cần thêm cuộc họp Hội đồng sinh viên diễn ra vào tháng tới vào lịch của bạn. Bạn có thể lựa chọn hai phần tử nào sau đây để mở hộp thoại sự kiện? (Chọn 2)",
+    options: [
+      { key: "A", text: "area1" },
+      { key: "B", text: "area2" }
+    ],
+    correctKeys: ["A", "B"]
+  },
+  {
+    id: "lv2-ot1-16",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 16,
+    type: "multiple_choice",
+    text: "Trong Outlook, điều gì thay đổi cuộc hẹn (Appointment) thành cuộc họp (Meeting)?",
+    options: [
+      { key: "A", text: "Chọn hộp kiểm Meeting" },
+      { key: "B", text: "Đặt thời gian bắt đầu và kết thúc" },
+      { key: "C", text: "Chọn hộp kiểm All day" },
+      { key: "D", text: "Thêm người được mời" }
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "lv2-ot1-17",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 17,
+    type: "multiple_choice",
+    text: "Khu vực cài đặt nào trên thiết bị Windows cho phép người dùng kiểm soát cách nhận thông báo (Notification)?",
+    options: [
+      { key: "A", text: "Focus Assist" },
+      { key: "B", text: "Action Center" },
+      { key: "C", text: "Multitasking" },
+      { key: "D", text: "Shared Experiences" }
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "lv2-ot1-18",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 18,
+    type: "multiple_choice",
+    text: "Nhiều hàng hóa và dịch vụ được bán trực tuyến. Tùy chọn nào sau đây là dịch vụ? (Chọn 3)",
+    options: [
+      { key: "A", text: "Tai nghe Bose (Bose earbuds)" },
+      { key: "B", text: "Ứng dụng trực tuyến (Online applications)" },
+      { key: "C", text: "Hỗ trợ máy tính để bàn từ xa (Remote desktop support)" },
+      { key: "D", text: "Điện thoại Samsung Galaxy (Samsung Galaxy phone)" },
+      { key: "E", text: "Balo (Backpack)" },
+      { key: "F", text: "Lưu trữ đám mây (Cloud storage)" }
+    ],
+    correctKeys: ["B", "C", "F"]
+  },
+  {
+    id: "lv2-ot1-19",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 19,
+    type: "multiple_choice",
+    text: "Trên thiết bị Windows, từ khu vực cài đặt nào người ta có thể thay đổi màu nền của màn hình?",
+    options: [
+      { key: "A", text: "Display" },
+      { key: "B", text: "Desktop" },
+      { key: "C", text: "Settings" },
+      { key: "D", text: "Personalization" }
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "lv2-ot1-20",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 20,
+    type: "multiple_choice",
+    text: "Billy đang đánh máy bài viết của mình. Anh ấy gõ 'cia' và khi gõ phím cách, từ đó đổi thành 'cái'. Tính năng nào tạo nên sự thay đổi này?",
+    options: [
+      { key: "A", text: "Tự động sửa (AutoCorrect)" },
+      { key: "B", text: "Trình soát chính tả (Spelling Checker)" },
+      { key: "C", text: "Tự động định dạng (AutoFormat)" },
+      { key: "D", text: "Xác thực dữ liệu (Data Validation)" }
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "lv2-ot1-21",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 21,
+    type: "matching",
+    text: "Nối từng phần mở rộng tập tin với mô tả định dạng tập tin tương ứng. Để trả lời, hãy di chuyển từng mô tả tương ứng ở bên phải sang bên trái sao cho phù hợp.",
+    pairs: [
+      { left: "Gif", right: "Tập tin hình vạch quét có độ nén cao hỗ trợ chứa nhiều hình ảnh trong một tập tin" },
+      { left: "Png", right: "Tập tin hình vạch quét với tính năng nén không mất dữ liệu, hỗ trợ 'hình ảnh trong suốt, ánh xạ màu và màu sắc trung thực 48 bit'" },
+      { left: "Txt", right: "Tập tin văn bản chỉ hỗ trợ văn bản thuần ở định dạng tuyến tính" },
+      { left: "Rtf", right: "Tập tin văn bản hỗ trợ văn bản và đồ họa được định dạng" }
+    ]
+  },
+  {
+    id: "lv2-ot1-22",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 22,
+    type: "matching",
+    text: "Nối từng loại quyền truy cập tập tin với định nghĩa tương ứng. Để trả lời, hãy ghép từng loại quyền truy cập từ cột bên phải sang cột bên trái tương ứng.",
+    pairs: [
+      { left: "Sửa (Modify)", right: "Thêm dữ liệu vào tập tin và đọc hoặc thay đổi các thuộc tính của tập tin" },
+      { left: "Ghi (Write)", right: "Xem nội dung tập tin, thêm dữ liệu vào tập tin và xóa" },
+      { left: "Đọc & Thực thi (Read & Execute)", right: "Xem hoặc truy cập nội dung tập tin và chạy tập tin nếu đó là một chương trình" },
+      { left: "Đọc (Read)", right: "Xem hoặc truy cập nội dung tập tin" }
+    ]
+  },
+  {
+    id: "lv2-ot1-23",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 23,
+    type: "multiple_choice",
+    text: "Mục nào của Outlook Calendar kéo dài cả ngày theo mặc định?",
+    options: [
+      { key: "A", text: "Meeting" },
+      { key: "B", text: "Event" },
+      { key: "C", text: "Special" },
+      { key: "D", text: "Appointment" }
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "lv2-ot1-24",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 24,
+    type: "multiple_choice",
+    text: "Những cài đặt nào được lưu trữ trong phần autofill của Google Chrome? (Chọn 3)",
+    options: [
+      { key: "A", text: "Passwords" },
+      { key: "B", text: "Usernames" },
+      { key: "C", text: "Payment methods" },
+      { key: "D", text: "Phrases" },
+      { key: "E", text: "Address information" }
+    ],
+    correctKeys: ["A", "C", "E"]
+  },
+  {
+    id: "lv2-ot1-25",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 25,
+    type: "multiple_choice",
+    text: "Đâu là quá trình chuyển đổi dữ liệu sang dạng thức không thể nhận dạng yêu cầu sử dụng khóa để trả dữ liệu về dạng văn bản thuần?",
+    options: [
+      { key: "A", text: "Hàm băm (Hashing)" },
+      { key: "B", text: "Nén (Compression)" },
+      { key: "C", text: "Mã hóa (Encoding)" },
+      { key: "D", text: "Mã hóa (Encryption)" }
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "lv2-ot1-26",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 26,
+    type: "multiple_choice",
+    text: "Bạn hãy cho biết, biểu tượng hình mặt trời trên bảng điều khiển thường đại diện cho cài đặt nào sau đây?",
+    options: [
+      { key: "A", text: "Độ tối (Darkness)" },
+      { key: "B", text: "Độ tương phản (Contrast)" },
+      { key: "C", text: "Tông màu màn hình (Screen tone)" },
+      { key: "D", text: "Độ sáng (Brightness)" }
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "lv2-ot1-27",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 27,
+    type: "multiple_choice",
+    text: "Bạn hãy cho biết, tính năng nào được sử dụng trong nhiều ứng dụng để thay thế những từ bị sai chính tả bằng các từ dự định một cách tự động?",
+    options: [
+      { key: "A", text: "Autofix" },
+      { key: "B", text: "Autocorrect" },
+      { key: "C", text: "Autofill" },
+      { key: "D", text: "Autocomplete" }
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "lv2-ot1-28",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 28,
+    type: "multiple_choice",
+    text: "Phần cứng nào trong máy tính xử lý hiệu suất của video và đồ họa?",
+    options: [
+      { key: "A", text: "VRAM" },
+      { key: "B", text: "CPU" },
+      { key: "C", text: "VPU" },
+      { key: "D", text: "GPU" }
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "lv2-ot1-29",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 29,
+    type: "multiple_choice",
+    text: "Nội dung hiển thị trên màn hình máy tính của bạn rất khó xem, vùng tối của màn hình quá tối, còn vùng sáng của màn hình quá sáng. Bạn cần điều chỉnh màn hình để có thể xem nội dung. Bạn nên điều chỉnh cài đặt màn hình nào?",
+    options: [
+      { key: "A", text: "Nguồn đầu vào (Input Source)" },
+      { key: "B", text: "Độ tương phản (Contrast)" },
+      { key: "C", text: "Độ sáng (Brightness)" },
+      { key: "D", text: "Độ sắc nét (Sharpness)" }
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "lv2-ot1-30",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 30,
+    type: "yes_no",
+    text: "Với mỗi câu phát biểu về bộ xử lý trung tâm (CPU), hãy chọn Đúng hoặc Sai.",
+    statements: [
+      { text: "Hầu hết các bộ xử lý trung tâm hiện đại đều được xây dựng để hỗ trợ các hệ thống 64-bit", correct: "True" },
+      { text: "CPU thường có bộ tản nhiệt khí hoặc tản nhiệt nước đi kèm", correct: "True" },
+      { text: "Tốc độ CPU ảnh hưởng đến số khung hình trên giây (fps) hiển thị trong trò chơi 3D", correct: "True" }
+    ]
+  },
+  {
+    id: "lv2-ot1-31",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 31,
+    type: "multiple_choice",
+    text: "Bạn hãy cho biết, thiết bị xuất nào sau đây được sử dụng để điều khiển âm thanh?",
+    options: [
+      { key: "A", text: "Mic (Microphone)" },
+      { key: "B", text: "Loa (Speakers)" },
+      { key: "C", text: "Chuột máy tính (Mouse)" },
+      { key: "D", text: "Bàn phím (Keyboard)" }
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "lv2-ot1-32",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 32,
+    type: "multiple_choice",
+    text: "Bạn vừa đăng ký một tài khoản trên Google. Tài khoản mới của bạn sử dụng đăng nhập một lần (SSO). Bạn hãy cho biết, tùy chọn nào sau đây là lợi ích của đăng nhập một lần (SSO)? (Chọn 3)",
+    options: [
+      { key: "A", text: "Giúp tài khoản của bạn có bảo mật mạnh mẽ hơn" },
+      { key: "B", text: "SSO thuộc sở hữu và điều hành của chính phủ" },
+      { key: "C", text: "Bạn chỉ cần nhớ một tập hợp các chi tiết đăng nhập" },
+      { key: "D", text: "Bạn có thể đăng nhập mà không cần sử dụng mật khẩu" },
+      { key: "E", text: "Sau khi đăng nhập, bạn có thể truy cập email, lưu trữ tài liệu, ứng dụng và các trang web khác của mình với toàn quyền truy cập" },
+      { key: "F", text: "Thông tin xác thực được lưu trữ trên Amazon, Facebook và Google" }
+    ],
+    correctKeys: ["A", "C", "E"]
+  },
+  {
+    id: "lv2-ot1-33",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 33,
+    type: "multiple_choice",
+    text: "Phát biểu nào sau đây giúp phân biệt giữa tập tin chỉ đọc (Read-Only) và tập tin đọc ghi (Read-Write)? (Chọn 2)",
+    options: [
+      { key: "A", text: "Người dùng khác có thể thay đổi tập tin có thuộc tính đọc ghi (Read-Write)" },
+      { key: "B", text: "Các tập tin được đặt thuộc tính chỉ đọc (Read-Only) theo mặc định" },
+      { key: "C", text: "Tập tin được đặt thuộc tính chỉ đọc (Read-Only) được bảo vệ khỏi bị sao chép" },
+      { key: "D", text: "Một tập tin được đặt thuộc tính chỉ đọc (Read-Only) có thể được xem nhưng không được sửa đổi" }
+    ],
+    correctKeys: ["A", "D"]
+  },
+  {
+    id: "lv2-ot1-34",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 34,
+    type: "yes_no",
+    text: "Sau đây là một số phát biểu về việc nén tập tin. Bạn hãy chọn Đúng hoặc Sai:",
+    statements: [
+      { text: "Nhiều tập tin có thể được đóng gói bằng một tiện ích tạo một tập tin nén duy nhất có đuôi tập tin .zip hoặc .rar", correct: "True" },
+      { text: "Tập tin nén chiếm nhiều dung lượng lưu trữ hơn tập tin gốc", correct: "False" },
+      { text: "Một tập tin nén thường có kích thước nhỏ hơn tập tin gốc", correct: "True" },
+      { text: "Chỉ có thể nén các tập tin hình ảnh", correct: "False" }
+    ]
+  },
+  {
+    id: "lv2-ot1-35",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 35,
+    type: "multiple_choice",
+    text: "Bạn hãy chọn hai tùy chọn nào sau đây là dịch vụ? (Chọn 2)",
+    options: [
+      { key: "A", text: "Trò chơi" },
+      { key: "B", text: "Sửa ống nước" },
+      { key: "C", text: "Quần áo" },
+      { key: "D", text: "Cắt tóc" }
+    ],
+    correctKeys: ["B", "D"]
+  },
+  {
+    id: "lv2-ot1-36",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 36,
+    type: "multiple_choice",
+    text: "Bạn đang ở trong một căn phòng có nhiều tiếng ồn. Bạn kết nối tai nghe với máy tính để có thể nghe âm thanh tốt hơn nhưng âm thanh vẫn phát ra qua loa ngoài của máy tính thay vì tai nghe. Bạn cần âm thanh của máy tính phát ra qua tai nghe. Bạn nên làm gì?",
+    options: [
+      { key: "A", text: "Quản lý thiết bị đầu vào" },
+      { key: "B", text: "Đặt cấu hình cài đặt âm thanh trợ năng" },
+      { key: "C", text: "Quản lý thiết bị đầu ra" },
+      { key: "D", text: "Tắt tiếng loa máy tính" }
+    ],
+    correctKeys: ["C"]
+  },
+  {
+    id: "lv2-ot1-37",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 37,
+    type: "multiple_choice",
+    text: "Loại tài khoản nào được yêu cầu để đăng các mục trong diễn đàn cộng đồng Microsoft?",
+    options: [
+      { key: "A", text: "Microsoft" },
+      { key: "B", text: "Domain" },
+      { key: "C", text: "Windows" },
+      { key: "D", text: "Azure" }
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "lv2-ot1-38",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 38,
+    type: "multiple_choice",
+    text: "Bạn hãy cho biết cách sử dụng tính năng trò chuyện (Chat) trong tình huống nào sau đây là phù hợp nhất trong hội thảo trên web (Webinar)?",
+    options: [
+      { key: "A", text: "Bắt chuyện với đồng nghiệp" },
+      { key: "B", text: "Đặt câu hỏi khi có thời gian thích hợp" },
+      { key: "C", text: "Chèn kiến thức để thêm vào bài thuyết trình" },
+      { key: "D", text: "Nhận xét về bài thuyết trình" }
+    ],
+    correctKeys: ["B"]
+  },
+  {
+    id: "lv2-ot1-39",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 39,
+    type: "multiple_choice",
+    text: "Bạn hãy cho biết ứng dụng nào sau đây có khả năng tạo cuộc họp mặt trực tuyến?",
+    options: [
+      { key: "A", text: "OneDrive" },
+      { key: "B", text: "Google Drive" },
+      { key: "C", text: "Zoom" },
+      { key: "D", text: "Dropbox" }
+    ],
+    correctKeys: ["C"]
+  },
+  {
+    id: "lv2-ot1-40",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 40,
+    type: "multiple_choice",
+    text: "Bạn hãy cho biết khi sử dụng tất cả chữ in hoa trong một thư điện tử (Email) sẽ truyền đạt điều gì?",
+    options: [
+      { key: "A", text: "La hét" },
+      { key: "B", text: "Khẩn cấp" },
+      { key: "C", text: "Nhấn mạnh" },
+      { key: "D", text: "Tâm quan trọng" }
+    ],
+    correctKeys: ["A"]
+  },
+  {
+    id: "lv2-ot1-41",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 41,
+    type: "multiple_choice",
+    text: "Bạn hãy cho biết, nếu một người dùng muốn gửi tin nhắn tức thời cho đồng nghiệp, nhưng trạng thái tài khoản của đồng nghiệp đang không khả dụng (Unavailable) thì cách nào sau đây là tốt nhất để người dùng có thể sử dụng?",
+    options: [
+      { key: "A", text: "Email cho đồng nghiệp" },
+      { key: "B", text: "Gọi điện cho đồng nghiệp" },
+      { key: "C", text: "Cứ gửi tin nhắn" },
+      { key: "D", text: "Chờ cho đến khi tài khoản của đồng nghiệp khả dụng" }
+    ],
+    correctKeys: ["D"]
+  },
+  {
+    id: "lv2-ot1-42",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 42,
+    type: "multiple_choice",
+    text: "Người dùng muốn xem các câu hỏi và câu trả lời phổ biến về Microsoft Outlook. Tùy chọn nào sau đây là phù hợp nhất để giúp người dùng có thể xem các câu hỏi và câu trả lời?",
+    options: [
+      { key: "A", text: "Tell me" },
+      { key: "B", text: "Help" },
+      { key: "C", text: "Community forum" },
+      { key: "D", text: "What's New?" }
+    ],
+    correctKeys: ["C"]
+  },
+  {
+    id: "lv2-ot1-43",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 43,
+    type: "multiple_choice",
+    text: "Bạn hãy cho biết, bạn nên làm gì trước khi bắt đầu một cuộc hội thoại bằng loa ngoài?",
+    options: [
+      { key: "A", text: "Kiểm tra âm lượng trên thiết bị liên lạc đầu ra" },
+      { key: "B", text: "Bật loa điện thoại và bắt đầu nói chuyện" },
+      { key: "C", text: "Xin phép để tiếp tục cuộc trò chuyện trên loa ngoài" },
+      { key: "D", text: "Yêu cầu đầu dây bên kia nói để kiểm tra âm lượng" }
+    ],
+    correctKeys: ["C"]
+  },
+  {
+    id: "lv2-ot1-44",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 44,
+    type: "multiple_choice",
+    text: "Bạn hãy chọn hai phát biểu đúng khi lựa chọn địa điểm tổ chức hội nghị truyền hình? (Chọn 2)",
+    options: [
+      { key: "A", text: "Địa điểm nên cố gắng tìm một khu vực có ít hoặc không có tiếng ồn xung quanh" },
+      { key: "B", text: "Địa điểm nên có chỗ ngồi nơi có ánh sáng tốt" },
+      { key: "C", text: "Địa điểm luôn phải ở trong một tòa nhà chuyên nghiệp" },
+      { key: "D", text: "Địa điểm nên tránh xa các thiết bị di động" }
+    ],
+    correctKeys: ["A", "B"]
+  },
+  {
+    id: "lv2-ot1-45",
+    levelId: "level-2",
+    subsetId: "OT1",
+    questionNumber: 45,
+    type: "multiple_choice",
+    text: "Hai nhận định nào là đúng về một người nhạy cảm với sự đa dạng văn hóa? (Chọn 2)",
+    options: [
+      { key: "A", text: "Người ta nên nghiên cứu các chuẩn mực văn hóa cho các khách hàng quốc tế mà họ sẽ gặp" },
+      { key: "B", text: "Giao tiếp đồng bộ có thể tốt hơn một cuộc họp trực tuyến" },
+      { key: "C", text: "Người ta nên xem liệu có cần thông dịch viên cho cuộc họp giữa các bên với nhiều ngôn ngữ mẹ đẻ hay không" },
+      { key: "D", text: "Tất cả các nền văn hóa đều cảm thấy thoải mái với hội nghị truyền hình" }
+    ],
+    correctKeys: ["A", "C"]
   }
 ]
+
+
+
+
+
